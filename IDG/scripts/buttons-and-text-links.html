@@ -1,0 +1,197 @@
+<!--  Buttons -->
+<script>
+    'use strict';
+    document.addEventListener('DOMContentLoaded', setUpButtonsAndTextLinks);
+
+    // Handlers
+    // Handler - btn click to plan cards function
+    function handleCTAClick(event) {
+        event.preventDefault();
+        // Plan card header block
+        const cardHeader = document.querySelector('#page-block-12rdx6026bl');
+
+        // bounding rect values
+        const bodyRect = document.body.getBoundingClientRect();
+        const cardHeaderRect = cardHeader.getBoundingClientRect();
+        // Do math
+        const cardBlockTopOffset = (bodyRect.top - cardHeaderRect.top) * -1;
+
+        // Scroll to card header
+        window.scrollTo({
+            top: cardBlockTopOffset,
+            left: 0,
+            behavior: 'smooth',
+        });
+
+        // Place focus on family CTA on next tab
+        window.addEventListener('keydown', setFocusToUltraCta);
+    }
+
+    // Handler - btn keydown
+    function handleCTAKeydown(event) {
+        const { key, which } = event;
+        const keysToMatch = ['Enter', ' '];
+        const whichCodesToMatch = [32, 13];
+
+        if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+            handleCTAClick(event);
+        }
+    }
+
+    // Utility functions
+    // Set focus to fam CTA
+    function setFocusToUltraCta(event) {
+        const { key, which } = event;
+        const famCta = document.querySelector('.idg-plan-cards-ultra-cta-link');
+
+        if ((key === 'Tab' || which === 9) && famCta) {
+            event.preventDefault();
+            famCta.focus();
+            return window.removeEventListener('keydown', setFocusToUltraCta);
+        }
+    }
+
+    // Add classlists to arrays of special els
+    function addClassList(elements, classNames) {
+        Array.from(elements).forEach((element, index) => {
+            if (!element) {
+                const message = `There is a non-element in the ${classNames[0]} array at index ${index}, please select the correct element.`;
+                throw new Error(message);
+            }
+            classNames.forEach((className) => element.classList.add(className));
+        });
+    }
+
+    // Setup functions
+    // Set up CTA buttons
+    function setUpButtonsAndTextLinks() {
+        // CONSTANTS
+        // Text for buttons
+        const CTA_TEXT_DESKTOP = 'Get Protection Now'; // Options: "Start Your Free Trial" | "Get Protection Now"
+        const CTA_TEXT_DESKTOP_ALTERNATE = ''; // For any desk buttons that have alternate copy
+        const CTA_TEXT_MOBILE = 'Get Protection'; // "Get Protection" or "Start Free Trial"
+        // For buttons that the script should ignore.
+        const IGNORE_ME = [];
+        // URL path for alternate icon
+        const ALTERNATE_ICON_PATH = '';
+
+        // ELEMENT VARIABLES
+        const stickyHeaderDesktop = document.querySelector('#element-__gpage-block-qh0mrt224sb-1929 a');
+        const stickyHeaderMobile = document.querySelector('#element-__gpage-block-qh0mrt224sb-1931 a');
+        // Get all ctas
+        const ctas = document.querySelectorAll('.btn');
+
+        // For desktop CTAs
+        // Small: font size: 14px (e.g. sticky header)
+        // Medium: font size: 16px (e.g. most hero CTAs)
+        // Large: font size: 18px (default: most body CTAs are this style)
+        const desktopCtasSmall = [stickyHeaderDesktop];
+        const desktopCtasMedium = [document.querySelector('#element-2063 a')];
+
+        // For mobile only CTAs (usually only mobile sticky header)
+        const mobileOnlyCtas = [stickyHeaderMobile];
+
+        // Alternate copy
+        const desktopCtasAlternateCopy = [];
+
+        // Purple buttons
+        const ctasAltPurple = [];
+        const ctasAltOutlinePurple = [];
+
+        // MAKE IT SO
+        // Add class names to elements
+        if (desktopCtasSmall) {
+            addClassList(desktopCtasSmall, ['aura-cta-small']);
+        }
+        if (desktopCtasMedium) {
+            addClassList(desktopCtasMedium, ['aura-cta-medium']);
+        }
+        if (mobileOnlyCtas) {
+            addClassList(mobileOnlyCtas, ['aura-cta-mobile-only']);
+        }
+        if (ctasAltOutlinePurple) {
+            addClassList(mobileOnlyCtas, ['aura-cta-alt-outline-purple']);
+        }
+        if (ctasAltPurple) {
+            addClassList(mobileOnlyCtas, ['aura-cta-alt-purple']);
+        }
+
+        // Set up CTAs
+        Array.from(ctas).forEach((cta) => {
+            // Set text
+            if (Array.from(mobileOnlyCtas).includes(cta)) {
+                cta.innerHTML = CTA_TEXT_MOBILE;
+            } else if (Array.from(desktopCtasAlternateCopy).includes(cta)) {
+                cta.innerHTML = CTA_TEXT_DESKTOP_ALTERNATE;
+            } else {
+                cta.innerHTML = CTA_TEXT_DESKTOP;
+            }
+
+            // Append class to all ctas on page, including plan cards (for flex)
+            if (
+                !cta.classList.contains('landing-page-link') &&
+                !cta.classList.contains('onpage-link') &&
+                !Array.from(IGNORE_ME).includes(cta)
+            ) {
+                cta.classList.add('aura-cta');
+            }
+
+            // Add btn click / keyboard press to Plan cards
+            if (
+                !cta.classList.contains('url-link') &&
+                !cta.classList.contains('landing-page-link') &&
+                !cta.classList.contains('popup-link') &&
+                !cta.classList.contains('onpage-link') &&
+                !Array.from(IGNORE_ME).includes(cta)
+            ) {
+                cta.classList.remove('btn');
+                cta.removeAttribute('href');
+                cta.setAttribute('tabindex', '0');
+                cta.addEventListener('click', handleCTAClick);
+                cta.addEventListener('keydown', handleCTAKeydown);
+            }
+        });
+
+        // call text links func
+        setUpTextLinks(CTA_TEXT_DESKTOP);
+    }
+
+    // Set up text links
+    function setUpTextLinks(copy) {
+        // CONSTANTS
+        // For buttons that the script should ignore.
+        const IGNORE_ME = [];
+        const IMAGE_LINKS = [
+            document.querySelector('#element-__gpage-block-ap5o6o8o8xf-1830 a'),
+            document.querySelector('#element-__gpage-block-knfcsl8ebi-1840 a'),
+        ];
+
+        const TEXT_LINKS_ALT = [];
+        const TEXT_LINKS_DO_NOT_UPDATE_COPY = [
+            document.querySelector("#element-__gpage-block-mul2sbzwhzh-2295 a"),
+        ];
+
+        // ELEMENT VARIABLES
+        // In-line text links (uses the "landing page link" in IP)
+        const textLinks = document.querySelectorAll('.landing-page-link');
+
+        // MAKE IT SO
+        textLinks.forEach((element) => {
+            element.classList.add('aura-text-cta');
+            if (Array.from(TEXT_LINKS_ALT).includes(element)) element.classList.add('aura-text-cta-alt');
+
+            if (!Array.from(IGNORE_ME).includes(element)) {
+                if (
+                    !Array.from(TEXT_LINKS_DO_NOT_UPDATE_COPY).includes(element) &&
+                    !Array.from(IMAGE_LINKS).includes(element)
+                ) {
+                    element.innerText = copy;
+                }
+                element.removeAttribute('href');
+                element.setAttribute('tabindex', '0');
+                element.addEventListener('click', handleCTAClick);
+                element.addEventListener('keydown', handleCTAKeydown);
+            }
+        });
+    }
+</script>

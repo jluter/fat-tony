@@ -1,0 +1,488 @@
+<!-- Plan Cards  -->
+<script>
+    'use strict';
+    window.addEventListener('DOMContentLoaded', () => {
+        const { updatePlanCards } = setUpPlanCards();
+
+        updatePlanCards('individual', 'annual');
+    });
+
+    function setUpPlanCards() {
+        // CONSTANTS
+        const ENROLLMENT_VERSION = 'v57';
+        const PLAN_DATA = {
+            Value: {
+                individual: {
+                    monthly: {
+                        fullPrice: '$8.99',
+                        price: '$8.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=j2sdvo05ry&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$8.99',
+                        price: '$6.67',
+                        discount: 'Save 25%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=x1y2kdkjvf&cc=summer_best`,
+                    },
+                },
+                family: {
+                    monthly: {
+                        fullPrice: '$14.99',
+                        price: '$14.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=c4avy0ter5&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$14.99',
+                        price: '$10.00',
+                        discount: 'Save 33%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=2gw3928dkd&cc=summer_best`,
+                    },
+                },
+            },
+            Total: {
+                individual: {
+                    monthly: {
+                        fullPrice: '$19.99',
+                        price: '$19.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=zdgjabzz21&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$19.99',
+                        price: '$11.99',
+                        discount: 'Save 40%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=qgd1lru43n&cc=summer_best`,
+                    },
+                },
+                family: {
+                    monthly: {
+                        fullPrice: '$29.99',
+                        price: '$29.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=0dlw2ro7d2&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$29.99',
+                        price: '$17.99',
+                        discount: 'Save 40%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=ccj61w6byj&cc=summer_best`,
+                    },
+                },
+            },
+            Ultra: {
+                individual: {
+                    monthly: {
+                        fullPrice: '$29.99',
+                        price: '$29.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=0qvgii8owt&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$29.99',
+                        price: '$17.99',
+                        discount: 'Save 40%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=g4sr8flfdt&cc=summer_best`,
+                    },
+                },
+                family: {
+                    monthly: {
+                        fullPrice: '$39.99',
+                        price: '$39.99',
+                        discount: 'Save 0%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=9aqbwigffh&cc=summer_best`,
+                    },
+                    annual: {
+                        fullPrice: '$39.99',
+                        price: '$23.99',
+                        discount: 'Save 40%',
+                        buttonPath: `https://my.identityguard.com/enrollment/${ENROLLMENT_VERSION}/1?offer_code=s5k3icilt5&cc=summer_best`,
+                    },
+                },
+            },
+        };
+
+        // ELEMENTS
+        const bar = document.querySelector('.idg-plan-cards-bar');
+        const customSelectMenus = document.querySelectorAll('.idg-plan-cards-custom-select-menu');
+        const selectAreas = document.querySelectorAll('.idg-plan-cards-select-area');
+        const toggle = document.querySelector('.idg-plan-cards-plan-toggle-checkbox');
+        const toggleText = document.querySelectorAll('.idg-plan-cards-toggle-text');
+
+        // UTILS
+        function updatePlanCards(plan, billing) {
+            var valueFullPriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2015"
+            );
+            var totalFullPriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2018"
+            );
+            var ultraFullPriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2021"
+            );
+
+            var valueSaveId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2016"
+            );
+            var totalSaveId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2020"
+            );
+            var ultraSaveId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-2023"
+            );
+
+            var valuePriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-1929"
+            );
+            var totalPriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-1964"
+            );
+            var ultraPriceId = document.querySelector(
+                "#element-__gpage-block-361ndeiimo5-1961"
+            );
+            var valueButton = document.querySelector('.idg-plan-cards-value-cta-link');
+            var totalButton = document.querySelector('.idg-plan-cards-total-cta-link');
+            var ultraButton = document.querySelector('.idg-plan-cards-ultra-cta-link');
+
+            var valueSaveBackgroundId = document.querySelector('#element-__gpage-block-361ndeiimo5-2017');
+            var totalSaveBackgroundId = document.querySelector('#element-__gpage-block-361ndeiimo5-2019');
+            var ultraSaveBackgroundId = document.querySelector('#element-__gpage-block-361ndeiimo5-2022');
+
+            var prices = [valuePriceId, totalPriceId, ultraPriceId];
+            var discounts = [valueSaveId, totalSaveId, ultraSaveId];
+            var fullPrices = [valueFullPriceId, totalFullPriceId, ultraFullPriceId];
+
+
+              const isZeroDiscount =
+            	PLAN_DATA.Value[plan][billing].discount === 'Save 0%' ??
+            	PLAN_DATA.Total[plan][billing].discount === 'Save 0%' ??
+            	PLAN_DATA.Ultra[plan][billing].discount === 'Save 0%';
+
+            const elsToHideAndShow = [
+            	...discounts,
+            	...fullPrices,
+            	valueSaveBackgroundId,
+            	totalSaveBackgroundId,
+            	ultraSaveBackgroundId,
+            ];
+
+            if (isZeroDiscount) {
+            	elsToHideAndShow.forEach((el) => (el.style.display = 'none'));
+            } else {
+            	elsToHideAndShow.forEach((el) => (el.style.display = 'block'));
+            }
+
+            // Add classes to define styles
+            // Doing this to work around known Instapage bug that reverts styles on any element on which .innerText or .innerHTML is called.
+            // CSS is nested within global IP block
+            prices.forEach((el) => {
+                if (el === null) {
+                    throw new Error('Select all price divs');
+                }
+                el.classList.add('price-div');
+            });
+            discounts.forEach((el) => {
+                if (el === null) {
+                    throw new Error('Select all discount divs');
+                }
+                el.classList.add('discount-div');
+            });
+            fullPrices.forEach((el) => {
+                if (el === null) {
+                    throw new Error('Select all full price divs');
+                }
+                el.classList.add('full-price-div');
+            });
+
+            // Sets divs and button paths to the appropriate plan and billing
+            valuePriceId.innerHTML = `${PLAN_DATA.Value[plan][billing].price}<span class="per" role="img" aria-label="per month">/mo</span>`;
+			totalPriceId.innerHTML = `${PLAN_DATA.Total[plan][billing].price}<span class="per" role="img" aria-label="per month">/mo</span>`;
+			ultraPriceId.innerHTML = `${PLAN_DATA.Ultra[plan][billing].price}<span class="per" role="img" aria-label="per month">/mo</span>`;
+            //valuePriceId.innerHTML = PLAN_DATA.Value[plan][billing].price;
+            //totalPriceId.innerHTML = PLAN_DATA.Total[plan][billing].price;
+            //ultraPriceId.innerHTML = PLAN_DATA.Ultra[plan][billing].price;
+
+            valueSaveId.innerText = PLAN_DATA.Value[plan][billing].discount;
+            totalSaveId.innerText = PLAN_DATA.Total[plan][billing].discount;
+            ultraSaveId.innerText = PLAN_DATA.Ultra[plan][billing].discount;
+
+            valueFullPriceId.innerText = PLAN_DATA.Value[plan][billing].fullPrice;
+            totalFullPriceId.innerText = PLAN_DATA.Total[plan][billing].fullPrice;
+            ultraFullPriceId.innerText = PLAN_DATA.Ultra[plan][billing].fullPrice;
+
+            valueButton.href = PLAN_DATA.Value[plan][billing].buttonPath;
+            totalButton.href = PLAN_DATA.Total[plan][billing].buttonPath;
+            ultraButton.href = PLAN_DATA.Ultra[plan][billing].buttonPath;
+
+            setCustomDropdownText(plan);
+            resetCustomStyles(billing);
+        }
+
+        function setCustomDropdownText(plan) {
+            const saveValue = `Billed Annually — ${PLAN_DATA.Value[plan].annual.discount}`;
+            const saveTotal = `Billed Annually — ${PLAN_DATA.Total[plan].annual.discount}`;
+            const saveUltra = `Billed Annually — ${PLAN_DATA.Ultra[plan].annual.discount}`;
+            // Value plan card
+            document.querySelector('#idg-plan-cards-select-area1 [value="annual"]').innerText = saveValue;
+            document.querySelector(
+                '.idg-plan-cards-select-1 li[rel="annual"] span:last-of-type'
+            ).innerText = saveValue;
+
+            // Total plan card
+            document.querySelector('#idg-plan-cards-select-area2 [value="annual"]').innerText = saveTotal;
+            document.querySelector(
+                '.idg-plan-cards-select-2 li[rel="annual"] span:last-of-type'
+            ).innerText = saveTotal;
+
+            // Ultra plan card
+            document.querySelector('#idg-plan-cards-select-area3 [value="annual"]').innerText = saveUltra;
+            document.querySelector(
+                '.idg-plan-cards-select-3 li[rel="annual"] span:last-of-type'
+            ).innerText = saveUltra;
+        }
+
+        function resetCustomStyles() {
+            // Resets plan card classes and styling
+            document.querySelectorAll('.idg-plan-cards-styled-options').forEach((el) => {
+                el.querySelectorAll('li').forEach((li) => {
+                    li.classList.remove('selected');
+                    if (li.getAttribute('rel') === selectAreas[0].value) {
+                        li.classList.add('selected');
+                    }
+                });
+            });
+        }
+
+        // Handlers
+        // Handle toggle and select menu changes
+        function handleChange() {
+            // Get current plan type
+            var billing = selectAreas[0].value;
+            // Get current toggle value
+            var plan = toggle.checked ? 'family' : 'individual';
+            // Pass to planInfo
+            updatePlanCards(plan, billing);
+            // sets toggle label styling
+            toggleText.forEach((el) => {
+                el.classList.contains(plan) ? el.classList.add('active') : el.classList.remove('active');
+            });
+        }
+
+        function handleToggleKeyPress(event) {
+            if (event.key === 'Enter' || event.key == ' ') {
+                event.preventDefault();
+                var evt = new Event('change');
+                toggle.checked = !toggle.checked;
+                toggle.dispatchEvent(evt);
+            }
+        }
+
+        function handleCustomOptionPress(select, li) {
+            const rel = li.getAttribute('rel');
+            // Sets select areas value to corresponding rel
+            selectAreas.forEach((el) => (el.value = rel));
+            // trigger change
+            handleChange();
+            // close select menu
+            select.classList.remove('active');
+        }
+
+        // Handle arrow button focusing
+        function focusNextOrPreviousElement(key) {
+            const focusableElements = document.querySelectorAll(
+                'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])'
+            );
+            const focusable = Array.from(focusableElements);
+            const index = focusable.indexOf(document.activeElement);
+            let elementToFocus;
+
+            if (index > -1) {
+                if (key === 'ArrowDown') {
+                    elementToFocus = focusable[index + 1] || focusable[0];
+                }
+                if (key === 'ArrowUp') {
+                    elementToFocus = focusable[index - 1] || focusable[focusable.length - 1];
+                }
+                elementToFocus.focus();
+            }
+        }
+
+        // EVENT LISTENERS
+        // Listeners - custom select menus
+        customSelectMenus.forEach((element) => {
+            const thisStyledMenu = element.querySelector('ul');
+            const theseStyledOptions = thisStyledMenu.querySelectorAll('li');
+            const thisSelectMenu = element.querySelector('select');
+            const theseOptions = element.querySelectorAll('option');
+
+            // To open and close the menus
+            // On click
+            element.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (!element.classList.contains('active'))
+                    customSelectMenus.forEach((element) => element.classList.remove('active'));
+                element.classList.toggle('active');
+                if (element.classList.contains('active')) {
+                    thisStyledMenu.setAttribute('aria-expanded', 'true');
+                } else {
+                    thisStyledMenu.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // On enter or spacebar keys
+            element.addEventListener('keydown', (event) => {
+                const key = event.key;
+                if (!element.classList.contains('active')) {
+                    customSelectMenus.forEach((element) => element.classList.remove('active'));
+                }
+                if (key === 'Enter' || key === ' ') {
+                    element.classList.toggle('active');
+                    if (element.classList.contains('active')) {
+                        thisStyledMenu.setAttribute('aria-expanded', 'true');
+                    } else {
+                        thisStyledMenu.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+
+            // On select menu change
+            element.addEventListener('change', function () {
+                // triggers change
+                handleChange();
+                // resets options
+                theseOptions.forEach((option) => {
+                    // return on click to 'disabled' option
+                    if (!option.classList.contains('no-click')) {
+                        option.setAttribute('selected', false);
+                        option.classList.remove('selected');
+                    }
+                    if (option.value === selectAreas[0].value) {
+                        option.classList.add('selected');
+                        option.setAttribute('selected', true);
+                    }
+                });
+            });
+
+            // Keyboard listener to navigate custom options
+            element.addEventListener('keydown', (event) => {
+                if (element.classList.contains('active')) {
+                    const key = event.key;
+                    if (key === 'ArrowUp' || key === 'ArrowDown') {
+                        event.preventDefault();
+                        focusNextOrPreviousElement(key);
+                    }
+                }
+            });
+
+            // Handle custom option press
+            theseStyledOptions.forEach((li) => {
+                // Click
+                li.addEventListener('click', (event) => {
+                    const isNoClick = event.target.classList.contains('no-click');
+                    //  if li is clickable
+                    if (!isNoClick) {
+                        event.stopPropagation();
+                        handleCustomOptionPress(element, li);
+                    }
+                });
+
+                // Keydown
+                li.addEventListener('keydown', (event) => {
+                    const isNoClick = event.target.classList.contains('no-click');
+                    if (!isNoClick && (event.key === 'Enter' || event.key == ' ')) {
+                        event.preventDefault();
+                        handleCustomOptionPress(element, li);
+                    }
+                });
+            });
+
+            // Auxiliary listeners
+            // Listener to hide empty select area on Firefox
+            element.addEventListener('mousedown', (event) => {
+                event.stopPropagation();
+                event.preventDefault();
+                thisSelectMenu.blur();
+                window.focus();
+            });
+
+            // Listener on window when a select window is open
+            window.addEventListener('click', (event) => {
+                if (
+                    !event.target.classList.contains('idg-plan-cards-styled-options') &&
+                    !event.target.classList.contains('individual') &&
+                    !event.target.classList.contains('family') &&
+                    event.target !== toggle
+                ) {
+                    event.stopPropagation();
+                    customSelectMenus.forEach((el) => {
+                        el.classList.remove('active');
+                    });
+                }
+            });
+        });
+
+        // Listeners - Toggle
+        toggle.addEventListener('change', handleChange);
+        toggle.addEventListener('focus', () => {
+            bar.classList.add('border');
+        });
+        toggle.addEventListener('blur', () => {
+            bar.classList.remove('border');
+        });
+        toggle.addEventListener('keydown', (event) => {
+            handleToggleKeyPress(event);
+        });
+
+        // Listeners - Toggle Labels
+        toggleText.forEach((el) => {
+            el.addEventListener('click', () => {
+                if (el.classList.contains('active')) {
+                    return;
+                }
+                var evt = new Event('change');
+                toggle.checked = !toggle.checked;
+                toggle.dispatchEvent(evt);
+            });
+            el.addEventListener('keydown', (event) => {
+                if (el.classList.contains('active')) {
+                    return;
+                }
+                if (event.key === 'Enter' || event.key == ' ') {
+                    event.preventDefault();
+                    handleToggleKeyPress(event);
+                }
+            });
+        });
+
+        // Listener - Window (for removing toggle styling on non-toggle click)
+        window.addEventListener('click', (event) => {
+            if (
+                !event.target.classList.contains('individual') &&
+                !event.target.classList.contains('family') &&
+                event.target !== toggle
+            ) {
+                event.stopPropagation();
+                if (bar.classList.contains('border')) {
+                    bar.classList.remove('border');
+                }
+            } else {
+                return;
+            }
+        });
+
+        // Listener - window (for back button)
+        window.addEventListener('pageshow', (event) => {
+            var historyTraversal =
+                event.persisted ||
+                (typeof window.performance != 'undefined' && window.performance.navigation.type === 2);
+            if (historyTraversal) {
+                var evt = new Event('change');
+                toggle.dispatchEvent(evt);
+                handleChange();
+            }
+        });
+
+        return { updatePlanCards };
+    }
+</script>

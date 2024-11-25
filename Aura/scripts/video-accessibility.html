@@ -1,0 +1,40 @@
+<!--Video Pop Up Accessibility Script-->
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		//Add Each video thumbnail image ID, and it's corresponding pop-up window ID
+		const videoElements = [
+			{
+				thumbnailId: '#element-5182',
+				popUpId: '#element-5183'
+			},
+		];
+
+		//Handler - mouse click
+		const handleThumbnailClick = (event, popUpVideo) => {
+			event.preventDefault();
+			popUpVideo.focus();
+		}
+		// Handler - btn keydown
+		const handleThumbnailKeydown = (event, popUpVideo) => {
+			const { key, which } = event;
+			const keysToMatch = ["Enter", " "];
+			const whichCodesToMatch = [32, 13];
+
+			if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+				handleThumbnailClick(event, popUpVideo);
+			}
+		};
+
+		//Add functionality to each video pop up
+		videoElements.forEach(video => {
+			let videoThumbnail = document.querySelector(video.thumbnailId);
+			let popUpVideo = document.querySelector(video.popUpId + ' iframe');
+
+			//Make the YouTube iFrame tabbable. 
+			popUpVideo.setAttribute('tabindex', '0');
+
+			videoThumbnail.addEventListener('click', handleThumbnailClick(event, popUpVideo));
+			videoThumbnail.addEventListener('keydown', handleThumbnailKeydown(event, popUpVideo));
+		});
+	});
+</script>

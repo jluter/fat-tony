@@ -1,0 +1,303 @@
+<style>
+    #page-block-mjqoqa1yiw .headline,
+    #page-block-mjqoqa1yiw .paragraph {
+    color: #161616 !important;
+    }
+    
+    /* Plan card styles */
+    .per {
+    color: #161616 !important;
+    font-family: 'Basel Grotesk', sans-serif !important;
+    font-size: 1.375rem !important;
+    font-weight: 300 !important;
+    line-height: 1.375rem !important;
+    margin-left: -1rem !important;
+    }
+    
+    .price-div:not(.ft-price-div) {
+    color: #161616 !important;
+    font-family: 'Basel Grotesk', sans-serif !important;
+    font-size: 3.625rem !important;
+    font-weight: 300 !important;
+    line-height: 3.625rem !important;
+    }
+    
+    .price-div.ft-price-div {
+    color: #161616 !important;
+    font-family: 'Basel Grotesk', sans-serif !important;
+    font-size: 2.25rem !important;
+    font-weight: 300 !important;
+    line-height: 2.25rem !important;
+    }
+    
+    .discount-div {
+    color: #1d2f50 !important;
+    font-family: 'Basel Grotesk', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    }
+    
+    .annual-monthly-div {
+    color: #161616 !important;
+    font-family: 'Basel Grotesk', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1 !important;
+    }
+    
+    .strikethrough {
+    text-decoration: line-through;
+    }
+    
+    /* C2C and Button styles */
+    /* Click to call */
+    .click-to-call-wrapper {
+    align-items: flex-end;
+    background-color: rgb(210, 255, 175);
+    border: 1px solid rgb(22, 22, 22);
+    border-radius: 666px;
+    bottom: 22px;
+    cursor: pointer;
+    display: flex;
+    height: 3.4375rem;
+    left: unset !important;
+    overflow: hidden;
+    position: fixed;
+    right: 17px;
+    top: unset !important;
+    transform-origin: left center;
+    transition-timing-function: ease;
+    transition: all 0.4s;
+    width: 18.225rem !important;
+    z-index: 1000000 !important;
+    }
+    
+    /* C2C: Scroll styles desk */
+    .click-to-call-wrapper.scrolled {
+    width: 3.4375rem !important;
+    }
+    
+    .click-to-call-wrapper:hover,
+    .click-to-call-wrapper.scrolled:hover {
+    width: 18.225rem !important;
+    }
+    
+    .click-to-call-link {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    overflow: hidden;
+    transition-timing-function: ease;
+    transition: all 0.4s;
+    width: 100%;
+    }
+    
+    .click-to-call-inner {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding-right: 24px;
+    width: 100%;
+    }
+    
+    .click-to-call-phone-icon {
+    transition-timing-function: ease;
+    transition: all 0.4s;
+    width: auto;
+    height: 100%;
+    }
+    
+    .click-to-call-phone-number {
+    white-space: nowrap;
+    font-size: 1.125rem;
+    font-weight: 500;
+    }
+    
+    /* Phone number */
+    .sticky-header-mobile-call-button-border .shape {
+    border-width: 0.0925rem !important;
+    }
+    
+    /* CTAs */
+    .aura-cta {
+    align-items: center;
+    background-image: none !important;
+    border-radius: 41px !important;
+    border: 1px solid transparent !important;
+    box-shadow: 0px 0px 0px transparent !important;
+    color: #fff !important;
+    cursor: pointer;
+    display: flex;
+    font-family: Basel Grotesk !important;
+    font-size: 1.375rem !important;
+    font-weight: 500 !important;
+    justify-content: center;
+    transform: translate(0px, 0px);
+    transition: all 0.3s ease;
+    white-space: normal !important;
+    }
+    
+    /* Blue BG except for sticky header and alt grey / alt black */
+    .aura-cta:not(.aura-cta-sticky-header):not(.aura-cta-alt-grey):not(
+    .aura-cta-alt-outline-black
+    ):not(.aura-cta-alt-outline-white):not(.aura-cta-alt-green) {
+    background-color: #3366ff !important;
+    }
+    
+    /* Alt CTAs */
+    .aura-cta-alt-grey {
+    background-color: #ecf4ff !important;
+    color: #161616 !important;
+    }
+    
+    .aura-cta-alt-green {
+    background-color: #d2ffaf !important;
+    color: #161616 !important;
+    }
+    
+    .aura-cta-alt-outline-black {
+    background-color: transparent !important;
+    border: 1px solid #161616 !important;
+    color: #161616 !important;
+    }
+    
+    .aura-cta-alt-outline-white {
+    background-color: transparent !important;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    }
+    
+    /* Hover and focus styles */
+    
+    .aura-cta-alt-grey:hover,
+    .aura-cta-alt-outline-black:hover,
+    .aura-cta-sticky-header:hover {
+    box-shadow: -3px 3px 0px rgba(0 0 0 / 0.9) !important;
+    text-decoration: none !important;
+    transform: translate(4px, -4px) !important;
+    }
+    
+    .aura-cta-alt-outline-white:hover {
+    background-color: #3366ff !important;
+    box-shadow: -3px 3px 0px rgba(0 0 0 / 0.9) !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    transform: translate(4px, -4px) !important;
+    }
+    
+    .aura-cta-alt-green:hover {
+    background-color: #d2ffaf !important;
+    box-shadow: -3px 3px 0px rgba(0 0 0 / 0.9) !important;
+    color: #161616 !important;
+    text-decoration: none !important;
+    transform: translate(4px, -4px) !important;
+    }
+    
+    .aura-cta:not(.aura-cta-sticky-header):not(.aura-cta-alt-outline-black):not(
+    .aura-cta-alt-grey
+    ):not(.aura-cta-alt-green):hover {
+    border: 1px solid transparent !important;
+    box-shadow: -3px 3px 0px rgba(0 0 0 / 0.9) !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    transform: translate(4px, -4px) !important;
+    }
+    
+    /* Sticky Header CTAs */
+    .aura-cta-sticky-header {
+    background-color: transparent !important;
+    font-size: 1.125rem !important;
+    transition: all 0.3s ease;
+    }
+    
+    .aura-cta-sticky-header.black {
+    border: 1px solid #161616 !important;
+    color: #161616 !important;
+    }
+    .aura-cta-sticky-header.white {
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    }
+    
+    /* Scrolled styles for sticky header CTAs */
+    .aura-cta-sticky-header.scrolled {
+    background-color: #3366ff !important;
+    border: 1px solid transparent !important;
+    color: #fff !important;
+    }
+    
+    .aura-cta-mobile-only {
+    font-size: 0.875rem !important;
+    }
+    
+    .aura-cta-arrow-image,
+    .aura-cta-icon {
+    transition: all 0.3s ease;
+    width: auto !important;
+    height: 40% !important;
+    margin-left: 10px;
+    }
+    
+    /* Text links */
+    .aura-text-cta {
+    color: #161616 !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: underline !important;
+    }
+    
+    .aura-text-cta:hover {
+    color: #3366ff !important;
+    outline: unset !important;
+    text-decoration: underline #3366ff !important;
+    }
+    
+       .aura-text-cta-alt,
+         .no-hover-styles {
+    cursor: pointer;
+    }
+    
+    /* Hide elements */
+    .hide {
+    display: none !important;
+    }
+    
+    @media (max-width: 767px) {
+    /* Click to call mobile styles */
+    .click-to-call-wrapper {
+    width: 18rem !important;
+    }
+    
+    /* C2C: Scroll styles mob */
+    .click-to-call-wrapper.scrolled {
+    width: 3.4375rem !important;
+    }
+    
+    /* C2C: Hover styles mob - both when scrolled and not */
+    .click-to-call-wrapper:hover,
+    .click-to-call-wrapper.scrolled:hover {
+    width: 16.7rem !important;
+    }
+    
+    /* CTAs mobile styles */
+    .aura-cta {
+    font-size: 1.125rem;
+    font-weight: 500;
+    }
+    
+    /* Hide els, mobile-only */
+    .hide-mobile {
+    display: none;
+    }
+    }
+    
+    @media (min-width: 768px) {
+    /* Hide els, desk only */
+    .hide-desktop {
+    display: none;
+    }
+    }
+    </style>

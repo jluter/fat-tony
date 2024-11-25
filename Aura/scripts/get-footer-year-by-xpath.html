@@ -1,0 +1,17 @@
+<!-- Footer year -->
+<script type="text/javascript">
+	document.addEventListener('DOMContentLoaded', () => {
+		// Use xpath to get text node
+		const query = "//p/span[contains(text(), '{YEAR}')]";
+		const resultType = XPathResult.FIRST_ORDERED_NODE_TYPE;
+		const result = document.evaluate(query, document, null, resultType, null).singleNodeValue;
+
+		// To work around IP's ridiculous reversion of colors when using .innerText,
+		// we get the color first...
+		const color = result.style.color;
+		result.innerText = `© ${new Date().getFullYear()} Aura. All rights reserved.`;
+
+		// ...then re-apply it after changing innerText value
+		result.style.color = color;
+	});
+</script>

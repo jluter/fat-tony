@@ -1,0 +1,44 @@
+<!-- Sticky header no banner -->
+<style>
+	.sticky-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1000000;
+	}
+</style>
+
+<!-- Sticky header with banner -->
+<style>
+	/* Sticky Header with Banner */
+	.sticky-banner {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		min-height: 3rem; /* Where min-height is equal to the banner height */
+		z-index: 1000000;
+	}
+
+	.sticky-header {
+		position: fixed;
+		top: 3rem; /* Where top is equal to the height of the banner element above */
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: 1000000;
+	}
+
+	/* Banner grows slightly on mob, so we adjust in MQ */
+	@media (max-width: 767px) {
+		.sticky-banner {
+			min-height: 4.25rem;
+		}
+		.sticky-header {
+			top: 4.25rem;
+		}
+	}
+</style>

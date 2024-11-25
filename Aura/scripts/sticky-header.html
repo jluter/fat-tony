@@ -1,0 +1,35 @@
+<!-- Sticky Header no banner -->
+<script>
+	'use strict';
+	document.addEventListener('DOMContentLoaded', stickyHeader);
+	window.addEventListener('resize', stickyHeader);
+
+	function stickyHeader() {
+		var header = window.__page_generator
+			? document.querySelector('.section')
+			: document.querySelector('.page-block');
+		var headerHeight = header.clientHeight;
+		header.classList.add('sticky-header');
+		document.querySelector('body').style.marginTop = headerHeight + 'px';
+	}
+</script>
+
+<!-- Sticky header with banner -->
+<script>
+	document.addEventListener('DOMContentLoaded', stickyHeader);
+	window.addEventListener('resize', stickyHeader);
+
+	function stickyHeader() {
+		const isSectionBlock = window.__page_generator || false;
+		const sections = isSectionBlock
+			? document.querySelectorAll('.section')
+			: document.querySelectorAll('.page-block');
+
+		const banner = sections[0];
+		const header = sections[1];
+		const bannerAndHeaderHeight = banner.clientHeight + header.clientHeight;
+		banner.classList.add('sticky-banner');
+		header.classList.add('sticky-header');
+		document.querySelector('body').style.marginTop = bannerAndHeaderHeight + 'px';
+	}
+</script>

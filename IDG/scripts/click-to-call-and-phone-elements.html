@@ -1,0 +1,166 @@
+<!-- Click to Call and Phone Elements -->
+<script>
+    'use strict';
+    document.addEventListener('DOMContentLoaded', () => {
+        createClickToCall();
+        setUpPhoneNumberElements();
+    });
+
+    // UTILS
+    // Util - get phone number
+    function getOnPagePhoneNumber() {
+        // CONSTANTS
+        const PHONE_NUMBER = '888-231-4773';
+        const PHONE_NUMBER_REPLACE_EXTRA_CHARS = PHONE_NUMBER.replace(/-+/g, '');
+        const PHONE_NUMBER_URL = `tel:${PHONE_NUMBER_REPLACE_EXTRA_CHARS}`;
+        return { PHONE_NUMBER, PHONE_NUMBER_URL };
+    }
+
+    // Util - Call center open hours
+    // function callCenterIsOpen() {
+    // 	const date = new Date();
+    // 	const convertedDate = new Date(
+    // 		date.toLocaleString('en-US', {
+    // 			timeZone: 'America/New_York',
+    // 		})
+    // 	);
+    // 	const estHour = convertedDate.getHours();
+    // 	const estDay = convertedDate.getDay();
+    // 	const estMinutes = convertedDate.getMinutes();
+    // 	const isWeekday = estDay > 0 && estDay < 6;
+    // 	const areBusinessHours = estHour >= 8 && estHour < 21;
+    // 	const isSaturday = estDay === 6;
+    // 	if (isSaturday) {
+    // 		return estHour >= 9 && estHour < 18;
+    // 	}
+    // 	return isWeekday && areBusinessHours;
+    // }
+
+    // Setup Functions
+    // Set up phone number elements
+    function setUpPhoneNumberElements() {
+        // CONSTANTS
+        // Phone number and link
+        const { PHONE_NUMBER, PHONE_NUMBER_URL } = getOnPagePhoneNumber();
+
+        // ELEMENT VARIABLES
+        const stickyHeaderPhoneNumber = document.querySelector(
+            '#element-__gpage-block-qh0mrt224sb-1926'
+        );
+        const stickyHeaderCallUs = document.querySelector('#element-__gpage-block-qh0mrt224sb-1927');
+        const stickyHeaderPhoneIcon = document.querySelector('#element-__gpage-block-qh0mrt224sb-1930');
+
+        // Element Arrays
+        const phoneNumberElements = [
+            stickyHeaderPhoneNumber,
+            stickyHeaderPhoneIcon,
+            stickyHeaderCallUs,
+        ];
+        const phoneNumberElementsText = [stickyHeaderPhoneNumber];
+
+        // MAKE IT SO
+        // All elements are hidden by default
+        phoneNumberElements.forEach((element, index) => {
+            if (!element) {
+                const message = `There is a null value in the phoneNumberElements array at index ${index}, please select the correct element.`;
+                throw new Error(message);
+            }
+            // element.classList.add('hide');
+        });
+
+        // All elements get phone number link
+        phoneNumberElements.forEach((element) => {
+            const anchor = element.querySelector('a') ?? element;
+            if (anchor.href) {
+                anchor.href = PHONE_NUMBER_URL;
+            } else {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.href = PHONE_NUMBER_URL;
+                });
+            }
+        });
+
+        // Text elements get phone number inner text
+        phoneNumberElementsText.forEach((element, index) => {
+            if (!element) {
+                const message = `There is a null value in the phoneNumberElementsText array at index ${index}, please select the correct element.`;
+                throw new Error(message);
+            }
+
+            const anchor = element.querySelector('a') ?? element;
+            // Get initial color, to workaround IP's ridiculous reversion of colors when calling .innerText on an element...
+            const color = anchor.style.color;
+            if (anchor) {
+                anchor.href = PHONE_NUMBER_URL;
+                anchor.innerText = PHONE_NUMBER;
+                // ...And reset element to color after calling .innerText
+                anchor.style.color = color;
+            }
+        });
+
+        // Unhide els if call center is open
+        // if (callCenterIsOpen()) {
+        // 	phoneNumberElements.forEach((el) => el.classList.remove('hide'));
+        // }
+    }
+
+    // Setup C2C
+    function createClickToCall() {
+        // CONSTANTS
+        // Call phone number func to get numbers
+        const { PHONE_NUMBER, PHONE_NUMBER_URL } = getOnPagePhoneNumber();
+
+        // ELEMENT VARIABLES
+        // Parent Div receiving interaction
+        const clickToCallWrapper = document.querySelector('#element-__gpage-block-12rdx6026bl-1331');
+        // Remove .btn class so that button script below ignores C2C
+        clickToCallWrapper.classList.remove('btn');
+        clickToCallWrapper.classList.add('click-to-call-wrapper');
+        // clickToCallWrapper.classList.add('hide');
+
+        // Native Child element with all styles
+        const clickToCallLink = document.querySelector('#element-__gpage-block-12rdx6026bl-1331 a');
+        clickToCallLink.classList.add('click-to-call-link');
+        clickToCallLink.classList.remove('url-link');
+        clickToCallLink.classList.remove('btn');
+        clickToCallLink.tabIndex = '0';
+        clickToCallLink.href = PHONE_NUMBER_URL;
+
+        // MAKE IT SO
+        // Create elements
+        // Create inner div for flex box
+        const innerDiv = document.createElement('div');
+        innerDiv.classList.add('click-to-call-inner');
+
+        // Create phone icon
+        const phoneImage = document.createElement('img');
+        phoneImage.classList.add('click-to-call-phone-icon');
+        phoneImage.src = '//v.fastcdn.co/u/bff2cbd9/58360457-0-phone-orange.png';
+
+        // Create p for phonenumber
+        const clickToCallText = document.createElement('p');
+        clickToCallText.innerText = `Call us now: ${PHONE_NUMBER}`;
+        clickToCallText.classList.add('click-to-call-phone-number');
+
+        // Append elements
+        innerDiv.appendChild(phoneImage);
+        innerDiv.appendChild(clickToCallText);
+        clickToCallLink.appendChild(innerDiv);
+
+        // Event listeners
+        // Scroll
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 10) {
+                clickToCallWrapper.classList.add('scrolled');
+            }
+            if (window.pageYOffset < 10) {
+                clickToCallWrapper.classList.remove('scrolled');
+            }
+        });
+
+        // if (callCenterIsOpen()) {
+        // 	clickToCallWrapper.classList.remove('hide');
+        // }
+    }
+</script>

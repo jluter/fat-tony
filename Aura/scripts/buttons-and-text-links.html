@@ -1,0 +1,266 @@
+<!--  Buttons -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", setUpButtonsAndTextLinks);
+
+    // Handlers
+    // Handler - btn click to plan cards function
+    function handleCTAClick(event) {
+        event.preventDefault();
+        // Plan card header block
+        const cardHeader = document.querySelector("#page-block-mjqoqa1yiw");
+
+        // bounding rect values
+        const bodyRect = document.body.getBoundingClientRect();
+        const cardHeaderRect = cardHeader.getBoundingClientRect();
+        // Do math
+        const cardBlockTopOffset = (bodyRect.top - cardHeaderRect.top) * -1;
+
+        // Scroll to card header
+        window.scrollTo({
+            top: cardBlockTopOffset,
+            left: 0,
+            behavior: "smooth",
+        });
+
+        // Place focus on family CTA on next tab
+        window.addEventListener("keydown", setFocusToFamilyCta);
+    }
+
+    // Handler - btn keydown
+    function handleCTAKeydown(event) {
+        const { key, which } = event;
+        const keysToMatch = ["Enter", " "];
+        const whichCodesToMatch = [32, 13];
+
+        if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+            handleCTAClick(event);
+        }
+    }
+
+    // Utility functions
+    // Set focus to fam CTA
+    function setFocusToFamilyCta(event) {
+        const { key, which } = event;
+        const famCta = document.querySelector(".aura-cta-plan-card-family");
+
+        if ((key === "Tab" || which === 9) && famCta) {
+            event.preventDefault();
+            famCta.focus();
+            return window.removeEventListener("keydown", setFocusToFamilyCta);
+        }
+    }
+
+    // Arrow image factory
+    function createArrowImage(color) {
+        const arrowImage = document.createElement("img");
+        arrowImage.classList.add("aura-cta-icon");
+        arrowImage.src =
+            color === "white"
+                ? "//v.fastcdn.co/u/bff2cbd9/60877781-0-result---2022-02-07T.svg"
+                : "//v.fastcdn.co/u/bff2cbd9/60879796-0-result---2022-02-07T.svg";
+        return arrowImage;
+    }
+
+    // Alternate image factory
+    function createAlternateImage(path) {
+        const altImage = document.createElement("img");
+        altImage.classList.add("aura-cta-icon");
+        altImage.src = path;
+        return altImage;
+    }
+
+    // Add classlists to arrays of special els
+    function addClassList(elements, classNames) {
+        Array.from(elements).forEach((element, index) => {
+            if (!element) {
+                const message = `There is a non-element in the ${classNames[0]} array at index ${index}, please select the correct element.`;
+                throw new Error(message);
+            }
+            classNames.forEach((className) => element.classList.add(className));
+        });
+    }
+
+    // Setup functions
+    // Set up CTA buttons
+    function setUpButtonsAndTextLinks() {
+        // CONSTANTS
+        // Text for buttons
+        const CTA_TEXT_DESKTOP = "Get Protection Now"; // Options: "Start Your Free Trial" | "Get Protection Now"
+        const CTA_TEXT_DESKTOP_ALTERNATE = ""; // For any desk buttons that have alternate copy
+        const CTA_TEXT_MOBILE = "Get Protection"; // "Get Protection" or "Start Free Trial"
+        const STICKY_HEADER_COLOR = "white"; // 'white' or 'black', actual styling is CSS
+        // For buttons that the script should ignore.
+        const IGNORE_ME = [];
+        // URL path for alternate icon
+        const ALTERNATE_ICON_PATH = "";
+
+        // ELEMENT VARIABLES
+        // Get all ctas
+        const ctas = document.querySelectorAll(".btn");
+
+        // For blue background color on scroll for sticky header btns only
+        const stickyHeaderCtas = [
+            document.querySelector("#element-6263 a"),
+            document.querySelector("#element-6265 a"),
+        ];
+
+        // For buttons that don't need an arrow, create a new variable and add each variable to array
+        const noArrowsCtas = [...stickyHeaderCtas];
+
+        // For buttons that need the alternate arrow / bg color, create a new variable and add each variable to array
+        const altCtasGrey = [
+            document.querySelector('#element-6326 a'),
+        ];
+
+        // For outline buttons in black
+        const altCtasOutlineBlack = [];
+
+        // For outline buttons in white
+        const altCtasOutlineWhite = [
+
+        ];
+
+        // For mobile only CTAs
+        const mobileOnlyCtas = [
+            document.querySelector("#element-6265 a"),
+        ];
+
+        // For alternate copy CTAs
+        const desktopCtasAlternateCopy = [];
+
+        // For any alternate icons
+        const ctasWithAlternateIcon = [];
+
+        // MAKE IT SO
+        // Add class names to elements
+        if (stickyHeaderCtas) {
+            addClassList(stickyHeaderCtas, [
+                "aura-cta-sticky-header",
+                STICKY_HEADER_COLOR,
+            ]);
+        }
+        if (noArrowsCtas) {
+            addClassList(noArrowsCtas, ["aura-cta-no-arrow"]);
+        }
+        if (altCtasGrey) {
+            addClassList(altCtasGrey, ["aura-cta-alt-grey"]);
+        }
+        if (altCtasOutlineBlack) {
+            addClassList(altCtasOutlineBlack, ["aura-cta-alt-outline-black"]);
+        }
+        if (altCtasOutlineWhite) {
+            addClassList(altCtasOutlineWhite, ["aura-cta-alt-outline-white"]);
+        }
+        if (mobileOnlyCtas) {
+            addClassList(mobileOnlyCtas, ["aura-cta-mobile-only"]);
+        }
+
+        // Set up CTAs
+        Array.from(ctas).forEach((cta) => {
+            // Set text
+            if (Array.from(mobileOnlyCtas).includes(cta)) {
+                cta.innerHTML = CTA_TEXT_MOBILE;
+            } else if (Array.from(desktopCtasAlternateCopy).includes(cta)) {
+                cta.innerHTML = CTA_TEXT_DESKTOP_ALTERNATE;
+            } else {
+                cta.innerHTML = CTA_TEXT_DESKTOP;
+            }
+
+            // Append class to all ctas on page, including plan cards (for flex)
+            if (
+                !cta.classList.contains("landing-page-link") &&
+                !cta.classList.contains("onpage-link") &&
+                !Array.from(IGNORE_ME).includes(cta)
+            ) {
+                cta.classList.add("aura-cta");
+            }
+
+            // Append button icon if cta is not included in noArrows array
+            if (!Array.from(noArrowsCtas).includes(cta)) {
+                // If alt icon, use that
+                if (Array.from(ctasWithAlternateIcon).includes(cta)) {
+                    cta.appendChild(createAlternateImage(ALTERNATE_ICON_PATH));
+                    // If alt grey or alt outline black, add black arrow
+                } else if (
+                    !Array.from(ctasWithAlternateIcon).includes(cta) &&
+                    (Array.from(altCtasGrey).includes(cta) ||
+                        Array.from(altCtasOutlineBlack).includes(cta))
+                ) {
+                    cta.appendChild(createArrowImage("black"));
+                    // Otherwise, if not alt, use the white arrow
+                } else if (!Array.from(ctasWithAlternateIcon).includes(cta)) {
+                    cta.appendChild(createArrowImage("white"));
+                }
+            }
+
+            // Add btn click / keyboard press to Plan cards
+            if (
+                !cta.classList.contains("url-link") &&
+                !cta.classList.contains("landing-page-link") &&
+                !cta.classList.contains("popup-link") &&
+                !cta.classList.contains("onpage-link") &&
+                !Array.from(IGNORE_ME).includes(cta)
+            ) {
+                cta.classList.remove("btn");
+                cta.removeAttribute("href");
+                cta.setAttribute("tabindex", "0");
+                cta.addEventListener("click", handleCTAClick);
+                cta.addEventListener("keydown", handleCTAKeydown);
+            }
+        });
+
+        // call text links func
+        setUpTextLinks(CTA_TEXT_DESKTOP);
+
+        // Add window event listener for scroll
+        window.addEventListener("scroll", function () {
+            if (window.pageYOffset > 10) {
+                stickyHeaderCtas.forEach((el) => el.classList.add("scrolled"));
+            }
+            if (window.pageYOffset < 10) {
+                stickyHeaderCtas.forEach((el) => el.classList.remove("scrolled"));
+            }
+        });
+    }
+
+    // Set up text links
+    function setUpTextLinks(copy) {
+        // CONSTANTS
+        // For buttons that the script should ignore.
+        const IGNORE_ME = [
+            document.querySelector("#element-__gpage-block-az792w7sfsh-4413 a"),
+            document.querySelector("#element-__gpage-block-az792w7sfsh-4399 a"),
+            document.querySelector("#element-__gpage-block-az792w7sfsh-4400 a"),
+        ];
+        const IMAGE_LINKS = [];
+        const TEXT_LINKS_ALT = [];
+        const TEXT_LINKS_DO_NOT_UPDATE_COPY = [
+            document.querySelector("#element-__gpage-block-jiml2u6y2yh-4241 a"),
+        ];
+
+        // ELEMENT VARIABLES
+        // In-line text links (uses the "landing page link" in IP)
+        const textLinks = document.querySelectorAll(".landing-page-link");
+
+        // MAKE IT SO
+        textLinks.forEach((element) => {
+            if (Array.from(TEXT_LINKS_ALT).includes(element))
+                element.classList.add("aura-text-cta-alt");
+
+            if (!Array.from(IGNORE_ME).includes(element)) {
+                element.classList.add("aura-text-cta");
+                if (
+                    !Array.from(TEXT_LINKS_DO_NOT_UPDATE_COPY).includes(element) &&
+                    !Array.from(IMAGE_LINKS).includes(element)
+                ) {
+                    element.innerText = copy;
+                }
+                element.removeAttribute("href");
+                element.setAttribute("tabindex", "0");
+                element.addEventListener("click", handleCTAClick);
+                element.addEventListener("keydown", handleCTAKeydown);
+            }
+        });
+    }
+</script>

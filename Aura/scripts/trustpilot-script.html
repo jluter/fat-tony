@@ -1,0 +1,628 @@
+<!-- TrustPilot API -->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", async () => {
+        // Get data and store in global var object
+        await getTrustpilotData();
+        // Do the things
+        insertTrustpilotHTML();
+    });
+
+    // Namespace global vars
+    const __global = {
+        commonConfigs: {
+            // Default (appears in many heroes)
+            inlineDesktopStackedMobile: {
+                icon: {
+                    color: "green",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 24,
+                            width: 96,
+                        },
+                        mobile: { height: 24, width: 96 },
+                    },
+                    textColor: "black",
+                },
+                layoutType: {
+                    desktop: "inline",
+                    mobile: "stacked",
+                },
+                stars: {
+                    colorWrapper: "green",
+                    containerSize: { desktop: 16, mobile: 16 },
+                    positioning: { desktop: null, mobile: "top" },
+                },
+                text: {
+                    color: "#161616",
+                    size: { desktop: 16, mobile: 16 },
+                    value: "{{rating}} as of {{date}}",
+                },
+                styleOverrides: {
+                    desktop: null,
+                    mobile: null
+                }
+            },
+            //inline Desktop, stacked in three on mobile
+            inlineDesktopTripleStackedMobile: {
+                icon: {
+                    color: "green",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 24,
+                            width: 96,
+                        },
+                        mobile: { height: 19.2, width: 80 },
+                    },
+                    textColor: "black",
+                },
+                layoutType: {
+                    desktop: "inline",
+                    mobile: "triple-stacked",
+                },
+                stars: {
+                    colorWrapper: "green",
+                    containerSize: { desktop: 16, mobile: 14 },
+                    positioning: { desktop: null, mobile: "top" },
+                },
+                text: {
+                    color: "#161616",
+                    size: { desktop: 16, mobile: 12 },
+                    value: "{{rating}} • Excellent",
+                },
+                styleOverrides: {
+                    desktop: null,
+                    mobile: {
+                        "aura-trustpilot-rating-icon": ".6875rem",
+                    }
+                },
+            },
+            customInlineDesktopStackedMobile: {
+                icon: {
+                    color: "white",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 24,
+                            width: 96,
+                        },
+                        mobile: { height: 16.2, width: 68.15 },
+                    },
+                    textColor: "white",
+                },
+                layoutType: {
+                    desktop: "inline",
+                    mobile: "stacked",
+                },
+                stars: {
+                    colorWrapper: "green",
+                    containerSize: { desktop: 16, mobile: 12 },
+                    positioning: { desktop: null, mobile: "top" },
+                },
+                text: {
+                    color: "#ffffff",
+                    size: { desktop: 16, mobile: 10 },
+                    value: "{{rating}} • Excellent",
+                },
+                styleOverrides: {
+                    desktop: null,
+                    mobile: null
+                }
+            },
+            // cred bar stacked white (usually on dark blue)
+            credBarStackedWhite: {
+                icon: {
+                    color: "white",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 32,
+                            width: 134,
+                        },
+                        mobile: { height: 32, width: 134 },
+                    },
+                    textColor: "white",
+                },
+                layoutType: {
+                    desktop: "stacked",
+                    mobile: "stacked",
+                },
+                stars: {
+                    colorWrapper: "white",
+                    containerSize: { desktop: 16, mobile: 16 },
+                    positioning: { desktop: "bottom", mobile: "bottom" },
+                },
+                text: {
+                    color: "#fff",
+                    size: { desktop: 16, mobile: 16 },
+                    value: "{{rating}} Stars",
+                },
+                styleOverrides: {
+                    desktop: {
+                        "row-gap": ".3125rem",
+                    },
+                    mobile: {
+                        "row-gap": ".3125rem",
+                    },
+                },
+            },
+            // cred bar stacked blue (usually on light-blue)
+            credBarStackedBlue: {
+                icon: {
+                    color: "blue",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 32,
+                            width: 134,
+                        },
+                        mobile: { height: 32, width: 134 },
+                    },
+                    textColor: "blue",
+                },
+                layoutType: {
+                    desktop: "stacked",
+                    mobile: "stacked",
+                },
+                stars: {
+                    colorWrapper: "blue",
+                    containerSize: { desktop: 16, mobile: 16 },
+                    positioning: { desktop: "bottom", mobile: "bottom" },
+                },
+                text: {
+                    color: "#4C5570",
+                    size: { desktop: 16, mobile: 16 },
+                    value: "{{rating}} Stars",
+                },
+                styleOverrides: {
+                    desktop: {
+                        "row-gap": ".3125rem",
+                    },
+                    mobile: {
+                        "row-gap": ".3125rem",
+                    }
+                },
+            },
+            // usVersusThem module
+            usVersusThemOnBlueContainer: {
+                icon: {
+                    color: "green",
+                    hasText: true,
+                    isDisplayed: true,
+                    size: {
+                        desktop: {
+                            height: 24,
+                            width: 96,
+                        },
+                        mobile: { height: 24, width: 96 },
+                    },
+                    textColor: "black",
+                },
+                layoutType: {
+                    desktop: "stacked",
+                    mobile: "stacked",
+                },
+                stars: {
+                    colorWrapper: "green",
+                    // Overriding default bg color on desktop because of rando blue container that borks the usual logic
+                    colorStarOverride: { desktop: "#ECF4FF", mobile: null },
+                    containerSize: { desktop: 16, mobile: 16 },
+                    positioning: { desktop: "top", mobile: "top" },
+                },
+                text: {
+                    color: "#161616",
+                    size: { desktop: 16, mobile: 16 },
+                    value: "{{rating}} as of {{date}}",
+                },
+                styleOverrides: {
+                    desktop: null,
+                    mobile: null
+                }
+            },
+        },
+        // initialize all values to null, this is where we will store data from the TP API
+        data: { isDefault: null, numberOfReviews: null, rating: null },
+        dateHelpers: {
+            months: [
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December",
+            ],
+        },
+        urls: {
+            trustpilotApiWithAuraKey:
+                "https://api.trustpilot.com/v1/business-units/604265ff4919ec0001a76b27/?apikey=cu49p5uyt3Jb3taT8yaurWUP2S56CRwa",
+            trustPilotLogos: {
+                blue: "https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/64ac6012bdca7ed35f2ad3e5_trustpilot-blue-logo.svg",
+                white:
+                    "https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/64ac4127550428270d3a7dfb_trustpilot-white-logo.svg",
+                greenStar: {
+                    blackText:
+                        "https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/61b902913df99e6cba298e07_tp-logo-black-text.svg",
+                    noText:
+                        "https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/61b902900ac13b819cd3c17b_tp-icon.svg",
+                    whiteText:
+                        "https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/61b902912f9af56e4fd71b99_tp-logo-white-text.svg",
+                },
+            },
+        },
+    };
+
+    // DO IT
+    function insertTrustpilotHTML() {
+        // GET DOM ELEMENTS and place each into a tuple with desired config
+        // Either 1. call getCommonConfig with config name—see __global.commonConfigs for options, or 2. build your own config object
+
+        const tpSplideInlineDesktopStackedMobile = [
+            document.querySelector('#element-__gpage-block-2lh5v140oux-4595'),
+            getCommonConfig("inlineDesktopTripleStackedMobile")
+        ];
+
+        const tpDynamicReviews = [
+            document.querySelector('#element-6509'),
+            getCommonConfig("inlineDesktopTripleStackedMobile")
+        ];
+
+        // Add each tuple to the allTrustpilotDivs array
+        const allTrustpilotDivs = [tpSplideInlineDesktopStackedMobile, tpDynamicReviews];
+
+        // now we loop through and call generateHtml with each element / config pairing
+        allTrustpilotDivs.forEach(([element, config]) =>
+            generateHTML(element, config, getStarColor(element))
+        );
+
+        // And shade divs based on rating
+        starShade(__global.data.rating);
+    }
+
+    // HELPERS
+    // Helpers - async
+    async function getTrustpilotData() {
+        await fetch(__global.urls.trustpilotApiWithAuraKey)
+            .then((response) => response.json())
+            .then((data) => {
+                // on success, set global data to what we need
+                const globalDataObject = {
+                    isDefault: false,
+                    numberOfReviews: data.numberOfReviews.total,
+                    rating: data.score.trustScore,
+                };
+                __global.data = { ...globalDataObject };
+            })
+            .catch((error) => {
+                // on error pass defaults
+                __global.data = { isDefault: true, numberOfReviews: 4000, rating: 4.7 };
+                console.error(error);
+            });
+    }
+
+    // Helpers - element factories
+    function generateHTML(IPContainerElement, config, starColor) {
+        const {
+            classListOverrides,
+            icon,
+            layoutType,
+            stars,
+            text,
+            styleOverrides,
+        } = config;
+
+        const {
+            positioning: { desktop: desktopPositioning, mobile: mobilePositioning },
+        } = stars;
+        const desktopPositioningClassValue = desktopPositioning
+            ? `star-position-desktop-${desktopPositioning}`
+            : undefined;
+        const mobilePositioningClassValue = mobilePositioning
+            ? `star-position-mobile-${mobilePositioning}`
+            : undefined;
+
+        const noIconClassValue = !icon.isDisplayed ? "no-icon" : undefined;
+
+        const container = document.createElement("div");
+
+        // Add inline style overrides
+        let overrideBreakpoint = window.innerWidth < 767 ? styleOverrides.mobile : styleOverrides.desktop;
+        const overrideStyles = () => {
+            if (overrideBreakpoint) {
+                Object.entries(overrideBreakpoint).forEach(
+                    ([prop, val]) => (container.style[prop] = val)
+                );
+            }
+        };
+        overrideStyles();
+
+        //handle window resizing for applying overriden styles
+        window.addEventListener('resize', () => {
+            overrideStyles();
+        });
+
+        // get classList overrides
+        const classListAdditional = classListOverrides
+            ? classListOverrides.join(" ")
+            : undefined;
+
+        // Add classlist
+        container.classList.add(
+            "aura-trustpilot-rating",
+            `layout-desktop-${layoutType.desktop}`,
+            `layout-mobile-${layoutType.mobile}`,
+            `star-size-desktop-${stars.containerSize.desktop}`,
+            `star-size-mobile-${stars.containerSize.mobile}`,
+            `text-size-desktop-${text.size.desktop}`,
+            `text-size-mobile-${text.size.mobile}`,
+            desktopPositioningClassValue,
+            mobilePositioningClassValue,
+            noIconClassValue,
+            classListAdditional
+        );
+
+        //Add accessibility 
+        container.setAttribute('role', 'img');
+        const ariaLabelRating = __global.data.rating ? __global.data.rating : '4.7';
+        container.setAttribute('aria-label', `TrustPilot ${ariaLabelRating} out of 5 stars rating out of ${__global.data.numberOfReviews} reviews.`);
+
+        const tpIcon = iconFactory(icon);
+        const tpStars = starsFactory(stars, starColor);
+        const tpText = textFactory(text);
+
+        container.appendChild(tpIcon);
+        container.appendChild(tpStars);
+        container.appendChild(tpText);
+
+        IPContainerElement.style.border = "transparent";
+        IPContainerElement.style.backgroundColor = "transparent";
+        IPContainerElement.innerHTML = "";
+
+        IPContainerElement.appendChild(container);
+    }
+
+    function iconFactory(iconConfig) {
+        let iconPath;
+        const {
+            color,
+            hasText,
+            size: { desktop: desktopDimensions, mobile: mobileDimensions },
+            textColor,
+        } = iconConfig;
+
+        // Get icon path
+        if (color === "white") {
+            iconPath = __global.urls.trustPilotLogos.white;
+        } else if (color === "blue") {
+            iconPath = __global.urls.trustPilotLogos.blue;
+        } else {
+            if (!hasText) {
+                iconPath = __global.urls.trustPilotLogos.greenStar.noText;
+            } else if (textColor === "white") {
+                iconPath = __global.urls.trustPilotLogos.greenStar.whiteText;
+            } else {
+                iconPath = __global.urls.trustPilotLogos.greenStar.blackText;
+            }
+        }
+
+        const iconWrapper = document.createElement("div");
+        iconWrapper.classList.add("aura-trustpilot-rating-icon");
+
+        // Desktop or mobile size - define as func so we can close over the window object and access it when called by the 'resize' event listener
+        const getSize = () =>
+            window.innerWidth < 767 ? mobileDimensions : desktopDimensions;
+
+        iconWrapper.innerHTML = `<svg style="height: ${getSize().height / 16
+            }rem; width: ${getSize().width / 16}rem;">
+				  <image xlink:href="${iconPath}" height="100%" width="100%"/>
+			  </svg>`;
+
+        // Edge case of resize between mob/desk breakpoints
+        window.addEventListener("resize", () => {
+            const svg = iconWrapper.querySelector("svg");
+            const { height, width } = getSize();
+            svg.style.height = height;
+            svg.style.width = width;
+        });
+
+        return iconWrapper;
+    }
+
+    function starsFactory(starsConfig, starColor) {
+        const { colorWrapper, colorStarOverride } = starsConfig;
+
+        colorOverride = getOverride();
+        starColor = colorOverride ?? starColor;
+
+        const stars = document.createElement("div");
+        stars.classList.add("aura-trustpilot-rating-stars-wrapper");
+        stars.innerHTML = `
+					<div class="aura-trustpilot-rating-star">
+						  <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_1"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+            starColor
+        )}</div>
+					  </div>
+					<div class="aura-trustpilot-rating-star">
+						  <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_2"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+            starColor
+        )}</div>
+					  </div>
+					<div class="aura-trustpilot-rating-star">
+						  <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_3"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+            starColor
+        )}</div>
+					  </div>
+					<div class="aura-trustpilot-rating-star">
+						  <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+            starColor
+        )}</div>
+					  </div>
+					<div class="aura-trustpilot-rating-star">
+						  <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_5"></div>
+						  <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+            starColor
+        )}</div>
+					  </div>
+					   `;
+        return stars;
+
+        // Helper
+        function getOverride() {
+            return window.innerWidth < 767
+                ? colorStarOverride?.mobile
+                : colorStarOverride?.desktop;
+        }
+    }
+
+    function textFactory(textConfig) {
+        let { color, value } = textConfig;
+        const paragraph = document.createElement("p");
+        const text = document.createElement("div");
+        text.classList.add("aura-trustpilot-rating-text");
+        text.style.color = color;
+
+        // Replace interpolated values with data
+        if (value.includes("{{rating}}")) {
+            value = findAndReplaceInterpolatedStringVariables(
+                value,
+                "rating",
+                __global.data.rating.toString()
+            );
+        }
+        if (value.includes("{{date}}")) {
+            value = findAndReplaceInterpolatedStringVariables(
+                value,
+                "date",
+                getFormattedDate()
+            );
+        }
+        if (value.includes("{{total}}")) {
+            value = findAndReplaceInterpolatedStringVariables(
+                value,
+                "total",
+                addCommasToNumber(__global.data.numberOfReviews)
+            );
+        }
+
+        paragraph.innerText = value;
+        text.appendChild(paragraph);
+        return text;
+    }
+
+    function starSvgFactory(starColor) {
+        return `<svg style="color: ${starColor}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18L4.94658 21.7082L6.29366 13.8541L0.587322 8.2918L8.47329 7.1459L12 0L15.5267 7.1459L23.4127 8.2918L17.7063 13.8541L19.0534 21.7082L12 18Z" fill="currentColor"/>
+				  </svg>`;
+    }
+
+    // Helpers - utils
+    function abbreviateMonth(month) {
+        // Returns abbreviated month if >4 char, as-is if <=4
+        return month.length > 4 ? `${month.substring(0, 3)}.` : month;
+    }
+
+    function addCommasToNumber(number) {
+        if (typeof number !== "number") number = Number(number); // Number number number!
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function getFormattedDate() {
+        const abbreviatedMonth = abbreviateMonth(
+            __global.dateHelpers.months[new Date().getMonth()]
+        );
+        const year = new Date().getFullYear();
+        return `${abbreviatedMonth} ${year}`;
+    }
+
+    function getCommonConfig(configType) {
+        if (!Object.keys(__global.commonConfigs).includes(configType)) {
+            throw new Error("configType does not exist on __global.commonConfigs");
+        }
+        return __global.commonConfigs[configType];
+    }
+
+    function getStarColor(element) {
+        const grandparent = element.parentElement.parentElement;
+        const background = window
+            .getComputedStyle(grandparent)
+            .getPropertyValue("background-color");
+        const color =
+            !background || background === "rgba(0, 0, 0, 0)" ? "#fff" : background;
+        return color;
+    }
+
+    function findAndReplaceInterpolatedStringVariables(string, find, replace) {
+        if (/[a-zA-Z\_]+/g.test(string)) {
+            return string.replace(
+                new RegExp("\{\{(?:\\s+)?(" + find + ")(?:\\s+)?\}\}"),
+                replace
+            );
+        } else {
+            throw new Error(
+                "Find statement does not match regular expression: /[a-zA-Z\_]+/"
+            );
+        }
+    }
+
+    function starShade(rating) {
+        let ratingOffset;
+        const first = Array.from(document.getElementsByClassName("shade_1"));
+        const second = Array.from(document.getElementsByClassName("shade_2"));
+        const third = Array.from(document.getElementsByClassName("shade_3"));
+        const fourth = Array.from(document.getElementsByClassName("shade_4"));
+        const fifth = Array.from(document.getElementsByClassName("shade_5"));
+        const radius = "3px 0 0 3px";
+
+        if (rating <= 1) {
+            ratingOffset = 0;
+            first.forEach(setWidthAndRadiusOfFinalShadedStar);
+            fifth
+                .concat([...fourth, ...third, ...second])
+                .forEach(setWidthOfUnshadedStars);
+        } else if (rating <= 2) {
+            ratingOffset = 1;
+            second.forEach(setWidthAndRadiusOfFinalShadedStar);
+            fifth.concat([...fourth, ...third]).forEach(setWidthOfUnshadedStars);
+        } else if (rating <= 3) {
+            ratingOffset = 2;
+            third.forEach(setWidthAndRadiusOfFinalShadedStar);
+            fifth.concat(fourth).forEach(setWidthOfUnshadedStars);
+        } else if (rating <= 4) {
+            ratingOffset = 3;
+            fourth.forEach(setWidthAndRadiusOfFinalShadedStar);
+            fifth.forEach(setWidthOfUnshadedStars);
+        } else if (rating <= 5) {
+            ratingOffset = 4;
+            fifth.forEach(setWidthAndRadiusOfFinalShadedStar);
+        }
+
+        function setWidthAndRadiusOfFinalShadedStar(element) {
+            element.style.width = `${(rating - ratingOffset) * 100}%`;
+            element.style.borderRadius = radius;
+        }
+
+        function setWidthOfUnshadedStars(element) {
+            element.style.width = 0;
+        }
+    }
+</script>

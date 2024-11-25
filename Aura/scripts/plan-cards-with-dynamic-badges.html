@@ -1,0 +1,370 @@
+<!-- Plan Cards w/ Dynamic Badges -->
+<script>
+    "use strict";
+    window.addEventListener("DOMContentLoaded", setUpPlanCards);
+
+    function setUpPlanCards() {
+        // CONSTANTS
+        const DISCOUNT = "privacyIntro"; // Options: forty, fifty, sixty, freeTrialList, freeTrialForty, freeTrialFifty, avIntro
+        const ENROLLMENT_VERSION = "v88";
+        const HEADER_TEXT = "Select Your Protection Plan";
+        // For Free Trial: "Try Aura risk-free with your free 14 day free trial. Cancel your free trial anytime."
+        // For Non-Free Trial: "Try risk free with our 60-day money-back guarantee.² 24/7 customer support included with all plans."
+        const SUBHEADER_TEXT =
+            "Try risk free with our 60-day money-back guarantee.² 24/7 customer support included with all plans.";
+
+        const PLAN_DATA = {
+            // forty: {
+            //   individual: {
+            //     annual: {
+            //       price:
+            //         '$10 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 33%",
+            //       monthlyPrice: "$13",
+            //       buttonPath: `
+            //          https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_40&offer_code=3yb2lantbj
+            //          `,
+            //     },
+            //   },
+            //   couple: {
+            //     annual: {
+            //       price:
+            //         '$18 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 37%",
+            //       monthlyPrice: "$24",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_40&offer_code=9dgk2a0hv5`,
+            //     },
+            //   },
+            //   family: {
+            //     annual: {
+            //       price:
+            //         '$29 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 42%",
+            //       monthlyPrice: "$39",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_40&offer_code=hgpt6xi9ca`,
+            //     },
+            //   },
+            // },
+            // fifty: {
+            //   individual: {
+            //     annual: {
+            //       price:
+            //         '$9<div class="mo-cent-wrapper"><p class="cent-text">.99</p> <span class="per mo-text" role="img" aria-label="per month">/mo</span></div>',
+            //       discount: "Save up to 58%",
+            //       monthlyPrice: "$12",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=bestoffer_saff&offer_code=u9i7va3vs3`,
+            //     },
+            //   },
+            //   couple: {
+            //     annual: {
+            //       price:
+            //         '$17<div class="mo-cent-wrapper"><p class="cent-text">.99</p> <span class="per mo-text" role="img" aria-label="per month">/mo</span></div>',
+            //       discount: "Save up to 62%",
+            //       monthlyPrice: "$20",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=bestoffer_saff&offer_code=c0p7vlyxug`,
+            //     },
+            //   },
+            //   family: {
+            //     annual: {
+            //       price:
+            //         '$24<div class="mo-cent-wrapper"><p class="cent-text">.99</p> <span class="per mo-text" role="img" aria-label="per month">/mo</span></div>',
+            //       discount: "Save up to 68%",
+            //       monthlyPrice: "$30",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=bestoffer_saff&offer_code=tz4r5nzat8`,
+            //     },
+            //   },
+            // },
+            // sixty: {
+            //   individual: {
+            //     annual: {
+            //       price:
+            //         '$8 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 46%",
+            //       monthlyPrice: "$11",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_60&offer_code=c9zb7v0p88`,
+            //     },
+            //   },
+            //   couple: {
+            //     annual: {
+            //       price:
+            //         '$14 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 51%",
+            //       monthlyPrice: "$20",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_60&offer_code=5rdhlerv9v`,
+            //     },
+            //   },
+            //   family: {
+            //     annual: {
+            //       price:
+            //         '$20 <span class="per" role="img" aria-label="per month">/mo</span>',
+            //       discount: "Save up to 60%",
+            //       monthlyPrice: "$29",
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_60&offer_code=jrd0giar1n`,
+            //     },
+            //   },
+            // },
+
+            privacyIntro: {
+                individual: {
+                    annual: {
+                        price: '$7 <span class="per" role="img" aria-label="per month">/mo</span>',
+                        discount: "Save up to 53%",
+                        annualPrice:
+                            'billed annually',
+                        monthlyPrice:
+                            'or $10<span role="img" aria-label="per month">/mo</span> billed monthly',
+                        buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=aurasavings&offer_code=fri9ra322q&gtwid=privacy`,
+                    },
+                },
+                couple: {
+                    annual: {
+                        price: '$9 <span class="per" role="img" aria-label="per month">/mo</span>',
+                        discount: "Save up to 62%",
+                        annualPrice:
+                            'billed annually',
+                        monthlyPrice:
+                            'or $12<span role="img" aria-label="per month">/mo</span> billed monthly',
+                        buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=aurasavings&offer_code=dnzrx1en7k&gtwid=privacy`,
+                    },
+                },
+                family: {
+                    annual: {
+                        price: '$15 <span class="per" role="img" aria-label="per month">/mo</span>',
+                        discount: "Save up to 68%",
+                        annualPrice:
+                            'billed annually',
+                        monthlyPrice:
+                            'or $20<span role="img" aria-label="per month">/mo</span> billed monthly',
+                        buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=aurasavings&offer_code=11t1gsrn3i&gtwid=privacy`,
+                    },
+                },
+            },
+            // freeTrialForty: {
+            //   individual: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 33%",
+            //       annualPrice:
+            //         'then $10<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $13<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft40&offer_code=xbvvxcykfs`,
+            //     },
+            //   },
+            //   couple: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 37%",
+            //       annualPrice:
+            //         'then $18<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $24<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft40&offer_code=bi9ritb279`,
+            //     },
+            //   },
+            //   family: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 42%",
+            //       annualPrice:
+            //         'then $29<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $39<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft40&offer_code=fjfp0rmhgx`,
+            //     },
+            //   },
+            // },
+            // freeTrialSixtyEight: {
+            //   individual: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 62%",
+            //       annualPrice:
+            //         'then $9<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $12<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft14_50&offer_code=8fsm2a1qd8`,
+            //     },
+            //   },
+            //   couple: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 64%",
+            //       annualPrice:
+            //         'then $17<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $20<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft14_50&offer_code=7891h9l4vs`,
+            //     },
+            //   },
+            //   family: {
+            //     annual: {
+            //       price: "Free for 14 days",
+            //       discount: "Save up to 68%",
+            //       annualPrice:
+            //         'then $25<span role="img" aria-label="per month">/mo</span> billed annually,',
+            //       monthlyPrice:
+            //         'or $30<span role="img" aria-label="per month">/mo</span> billed monthly',
+            //       buttonPath: `https://my.aura.com/enrollment/${ENROLLMENT_VERSION}/1?cc=a_22_ft14_50&offer_code=atn3hn40ld`,
+            //     },
+            //   },
+            // },
+        };
+
+
+        // ELEMENT VARS
+        const cardHeader = document.querySelector(
+            "#page-block-mjqoqa1yiw .section-block"
+        );
+        const cardHeaderHeadline = cardHeader.querySelector(".headline");
+        const cardHeaderSubheader = cardHeader.querySelector(".paragraph");
+
+        // Price divs
+        const individualPrice = document.querySelector("#planPriceIndividual");
+        const couplePrice = document.querySelector("#planPriceCouple");
+        const familyPrice = document.querySelector("#planPriceFamily");
+
+        // Dynamic Discount Badges
+        // const heroBadgeDiscount = document.querySelector("#element-6150");
+
+        // Add New Badges to Array! By default we are set to have discount percentage be pulled from the family plan!
+        const discountBadges = [];
+
+        // Discount divs
+        const individualDiscount = document.querySelector(
+            "#planDiscountIndividual"
+        );
+        const coupleDiscount = document.querySelector("#planDiscountCouple");
+        const familyDiscount = document.querySelector("#planDiscountFamily");
+
+        // Monthly
+        const individualMonthly = document.querySelector(
+            "#planMonthlyIndividual"
+        );
+        const coupleMonthly = document.querySelector(
+            "#planMonthlyCouple"
+        );
+        const familyMonthly = document.querySelector(
+            "#planMonthlyFamily"
+        );
+
+        // Annual
+        const individualAnnual = document.querySelector("#planAnnuallyIndividual");
+        const coupleAnnual = document.querySelector("#planAnnuallyCouple");
+        const familyAnnual = document.querySelector("#planAnnuallyFamily");
+
+        // Buttons
+        const individualButton = document.querySelector("#planButtonIndividual");
+        const coupleButton = document.querySelector("#planButtonCouple");
+        const familyButton = document.querySelector("#planButtonFamily");
+
+        // MAKE IT SO
+        // Add classes for styling
+        [individualPrice, couplePrice, familyPrice].forEach((element, index) => {
+            if (!element) {
+                throw new Error(
+                    `There is a null value in the array of plan card price divs at index ${index}, please select the correct element.`
+                );
+            }
+            if (DISCOUNT.includes("freeTrial")) {
+                element.classList.add("ft-price-div");
+            }
+            element.classList.add("price-div");
+        });
+
+        [individualDiscount, coupleDiscount, familyDiscount].forEach(
+            (element) =>
+                // No error handling here, as some of these values may be null, depending on freeTrial/D2P plans
+                element && element.classList.add("discount-div")
+        );
+
+        [
+            individualAnnual,
+            coupleAnnual,
+            familyAnnual,
+            individualMonthly,
+            coupleMonthly,
+            familyMonthly,
+            // No error handling here, as some of these values may be null, depending on freeTrial/D2P plans
+        ].forEach(
+            (element) => element && element.classList.add("annual-monthly-div")
+        );
+        individualButton.classList.add("aura-cta-plan-card-individual");
+        coupleButton.classList.add("aura-cta-plan-card-couple");
+        familyButton.classList.add("aura-cta-plan-card-family");
+
+        if (DISCOUNT.includes("freeTrial")) {
+            individualPrice.innerHTML = PLAN_DATA[DISCOUNT].individual.annual.price;
+            couplePrice.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.price;
+            familyPrice.innerHTML = PLAN_DATA[DISCOUNT].family.annual.price;
+
+            if (individualDiscount) {
+                individualDiscount.innerHTML =
+                    PLAN_DATA[DISCOUNT].individual.annual.discount;
+                coupleDiscount.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.discount;
+                familyDiscount.innerHTML = PLAN_DATA[DISCOUNT].family.annual.discount;
+                discountBadges.forEach((badge, index) => {
+                    if (!badge) {
+                        throw new Error(
+                            `There is a null value in the array of discountBadges at index ${index}, please select the correct element.`
+                        );
+                    }
+                    badge.innerHTML = PLAN_DATA[DISCOUNT].family.annual.discount
+                        .split(" ")
+                        .splice(-1);
+                });
+            }
+
+            individualAnnual.innerHTML =
+                PLAN_DATA[DISCOUNT].individual.annual.annualPrice;
+            coupleAnnual.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.annualPrice;
+            familyAnnual.innerHTML = PLAN_DATA[DISCOUNT].family.annual.annualPrice;
+
+            individualMonthly.innerHTML =
+                PLAN_DATA[DISCOUNT].individual.annual.monthlyPrice;
+            coupleMonthly.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.monthlyPrice;
+            familyMonthly.innerHTML = PLAN_DATA[DISCOUNT].family.annual.monthlyPrice;
+        }
+        if (!DISCOUNT.includes("freeTrial")) {
+            individualPrice.innerHTML = PLAN_DATA[DISCOUNT].individual.annual.price;
+            couplePrice.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.price;
+            familyPrice.innerHTML = PLAN_DATA[DISCOUNT].family.annual.price;
+
+            individualDiscount.innerHTML =
+                PLAN_DATA[DISCOUNT].individual.annual.discount;
+            coupleDiscount.innerHTML = PLAN_DATA[DISCOUNT].couple.annual.discount;
+            familyDiscount.innerHTML = PLAN_DATA[DISCOUNT].family.annual.discount;
+            discountBadges.forEach((badge, index) => {
+                if (!badge) {
+                    throw new Error(
+                        `There is a null value in the array of discountBadges at index ${index}, please select the correct element.`
+                    );
+                }
+                badge.innerHTML = PLAN_DATA[DISCOUNT].family.annual.discount
+                    .split(" ")
+                    .splice(-1);
+            });
+
+            individualMonthly.innerHTML =
+                PLAN_DATA[DISCOUNT].individual.annual.monthlyPrice;
+            coupleMonthly.innerHTML =
+                PLAN_DATA[DISCOUNT].couple.annual.monthlyPrice;
+            familyMonthly.innerHTML =
+                PLAN_DATA[DISCOUNT].family.annual.monthlyPrice;
+
+            individualAnnual.innerHTML =
+                PLAN_DATA[DISCOUNT].individual.annual.annualPrice;
+            coupleAnnual.innerHTML =
+                PLAN_DATA[DISCOUNT].couple.annual.annualPrice;
+            familyAnnual.innerHTML =
+                PLAN_DATA[DISCOUNT].family.annual.annualPrice;
+        }
+
+        individualButton.href = PLAN_DATA[DISCOUNT].individual.annual.buttonPath;
+        coupleButton.href = PLAN_DATA[DISCOUNT].couple.annual.buttonPath;
+        familyButton.href = PLAN_DATA[DISCOUNT].family.annual.buttonPath;
+
+        cardHeaderHeadline.innerText = HEADER_TEXT;
+        cardHeaderSubheader.innerText = SUBHEADER_TEXT;
+    }
+</script>

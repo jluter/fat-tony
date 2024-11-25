@@ -1,0 +1,76 @@
+<!--Gradient Background Sticky Header-->
+<style>
+    /* Sticky Header*/
+    .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000000;
+    }
+
+    .sticky-header > .section-block {
+        background-color: rgba(22, 22, 22, 0) !important; /*Desired sticky header background color on scroll/hover*/
+    }
+
+    .sticky-header:hover > .section-block {
+        background-color: rgba(22, 22, 22, 1) !important;
+    }
+
+    .sticky-header.scrolled-background > .section-block {
+        background-color: rgba(22, 22, 22, 1) !important;
+    }
+
+    .section-block {
+        transition: background-color 0.25s ease-in;
+    }
+
+</style>
+
+<!--Gradient Background Sticky Header + Banner-->
+<style>
+      /* Sticky Header with Banner */
+      .sticky-banner {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          min-height: 3rem; /* Where min-height is equal to the banner height */
+          z-index: 1000000;
+      }
+  
+      .sticky-header {
+          position: sticky;
+          top: 0;
+          left: 0;
+          right: 0;
+          width: 100%;
+          z-index: 1000000;
+          height: 0 !important; /*Height set to 0 purposefully*/
+      }
+  
+      .sticky-header > .section-block {
+          background-color: rgba(22, 22, 22, 0) !important; /*Desired sticky header background color on scroll/hover*/
+      }
+  
+      .sticky-header:hover > .section-block {
+          background-color: rgba(22, 22, 22, 1) !important;
+      }
+  
+      .sticky-header.scrolled-background > .section-block {
+          background-color: rgba(22, 22, 22, 1) !important;
+      }
+  
+      .section-block {
+          transition: background-color 0.25s ease-in;
+      }
+  
+      /* Banner grows slightly on mob, so we adjust in MQ */
+      @media (max-width: 767px) {
+          .sticky-banner {
+              height: 3.4375rem !important; /*Set height explicitly or IP leaves a gap of 1px on mobile*/
+          }
+      }
+</style>

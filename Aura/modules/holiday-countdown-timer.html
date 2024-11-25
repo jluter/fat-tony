@@ -1,0 +1,272 @@
+<style>
+	.aura-countdown-timer {
+		color: #fff;
+		display: block;
+		max-width: max-content;
+		margin: 0 auto;
+	}
+
+	.aura-countdown-timer.black {
+		color: #191c1f;
+	}
+
+	.aura-countdown-timer.hide {
+		display: none;
+	}
+
+	.aura-countdown-timer-wrapper {
+		align-items: center;
+		justify-items: center;
+		display: grid;
+		grid-template-columns: repeat(7, auto);
+		grid-template-rows: repeat(2, auto);
+		gap: 0 0.8125rem;
+	}
+
+	.aura-countdown-timer-wrapper p {
+		margin: 0;
+	}
+
+	.aura-countdown-timer-display {
+		font-weight: 430;
+		font-size: 3rem;
+		font-variant-numeric: tabular-nums;
+		grid-row: 1;
+	}
+
+	.aura-countdown-timer-label {
+		font-weight: 485;
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+
+	.aura-countdown-timer-label.days {
+		grid-column: 1/2;
+	}
+	.aura-countdown-timer-label.hours {
+		grid-column: 3/4;
+	}
+	.aura-countdown-timer-label.minutes {
+		grid-column: 5/6;
+	}
+	.aura-countdown-timer-label.seconds {
+		grid-column: 7/8;
+	}
+
+	.aura-countdown-timer-colon {
+		justify-self: center;
+		font-weight: 485;
+		font-size: 1.5rem;
+		grid-row: 1;
+	}
+
+	.aura-countdown-timer-colon:nth-of-type(3) {
+		grid-column: 2/3;
+	}
+	.aura-countdown-timer-colon:nth-of-type(6) {
+		grid-column: 4/5;
+	}
+	.aura-countdown-timer-colon:nth-of-type(9) {
+		grid-column: 6/7;
+	}
+
+	.aura-countdown-timer-display,
+	.aura-countdown-timer-label,
+	.aura-countdown-timer-colon {
+		font-family: 'Basel Grotesk';
+		font-weight: normal;
+		line-height: 140%;
+	}
+
+	.aura-countdown-timer.small .aura-countdown-timer-display {
+		font-size: 2rem;
+		line-height: 2rem;
+	}
+
+	.aura-countdown-timer.small .aura-countdown-timer-label {
+		font-size: 0.75rem;
+		line-height: 0.9 rem;
+	}
+
+	.aura-countdown-timer.small .aura-countdown-timer-wrapper {
+		gap: 0.125rem 0.5rem;
+	}
+
+	@media (max-width: 767px) {
+		.aura-countdown-timer.small .aura-countdown-timer-wrapper {
+			gap: 0 0.5rem;
+		}
+		.aura-countdown-timer-display {
+			font-size: 2.25rem;
+		}
+
+		.aura-countdown-timer-label,
+		.aura-countdown-timer-colon {
+			font-size: 0.875rem;
+		}
+
+		.aura-countdown-timer.small .aura-countdown-timer-display {
+			font-size: 1.5rem;
+		}
+
+		.aura-countdown-timer.small .aura-countdown-timer-label {
+			font-size: 0.5625rem;
+		}
+
+		.aura-countdown-timer.small .aura-countdown-timer-colon {
+			font-size: 0.5625rem;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', startTimer);
+
+	function startTimer() {
+		// Set start and end times
+		const promoBegins = new Date('2022-09-20T12:00:00');
+		const promoEnds = new Date('2022-10-10T17:00:00');
+
+		// Select as many divs on the page as you want to have timers
+		const bannerDiv = document.querySelector('#element-3095');
+		const heroDiv = document.querySelector('#element-3092');
+
+		// call insertInitialHtml on each element,
+		// passing size 'small' or 'normal' as the first arg,
+		// color 'white' or 'black' as the second arg,
+		// then the div as the third arg.
+		insertInitialHtml('small', 'white', bannerDiv);
+		insertInitialHtml('normal', 'white', heroDiv);
+
+		// Then call timer with beginning / ending times
+		// Aaaaand, we're Gucci.
+		timer(promoBegins, promoEnds);
+	}
+
+	function insertInitialHtml(size, color, target) {
+		const timer = document.createElement('div');
+		timer.classList = `aura-countdown-timer hide ${size} ${color}`;
+		timer.role = 'timer';
+
+		timer.innerHTML = `<p class="aura-countdown-timer-wrapper">
+	<span class="aura-countdown-timer-display days">00</span>
+	<span class="aura-countdown-timer-label days">days</span>
+	<span class="aura-countdown-timer-colon">:</span>
+	<span class="aura-countdown-timer-display hours">00</span>
+	<span class="aura-countdown-timer-label hours">hours</span>
+	<span class="aura-countdown-timer-colon">:</span>
+	<span class="aura-countdown-timer-display minutes">00</span>
+	<span class="aura-countdown-timer-label minutes">minutes</span>
+	<span class="aura-countdown-timer-colon">:</span>
+	<span class="aura-countdown-timer-display seconds">00</span>
+	<span class="aura-countdown-timer-label seconds">seconds</span>
+</p>`;
+		target.innerHTML = '';
+		target.style.border = 'unset';
+		target.appendChild(timer);
+	}
+
+	function timer(promoBegins, promoEnds) {
+		// Convert to US EST locale string
+		const isDisplayedAfter = new Date(
+			promoBegins.toLocaleString('en-US', {
+				timeZone: 'America/New_York',
+			})
+		).getTime();
+		const isDisplayedUntil = new Date(
+			promoEnds.toLocaleString('en-US', {
+				timeZone: 'America/New_York',
+			})
+		).getTime();
+		// Current time
+		const now = Date.now();
+
+		// Countdown
+		const countdown = setInterval(() => {
+			const timeLeft = isDisplayedUntil - Date.now();
+			if (timeLeft <= 0) {
+				return clearInterval(countdown);
+			}
+			displayCountdown(timeLeft);
+		}, 1000);
+
+		// Remove hide class after first timer tick
+		const displayTheTimer = setTimeout(() => {
+			if (now > isDisplayedAfter && now < isDisplayedUntil) {
+				timerDivs.forEach((el) => el.classList.remove('hide'));
+			}
+			if (displayTheTimer) {
+				return clearTimeout(displayTheTimer);
+			}
+		}, 1100);
+
+		// Display divs
+		const timerDivs = document.querySelectorAll('.aura-countdown-timer');
+		const daysDisplays = document.querySelectorAll('.aura-countdown-timer-display.days');
+		const hoursDisplays = document.querySelectorAll('.aura-countdown-timer-display.hours');
+		const minutesDisplays = document.querySelectorAll('.aura-countdown-timer-display.minutes');
+		const secondsDisplays = document.querySelectorAll('.aura-countdown-timer-display.seconds');
+		const daysLabels = document.querySelectorAll('.aura-countdown-timer-label.days');
+		const hoursLabels = document.querySelectorAll('.aura-countdown-timer-label.hours');
+		const minutesLabels = document.querySelectorAll('.aura-countdown-timer-label.minutes');
+		const secondsLabels = document.querySelectorAll('.aura-countdown-timer-label.seconds');
+
+		// Helpers
+		function formatNumberAlwaysTwoDigits(number) {
+			return number === 0
+				? number
+				: number.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
+		}
+
+		// Display func
+		function displayCountdown(milliseconds) {
+			let millisecondsRemaining;
+
+			const days = Math.floor(milliseconds / 8.64e7);
+			millisecondsRemaining = milliseconds % 8.64e7;
+
+			const hours = Math.floor(millisecondsRemaining / 3.6e6);
+			millisecondsRemaining %= 3.6e6;
+
+			const minutes = Math.floor(millisecondsRemaining / 60000);
+			millisecondsRemaining %= 60000;
+
+			const seconds = Math.floor(millisecondsRemaining / 1000);
+
+			// Helpers
+			function updateLabelText() {
+				if (days === 1) {
+					daysLabels.forEach((el) => (el.innerText = 'day '));
+				}
+				if (days !== 1) {
+					daysLabels.forEach((el) => (el.innerText = 'days'));
+				}
+				if (hours === 1) {
+					hoursLabels.forEach((el) => (el.innerText = 'hour '));
+				}
+				if (hours !== 1) {
+					hoursLabels.forEach((el) => (el.innerText = 'hours'));
+				}
+				if (minutes === 1) {
+					minutesLabels.forEach((el) => (el.innerText = 'minute'));
+				}
+				if (minutes !== 1) {
+					minutesLabels.forEach((el) => (el.innerText = 'minutes'));
+				}
+				if (seconds === 1) {
+					secondsLabels.forEach((el) => (el.innerText = 'second'));
+				}
+				if (seconds !== 1) {
+					secondsLabels.forEach((el) => (el.innerText = 'seconds'));
+				}
+			}
+
+			// Insert into dom
+			updateLabelText();
+			daysDisplays.forEach((el) => (el.innerText = days));
+			hoursDisplays.forEach((el) => (el.innerText = hours));
+			minutesDisplays.forEach((el) => (el.innerText = formatNumberAlwaysTwoDigits(minutes)));
+			secondsDisplays.forEach((el) => (el.innerText = formatNumberAlwaysTwoDigits(seconds)));
+		}
+	}
+</script>

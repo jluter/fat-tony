@@ -1,0 +1,42 @@
+<!-- Gradient Sticky Header Script -->
+<script data-cfasync="false">
+    document.addEventListener("DOMContentLoaded", stickyHeader);
+    window.addEventListener("resize", stickyHeader);
+    window.addEventListener("scroll", scrolledBackground);
+
+    function stickyHeader() {
+        var header = window.__page_generator
+            ? document.querySelector(".section")
+            : document.querySelector(".page-block");
+        header.classList.add("sticky-header");
+    }
+
+    function scrolledBackground() {
+        const header = document.querySelector(".sticky-header");
+        header.classList.toggle("scrolled-background", window.scrollY > 0);
+    };
+</script>
+
+<!-- Gradient Sticky Header with Banner -->
+<script>
+    document.addEventListener('DOMContentLoaded', stickyHeader);
+    window.addEventListener('resize', stickyHeader);
+    window.addEventListener("scroll", scrolledBackground);
+
+
+    function stickyHeader() {
+        const isSectionBlock = window.__page_generator || false;
+        const sections = isSectionBlock
+            ? document.querySelectorAll('.section')
+            : document.querySelectorAll('.page-block');
+        const banner = sections[0];
+        const header = sections[1];
+        banner.classList.add('sticky-banner');
+        header.classList.add('sticky-header');
+    };
+
+    function scrolledBackground() {
+        const header = document.querySelector(".sticky-header");
+        header.classList.toggle("scrolled-background", window.scrollY > 0);
+    };
+</script>

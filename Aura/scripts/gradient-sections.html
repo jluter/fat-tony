@@ -1,0 +1,44 @@
+<!-- Gradient sections  -->
+<script>
+    "use strict";
+    window.addEventListener("DOMContentLoaded", setGradients);
+
+    function setGradients() {
+        // Add each gradient div to its own variable
+        const container1 = document.querySelector("#page-block-wj6sw3x81jm");
+        const container2 = document.querySelector("#page-block-kqg31zq93vi");
+        const container3 = document.querySelector("#page-block-8pta67jg0z7");
+        const container4 = document.querySelector("#page-block-kf8wmc3z64d");
+        const container5 = document.querySelector("#page-block-h3zlg7fx59l");
+
+
+        const gradientContainers = [
+            container1,
+            container2,
+            container3,
+            container4,
+            container5,
+        ];
+
+        gradientContainers.forEach((element, index) => {
+            if (!element) {
+                throw new Error(
+                    `There is a null value in the gradientContainers array at index ${index}. Please select all gradient divs on the page and add them to the array, and remove any variables targeting unused gradients.`
+                );
+            }
+            const contentDiv = element.lastElementChild;
+
+            const prev = element.previousElementSibling;
+            const prevSectionBG = window
+                .getComputedStyle(prev.lastElementChild)
+                .getPropertyValue("background-color");
+
+            const next = element.nextElementSibling;
+            const nextSectionBG = window
+                .getComputedStyle(next.lastElementChild)
+                .getPropertyValue("background-color");
+
+            contentDiv.style.backgroundImage = `linear-gradient(${prevSectionBG}, ${nextSectionBG})`;
+        });
+    }
+</script>

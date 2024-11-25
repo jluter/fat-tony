@@ -1,0 +1,75 @@
+<!-- Plan Card Footer LInk Script  -->
+<script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Use xpath to get text node
+        const query = "//a[contains(text(), 'SeeBelow')]";
+        const resultType = XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE;
+        const result = document.evaluate(query, document, null, resultType, null);
+
+        for (let i = 0; i < result.snapshotLength; i++) {
+
+            const seeBelow = result.snapshotItem(i);
+            // To work around IP's ridiculous reversion of colors when using .innerText,
+            // we get the color first...
+            const color = seeBelow.style.color;
+            seeBelow.classList.add("see-below-jump-link");
+            seeBelow.innerText = "See below";
+            // ...then re-apply it after changing innerText value
+            seeBelow.style.color = color;
+            seeBelow.removeAttribute("href");
+            seeBelow.setAttribute("tabindex", "0");
+            seeBelow.addEventListener("click", handleAltCTAClick);
+            seeBelow.addEventListener("keydown", handleAltCTAKeydown);
+        }
+    });
+
+    // Handlers
+    // Handler - btn click to plan cards function
+    function handleAltCTAClick(event) {
+        event.preventDefault();
+        // Plan card header block
+        const footerSection = Object.values(document.querySelectorAll(".section")).pop();
+
+
+
+        // bounding rect values
+        const bodyRect = document.body.getBoundingClientRect();
+        const footerSectionRect = footerSection.getBoundingClientRect();
+        // Do math
+        const footerOffset = (bodyRect.top - footerSectionRect.top) * -1;
+
+        // Scroll to card header
+        window.scrollTo({
+            top: footerOffset,
+            left: 0,
+            behavior: "smooth",
+        });
+
+        // Place focus on family CTA on next tab
+        window.addEventListener("keydown", setFocusToFooter);
+    }
+
+    // Handler - btn keydown
+    function handleAltCTAKeydown(event) {
+        const { key, which } = event;
+        const keysToMatch = ["Enter", " "];
+        const whichCodesToMatch = [32, 13];
+
+        if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+            handleAltCTAClick(event);
+        }
+    }
+
+    // Utility functions
+    // Set focus to fam CTA
+    function setFocusToFooter(event) {
+        const { key, which } = event;
+        const footerSectionFirstAnchor = Object.values(document.querySelectorAll(".section")).pop().querySelector("a");
+
+        if ((key === "Tab" || which === 9) && footerSectionFirstAnchor) {
+            event.preventDefault();
+            footerSectionFirstAnchor.focus({ focusVisible: true });
+            return window.removeEventListener("keydown", setFocusToFooter);
+        }
+    }
+</script>

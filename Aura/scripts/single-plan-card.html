@@ -1,0 +1,95 @@
+<!-- Single Plan Card  -->
+<script>
+	'use strict';
+	window.addEventListener('DOMContentLoaded', setUpPlanCards);
+
+	function setUpPlanCards() {
+		// CONSTANTS
+		const DISCOUNT = 'freeTrialForty'; // Options: forty, fifty, sixty, freeTrialList, freeTrialForty, freeTrialFifty
+		//const ENROLLMENT_VERSION = 'v56';
+		const HEADER_TEXT = 'Select Your Protection Plan';
+		// For Free Trial: "Try Aura risk-free with your free 14 day free trial. Cancel your free trial anytime."
+		// For Non-Free Trial: "Try risk free with our 60-day money-back guarantee.² 24/7 customer support included with all plans."
+		const SUBHEADER_TEXT ='Try Aura risk-free with your free 14-day free trial. Cancel your free trial anytime.**';
+
+		const PLAN_DATA = {
+			
+			freeTrialForty: {
+				individual: {
+					annual: {
+						price: 'Try free for 14 days',
+            discount: 'Savings up to 50%',
+						//annualPrice: 'then $12/mo billed annually,',
+						monthlyPrice: 'Plans start at $12/mo',
+						buttonPath: `https://my.aura.com/enrollment/v56/1?cc=a_22_ft0&offer_code=akvighj84r`,
+					},
+				},
+			},
+		};
+
+		// ELEMENT VARS
+		const cardHeader = document.querySelector('#page-block-mjqoqa1yiw .section-block');
+		const cardHeaderHeadline = cardHeader.querySelector('.headline');
+		const cardHeaderSubheader = cardHeader.querySelector('.paragraph');
+
+		// Price divs
+		const individualPrice = document.querySelector('#element-__gpage-block-6cq612g0jus-2691');
+
+		// Discount divs
+		const individualDiscount = document.querySelector('#element-__gpage-block-6cq612g0jus-2692');
+
+		// Monthly
+		const individualMonthly = document.querySelector('#element-__gpage-block-6cq612g0jus-2825');
+
+
+		// Buttons
+		const individualButton = document.querySelector('#element-__gpage-block-6cq612g0jus-2710 a');
+
+
+		// MAKE IT SO
+		// Add classes for styling
+		[individualPrice].forEach((element, index) => {
+			if (!element) {
+				throw new Error(
+					`There is a null value in the array of plan card price divs at index ${index}, please select the correct element.`
+				);
+			}
+			if (DISCOUNT.includes('freeTrial')) {
+				element.classList.add('ft-price-div');
+			}
+			element.classList.add('price-div');
+		});
+
+		[individualDiscount].forEach(
+			(element) =>
+				// No error handling here, as some of these values may be null, depending on freeTrial/D2P plans
+				element && element.classList.add('discount-div')
+		);
+
+
+		if (DISCOUNT.includes('freeTrial')) {
+			individualPrice.innerText = PLAN_DATA[DISCOUNT].individual.annual.price;
+
+			if (individualDiscount) {
+				individualDiscount.innerText = PLAN_DATA[DISCOUNT].individual.annual.discount;
+			}
+
+			individualMonthly.innerText = PLAN_DATA[DISCOUNT].individual.annual.monthlyPrice;
+		}
+		if (!DISCOUNT.includes('freeTrial')) {
+			individualPrice.innerHTML = PLAN_DATA[DISCOUNT].individual.annual.price;
+
+			individualDiscount.innerText = PLAN_DATA[DISCOUNT].individual.annual.discount;
+
+			individualMonthly.innerText =
+				'billed annually, or ' +
+				PLAN_DATA[DISCOUNT].individual.annual.monthlyPrice +
+				'/mo billed monthly';
+		}
+
+		individualButton.href = PLAN_DATA[DISCOUNT].individual.annual.buttonPath;
+
+		cardHeaderHeadline.innerText = HEADER_TEXT;
+		cardHeaderSubheader.innerText = SUBHEADER_TEXT;
+	}
+</script>
