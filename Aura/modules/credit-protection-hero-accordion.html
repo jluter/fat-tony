@@ -54,6 +54,10 @@
         transition: height 0.3s ease-out;
     }
 
+    #credit-protection-hero-slide-acc .splide__track.is-open {
+        height: 36.625rem;
+    }
+
 
     #credit-protection-hero-slide-acc .card-header-text {
         font-size: 2rem;
@@ -89,11 +93,19 @@
         margin-right: -0.25rem;
     }
 
+    #credit-protection-hero-slide-acc .card-accordion-arrow.is-open {
+        transform: rotate(180deg);
+    }
+
     #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
         max-height: 0px;
         width: 18.625rem;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
+    }
+
+    #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
+        max-height: 7.5rem;
     }
 
     #credit-protection-hero-slide-acc .card-background-wrapper {
@@ -107,13 +119,16 @@
         height: 29.125rem;
     }
 
+    #credit-protection-hero-slide-acc .card-container.is-open {
+        height: 36.625rem;
+    }
+
     #credit-protection-hero-slide-acc .card-paragraph-text {
         font-family: 'Basel Grotesk';
 
     }
 
 
-    /*Build Healthy Online Habits Styles START*/
     /*Desktop*/
     @media (min-width: 769px) {
 
@@ -200,10 +215,6 @@
         gap: 3rem;
     }
 
-    #credit-protection-hero-slide-acc .card-container.first-hero-card {
-        gap: 3.15rem;
-    }
-
     #credit-protection-hero-slide-acc .card-container.second-hero-card {
         gap: 2.4rem;
     }
@@ -227,6 +238,7 @@ padding-bottom: 1.5rem;
     .card-paragraph-text {
         text-align: left;
         line-height: 22px;
+        font-weight: 500;
     }
 
     #credit-protection-hero-slide-acc .card-image {
@@ -240,6 +252,14 @@ padding-bottom: 1.5rem;
 
         #credit-protection-hero-slide-acc {
             margin: 0;
+        }
+
+        #credit-protection-hero-slide-acc .splide__track {
+            height: 24rem;
+        }
+
+        #credit-protection-hero-slide-acc .splide__track.is-open {
+            height: 33.5rem;
         }
 
         .accordion-block {
@@ -298,6 +318,10 @@ padding-bottom: 1.5rem;
             justify-content: flex-start !important;
         }
 
+        #credit-protection-hero-slide-acc .card-container.is-open {
+            height: 30.1875rem;
+        }
+
         #credit-protection-hero-slide-acc .card-icon {
             padding: 0;
         }
@@ -330,6 +354,10 @@ padding-bottom: 1.5rem;
 
         #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
             width: 13.75rem;
+        }
+
+        #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
+            max-height: 9.5rem;
         }
 
         #credit-protection-hero-slide-acc .card-accordion-title-wrapper {
@@ -435,7 +463,7 @@ padding-bottom: 1.5rem;
         #credit-protection-hero-slide-acc .card-paragraph-text {
             font-family: "Basel Grotesk";
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 1.5625rem;
             letter-spacing: 0px;
             text-align: left;
@@ -601,20 +629,25 @@ padding-bottom: 1.5rem;
         instaPageBlock.innerHTML = accordionHTML;
 
         //Add accordion functionality. Must be after HTML is inserted.
-        
+
         //Accordion DOM element variables
         const faqListItemArray = document.querySelectorAll('.card-accordion-title-wrapper');
         const faqBlocksToExpandArray = document.querySelectorAll('.card-accordion-body-wrapper');
         const faqCardArray = document.querySelectorAll('#credit-protection-hero-slide-acc .card-container');
         const splideTrack = document.querySelector("#credit-protection-hero-slide-acc .splide__track");
-        
+
         //Original card height before accordion is opened
         // const cardHeight = faqCardArray[0].scrollHeight;
         const trackHeight = splideTrack.scrollHeight;
         const blockWidth = instaPageBlock.getBoundingClientRect().width;
-        
-        
+
+
         let isAccordionOpen = 0;
+        const checkAccordion = () => {
+            if (!isAccordionOpen) {
+                splideTrack.classList.toggle("is-open");
+            }
+        };
 
         faqListItemArray.forEach((toggle, index) => {
             toggle.setAttribute('tabindex', '0');
@@ -623,40 +656,44 @@ padding-bottom: 1.5rem;
             let card = faqCardArray[index];
             let buttonArrow = toggle.querySelector('.card-accordion-arrow');
 
-            splideTrack.addEventListener("scroll", (event) => {
-                event.preventDefault();
-                //Adjust track height based on how many accordions are open
-                if (!isAccordionOpen) {
-                    splideTrack.style.height = trackHeight / 16 + 'rem';
-                } else {
-                    splideTrack.style.height = ((trackHeight / 16) + heightAdjustment) + 'rem';
-                }
-            });
+            // splideTrack.addEventListener("scroll", (event) => {
+            //     event.preventDefault();
+            //     //Adjust track height based on how many accordions are open
+            //     if (!isAccordionOpen) {
+            //         splideTrack.style.height = trackHeight / 16 + 'rem';
+            //     } else {
+            //         splideTrack.style.height = ((trackHeight / 16) + heightAdjustment) + 'rem';
+            //     }
+            // });
 
             let handleToggle = () => {
                 toggle.classList.toggle('is-open');
                 accordionContent.classList.toggle('is-open');
                 buttonArrow.classList.toggle('is-open');
-                let heightAdjustment = blockWidth > 768 ? 7.5 : 9.5;
-                let cardHeight = blockWidth > 768 ? 29.125 : 20.6875;
+                card.classList.toggle("is-open");
+
+                // let heightAdjustment = blockWidth > 768 ? 7.5 : 9.5;
+                // let cardHeight = blockWidth > 768 ? 29.125 : 20.6875;
+
+                //Adjust track height based on how many accordions are open
+                checkAccordion();
 
                 //NOTE: Readjust to be edited in CSS by toggling "is-open"
-                if (accordionContent.style.maxHeight) {
-                    accordionContent.style.maxHeight = null;
-                    card.style.height = cardHeight + 'rem';
+                if (accordionContent.classList.contains("is-open")) {
+                    // accordionContent.style.maxHeight = null;
+                    // card.style.height = cardHeight + 'rem';
                     isAccordionOpen += 1;
+                    // card.classList.remove("is-open");
+                    // splideTrack.classList.remove("is-open");
                 } else {
-                    accordionContent.style.maxHeight = heightAdjustment + 'rem';
-                    card.style.height = ((cardHeight) + heightAdjustment) + 'rem';
+                    // accordionContent.style.maxHeight = heightAdjustment + 'rem';
+                    // card.style.height = ((cardHeight) + heightAdjustment) + 'rem';
                     isAccordionOpen -= 1;
+                    // card.classList.add("is-open");
+                    // splideTrack.classList.add("is-open");
                 }
-                
-                //Adjust track height based on how many accordions are open
-                if (!isAccordionOpen) {
-                    splideTrack.style.height = trackHeight / 16 + 'rem'; 
-                } else {
-                    splideTrack.style.height = ((trackHeight / 16) + heightAdjustment) + 'rem'; 
-                }
+
+                checkAccordion();
             };
 
             toggle.addEventListener('click', (event) => {
@@ -772,6 +809,10 @@ padding-bottom: 1.5rem;
         transition: height 0.3s ease-out;
     }
 
+    #credit-protection-hero-slide-acc .splide__track.is-open {
+        height: 36.625rem;
+    }
+
 
     #credit-protection-hero-slide-acc .card-header-text {
         font-size: 2rem;
@@ -807,11 +848,19 @@ padding-bottom: 1.5rem;
         margin-right: -0.25rem;
     }
 
+    #credit-protection-hero-slide-acc .card-accordion-arrow.is-open {
+        transform: rotate(180deg);
+    }
+
     #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
         max-height: 0px;
         width: 18.625rem;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
+    }
+
+    #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
+        max-height: 7.5rem;
     }
 
     #credit-protection-hero-slide-acc .card-background-wrapper {
@@ -825,13 +874,16 @@ padding-bottom: 1.5rem;
         height: 29.125rem;
     }
 
+    #credit-protection-hero-slide-acc .card-container.is-open {
+        height: 36.625rem;
+    }
+
     #credit-protection-hero-slide-acc .card-paragraph-text {
         font-family: 'Basel Grotesk';
 
     }
 
 
-    /*Build Healthy Online Habits Styles START*/
     /*Desktop*/
     @media (min-width: 769px) {
 
@@ -918,10 +970,6 @@ padding-bottom: 1.5rem;
         gap: 3rem;
     }
 
-    #credit-protection-hero-slide-acc .card-container.first-hero-card {
-        gap: 3.15rem;
-    }
-
     #credit-protection-hero-slide-acc .card-container.second-hero-card {
         gap: 2.4rem;
     }
@@ -945,6 +993,7 @@ padding-bottom: 1.5rem;
     .card-paragraph-text {
         text-align: left;
         line-height: 22px;
+        font-weight: 500;
     }
 
     #credit-protection-hero-slide-acc .card-image {
@@ -958,6 +1007,14 @@ padding-bottom: 1.5rem;
 
         #credit-protection-hero-slide-acc {
             margin: 0;
+        }
+
+        #credit-protection-hero-slide-acc .splide__track {
+            height: 24rem;
+        }
+
+        #credit-protection-hero-slide-acc .splide__track.is-open {
+            height: 33.5rem;
         }
 
         .accordion-block {
@@ -1016,6 +1073,10 @@ padding-bottom: 1.5rem;
             justify-content: flex-start !important;
         }
 
+        #credit-protection-hero-slide-acc .card-container.is-open {
+            height: 30.1875rem;
+        }
+
         #credit-protection-hero-slide-acc .card-icon {
             padding: 0;
         }
@@ -1048,6 +1109,10 @@ padding-bottom: 1.5rem;
 
         #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
             width: 13.75rem;
+        }
+
+        #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
+            max-height: 9.5rem;
         }
 
         #credit-protection-hero-slide-acc .card-accordion-title-wrapper {
@@ -1153,7 +1218,7 @@ padding-bottom: 1.5rem;
         #credit-protection-hero-slide-acc .card-paragraph-text {
             font-family: "Basel Grotesk";
             font-size: 1rem;
-            font-weight: 400;
+            font-weight: 500;
             line-height: 1.5625rem;
             letter-spacing: 0px;
             text-align: left;

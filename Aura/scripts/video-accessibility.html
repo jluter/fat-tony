@@ -4,8 +4,14 @@
 		//Add Each video thumbnail image ID, and it's corresponding pop-up window ID
 		const videoElements = [
 			{
-				thumbnailId: '#element-5182',
-				popUpId: '#element-5183'
+				thumbnailId: '#element-6929',
+				popUpId: '#element-8134',
+				ariaLabel: "Watch the video",
+			},
+			{
+				thumbnailId: '#element-7183',
+				popUpId: '#element-8077',
+				ariaLabel: "Watch the See What Parents Are Saying Video",
 			},
 		];
 
@@ -29,6 +35,10 @@
 		videoElements.forEach(video => {
 			let videoThumbnail = document.querySelector(video.thumbnailId);
 			let popUpVideo = document.querySelector(video.popUpId + ' iframe');
+
+			//Add aria-labels
+			let videoThumbnailLink = videoThumbnail.querySelector("a");
+			videoThumbnailLink.ariaLabel = video.ariaLabel;
 
 			//Make the YouTube iFrame tabbable. 
 			popUpVideo.setAttribute('tabindex', '0');
