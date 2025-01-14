@@ -6,115 +6,177 @@
                     Ready to Get Started?
                 </div>
                 <div class="contact-form__p">
-                    If you want to take the next steps to learn more about participating in this one-of-a-kind online
-                    study, just fill out
-                    the form below and we’ll be in touch soon.
+                    Please fill out the form below to receive an email invitation to join the study.
                 </div>
             </div>
-            <form class="contact-form">
-                <div class="contact-form__column-wrapper">
-                    <div class="contact-form__first-row">
-                        <div class="contact-form__input-label-wrapper">
-                            <label for="parentFirstName" class="contact-form__label">First Name of Parent</label>
-                            <input type="text" id="parentFirstName" class="contact-form__input-field"
-                                name="parentFirstName" placeholder="First Name" required />
+            <div class="contact-form__form-notes-wrapper">
+                <form class="contact-form">
+                    <div class="contact-form__column-wrapper">
+                        <div class="contact-form__first-row">
+                            <div class="contact-form__input-label-wrapper">
+                                <label for="parentFirstName" class="contact-form__label">Parent First Name</label>
+                                <input type="text" id="parentFirstName" class="contact-form__input-field"
+                                    name="parentFirstName" placeholder="First Name" required />
+                            </div>
+                            <div class="contact-form__input-label-wrapper">
+                                <label for="parentLastName" class="contact-form__label">Parent Last Name</label>
+                                <input type="text" id="parentLastName" class="contact-form__input-field"
+                                    name="parentLastName" placeholder="Last Name" required />
+                            </div>
                         </div>
-                        <div class="contact-form__input-label-wrapper">
-                            <label for="parentLastName" class="contact-form__label">Last Name of Parent</label>
-                            <input type="text" id="parentLastName" class="contact-form__input-field"
-                                name="parentLastName" placeholder="Last Name" required />
-                        </div>
-                    </div>
-                    <div class="contact-form__second-row">
-                        <div class="contact-form__input-label-wrapper">
-                            <label for="childFirstName" class="contact-form__label">Child's First Name</label>
-                            <input type="text" id="childFirstName" class="contact-form__input-field"
-                                name="childFirstName" placeholder="First Name" required />
-                        </div>
-                        <div class="contact-form__input-label-wrapper">
-                            <label for="childLastName" class="contact-form__label">Child's Last Name</label>
-                            <input type="text" id="childLastName" class="contact-form__input-field"
-                                name="parentLastName" placeholder="Last Name" required />
-                        </div>
-                    </div>
-                    <div class="contact-form__third-row">
-                        <div class="contact-form__input-label-wrapper parent-email">
-                            <label for="parentEmail" class="contact-form__label">Parent Email</label>
-                            <input type="email" id="parentEmail" class="contact-form__input-field" name="parentEmail"
-                                placeholder="name@email.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required />
-                            <label for="parentEmail" class="contact-form__label-error">Email must be unique</label>
-                        </div>
-                        <div class="contact-form__child-email-age-wrapper">
-                            <div class="contact-form__input-label-wrapper child-email">
-                                <label for="childEmail" class="contact-form__label child-email">Child's Email</label>
-                                <input type="email" id="childEmail" class="contact-form__input-field" name="childEmail"
-                                    placeholder="name@email.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required />
+                        <div class="contact-form__second-row">
+                            <div class="contact-form__input-label-wrapper parent-email">
+                                <label for="parentEmail" class="contact-form__label">Parent Email</label>
+                                <input type="email" id="parentEmail" class="contact-form__input-field"
+                                    name="parentEmail" placeholder="name@email.com"
+                                    pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required />
                                 <label for="parentEmail" class="contact-form__label-error">Email must be unique</label>
                             </div>
-                            <div class="contact-form__input-label-wrapper child-age">
-                                <label for="childAge" class="contact-form__label child-age">Child's Age</label>
-                                <input type="number" id="childAge" class="contact-form__input-field" name="childAge"
-                                    min="8" max="17" placeholder="0" required />
+                            <div class="contact-form__input-label-wrapper">
+                                <label for="childFirstName" class="contact-form__label">Child's First Name</label>
+                                <input type="text" id="childFirstName" class="contact-form__input-field"
+                                    name="childFirstName" placeholder="First Name" required />
+                            </div>
+                        </div>
+                        <div class="contact-form__third-row">
+                            <div class="contact-form__input-label-wrapper">
+                                <label for="childLastName" class="contact-form__label">Child's Last Name</label>
+                                <input type="text" id="childLastName" class="contact-form__input-field"
+                                    name="parentLastName" placeholder="Last Name" required />
+                            </div>
+                            <div class="contact-form__child-email-age-wrapper">
+                                <div class="contact-form__input-label-wrapper child-email">
+                                    <label for="childEmail" class="contact-form__label child-email">Child's
+                                        Email</label>
+                                    <input type="email" id="childEmail" class="contact-form__input-field"
+                                        name="childEmail" placeholder="name@email.com"
+                                        pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required />
+                                    <label for="parentEmail" class="contact-form__label-error">Email must be
+                                        unique</label>
+                                </div>
+                                <div class="contact-form__input-label-wrapper child-age">
+                                    <label for="childAge" class="contact-form__label child-age">Child's Age</label>
+                                    <input type="number" id="childAge" class="contact-form__input-field" name="childAge"
+                                        min="8" max="17" placeholder="0" required />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="contact-form__checkbox-consent-wrapper">
-                    <input type="checkbox" id="checkboxConsent" name="checkboxConsent" value="consent" required />
-                    <label for="checkboxConsent" class="checkbox-consent-label">By checking this box and submitting this
-                        form, you give permission for Aura's TECHWISE study and Castor Connects to send
-                        you an e-mail invitation to the Aura TECHWISE study and acknowledge <a
-                            href="https://www.aura.com/legal/privacy-policy" target="_blank"
-                            aria-label="View Aura's Privacy Policy" rel="noopener noreferrer"><u>Aura's Privacy
-                                Policy</u></a>.</label>
-                </div>
-                <div class="contact-form__submit-wrapper">
-                    <button class="contact-form__submit-button" type="submit" aria-label="Submit Interest Form">
-                        <p>Submit</p>
-                        <img class="aura-cta-icon"
-                            src="https://v.fastcdn.co/u/bff2cbd9/60877781-0-result---2022-02-07T.svg" alt="" />
-                    </button>
-                    <div class="contact-form__loading-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img"
-                            aria-labelledby="formLoadingSvgTitle" aria-describedby="formLoadingSvgDesc">
-                            <title id="formLoadingSvgTitle">Loading Indicator</title>
-                            <desc id="formLoadingSvgDesc">An animation of dots rotating in a circle.</desc>
-                            <linearGradient id="a12">
-                                <stop offset="0" stop-color="#3366FF" stop-opacity="0"></stop>
-                                <stop offset="1" stop-color="#3366FF"></stop>
-                            </linearGradient>
-                            <circle fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round"
-                                stroke-dasharray="0 44 0 44 0 44 0 44 0 360" cx="100" cy="100" r="70"
-                                transform-origin="center">
-                                <animateTransform type="rotate" attributeName="transform" calcMode="discrete" dur="1"
-                                    values="360;324;288;252;216;180;144;108;72;36" repeatCount="indefinite">
-                                </animateTransform>
-                            </circle>
-                        </svg>
+                    <div class="contact-form__checkbox-consent-wrapper">
+                        <input type="checkbox" id="checkboxConsent" name="checkboxConsent" value="consent" required />
+                        <label for="checkboxConsent" class="checkbox-consent-label">By checking this box and submitting
+                            this
+                            form, you give permission for Aura's TECHWISE study and Castor Connects to send
+                            you an e-mail invitation to the Aura TECHWISE study and acknowledge <a
+                                href="https://www.aura.com/legal/privacy-policy" target="_blank"
+                                aria-label="View Aura's Privacy Policy" rel="noopener noreferrer"><u>Aura's Privacy
+                                    Policy</u></a>.</label>
                     </div>
-                    <div class="contact-form__confirmation">
-                        <img class="contact-form__confirmation-check" alt=""
-                            src="https://v.fastcdn.co/u/bff2cbd9/65237276-0-Blue-checkmark.svg" />
-                        <p class="contact-form__confirmation-p">Submission confirmed. Please fill out again for each
-                            additional child.</p>
+                    <div class="contact-form__submit-wrapper">
+                        <button class="contact-form__submit-button" type="submit" aria-label="Submit Interest Form">
+                            <p>Submit</p>
+                            <img class="aura-cta-icon"
+                                src="https://v.fastcdn.co/u/bff2cbd9/60877781-0-result---2022-02-07T.svg" alt="" />
+                        </button>
+                        <div class="contact-form__loading-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img"
+                                aria-labelledby="formLoadingSvgTitle" aria-describedby="formLoadingSvgDesc">
+                                <title id="formLoadingSvgTitle">Loading Indicator</title>
+                                <desc id="formLoadingSvgDesc">An animation of dots rotating in a circle.</desc>
+                                <linearGradient id="a12">
+                                    <stop offset="0" stop-color="#3366FF" stop-opacity="0"></stop>
+                                    <stop offset="1" stop-color="#3366FF"></stop>
+                                </linearGradient>
+                                <circle fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round"
+                                    stroke-dasharray="0 44 0 44 0 44 0 44 0 360" cx="100" cy="100" r="70"
+                                    transform-origin="center">
+                                    <animateTransform type="rotate" attributeName="transform" calcMode="discrete"
+                                        dur="1" values="360;324;288;252;216;180;144;108;72;36" repeatCount="indefinite">
+                                    </animateTransform>
+                                </circle>
+                            </svg>
+                        </div>
+                        <div class="contact-form__confirmation">
+                            <img class="contact-form__confirmation-check" alt=""
+                                src="https://v.fastcdn.co/u/bff2cbd9/65237276-0-Blue-checkmark.svg" />
+                            <p class="contact-form__confirmation-p">Submission confirmed. Check your emails to complete
+                                enrollment.</p>
+                        </div>
+                    </div>
+                </form>
+                <div class="contact-form__notes">
+                    <div class="contact-form__notes--top-right">
+                        <p class="contact-form__notes-heading">Notes</p>
+                        <ul class="contact-form__notes-list">
+                            <li class="contact-form__notes-item">Each participant (parent and child) need a unique email
+                                to enroll.</li>
+                            <li class="contact-form__notes-item">If the child doesn’t have an email, they may enroll
+                                with a parent’s alternate email. It must be different than the one the parent uses to
+                                enroll.</li>
+                            <li class="contact-form__notes-item">If parents wish to enroll multiple children, every
+                                participant must use a different email. For example, to enroll two
+                                children at the same time:</li>
+                            <ul>
+                                <li class="contact-form__notes-item">Submit an interest form for
+                                    <u>parent1@gmail.com</u> and <u>child1@gmail.com</u>.
+                                </li>
+                                <li class="contact-form__notes-item">Submit a second interest form for
+                                    <u>parent2@gmail.com</u> and <u>child2@gmail.com</u>.
+                                </li>
+                            </ul>
+                            <li class="contact-form__notes-item">Check your emails to complete enrollment.</li>
+                        </ul>
+                    </div>
+                    <div class="contact-form__notes--bot-right is-desktop">
+                        <div class="contact-form__questions-container">
+                            <p class="contact-form__questions-title">Have Questions?</p>
+                            <p class="contact-form__questions-p">Contact us at:
+                                <br /><u><a
+                                        href="mailto:auraresearchsupport@aura.com">AuraResearchSupport@aura.com</a></u>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-
     </div>
-
-    <div class="contact-form__questions-container">
-        <p class="contact-form__questions-title">Have Questions?</p>
-        <p class="contact-form__questions-p">Contact us at: <br class="is-mobile" /><u>AuraResearchSupport@aura.com</u>
-        </p>
+    <div class="contact-form__notes--bot-right is-mobile">
+        <div class="contact-form__questions-container">
+            <p class="contact-form__questions-title">Have Questions?</p>
+            <p class="contact-form__questions-p">Contact us at: <br /><u><a
+                        href="mailto:auraresearchsupport@aura.com">AuraResearchSupport@aura.com</a></u>
+            </p>
+        </div>
     </div>
 </div>
 
 <style>
+    #contactForm ul {
+        padding: 0;
+        padding-left: 1rem;
+        margin: 0;
+        list-style-type: "  •  ";
+    }
+
+    .contact-form__notes-list {
+        padding-top: 1rem !important;
+    }
+
     .contact-form {
         display: flex;
         flex-direction: column;
+        padding-right: 2rem;
+        border-right: 1px solid #dde2ed;
+        width: 100%;
+    }
+
+    .contact-form__notes {
+        padding-left: 2rem;
+    }
+
+    .contact-form__notes--top-right {
+        padding-bottom: 4rem;
+        border-bottom: 1px solid #dde2ed;
     }
 
     .contact-form__background-container {
@@ -123,14 +185,28 @@
     }
 
     .contact-form__wrapper {
-        padding: 3.75rem 11.5rem 4rem 11.5rem;
+        padding: 3.75rem 7.0625rem 4rem 4.5625rem;
+    }
+
+    .contact-form__form-notes-wrapper {
+        display: flex;
+    }
+
+    .contact-form__notes-heading {
+        text-align: left;
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    .contact-form__notes-item {
+        text-align: left;
+        margin: 0.5rem 0;
     }
 
     .contact-form__column-wrapper {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin: 0 auto;
     }
 
     .contact-form__first-row,
@@ -139,13 +215,15 @@
         width: 100%;
         display: flex;
         gap: 0.75rem;
+        flex-direction: column;
+        width: 27.5625rem;
     }
 
     .contact-form__top-content {
         text-align: center;
         display: flex;
         flex-direction: column;
-        padding-bottom: 2.5rem;
+        padding-bottom: 3.5rem;
         gap: 0.75rem;
     }
 
@@ -154,11 +232,9 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0.75rem;
-        width: 22.5rem;
     }
 
     .contact-form__input-label-wrapper.parent-email {
-        width: 50%;
         position: relative;
     }
 
@@ -187,17 +263,16 @@
 
     .contact-form__input-label-wrapper.child-email {
         position: relative;
-        width: 70%;
+        width: 75%;
     }
 
     .contact-form__input-label-wrapper.child-age {
-        width: 30%;
+        width: 25%;
     }
 
     .contact-form__child-email-age-wrapper {
         display: flex;
         gap: 0.75rem;
-        width: 50%;
     }
 
     .contact-form__label-error {
@@ -291,7 +366,7 @@
         font-family: 'Basel Grotesk';
         color: #4D4D4D;
         text-align: left;
-
+        width: 10rem;
     }
 
     .contact-form__submit-button:hover {
@@ -302,20 +377,22 @@
     .contact-form__questions-container {
         display: flex;
         justify-content: center;
-        padding-top: 4.5rem;
-        align-items: flex-end;
+        padding-top: 3rem;
         gap: 0.5rem;
+        flex-direction: column;
     }
 
     .contact-form__questions-title {
         font-family: 'Clarendon Graphic';
-        font-size: 2.25rem;
+        font-size: 1.875rem;
+        text-align: left;
     }
 
     .contact-form__questions-p {
         font-family: 'Basel Grotesk';
-        font-size: 1.375rem;
+        font-size: 1.125rem;
         margin-bottom: 0.5rem;
+        text-align: left;
     }
 
     /*Desktop Only Styles*/
@@ -331,8 +408,17 @@
             display: none;
         }
 
+        .contact-form {
+            padding: 0;
+            border: 0;
+        }
+
         .contact-form__background-container {
             border-radius: 1rem;
+        }
+
+        .contact-form__form-notes-wrapper {
+            flex-direction: column-reverse;
         }
 
         .contact-form__wrapper {
@@ -344,11 +430,21 @@
             margin: 0;
         }
 
+        .contact-form__notes {
+            padding: 0;
+        }
+
         .contact-form__first-row,
         .contact-form__second-row,
         .contact-form__third-row {
             flex-direction: column;
             width: 100%;
+        }
+
+        .contact-form__notes--top-right {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #dde2ed;
         }
 
         .contact-form__child-email-age-wrapper {
@@ -371,6 +467,9 @@
 
         .contact-form__top-content {
             gap: 1rem;
+            border-bottom: 1px solid #dde2ed;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
         }
 
         .contact-form__questions-container {
@@ -381,6 +480,7 @@
         .contact-form__questions-title,
         .contact-form__questions-p {
             margin: 0 auto;
+            text-align: center;
         }
 
         .contact-form__questions-title {
@@ -460,8 +560,11 @@
         }
 
         //Extract the emails form the form data, as it's all we need for our POST request
-        const parentEmail = formEntries[4];
+        const parentEmail = formEntries[2];
         const childEmail = formEntries[5];
+
+        console.log('parent',parentEmail)
+        console.log('child',childEmail)
 
         //grabbing relevant DOM elements for styling changes
         const parentEmailElement = document.querySelector(`#parentEmail`);
@@ -495,6 +598,8 @@
             })
         };
 
+        console.log('options', options);
+        
         const postFormData = async () => {
 
             confirmationElement.classList.remove("confirmed-visible"); //Set to none in case this is the second submission.
