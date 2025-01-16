@@ -1,323 +1,377 @@
 <!--How Aura Helps Fraud Victims Accordion Global Block-->
+<!--How Aura Helps Victim Fraud Accordion = HAHVFA-->
+
 <style id="hahvfaAccordionStyles">
-	.accordion-block {
-		background-color: #ffffff;
-		height: auto !important;
-		display: flex !important;
-		justify-content: center !important
-	}
+    
+    #hahvfaAccordionHtml ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
-	.hahvfa-container {
-		display: flex;
-		width: 69.375rem;
-		gap: 2.75rem;
-		padding: 2.5rem 4rem 2.5rem 2.5rem;
-		border-radius: 1.5rem;
-		background: center / cover no-repeat url(https://v.fastcdn.co/u/bff2cbd9/65325072-0-Light-Mobile-Backgro.png);
+    .accordion-block {
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important
+    }
+    
+    .hahvfa-accordion-block {
+        background-color: #ffffff;
+    }
 
-	}
+    .hahvfa-container {
+        display: flex;
+        width: 69.375rem;
+        gap: 2.75rem;
+        padding: 2.5rem 4rem 2.5rem 2.5rem;
+        border-radius: 1.5rem;
+        background: center / cover no-repeat url(https://v.fastcdn.co/u/bff2cbd9/65325072-0-Light-Mobile-Backgro.png);
 
-	.hahvfa-accordion-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-		padding-bottom: 9rem;
-	}
+    }
 
-	.hahvfa-headline {
-		font-family: 'Clarendon Graphic';
-		font-size: 2.25rem;
-		padding-bottom: 1rem;
-	}
+    .hahvfa-accordion-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 4rem 0 6rem 0;
+    }
 
-	.hahvfa-subheadline {
-		font-family: 'Basel Grotesk';
-		font-size: 1.125rem;
-		padding-bottom: 2rem;
-	}
+    .hahvfa-headline {
+        font-family: 'Clarendon Graphic';
+        font-size: 2.25rem;
+        padding-bottom: 1rem;
+    }
 
-	.hahvfa-accordion {
-		max-width: 69.375rem;
-		padding-bottom: 2.5rem;
-	}
+    .hahvfa-subheadline {
+        font-family: 'Basel Grotesk';
+        font-size: 1.125rem;
+        padding-bottom: 2rem;
+    }
 
-	.hahvfa-accordion__list-item {
-		border-bottom: 1px solid black;
-		padding-bottom: 1rem;
-	}
+    .hahvfa-accordion {
+        max-width: 69.375rem;
+        padding-bottom: 2.5rem;
+    }
 
-	.hahvfa-accordion__list-item:hover {
-		cursor: pointer;
-	}
+    .hahvfa-accordion__list-item {
+        border-bottom: 1px solid black;
+        padding-bottom: 1rem;
+    }
 
-	.hahvfa-accordion__list-item:hover>.hahvfa-accordion__permanent-block {
-		padding-left: 1rem;
-	}
+    .hahvfa-accordion__list-item:hover {
+        cursor: pointer;
+    }
+
+    /* .hahvfa-accordion__list-item:hover>.hahvfa-accordion__permanent-block {
+        padding-left: 1rem;
+    } */
 
 
-	.hahvfa-accordion__permanent-block {
-		padding-top: 1rem;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		transition: padding-left 0.2s linear;
-	}
+    .hahvfa-accordion__permanent-block {
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: padding-left 0.2s linear;
+    }
 
-	.hahvfa-accordion__expand-block {
-		max-height: 0px;
-		overflow: hidden;
-		transition: max-height 0.3s ease-out;
-		/* height: 100%; */
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: stretch;
-		justify-content: left;
-		gap: 2rem;
-	}
+    .hahvfa-accordion__expand-block {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /* height: 100%; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
 
-	.hahvfa-accordion__question {
-		font-size: 1.375rem;
-	}
+    .hahvfa-accordion__question {
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
 
-	.hahvfa-accordion__answer {
-		padding-top: 1rem;
-	}
+    .hahvfa-accordion__answer {
+        padding-top: 1rem;
+    }
 
-	.hahvfa-accordion__plus-minus {
-		height: 1.5rem;
-		width: 1.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+    .hahvfa-accordion__plus-minus {
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-	.hahvfa-accordion__svg-vertical-line {
-		transition: opacity 200ms ease-out;
-	}
+    .hahvfa-accordion__svg-vertical-line {
+        transition: opacity 200ms ease-out;
+    }
 
-	.hahvfa-accordion__plus-minus.is-open .hahvfa-accordion__svg-vertical-line {
-		opacity: 0%;
-	}
+    .hahvfa-accordion__plus-minus.is-open .hahvfa-accordion__svg-vertical-line {
+        opacity: 0%;
+    }
 
-	.hahvfa-img {
-		width: 30.625rem;
-		height: 35.3125rem;
-	}
+    .hahvfa-img {
+        width: 30.625rem;
+        height: 35.3125rem;
+    }
 
-	.hahvfa-button {
-		padding: 0;
-		margin: 0;
-		border: unset;
-		background-color: transparent;
-	}
+    .hahvfa-button {
+        padding: 0;
+        margin: 0;
+        border: unset;
+        background-color: transparent;
+    }
 
-	.hahvfa-button a {
-		height: 3.9375rem;
-		width: 19.0625rem;
-	}
+    .hahvfa-button a {
+        height: 3.9375rem;
+        width: 19.0625rem;
+    }
 
-	/*Mobile Styles*/
-	@media (max-width: 767px) {
-		.hahvfa-accordion-container {
-			padding-bottom: 4rem;
-		}
+    /*Mobile Styles*/
+    @media (max-width: 767px) {
+        .hahvfa-accordion-container {
+            padding: 2rem 2.5rem 4rem 2.5rem;
+        }
+        
+        .hahvfa-container {            
+            flex-direction: column-reverse;
+            align-items: center;
+            width: auto;
+            background: center / cover no-repeat url(https://v.fastcdn.co/u/bff2cbd9/65336014-0-Light-Blue-Gradient-.png);
+            padding: 2rem 1.5rem;
+        }
 
-		.hahvfa-accordion__alignment {
-			padding: 0 2.5rem;
-		}
+        .hahvfa-accordion__alignment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 2.5rem;
+        }
 
-		.hahvfa-headline {
-			text-align: center;
-			font-size: 1.875rem;
-			padding-bottom: 0;
-		}
+        .hahvfa-headline {
+            text-align: left;
+            font-size: 1.375rem;
+            padding-bottom: 1rem;
+            font-family: "Basel Grotesk";
+        }
 
-		.hahvfa-accordion__question {
-			font-size: 1.125rem;
-			padding-top: 1.5rem;
-		}
+        .hahvfa-subheadline {
+            padding-bottom: 1rem;
+            font-size: 0.875rem;
+        }
 
-		.hahvfa-accordion__answer {
-			padding-top: 1.5rem;
-		}
+        .hahvfa-accordion__question {
+            font-size: 1.125rem;
+            padding-top: 1.5rem;
+        }
 
-		.hahvfa-accordion__permanent-block {
-			padding-top: 1.5rem;
-			align-items: flex-end;
-		}
+        .hahvfa-accordion__answer {
+            padding-top: 1.5rem;
+        }
 
-		.hahvfa-accordion__plus-minus {
-			height: 1.5rem;
-			width: 1.5rem;
-		}
+        .hahvfa-accordion__permanent-block {
+            padding-top: 0;
+            align-items: flex-end;
+        }
 
-		.hahvfa-accordion__svg-icon {
-			height: 1.5rem;
-			width: 1.5rem;
-		}
-	}
+        .hahvfa-accordion__plus-minus {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .hahvfa-accordion__svg-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .hahvfa-img {
+            width: 100%;
+            height: 100%;
+        }
+    }
 </style>
 
 <!--HTML that will be inserted into the InstaPage <section> element-->
-<!--How Aura Helps Victim Fraud Accordion = HAHVFA-->
 <div id="hahvfaAccordionHtml" class="hahvfa-accordion-container">
-	<div class="hahvfa-container">
-		<img class="hahvfa-img" alt="Call center agent talking on headset" src="https://v.fastcdn.co/u/bff2cbd9/65312558-0-Woman-working-from-h.png"/>
-		<div class="hahvfa-accordion__alignment">
-			<h2 class="hahvfa-headline">How Aura Helps When You’re a Victim of Fraud</h2>
-			<p class="hahvfa-subheadline">With experience in resolving thousands of fraud cases, see why our Expert Fraud Remediation team are like the special
-			forces of identity theft and fraud resolution.</p>
-			<div class="hahvfa-accordion">
-				<div role="list" class="hahvfa-accordion__list">
-					<div role="listitem" class="hahvfa-accordion__list-item">
-						<div role="button" class="hahvfa-accordion__permanent-block">
-							<div class="hahvfa-accordion__question">Dedicated & Expert Help</div>
-							<div class="hahvfa-accordion__plus-minus">
-								<svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
-									height="32" viewBox="0 0 32 32" fill="none">
-									<path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-									<path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								</svg>
-							</div>
-						</div>
-						<div class="hahvfa-accordion__expand-block">
-							<div class="hahvfa-accordion__answer">Following a fraud incident, you are assigned a dedicated agent to closely work with you and understand your situation.</div>
-						</div>
-					</div>
-					<div role="listitem" class="hahvfa-accordion__list-item">
-						<div role="button" class="hahvfa-accordion__permanent-block">
-							<div class="hahvfa-accordion__question">Personalized Recovery Plan</div>
-							<div class="hahvfa-accordion__plus-minus">
-								<svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
-									height="32" viewBox="0 0 32 32" fill="none">
-									<path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-									<path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								</svg>
-							</div>
-						</div>
-						<div class="hahvfa-accordion__expand-block">
-							<div class="hahvfa-accordion__answer">Our agents will create a personalized recovery plan and help you navigate government agencies, creditors, and more.</div>
-						</div>
-					</div>
-					<div role="listitem" class="hahvfa-accordion__list-item">
-						<div role="button" class="hahvfa-accordion__permanent-block">
-							<div class="hahvfa-accordion__question">Active Guidance</div>
-							<div class="hahvfa-accordion__plus-minus">
-								<svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
-									height="32" viewBox="0 0 32 32" fill="none">
-									<path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-									<path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								</svg>
-							</div>
-						</div>
-						<div class="hahvfa-accordion__expand-block">
-							<div class="hahvfa-accordion__answer">Our agents will go the extra mile and call government agencies on your behalf, set up 3-way calls betweeen you and your financial institutions, and make light work of complicated forms.</div>
-						</div>
-					</div>
-					<div role="listitem" class="hahvfa-accordion__list-item">
-						<div role="button" class="hahvfa-accordion__permanent-block">
-							<div class="hahvfa-accordion__question">Thorough Fraud Resolution</div>
-							<div class="hahvfa-accordion__plus-minus">
-								<svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
-									height="32" viewBox="0 0 32 32" fill="none">
-									<path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-									<path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#000000"
-										stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								</svg>
-							</div>
-						</div>
-						<div class="hahvfa-accordion__expand-block">
-							<div class="hahvfa-accordion__answer">After your fraud incident has been resolved, our agents will continue to monitor your accounts for 90 days to ensure no new threats arise.</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<button class="hahvfa-button">
-				<a class="aura-cta btn">Get Protection Now</a>
-			</button>
-		</div>
-	</div>
+    <div class="hahvfa-container">
+        <picture>
+            <source media="(min-width: 768px)" srcset="https://v.fastcdn.co/u/bff2cbd9/65312558-0-Woman-working-from-h.png">
+            <img class="hahvfa-img" src="https://v.fastcdn.co/u/bff2cbd9/65335979-0-Woman-working-from-h.png" alt="Woman working from home using headset">
+        </picture>
+        <div class="hahvfa-accordion__alignment">
+            <h2 class="hahvfa-headline">How Aura Helps When You’re a Victim of Fraud</h2>
+            <p class="hahvfa-subheadline">With experience in resolving thousands of fraud cases, see why our Expert
+                Fraud Remediation team are like the special
+                forces of identity theft and fraud resolution.</p>
+            <div class="hahvfa-accordion">
+                <ul role="list" class="hahvfa-accordion__list">
+                    <li role="listitem" class="hahvfa-accordion__list-item">
+                        <div role="button" class="hahvfa-accordion__permanent-block">
+                            <div class="hahvfa-accordion__question">Dedicated & Expert Help</div>
+                            <div class="hahvfa-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hahvfa-accordion__expand-block">
+                            <div class="hahvfa-accordion__answer">Following a fraud incident, you are assigned a
+                                dedicated agent to closely work with you and understand your situation.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="hahvfa-accordion__list-item">
+                        <div role="button" class="hahvfa-accordion__permanent-block">
+                            <div class="hahvfa-accordion__question">Personalized Recovery Plan</div>
+                            <div class="hahvfa-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hahvfa-accordion__expand-block">
+                            <div class="hahvfa-accordion__answer">Our agents will create a personalized recovery plan
+                                and help you navigate government agencies, creditors, and more.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="hahvfa-accordion__list-item">
+                        <div role="button" class="hahvfa-accordion__permanent-block">
+                            <div class="hahvfa-accordion__question">Active Guidance</div>
+                            <div class="hahvfa-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hahvfa-accordion__expand-block">
+                            <div class="hahvfa-accordion__answer">Our agents will go the extra mile and call government
+                                agencies on your behalf, set up 3-way calls betweeen you and your financial
+                                institutions, and make light work of complicated forms.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="hahvfa-accordion__list-item">
+                        <div role="button" class="hahvfa-accordion__permanent-block">
+                            <div class="hahvfa-accordion__question">Thorough Fraud Resolution</div>
+                            <div class="hahvfa-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="hahvfa-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="hahvfa-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="hahvfa-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="hahvfa-accordion__expand-block">
+                            <div class="hahvfa-accordion__answer">After your fraud incident has been resolved, our
+                                agents will continue to monitor your accounts for 90 days to ensure no new threats
+                                arise.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="hahvfa-button">
+                <a class="aura-cta btn">Get Protection Now</a>
+            </button>
+        </div>
+    </div>
 </div>
 
 <!--hahvfa Accordion Script -->
 <script data-cfasync="false">
-	
-	const createHahvfaAccordion = () => {
-		//Grab the HTML Element/Object that this script is currently running in
-		const currentScript = document.currentScript;
-	
-		//Loop through parent elements in ascending order until IP's section element is found
-		let isSectionBlock = false;
-		let currentElementToCheck = currentScript.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
-	
-		while (!isSectionBlock) {
-			if (currentElementToCheck.nodeName === "SECTION") {
-				isSectionBlock = true;
-			} else {
-				currentElementToCheck = currentElementToCheck.parentElement;
-			}
-		}
-		
-		//Apply stylings via CSS
-		currentElementToCheck.classList.add('accordion-block');
-		
-		//Grab HTML & Style elements
-		const accordionHTML = document.querySelector("#hahvfaAccordionHtml");
-		const accordionStyles = document.querySelector("#hahvfaAccordionStyles");
 
-		//Overwrite current HTML
-		currentElementToCheck.innerHTML = '';
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptHahvfa = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
 
-		//Insert HTML & Styles into block
-		currentElementToCheck.appendChild(accordionHTML);
-		currentElementToCheck.appendChild(accordionStyles);
+    const createHahvfaAccordion = () => { //EDIT: Update function name in all locations for each new accordion.
 
-		//Add accordion functionality. Must be after HTML is inserted.
-		const hahvfaListItemArray = document.querySelectorAll('.hahvfa-accordion__list-item');
-		const hahvfaBlocksToExpandArray = document.querySelectorAll('.hahvfa-accordion__expand-block');
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptHahvfa.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
 
-		hahvfaListItemArray.forEach((toggle, index) => {
-			toggle.setAttribute('tabindex', '0');
-			// toggle.addEventListener('keydown', setFocusToIndividualCta);
-			let accordionContent = hahvfaBlocksToExpandArray[index];
-			let buttonArrow = toggle.querySelector('.hahvfa-accordion__plus-minus');
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
 
-			let handleToggle = () => {
-				toggle.classList.toggle('is-open');
-				accordionContent.classList.toggle('is-open');
-				buttonArrow.classList.toggle('is-open');
+        //Apply stylings via CSS
+        currentElementToCheck.classList.add('accordion-block');
+        currentElementToCheck.classList.add('hahvfa-accordion-block'); //EDIT: Update classlist name for each new accordion.
 
-				if (accordionContent.style.maxHeight) {
-					accordionContent.style.maxHeight = null;
-				} else {
-					accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-				}
-			}
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#hahvfaAccordionHtml");
+        const accordionStyles = document.querySelector("#hahvfaAccordionStyles");
 
-			toggle.addEventListener('click', (event) => {
-				handleToggle();
-			});
-			toggle.addEventListener('keydown', (event) => {
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = '';
 
-				const { key, which } = event;
-				const keysToMatch = ["Enter", " "];
-				const whichCodesToMatch = [32, 13];
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
 
-				if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
-					handleToggle();
-				}
-			});
-		});
-	}
+        //Add accordion functionality. Must be after HTML is inserted.
+        const hahvfaListItemArray = document.querySelectorAll('.hahvfa-accordion__list-item');
+        const hahvfaBlocksToExpandArray = document.querySelectorAll('.hahvfa-accordion__expand-block');
 
-	document.addEventListener("DOMContentLoaded", createHahvfaAccordion);
+        hahvfaListItemArray.forEach((toggle, index) => {
+            toggle.setAttribute('tabindex', '0');
+            // toggle.addEventListener('keydown', setFocusToIndividualCta);
+            let accordionContent = hahvfaBlocksToExpandArray[index];
+            let buttonArrow = toggle.querySelector('.hahvfa-accordion__plus-minus');
+
+            let handleToggle = () => {
+                toggle.classList.toggle('is-open');
+                accordionContent.classList.toggle('is-open');
+                buttonArrow.classList.toggle('is-open');
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            toggle.addEventListener('click', (event) => {
+                handleToggle();
+            });
+            toggle.addEventListener('keydown', (event) => {
+
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    handleToggle();
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", createHahvfaAccordion);
 </script>

@@ -1,0 +1,428 @@
+<!--Aura's Recovery Plan Checklist Accordion Global Block-->
+<!--Aura's Recovery Plan Checklist Accordion = arpc-->
+
+<style id="arpcAccordionStyles">
+
+    #arpcAccordionHtml ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .accordion-block {
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important
+    }
+    
+    .arpc-accordion-block {
+        background-color: #161616;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .arpc-container {
+        display: flex;
+        width: 69.375rem;
+        gap: 4rem;
+        padding: 2.5rem 4rem 2.5rem 2.5rem;
+    }
+
+    .arpc-accordion-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 9rem;
+    }
+
+    .arpc-headline {
+        font-family: 'Clarendon Graphic';
+        font-size: 2.25rem;
+        padding-bottom: 1rem;
+        color: #ffffff;
+    }
+    
+    .arpc-subheadline {
+        font-family: 'Basel Grotesk';
+        font-size: 1.125rem;
+        padding-bottom: 2rem;
+        color: #ffffff;
+    }
+
+    .arpc-headline-wrapper {
+        width: 45.625rem;
+        text-align: center;
+        padding-top: 6.5rem;
+    }
+
+    .arpc-accordion {
+        max-width: 69.375rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .arpc-accordion__list-item {
+        border-bottom: 1px solid #888888;
+        padding-bottom: 1rem;
+        color: #888888;
+    }
+    
+    .arpc-accordion__list-item:hover {
+        cursor: pointer;
+        color: #ffffff;
+        transition: color 0.2s linear;
+    }
+
+    .arpc-accordion__list-item.is-open {
+        color: #ffffff;
+    }
+
+    /* .arpc-accordion__list-item:hover>.arpc-accordion__permanent-block {
+        padding-left: 1rem;
+    } */
+
+
+    .arpc-accordion__permanent-block {
+        padding-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: padding-left 0.2s linear;
+    }
+
+    .arpc-accordion__expand-block {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /* height: 100%; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
+
+    .arpc-accordion__question {
+        font-size: 1.75rem;
+    }
+
+    .arpc-accordion__answer {
+        padding-top: 1rem;
+        font-size: 1.125rem;
+    }
+
+    .arpc-accordion__plus-minus {
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arpc-accordion__svg-vertical-line {
+        transition: opacity 200ms ease-out;
+    }
+
+    .arpc-accordion__plus-minus.is-open .arpc-accordion__svg-vertical-line {
+        opacity: 0%;
+    }
+
+    .arpc-img {
+        width: 30.625rem;
+        height: 35.3125rem;
+    }
+
+    .arpc-button {
+        padding: 0;
+        margin: 0;
+        border: unset;
+        background-color: transparent;
+    }
+
+    .arpc-button a {
+        height: 3.9375rem;
+        width: 19.0625rem;
+    }
+
+    /*Mobile Styles*/
+    @media (max-width: 767px) {
+        .arpc-accordion-container {
+            padding: 0;
+        }
+
+        .arpc-container {
+            flex-direction: column-reverse;
+            align-items: center;
+            width: auto;
+            padding: 2.5rem 0 4rem 0;
+        }
+
+        .arpc-accordion__alignment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        .arpc-headline {
+            text-align: center;
+            font-size: 1.875rem;
+            padding: 0 2rem;
+        }
+
+        .arpc-subheadline {
+            padding: 0 2rem;
+        }
+
+        .arpc-headline-wrapper {
+            width: 100%;
+            text-align: center;
+            padding:  2rem 0;
+        }
+
+        .arpc-accordion__question {
+            font-size: 1.125rem;
+            padding-top: 1.5rem;
+        }
+
+        .arpc-accordion__answer {
+            padding: 1.5rem 1.5rem 0 1.5rem;
+        }
+
+        .arpc-accordion__permanent-block {
+            padding: 0 1.5rem;
+            align-items: flex-end;
+        }
+
+        .arpc-accordion__plus-minus {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .arpc-accordion__svg-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .arpc-img {
+            width: 19.6875rem;
+            height: 19.6875rem;
+        }
+
+    }
+</style>
+
+<!--HTML that will be inserted into the InstaPage <section> element-->
+<div id="arpcAccordionHtml" class="arpc-accordion-container">
+    <div class="arpc-headline-wrapper">
+        <h2 class="arpc-headline">Aura’s Recovery Plan Checklist</h2>
+        <p class="arpc-subheadline">If you’ve been a victim of identity theft, see how our Expert Fraud Remediation team will work with you to create a personalized recovery plan.</p>
+    </div>
+    <div class="arpc-container">
+        <div class="arpc-accordion__alignment">
+            <div class="arpc-accordion">
+                <ul role="list" class="arpc-accordion__list">
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">1. Report identity theft</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Aura records the specifics of your case and guides you through steps like changing passwords or securing bank accounts to prevent further unauthorized access.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">2. Lock your credit profiles</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Lock your Experian credit file with a single tap inside Aura’s app. Also, receive assistance to place a credit freeze with other major credit bureaus.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">3. Flag fraudulent transactions</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Identify and dispute any unauthorized charges on your accounts. Aura can liaise with banks and lenders to help reverse fraudulent changes or close new accounts.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">4. Identity restoration and recovery</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Lean on Aura to help report losses with the right financial institutions, reclaims lsot funds, and rebuild your credit after any type of identity theft.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">5.Insurance for eligible losses</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Aura offers up to $1 million per adult (up to $5 million total with the Family plan) as insurance for out-of-pocket expenses incurred due to identtity theft - legal fees, travel expenses, or Certified Public Accountant costs.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="arpc-accordion__list-item">
+                        <div role="button" class="arpc-accordion__permanent-block">
+                            <div class="arpc-accordion__question">6. Ongoing conitnuous monitoring</div>
+                            <div class="arpc-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="arpc-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="arpc-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="arpc-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#888888" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="arpc-accordion__expand-block">
+                            <div class="arpc-accordion__answer">Receive alerts for any changes to your credit file, suspicious use of your sensitive information, or if your Social Security number (SSN) is found on the Dark Web.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="arpc-button">
+                <a class="aura-cta btn">Get Protection Now</a>
+            </button>
+        </div>
+        <picture>
+            <source media="(min-width: 768px)" srcset="https://v.fastcdn.co/u/bff2cbd9/65334361-0-Financial-Fraud-Prot.png">
+            <img class="arpc-img" alt="Call center agent talking on headset"
+                src="https://v.fastcdn.co/u/bff2cbd9/65336088-0-Alex-1-Critical-Aler.png" />
+        </picture>
+    </div>
+</div>
+
+<!--arpc Accordion Script -->
+<script data-cfasync="false">
+
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptarpc = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const createarpcAccordion = () => { //EDIT: Update function name in all locations for each new accordion.
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptarpc.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
+
+        //Apply stylings via CSS
+        currentElementToCheck.classList.add('accordion-block');
+        currentElementToCheck.classList.add('arpc-accordion-block'); //EDIT: Update classlist name for each new accordion.
+
+
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#arpcAccordionHtml");
+        const accordionStyles = document.querySelector("#arpcAccordionStyles");
+
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = '';
+
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
+
+        //Add accordion functionality. Must be after HTML is inserted.
+        const arpcListItemArray = document.querySelectorAll('.arpc-accordion__list-item');
+        const arpcBlocksToExpandArray = document.querySelectorAll('.arpc-accordion__expand-block');
+
+        arpcListItemArray.forEach((toggle, index) => {
+            toggle.setAttribute('tabindex', '0');
+            // toggle.addEventListener('keydown', setFocusToIndividualCta);
+            let accordionContent = arpcBlocksToExpandArray[index];
+            let buttonArrow = toggle.querySelector('.arpc-accordion__plus-minus');
+
+            let handleToggle = () => {
+                toggle.classList.toggle('is-open');
+                accordionContent.classList.toggle('is-open');
+                buttonArrow.classList.toggle('is-open');
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            toggle.addEventListener('click', (event) => {
+                handleToggle();
+            });
+            toggle.addEventListener('keydown', (event) => {
+
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    handleToggle();
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", createarpcAccordion);
+</script>
