@@ -1,3 +1,4 @@
+<!--GB Name: Aura Credit Monitoring Chart-->
 <div class="acmt">
     <div class="acmt__table-wrapper">
         <div class="acmt__row-groups is-desktop">
@@ -21,16 +22,20 @@
         <table class="aura-credit-monitoring-table">
             <tbody class="acmt__table-body">
                 <tr class="acmt__header-row">
-                    <th class="acmt__table-header">
+                    <th class="acmt__table-header" scope="col">
                         <div>
-                            <svg class="acmt__logo" alt="Black Aura Logo" role="img" xmlns="http://www.w3.org/2000/svg" width="142" height="44" viewBox="0 0 142 44" fill="none">
+                            <svg class="acmt__logo" alt="Black Aura Logo" role="img" xmlns="http://www.w3.org/2000/svg"
+                                width="142" height="44" viewBox="0 0 142 44" fill="none">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M6.61369 0H25.5519V4.3403H6.61369V0ZM61.5103 34.2066C62.0164 33.0974 62.2729 31.897 62.2729 30.6389V13.0044H66.818V30.6389C66.818 34.3029 65.307 37.6899 62.5628 40.1761C61.2445 41.3707 59.7034 42.3047 57.9823 42.9521C56.2309 43.611 54.3647 43.945 52.4355 43.945C50.5061 43.945 48.6401 43.611 46.8887 42.9521C45.1676 42.3047 43.6265 41.3707 42.3082 40.1761C39.5642 37.6897 38.0529 34.3029 38.0529 30.6389V13.0207H42.5981V30.6389C42.5981 31.897 42.8546 33.0974 43.3607 34.2066C43.8457 35.2698 44.5441 36.2188 45.4368 37.0276C47.2708 38.6894 49.7564 39.6047 52.4355 39.6047C55.1146 39.6047 57.6002 38.6894 59.4342 37.0276C60.3269 36.2188 61.0253 35.2698 61.5103 34.2066ZM82.7465 43.4029V32.94H94.4493L100.02 43.4029H105.119L98.5092 30.9882C98.9191 30.6995 99.308 30.3816 99.6742 30.0352C100.639 29.1229 101.396 28.0605 101.927 26.8774C102.479 25.6469 102.759 24.3415 102.759 22.9977C102.759 21.6546 102.48 20.3483 101.928 19.1151C101.398 17.9294 100.641 16.8638 99.6792 15.9477C98.7176 15.0324 97.5996 14.313 96.3562 13.8093C95.0646 13.286 93.697 13.0208 92.292 13.0208H78.2013V43.4029H82.7465ZM82.7465 17.3613H92.292C93.8616 17.3613 95.3455 17.9511 96.4704 19.0219C97.5947 20.0921 98.2138 21.5041 98.2138 22.9979C98.2138 24.487 97.5964 25.8912 96.4755 26.9518C95.3522 28.0145 93.8664 28.5997 92.292 28.5997H82.7465V17.3613ZM116.378 43.4029L125.916 19.5624L135.455 43.4029H140.321L128.165 13.021H123.668L111.512 43.4029H116.378ZM13.8251 13.021L1.66946 43.4029H6.53512L16.0735 19.5624L25.612 43.4029H30.4777L18.3219 13.021H13.8251Z"
                                     fill="#161616" />
                             </svg>
                         </div>
                     </th>
-                    <th class="acmt__table-header"><p class="other-digital-security-p">Other Digital Security Providers<p></th>
+                    <th class="acmt__table-header" scope="col">
+                        <p class="other-digital-security-p">Other Digital Security Providers
+                        <p>
+                    </th>
                 </tr>
                 <tr class="acmt__row">
                     <td class="acmt__data-cell aura-column top-cell">
@@ -292,6 +297,8 @@
     .acmt__data-cell.other-column .acmt__p {
         width: 17.5rem;
         font-size: 1.125rem;
+        font-weight: 400;
+        line-height: 1.8125rem;
     }
 
     .acmt__checkmark {
@@ -342,8 +349,8 @@
         display: flex;
         flex-direction: column;
         align-self: flex-end;
-        padding-bottom: 1.8rem;
-        gap: 1.25rem;
+        padding-bottom: 1.2rem;
+        gap: 1.625rem;
     }
 
     .acmt__row-groups .acmt__group-title-wrapper:nth-child(1) {
@@ -369,7 +376,7 @@
     .acmt__row:nth-of-type(5) .other-column {
         height: 9.25rem;
     }
-    
+
     .acmt__row:nth-of-type(8) .aura-column,
     .acmt__row:nth-of-type(8) .other-column {
         height: 6.6875rem;
@@ -431,7 +438,9 @@
             border-bottom-left-radius: 0;
         }
 
-        .acmt__data-cell.aura-column, .acmt__data-cell.other-column, .acmt__table-header {
+        .acmt__data-cell.aura-column,
+        .acmt__data-cell.other-column,
+        .acmt__table-header {
             width: 10.5625rem !important;
         }
 
@@ -443,6 +452,8 @@
         .acmt__data-cell.other-column .acmt__p {
             font-size: 0.75rem;
             width: 6.5625rem;
+            line-height: 1.125rem;
+
         }
 
         .acmt__row:nth-of-type(2) .aura-column,
@@ -474,7 +485,7 @@
         .acmt__row:nth-of-type(7) .other-column {
             height: 8.625rem;
         }
-        
+
         .acmt__row:nth-of-type(8) .aura-column,
         .acmt__row:nth-of-type(8) .other-column {
             height: 7.5rem;
