@@ -100,7 +100,8 @@
                                 d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
                                 clip-rule="evenodd" fill="#ffffff" fill-rule="evenodd"></path>
                         </svg>
-                        <p class="wiac__p">Protects up to 5 adults and unlimited kids, even outside your home (only with our best plan)</p>
+                        <p class="wiac__p">Protects up to 5 adults and unlimited kids, even outside your home (only with
+                            our best plan)</p>
                     </td>
                     <td class="wiac__data-cell other-column"><svg class="wiac__checkmark" alt="Not included"
                             xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -119,7 +120,8 @@
                                 d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
                                 clip-rule="evenodd" fill="#ffffff" fill-rule="evenodd"></path>
                         </svg>
-                        <p class="wiac__p">All-in-one protection starting at $9.99<span role="img" aria-label="month">/mo</span></p>
+                        <p class="wiac__p">All-in-one protection starting at $9<span
+                                class="optional-cent-text">.99</span><span role="img" aria-label="month">/mo</span></p>
                     </td>
                     <td class="wiac__data-cell other-column"><svg class="wiac__checkmark" alt="Not included"
                             xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -138,7 +140,8 @@
                                 d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
                                 clip-rule="evenodd" fill="#ffffff" fill-rule="evenodd"></path>
                         </svg>
-                        <p class="wiac__p">All plans come with $1M insurance to cover eligible losses due to identity theft*</p>
+                        <p class="wiac__p">All plans come with $1M insurance to cover eligible losses due to identity
+                            theft*</p>
                     </td>
                     <td class="wiac__data-cell other-column"><svg class="wiac__checkmark" alt="Not included"
                             xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
@@ -177,7 +180,7 @@
 </div>
 
 <style>
-    table {
+    .aura-credit-monitoring-table {
         border-spacing: 1.875rem 0;
     }
 
@@ -240,7 +243,7 @@
 
     .wiac__p {
         font-size: 1.375rem;
-        font-weight:400;
+        font-weight: 400;
     }
 
     .wiac__data-cell.aura-column {
@@ -300,7 +303,7 @@
         font-family: "Basel Grotesk";
         font-weight: 400;
         text-align: left;
-        width: 7.25rem;
+        width: 7rem;
     }
 
     .wiac__black-line {
@@ -471,6 +474,32 @@
         .wiac__button {
             margin-top: 2.0625rem;
             width: 22.3125rem;
+            height: 3.6875rem;
         }
     }
 </style>
+
+<!-- Script to update plan price based on what is shown in plan cards -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const indvidualPlanPrice = document.querySelector("#planPriceIndividual");
+        const chartPriceElement = document.querySelector(".optional-cent-text");
+
+        //Create a mutation observer object that takes two arguments: the element we're listening to, and an array-like object of the available changes
+        const observer = new MutationObserver((mutationsList, observer) => {
+            //MutationList elemenet is actually an HTML element object ("node") and we need to extract the element here, called a mutation
+            for (const mutation of mutationsList) {
+                //If the mutation is the correct type and the correct target, proceed. Basically we're double-checking we've received the right target.
+                if (mutation.type === "childList" && mutation.target === indvidualPlanPrice) {
+                    chartPriceElement.innerText = indvidualPlanPrice.querySelector(".cent-text") ? '.99' : null;
+
+                    //We won't need this again, so disconnect to avoid trouble in the future.
+                    observer.disconnect();
+                }
+            }
+        });
+
+        //Listening for the childList mutation here, as the page script updates the .99/mo which is a child of our planPriceIndividual element
+        observer.observe(indvidualPlanPrice, { childList: true })
+    });
+</script>
