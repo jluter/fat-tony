@@ -1,0 +1,436 @@
+<!--GB Name: Single Plan Card - Parental Controls-->
+<style>
+    /* PLAN CARD STYLES */
+    #singlePlanCard {
+        width: 45.1875rem;
+        margin: 0 auto;
+    }
+
+    .plan-card__u-list {
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+
+    .plan-card__topper-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .plan-card__title {
+        font-family: "Basel Grotesk";
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
+
+    .plan-card__title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .plan-card__price-and-button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0 2rem 0;
+        border-bottom: 1px solid #161616;
+    }
+
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+        padding: 2rem 2rem 0 2rem;
+        background-color: #ffffff;
+        border: 2px solid rgba(29, 47, 80, 0);
+        border-radius: 1rem;
+    }
+
+    .plan-card__list-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card__plan-name,
+    .plan-card__feature-header {
+        font-size: 1.375rem;
+    }
+
+    .plan-card__plan-name {
+        display: flex;
+    }
+
+    .plan-card__name-ss {
+        font-size: 1rem;
+        color: rgba(37, 81, 184, 1);
+    }
+
+    .plan-card__feature-header {
+        max-width: 22ch;
+    }
+
+    .plan-card__sub-feature-p {
+        color: #4c5570;
+        font-size: 0.875rem;
+        max-width: 50%;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card__discount-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        background-color: #d2ffaf;
+        border-radius: 9999rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card__discount-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Button */
+    .plan-card__button {
+        width: 17.375rem;
+        height: 3.9375rem;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card__price-wrapper,
+    .plan-card__feature-content-wrapper {
+        text-align: left;
+    }
+
+    .plan-card__price-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card__price-text {
+        font-size: 2.25rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card__mo-span {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card Text */
+    .plan-card__feature-text {
+        font-size: 1rem;
+    }
+
+    .plan-card__feature-text--new {
+        padding: 0.1rem 0.65rem;
+        background-color: #d2ffaf;
+        border-radius: 9999rem;
+        font-size: 0.75rem;
+        margin-left: 0.75rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card__feature-wrapper,
+    .plan-card__feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card__feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card__feature-wrapper {
+        align-items: start;
+        padding: 0.25rem 0;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card__checkmark {
+        background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    .plan-card__feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 1rem;
+    }
+
+    .plan-card__feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .plan-card__feature-block:nth-of-type(2) {
+        border-top: 1px solid #EBEBEB;
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+    .plan-card__feature-text {
+        max-width: 29ch;
+    }
+
+    .plan-card__circle-badge {
+        width: 7.375rem;
+    }
+
+    .plan-card__badge {
+        position: absolute;
+        top: -3rem;
+        right: 9.5rem;
+        width: 7.75rem;
+        height: 7.75rem;
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+
+        #singlePlanCard {
+            width: 22.5rem;
+        }
+
+        .plan-card {
+            padding: 2rem 1.5rem 0 1.5rem;
+            gap: 0;
+        }
+
+        .plan-card__u-list {
+            width: unset;
+        }
+
+        .plan-card__title-wrapper {
+            gap: 0;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .plan-card__price-and-button-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .plan-card__price-wrapper {
+            gap: 1rem;
+        }
+
+        .plan-card__feature-header {
+            font-size: 1.15rem;
+        }
+
+        .plan-card__list-wrapper {
+            flex-direction: column;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card__button {
+            width: 100%;
+            height: 3.438rem;
+            font-size: 1.375rem !important;
+        }
+
+        .plan-card__checkmark {
+            height: 1rem;
+            width: 1rem;
+            margin-top: 0.1rem;
+        }
+
+        .plan-card__ribbon,
+        .plan-card__discount-text {
+            font-size: 0.875rem !important;
+        }
+
+        .plan-card__feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card__feature-text {
+            max-width: 24ch;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-card__feature-header {
+            max-width: 18ch;
+        }
+
+        .plan-card__sub-feature-p {
+            font-size: 0.75rem;
+            max-width: unset;
+        }
+
+        .plan-card__sup {
+            margin-top: -0.4rem;
+        }
+
+        .plan-card__badge {
+            position: absolute;
+            top: -3.25rem;
+            right: 0;
+            left: 0;
+            margin-inline: auto;
+            width: 6.8125rem;
+            height: 6.8125rem;
+        }
+    }
+</style>
+
+<article id="singlePlanCard" class="plan-card">
+    <header class="plan-card__topper-wrapper">
+        <div class="plan-card__title-wrapper">
+            <h3 class="plan-card__title">Aura</h3>
+            <div class="plan-card__discount-wrapper">
+                <span id="planDiscountIndividual" class="plan-card__discount-text">Save up to XX%</span>
+            </div>
+        </div>
+        <div class="plan-card__price-and-button-wrapper">
+            <div class="plan-card__price-wrapper">
+                <span id="planPriceIndividual" class="plan-card__price-text">Try Free for 14 days</span>
+                <span id="planAnnuallyIndividual" class="plan-card__billed-text">then $XXX billed annually,</span>
+            </div>
+            <a id="planButtonIndividual" class="plan-card__button btn url-link">Get Protection Now</a>
+        </div>
+    </header>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">Parental Controls</h4>
+                <img alt="Powered By Circle" class="plan-card__feature-header--logo"
+                    src="https://v.fastcdn.co/u/bff2cbd9/62700479-0-Group-76224.svg" />
+            </div>
+            <div class="plan-card__list-wrapper">
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Covers unlimited kids and devices</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Mobile device management</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Filter content and block inappropriate sites</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Set screen time limits</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Pause the Internet<sup
+                                class="plan-card__sup">®</sup></span>
+                    </li>
+                </ul>
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">View online history</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Track usage of apps and sites</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Customize settings for every family member</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Schedule Bedtimes <span
+                                class="plan-card__feature-text--new" alt="New">New</span></span>
+                    </li>
+                </ul>
+            </div>
+            <p class="plan-card__sub-feature-p">Parental Controls available on iOS (iPhones and iPads) and Android
+                phones and tablets.</p>
+        </div>
+    </div>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">Safe Gaming</h4>
+            </div>
+            <div class="plan-card__list-wrapper">
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">24/7 In-Game Voice and Text Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Threat Alerts for predators, scams, cyberbullying, and
+                            hate speech</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Compatible with 200 of the most popular PC games</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
+                    </li>
+                </ul>
+            </div>
+            <p class="plan-card__sub-feature-p">Safe Gaming available on Windows PC</p>
+        </div>
+    </div>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">Online Security</h4>
+            </div>
+            <div class="plan-card__list-wrapper">
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Antivirus — 10 Devices</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Vault (digital lockbox)</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Dark Web Monitoring & Alerts</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <img class="plan-card__badge" alt="Featuring Parental Controls" src="https://v.fastcdn.co/u/bff2cbd9/65177817-0-Group-6960459.svg"/>
+</article>
