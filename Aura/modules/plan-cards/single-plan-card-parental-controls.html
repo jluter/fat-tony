@@ -1,4 +1,4 @@
-<!--GB Name: Single Plan Card - Parental Controls-->
+<!--GB Name: Single Plan Card Parental Controls FT-->
 <style>
     /* PLAN CARD STYLES */
     #singlePlanCard {
@@ -9,6 +9,9 @@
     .plan-card__u-list {
         padding: 0;
         margin: 0;
+    }
+
+    .plan-card__parent-list-item {
         width: 50%;
     }
 
@@ -45,7 +48,6 @@
         align-items: stretch;
         justify-content: space-between;
         width: 100%;
-        gap: 1rem;
         padding: 2rem 2rem 0 2rem;
         background-color: #ffffff;
         border: 2px solid rgba(29, 47, 80, 0);
@@ -55,6 +57,8 @@
     .plan-card__list-wrapper {
         display: flex;
         width: 100%;
+        padding: 0;
+        list-style-type: none;
     }
 
     /* Plan Card | Plan Name */
@@ -218,8 +222,8 @@
             gap: 0;
         }
 
-        .plan-card__u-list {
-            width: unset;
+        .plan-card__parent-list-item {
+            width: 100%;
         }
 
         .plan-card__title-wrapper {
@@ -328,50 +332,55 @@
                 <img alt="Powered By Circle" class="plan-card__feature-header--logo"
                     src="https://v.fastcdn.co/u/bff2cbd9/62700479-0-Group-76224.svg" />
             </div>
-            <div class="plan-card__list-wrapper">
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Covers unlimited kids and devices</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Mobile device management</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Filter content and block inappropriate sites</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Set screen time limits</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Pause the Internet<sup
-                                class="plan-card__sup">®</sup></span>
-                    </li>
-                </ul>
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">View online history</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Track usage of apps and sites</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Customize settings for every family member</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Schedule Bedtimes <span
-                                class="plan-card__feature-text--new" alt="New">New</span></span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text"><strong>Covers unlimited kids and
+                                    devices</strong></span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Mobile device management</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Filter content and block inappropriate sites</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Set screen time limits</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Pause the Internet<sup
+                                    class="plan-card__sup">®</sup></span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">View online history</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Track usage of apps and sites</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Customize settings for every family member</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Schedule Bedtimes <span
+                                    class="plan-card__feature-text--new" alt="New">New</span></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <p class="plan-card__sub-feature-p">Parental Controls available on iOS (iPhones and iPads) and Android
                 phones and tablets.</p>
         </div>
@@ -381,29 +390,34 @@
             <div class="plan-card__feature-header-wrapper">
                 <h4 class="plan-card__feature-header">Safe Gaming</h4>
             </div>
-            <div class="plan-card__list-wrapper">
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">24/7 In-Game Voice and Text Monitoring</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Threat Alerts for predators, scams, cyberbullying, and
-                            hate speech</span>
-                    </li>
-                </ul>
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Compatible with 200 of the most popular PC games</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">24/7 In-Game Voice and Text Monitoring</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Threat Alerts for predators, scams, cyberbullying, and
+                                hate speech</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Compatible with 200 of the most popular PC
+                                games</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
             <p class="plan-card__sub-feature-p">Safe Gaming available on Windows PC</p>
         </div>
     </div>
@@ -412,25 +426,30 @@
             <div class="plan-card__feature-header-wrapper">
                 <h4 class="plan-card__feature-header">Online Security</h4>
             </div>
-            <div class="plan-card__list-wrapper">
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Antivirus — 10 Devices</span>
-                    </li>
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Vault (digital lockbox)</span>
-                    </li>
-                </ul>
-                <ul class="plan-card__u-list">
-                    <li class="plan-card__feature-wrapper">
-                        <div class="plan-card__checkmark"></div>
-                        <span class="plan-card__feature-text">Dark Web Monitoring & Alerts</span>
-                    </li>
-                </ul>
-            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Antivirus — 10 Devices</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Vault (digital lockbox)</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Dark Web Monitoring & Alerts</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
-    <img class="plan-card__badge" alt="Featuring Parental Controls" src="https://v.fastcdn.co/u/bff2cbd9/65177817-0-Group-6960459.svg"/>
+    <img class="plan-card__badge" alt="Featuring Parental Controls"
+        src="https://v.fastcdn.co/u/bff2cbd9/65177817-0-Group-6960459.svg" />
 </article>
