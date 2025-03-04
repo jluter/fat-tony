@@ -1,0 +1,1589 @@
+<!-- Global Block Name: Splide Plan Cards - No Gap, Free Trial Version -->
+<!-- Splide Slider Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#slider", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: "0rem",
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    gap: "1rem",
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "1.5rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<div id="slider" class="splide" role="group" aria-label="Aura Plan Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list plan-card_list">
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card_ribbon">
+                    <span class="plan-card_ribbon-text">Now With AI Spam Call Protection!</span>
+                </div>
+                <div class="plan-card_callout first-plan-card">
+                    <span class="plan-card_callout-text">Identity & Fraud Protection</span>
+                </div>
+                <div class="plan-card first-plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <div class="plan-card_title-discount-wrapper">
+                            <h3 class="plan-card_plan-name">Individual</h3>
+                            <div class="plan-card_discount-wrapper">
+                                <span id="planDiscountIndividual" class="plan-card_discount-text">Save XX%</span>
+                            </div>
+                        </div>
+                        <div class="plan-card_coverage-text">1 adult, 10 devices</div>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceIndividual" class="plan-card_price-text">Free for 14 days</span>
+                        </div>
+                        <div class="plan-card_billed-intro-wrapper">
+                            <div class="plan-card_billed-wrapper">
+                                <span id="planMonthlyIndividual" class="plan-card_billed-text">$--/mo billed annually or
+                                    $--/mo billed monthly</span>
+                            </div>
+                            <div class="plan-card_special-intro-text">
+                                Special intro offer<sup>‡</sup>
+                            </div>
+                        </div>
+                    </div>
+                    <a id="planButtonIndividual" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Identity Theft Protection
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">$1 Million Identity Theft Insurance*</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Account Breach Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">SSN & Personal Info Dark Web Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Home & Auto Title Fraud Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Stolen Identity Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">U.S. Based Expert Fraud Remediation</span>
+                            </li>
+                        </ul>
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Financial Fraud Protection
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">3-Bureau Credit Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Instant Credit Lock</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Bank Fraud Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Financial Transaction Monitoring
+                                </span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Monthly Credit Score¹</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Annual Credit Reports</span>
+                            </li>
+                        </ul>
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Online Privacy & Security
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">People Search Sites & Junk Mail Removal</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Antivirus / Anti-Malware</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">VPN with Military-Grade Encryption</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Safe Browsing</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Password Manager</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="intro-offer-details-text plan-card_special-intro-text">
+                        <sup>‡</sup>Introductory offer
+                        <span class="intro-offer-details-button" tabindex="0" role="button"><u>details</u></span>.
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card_ribbon">
+                    <span class="plan-card_ribbon-text">Insert Ribbon Text</span>
+                </div>
+                <div class="plan-card_callout">
+                    <span class="plan-card_callout-text">Identity & Fraud Protection</span>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <div class="plan-card_title-discount-wrapper">
+                            <h3 class="plan-card_plan-name">Couple</h3>
+                            <div class="plan-card_discount-wrapper">
+                                <span id="planDiscountCouple" class="plan-card_discount-text">Save XX%</span>
+                            </div>
+                        </div>
+                        <div class="plan-card_coverage-text">2 adults, 20 devices</div>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceCouple" class="plan-card_price-text">Free for 14 days</span>
+                        </div>
+                        <div class="plan-card_billed-intro-wrapper">
+                            <div class="plan-card_billed-wrapper">
+                                <span id="planMonthlyCouple" class="plan-card_billed-text">$--/mo billed annually or
+                                    $--/mo billed monthly</span>
+                            </div>
+                            <div class="plan-card_special-intro-text">
+                                Special intro offer<sup>‡</sup>
+                            </div>
+                        </div>
+                    </div>
+                    <a id="planButtonCouple" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Identity Theft Protection
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">$2 Million Identity Theft Insurance*</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Account Breach Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">SSN & Personal Info Dark Web Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Home & Auto Title Fraud Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Stolen Identity Alerts</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">U.S. Based Expert Fraud Remediation</span>
+                            </li>
+                        </ul>
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Financial Fraud Protection
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">3-Bureau Credit Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Instant Credit Lock</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Bank Fraud Monitoring</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Financial Transaction Monitoring
+                                </span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Monthly Credit Score¹</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Annual Credit Reports</span>
+                            </li>
+                        </ul>
+                        <ul class="plan-card_feature-content-wrapper">
+                            <li class="plan-card_feature-header-li">
+                                <h4 class="plan-card_feature-header">
+                                    Online Privacy & Security
+                                </h4>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">People Search Sites & Junk Mail Removal</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Antivirus / Anti-Malware</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">VPN with Military-Grade Encryption</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Safe Browsing</span>
+                            </li>
+                            <li class="plan-card_feature-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <span class="plan-card_feature-text">Password Manager</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="intro-offer-details-text plan-card_special-intro-text">
+                        <sup>‡</sup>Introductory offer
+                        <span class="intro-offer-details-button" tabindex="0" role="button"><u>details</u></span>.
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide splide-card_family-wrapper">
+                <div class="plan-card_slide with-ribbon no-gap">
+                    <div class="plan-card_ribbon ribbon-is-active">
+                        <span class="plan-card_ribbon-text">Now With AI Spam Call Protection!</span>
+                    </div>
+                    <div class="plan-card_callout">
+                        <span class="plan-card_callout-text">Identity, Fraud & Child Protection</span>
+                    </div>
+                    <div class="plan-card has-ribbon">
+                        <div class="plan-card_topper-wrapper">
+                            <div class="plan-card_title-discount-wrapper">
+                                <h3 class="plan-card_plan-name">Family</h3>
+                                <div class="plan-card_discount-wrapper">
+                                    <span id="planDiscountFamily" class="plan-card_discount-text">Save XX%</span>
+                                </div>
+                            </div>
+                            <div class="plan-card_coverage-text">
+                                5 adults, unlimited kids & unlimited devices
+                            </div>
+                        </div>
+                        <div class="plan-card_plan-data-wrapper">
+                            <div class="plan-card_price-wrapper">
+                                <span id="planPriceFamily" class="plan-card_price-text">Free for 14 days</span>
+                            </div>
+                            <div class="plan-card_billed-intro-wrapper">
+                                <div class="plan-card_billed-wrapper">
+                                    <span id="planMonthlyFamily" class="plan-card_billed-text">$--/mo billed annually or
+                                        $--/mo billed monthly</span>
+                                </div>
+                                <div class="plan-card_special-intro-text">
+                                    Special intro offer<sup>‡</sup>
+                                </div>
+                            </div>
+                        </div>
+                        <a id="planButtonFamily" class="plan-card_button btn url-link">Get Protection Now</a>
+                        <div class="plan-card_feature-block">
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-header-li">
+                                    <h4 class="plan-card_feature-header">
+                                        Family Identity Theft Protection
+                                    </h4>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">$5 Million Insurance with Child Identity Theft
+                                        Coverage*</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Account Breach Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">SSN & Personal Info Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Home & Auto Title Fraud Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Stolen Identity Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">U.S. Based Expert Fraud Remediation</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Child SSN Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Child 3-Bureau Credit Freeze</span>
+                                </li>
+                            </ul>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-header-li">
+                                    <h4 class="plan-card_feature-header">
+                                        Financial Fraud Protection
+                                    </h4>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">3-Bureau Credit Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Instant Credit Lock</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Bank Fraud Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Financial Transaction Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Monthly Credit Score¹</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Annual Credit Reports</span>
+                                </li>
+                            </ul>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-header-li">
+                                    <h4 class="plan-card_feature-header">
+                                        Online Privacy & Security
+                                    </h4>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">People Search Sites & Junk Mail Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Antivirus / Anti-Malware</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">VPN with Military-Grade Encryption</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Safe Browsing</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">AI Spam Call & Message Protection</span>
+                                </li>
+                            </ul>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-header-li">
+                                    <h4 class="plan-card_feature-header">
+                                        Child Online Protection
+                                    </h4>
+                                    <div class="plan-card_child-feature-header-wrapper add-margin-top">
+                                        <div class="plan-card_child-feature-header">
+                                            Parental Controls
+                                        </div>
+                                        <img class="plan-card_circle-badge"
+                                        src="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/64fa05e52f145533e5c982ab_Frame%2075911.svg"
+                                        alt="Powered by circle" />
+                                    </div>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Content Filtering & Site Blocking</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Screen Time Limits & Scheduling</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Pause the Internet</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Online History & Usage Reports
+                                    </span>
+                                </li>
+                            </ul>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-header-li">
+                                <div class="plan-card_child-feature-header-wrapper">
+                                        <h4 class="plan-card_child-feature-header">
+                                            Safe Gaming (Online Predator Alerts)
+                                        </h4>
+                                    </div>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">In-game Voice & Text Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Predator, Scam & Cyberbullying Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 12 12">
+                                        <path
+                                            d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                            clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Weekly Gaming Activity Report</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="intro-offer-details-text plan-card_special-intro-text">
+                            <sup>‡</sup>Introductory offer
+                            <span class="intro-offer-details-button" tabindex="0" role="button"><u>details</u></span>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    main {
+        overflow: hidden;
+    }
+
+    /* SPLIDE STYLES */
+    .splide__track {
+        overflow: visible;
+    }
+
+    .plan-card_list {
+        justify-content: center;
+        align-items: start;
+    }
+
+    .plan-card_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        transition: all 200ms ease;
+        /* border-radius: 1.5rem 1.5rem 1rem 1rem; */
+        overflow: hidden;
+        background-color: rgba(29, 47, 80, 0);
+        /* Set to transparent for no ribbion */
+    }
+
+    .plan-card_slide.with-ribbon,
+    .plan-card_ribbon.ribbon-is-active {
+        border-radius: 1rem;
+        background-color: rgba(29, 47, 80, 1);
+        /* Sets to full color when active */
+    }
+
+    .no-gap {
+        margin-right: 0 !important;
+    }
+
+    /* PLAN CARD STYLES */
+
+    /* Native Plan Cards Style Overrides  */
+    /* #page-block-mjqoqa1yiw .section-block {
+		background-color: #ffffff !important;
+	} */
+
+    .per {
+        margin-left: 0rem !important;
+    }
+
+    .price-div:not(.ft-price-div) {
+        font-size: 2.25rem !important;
+    }
+
+    .discount-div {
+        font-size: 0.813rem !important;
+    }
+
+    /* Plan Card Parent Wrapper */
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+        padding: 2rem 1.2rem;
+        background-color: #ffffff;
+        border: 0.5px solid #d9d9d9;
+        border-top: none;
+        /* border-radius: 1rem; */
+    }
+
+    /* Family Plan Card Parent Wrapper */
+    .splide-card_family-wrapper {
+        background-color: white;
+        border-bottom: 0.5px solid #d9d9d9;
+        border-radius: 1rem 1rem 1rem 0;
+    }
+
+    .plan-card.has-ribbon {
+        border: 2px solid rgba(29, 47, 80, 1);
+        border-top: 0px;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    /* Plan Card | Ribbon holding Ribbon Text */
+    .plan-card_ribbon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: rgba(29, 47, 80, 0);
+        color: rgba(255, 255, 255, 0);
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Ribbon Active */
+    .ribbon-is-active {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    /* Plan Card | Topper holding Plan Name & Discount Bubble */
+    .plan-card_topper-wrapper,
+    .plan-card_plan-data-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .plan-card_topper-wrapper {
+        margin-bottom: 0.5rem;
+        /* gap: 0.6rem; */
+    }
+
+    .plan-card_title-discount-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .plan-card-modal__list-title.modal-individual {
+        margin-top: 1rem;
+    }
+
+    /*Secondary Plan Card Crown*/
+    .plan-card_callout {
+        background-color: #d2ffaf;
+        border: 0.5px solid #d9d9d9;
+        border-bottom: none;
+        border-right: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.5rem;
+    }
+
+    .with-ribbon .plan-card_callout {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border-top: none;
+        border-left: 2px solid rgba(29, 47, 80, 1);
+        border-right: 2px solid rgba(29, 47, 80, 1);
+        background-color: #d6e6ff;
+    }
+
+    .with-ribbon .plan-card_callout-text {
+        color: #3366ff;
+    }
+
+    .plan-card_callout.first-plan-card {
+        border-top-left-radius: 1rem;
+    }
+
+    .plan-card_callout-text {
+        font-size: 0.8125rem;
+        color: #008542;
+        font-weight: 500;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card_plan-name,
+    .plan-card_feature-header {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    .plan-card_child-feature-header {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    .plan-card_child-feature-header-wrapper.add-margin-top {
+        margin-top: 0.3rem;
+    }
+
+    /* Plan Card | Devices */
+    .plan-card_coverage-text {
+        font-size: 0.875rem;
+        color: #888888;
+        text-align: left;
+    }
+
+    .plan-card_feature-header {
+        max-width: 23ch;
+    }
+
+    .plan-card_special-intro-text {
+        font-size: 0.875rem;
+        color: #888888;
+        text-align: left;
+        margin-top: 0.2rem;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card_discount-wrapper,
+    .plan-card_protection-badge-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        border-radius: 9999rem;
+    }
+
+    .plan-card_protection-badge-wrapper {
+        background-color: #d2ffaf;
+        margin-bottom: 0.75rem;
+    }
+
+    .plan-card_protection-badge-wrapper.is-family {
+        background-color: #d6e6ff;
+    }
+
+    .plan-card_discount-wrapper {
+        background-color: #ecf4ff;
+        margin-bottom: 0.8rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card_discount-text,
+    .plan-card_protection-badge-text,
+    .discount-div {
+        font-size: 0.813rem !important;
+        color: #008542 !important;
+    }
+
+    .plan-card_protection-badge-text {
+        font-weight: 485 !important;
+    }
+
+    .discount-div {
+        font-weight: 600 !important;
+    }
+
+    .plan-card_protection-badge-text.is-family {
+        color: #3366ff !important;
+    }
+
+    /* Plan Card | Button */
+    .plan-card_button {
+        width: 19.0625rem;
+        height: 3.9375rem;
+        margin: 1rem 0rem;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card_price-wrapper,
+    .plan-card_billed-wrapper,
+    .plan-card_feature-content-wrapper {
+        width: 100%;
+        text-align: left;
+        max-width: 20rem;
+    }
+
+    .plan-card_price-wrapper {
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        gap: 1rem;
+        margin-bottom: 8px;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card_price-text {
+        font-size: 2.25rem !important;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card_mo-span {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Billed Monthly Text */
+    .plan-card_billed-text {
+        font-size: 0.875rem !important;
+    }
+
+    .plan-card_feature-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card_feature-wrapper,
+    .plan-card_feature-header-wrapper,
+    .plan-card_child-feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card_feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card_feature-header-li {
+        list-style-type: none;
+    }
+
+    .plan-card_feature-wrapper {
+        align-items: start;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card_checkmark {
+        /* background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.1rem;
+    }
+
+    .plan-card_feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 0.6rem;
+        padding: 0;
+    }
+
+    .plan-card_feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
+
+    .plan-card_feature-text {
+        max-width: 29ch;
+    }
+
+    .plan-card_circle-badge {
+        width: 6.375rem;
+    }
+
+    .plan-card_ribbon-text {
+        font-weight: 500;
+    }
+
+    /* Media Queries */
+
+    @media (min-width: 768px) {
+        .show-desktop {
+            display: block;
+        }
+
+        .show-mobile {
+            display: none;
+        }
+
+        .plan-card_list {
+            align-items: stretch;
+        }
+
+        .plan-card_slide {
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+
+        .plan-card {
+            justify-content: start;
+            border-right: 0px;
+            flex-grow: 1;
+        }
+
+        .plan-card.first-plan-card {
+            border-radius: 0 0 0 1rem;
+        }
+
+        /* .plan-card_list>#sliderPlanCards-slide01,
+		.plan-card_list>#sliderPlanCards-slide01>.plan-card {
+			border-radius: 1rem 0rem 0rem 1rem;
+		}
+
+		.plan-card_list>#sliderPlanCards-slide02,
+		.plan-card_list>#sliderPlanCards-slide02>.plan-card {
+			border-radius: 0rem;
+		}
+
+		.plan-card_list>#sliderPlanCards-slide02>.plan-card {
+			border: 0.5px solid #d9d9d9;
+			border-right: 0px;
+		}
+
+		.plan-card_list>#sliderPlanCards-slide03,
+		.plan-card_list>#sliderPlanCards-slide03>.plan-card {
+			border-radius: 1.5rem 1.5rem 1rem 0rem;
+		} */
+    }
+
+    @media (max-width: 767px) {
+        .show-desktop {
+            display: none;
+        }
+
+        .show-mobile {
+            display: block;
+        }
+
+        .price-div:not(.ft-price-div) {
+            font-size: 2.25rem !important;
+        }
+
+        .plan-card_topper-wrapper {
+            gap: 0;
+        }
+
+        .plan-card {
+            border-radius: 0 0 1rem 1rem;
+            gap: 0.8rem;
+            border: 1px solid #d9d9d9;
+            border-top: none;
+        }
+
+        .plan-card_callout {
+            border-radius: 1rem 1rem 0 0;
+            border-right: 0.5px solid #d9d9d9;
+        }
+
+        .plan-card_callout-text {
+            font-weight: 500;
+        }
+
+        .plan-card_list {
+            justify-content: start;
+        }
+
+        .splide-card_family-wrapper {
+            background-color: transparent;
+            border-bottom: 0px;
+            border-radius: 1rem 1rem 1rem 0rem;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card_coverage-text {
+            font-size: 0.8rem;
+            text-align: left;
+        }
+
+        .plan-card_plan-name,
+        .plan-card_feature-header {
+            font-size: 1.125rem;
+        }
+
+        .plan-card_child-feature-header {
+            max-width: 22ch;
+            font-size: 1rem;
+        }
+
+        .plan-card_button {
+            width: 16.1rem;
+            height: 3.438rem;
+            font-size: 1.125rem !important;
+        }
+
+        .plan-card_ribbon,
+        .plan-card_discount-text {
+            font-size: 0.8rem !important;
+        }
+
+        .plan-card_feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card_feature-text,
+        .plan-card_billed-wrapper {
+            max-width: 25ch;
+        }
+
+        .plan-card_feature-header {
+            max-width: 23ch;
+        }
+
+        .plan-card_billed-intro-wrapper {
+            display: inline;
+            max-width: 25ch;
+            text-align: left;
+        }
+
+        .plan-card_billed-wrapper,
+        .plan-card_special-intro-text {
+            display: inline;
+        }
+    }
+</style>
+
+<!--Plan Card Modal for Splide-->
+<style>
+    /*Modal pop-up*/
+    .plan-card-modal__list-title {
+        font-weight: 500;
+    }
+
+    .plan-card-modal__ul {
+        padding-left: 1rem;
+    }
+
+    li.plan-card-modal__li {
+        padding: 0.5rem 0;
+    }
+
+    .plan-card-modal__li::marker {
+        content: "  •  ";
+    }
+
+    /*Desktop Styles */
+    @media (min-width: 769px) {
+        .offer-details-modal-background {
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            height: 100% !important;
+            width: 100% !important;
+            max-width: 36.0625rem;
+        }
+
+        .offer-details-card-container-modal {
+            width: inherit;
+            height: inherit;
+            position: relative;
+            margin: 0;
+            padding: 3rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.75rem;
+            right: 1.75rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-exit-button:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 500;
+            line-height: 1.4625rem;
+            font-size: 1.375rem;
+            text-align: left;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+            padding-bottom: 1rem;
+        }
+    }
+
+    /*Desktop Styles End*/
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        .offer-details-modal-background {
+            height: 100% !important;
+            width: 100% !important;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .offer-details-card-container-modal {
+            width: inherit;
+            height: inherit;
+            position: relative;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .plan-card-modal-text-container {
+            max-width: 21rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.1875rem;
+            right: 1.1875rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button-wrapper:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 500;
+            line-height: 1.4625rem;
+            font-size: 1.125rem;
+            text-align: left;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+        }
+
+        .plan-card-modal-text {
+            height: 100% !important;
+            max-width: 80vw;
+        }
+    }
+
+    /*MODAL STYLES*/
+
+    .plan-card-modal-background {
+        position: fixed;
+        top: 0;
+        z-index: 9999999;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .intro-offer-details-text {
+        margin-top: auto;
+        padding-top: 1.5rem;
+    }
+
+    .intro-offer-details-button:hover {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", function () {
+        //Main HTML is used to add modals
+        const main = document.querySelector("main");
+        let createdModalDiv = document.createElement("div");
+        function modalFactory(modalDiv) {
+            //Modal HTML
+            let modalHtml = `
+			<div class="plan-card-modal">
+				<div class="offer-details-modal-background">
+					<div class="offer-details-card-container-modal">
+                        <div class="plan-card-modal-text-container">
+                            <h1 class="plan-card-modal-header-text">Introductory Offer</h1>
+                            <p class="plan-card-modal-text">The introductory offer is valid for the first term of your subscription. At the end of the expiration of the initial term, you will be automatically renewed at the renewal price. This price is subject to change. We will always email you in advance prior to annual renewal.</p>
+                            <div class="plan-card-modal__ul-wrapper">
+                                <h2 class="plan-card-modal__list-title modal-individual">Individual:</h2>
+                                <ul class="plan-card-modal__ul">
+                                    <li class="plan-card-modal__li">Annual - pay $108.00 after free trial, renews at $215.78/year</li>
+                                    <li class="plan-card-modal__li">Monthly - pay $12.00 after free trial, renews at $24.00/month</li>
+                                </ul>
+                            </div>
+                            <div class="plan-card-modal__ul-wrapper">
+                                <h2 class="plan-card-modal__list-title">Couple:</h2>
+                                <ul class="plan-card-modal__ul">
+                                    <li class="plan-card-modal__li">Annual - pay $204.00 after free trial, renews at $345.41/year</li>
+                                    <li class="plan-card-modal__li">Monthly - pay $20.00 after free trial, renews at $48.00/month</li>
+                                </ul>
+                            </div>
+                            <div class="plan-card-modal__ul-wrapper">
+                                <h2 class="plan-card-modal__list-title">Family:</h2>
+                                <ul class="plan-card-modal__ul">
+                                    <li class="plan-card-modal__li">Annual - pay $300.00 after free trial, renews at $419.83/year</li>
+                                    <li class="plan-card-modal__li">Monthly - pay $30.00 after free trial, renews at $80.00/month</li>
+                                </ul>
+                            </div>
+                        </div>
+						<div class="plan-card-modal-exit-button-wrapper" tabindex="0" role="button">
+							<img class="plan-card-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"/>
+						</div>
+				    </div>
+				</div>
+			</div>
+			`;
+
+            //Create modal HTML object and add it to top of the Main HTML element
+            modalDiv.classList.add("plan-card-modal-background");
+            modalDiv.innerHTML = modalHtml;
+            modalDiv.style.display = "none";
+            main.prepend(modalDiv);
+
+            let closeButton = document.querySelector(
+                `.plan-card-modal-exit-button-wrapper`
+            );
+            closeButton.setAttribute("aria-label", `Close Introductory Offer Pop-up`);
+            closeButton.addEventListener("click", () => {
+                modalDiv.style.display = "none";
+            });
+
+            closeButton.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    modalDiv.style.display = "none";
+                }
+            });
+
+            //Add Modal display functionality on 'read more' click
+            let readMoreLink = document.querySelectorAll(
+                `.intro-offer-details-button`
+            );
+            readMoreLink.forEach((link) => {
+                link.setAttribute("aria-label", `Open Introductory Offer Details`);
+                link.addEventListener("click", () => {
+                    console.log("test:", modalDiv);
+                    modalDiv.style.display = "flex";
+                });
+
+                link.addEventListener("keydown", (event) => {
+                    const { key, which } = event;
+                    const keysToMatch = ["Enter", " "];
+                    const whichCodesToMatch = [32, 13];
+
+                    if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                        modalDiv.style.display = "flex";
+                    }
+                });
+
+                //Add Modal hide functionality on background click
+                modalDiv.addEventListener("click", (event) => {
+                    if (event.target === modalDiv) {
+                        modalDiv.style.display = "none";
+                    }
+                });
+            });
+        }
+
+        modalFactory(createdModalDiv);
+    });
+</script>
