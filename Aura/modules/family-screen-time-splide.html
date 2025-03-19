@@ -1,0 +1,443 @@
+<!-- Splide Slider Mount -->
+<!-- GB Name: Family Screen Time Sidescroll (North Star) - /parental-controls-4-rdj -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const screenTimeSplide1 = new Splide("#screenTimeSplide1", {
+            type: "loop",
+            drag: "free",
+            focus: "center",
+            fixedWidth: "6.5rem",
+            arrows: false,
+            pagination: false,
+            autoScroll: {
+                pauseOnHover: false,
+                pauseOnFocus: false,
+                speed: 0.78,
+            },
+            i18n: {
+                prev: "Previous Feature, Family Screen Time Covered",
+                next: "Next Feature, Family Screen Time Covered",
+                slideX: "Go to Slide %s, Family Screen Time Covered"
+            },
+            breakpoints: {
+                769: {
+                    fixedWidth: "4rem",
+                    autoScroll: {
+                        speed: 0.65,
+                    },
+                },
+            },
+        });
+
+        // SECOND ROW ICONS, ASKED TO BE REMOVED BEFORE LAUNCH BUT KEPT HERE IN CASE REVERTING BACK
+
+        // const screenTimeSplide2 = new Splide("#screenTimeSplide2", {
+        //   type: "loop",
+        //   drag: "free",
+        //   focus: "center",
+        //   fixedWidth: "6.5rem",
+        //   arrows: false,
+        //   pagination: false,
+        //   autoScroll: {
+        //     pauseOnHover: false,
+        //     pauseOnFocus: false,
+        //     speed: -0.8,
+        //   },
+        //   breakpoints: {
+        //     769: {
+        //       fixedWidth: "3.25em",
+        //       autoScroll: {
+        //         speed: -0.4,
+        //       },
+        //     },
+        //   },
+        // });
+        screenTimeSplide1.mount(window.splide.Extensions);
+        // screenTimeSplide2.mount(window.splide.Extensions);
+    });
+</script>
+
+<!-- Script to add class to InstaPage parent block -->
+<script>
+    //Grab the HTML Element/Object that this script is currently running in
+    //Variables and functions REQUIRE a unique name, so as to not negatively interact with other scripts
+
+    const currentScriptFamilyScrenTime1 = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const addClassFamilyScreenTime1 = () => { //EDIT: Update function name in all locations for each new accordion.
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptFamilyScrenTime1.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            console.log(currentElementToCheck);
+            if (currentElementToCheck.classList.contains("widget") && currentElementToCheck.classList.contains("item-absolute")) {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
+
+        //Add class. Styling is included in CSS
+        currentElementToCheck.classList.add("splide-full-width");
+    }
+
+    document.addEventListener("DOMContentLoaded", addClassFamilyScreenTime1);
+</script>
+
+<style>
+    #screenTimeSplide1 .splide__track {
+        overflow: visible !important;
+    }
+
+    .splide-full-width {
+        width: 100% !important;
+    }
+</style>
+<div class="screentime1_text-wrapper">
+    <h2 class="screentime1_h2">Family Screen Time, Covered</h2>
+    <p class="screentime1_p">From social media to gaming, start managing your kids' online activity to support healthy
+        screen time and overall wellbeing. Aura Parental Controls allows you to restrict internet access and limit
+        screen time on your child's iPhone, iPad or Android phones and tablets.</p>
+</div>
+<div class="screentime_button-wrapper">
+    <a class="screentime_button btn"></a>
+</div>
+<div id="screenTimeSplide1" class="splide .screentime-splide_1" role="group"
+    aria-label="List of platform that Aura covers in a parental control feature">
+    <div class="splide__track">
+        <div class="splide__list">
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image facebook"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image instagram"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image youtube"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image tiktok"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image apple"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image snapchat"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image twitter"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image hulu"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image netflix"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image discord"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image playstation"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image game"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image xbox"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image reddit"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image vimeo"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image whatsapp"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image disney"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image blox"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image slack"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image twitch"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image android"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image wii"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image amazon"></div>
+            </div>
+            <div class="splide__slide .screentime_slide">
+                <div class="screentime1_image steam"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SECOND ROW ICONS, ASKED TO BE REMOVED BEFORE LAUNCH BUT KEPT HERE IN CASE REVERTING BACK -->
+
+<!-- <div
+    id="screenTimeSplide2"
+    class="splide .screentime-splide_2"
+    role="group"
+    aria-label="Aura Reviews">
+    <div class="splide__track">
+      <div class="splide__list">
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image xbox"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image reddit"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image vimeo"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image whatsapp"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image disney"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image blox"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image slack"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image twitch"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image android"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image wii"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image amazon"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image steam"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image facebook"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image instagram"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image youtube"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image tiktok"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image apple"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image snapchat"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image twitter"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image hulu"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image netflix"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image discord"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image playstation"></div>
+        </div>
+        <div class="splide__slide .screentime_slide">
+          <div class="screentime1_image game"></div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+<style>
+    /* AutoScroll Splide Styles*/
+    .screentime1_text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .screentime1_h2 {
+        font-family: "Clarendon Graphic";
+        font-weight: 400;
+        font-size: 3.5913rem;
+        line-height: 4.35rem;
+        text-align: center;
+    }
+
+    .screentime1_p {
+        font-size: 1.3622rem;
+        line-height: 1.925rem;
+        text-align: center;
+        max-width: 66ch;
+    }
+
+    .screentime_button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+    }
+
+    .screentime_button {
+        width: 18.75rem;
+        height: 3.875rem;
+    }
+
+    .screentime1_image {
+        background-position: center;
+        background-size: cover;
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+
+    .screentime1_image.facebook {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f485ff284837fccedf5a_Facebook.png");
+    }
+
+    .screentime1_image.instagram {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486add15982fc7e5cb4_Instagram.png");
+    }
+
+    .screentime1_image.youtube {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48533bdf8db8fbfaa4b_Youtube.png");
+    }
+
+    .screentime1_image.tiktok {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f485109db84affe48874_Tiktok.png");
+    }
+
+    .screentime1_image.apple {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f4869bf317e74d1f76e6_Group%2076018.png");
+    }
+
+    .screentime1_image.snapchat {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48658731458d50850e2_Snapchat.png");
+    }
+
+    .screentime1_image.twitter {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486de51738e9577cbbf_Twitter.png");
+    }
+
+    .screentime1_image.hulu {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f484735b42b8de568aac_Hulu.png");
+    }
+
+    .screentime1_image.netflix {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48534048dbcdc2249ca_Netflix.png");
+    }
+
+    .screentime1_image.discord {
+        background-image: url("https://storage.googleapis.com/instapage-user-media/bff2cbd9/64760770-0-Discord.png");
+    }
+
+    .screentime1_image.playstation {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f4840396b6c82237461a_Group%2076031.png");
+    }
+
+    .screentime1_image.game {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486add15982fc7e5cd3_Group%2076029.png");
+    }
+
+    .screentime1_image.xbox {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fa5d805c462a22d65e19_Group%2076019.png");
+    }
+
+    .screentime1_image.reddit {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fa80c3f0fe523355171e_Reddit.png");
+    }
+
+    .screentime1_image.vimeo {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb0615b2adbd28db2517_Vimeo.png");
+    }
+
+    .screentime1_image.whatsapp {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb42981fde7d66b9b441_WhatsApp.png");
+    }
+
+    .screentime1_image.disney {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb79a5dd59d76ea26365_Disney%20Plus.png");
+    }
+
+    .screentime1_image.blox {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb9da3901d87a9cd3efa_Blox.png");
+    }
+
+    .screentime1_image.slack {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbbba3901d87a9cd5659_Group%2076020.png");
+    }
+
+    .screentime1_image.twitch {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbd6c2533736a639c0ad_Twitch.png");
+    }
+
+    .screentime1_image.android {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbf881c1be73970299ed_android.png");
+    }
+
+    .screentime1_image.wii {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fc270f8e3fc623c5713f_wii.png");
+    }
+
+    .screentime1_image.amazon {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fc88a75a0fd2e2e1408d_Amazon.png");
+    }
+
+    .screentime1_image.steam {
+        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fcbb69d978a1d29f8695_Steam.png");
+    }
+
+    @media (max-width: 768px) {
+        .screentime1_image {
+            width: 4.25rem;
+            height: 4.25rem;
+        }
+
+        .screentime1_h2 {
+            font-size: 2rem;
+            line-height: 2.625rem;
+            max-width: 12ch;
+        }
+
+        .screentime1_p {
+            font-size: 1.1146rem;
+            line-height: 1.5625rem;
+            max-width: 30ch;
+        }
+
+        .screentime_button-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .screentime_button {
+            width: 21.3125rem;
+            height: 3.5rem;
+        }
+    }
+</style>
