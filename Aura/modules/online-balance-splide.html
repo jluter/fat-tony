@@ -1,0 +1,513 @@
+<!-- GB Name: Online Balance Splide Module  -->
+<!-- Splide Slider Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#online-balance-slider", {
+            destroy: true,
+            mediaQuery: "min",
+
+            i18n: {
+                prev: "Previous Feature, Online Balance Feature",
+                next: "Next Feature, Online Balance Feature",
+                slideX: "Go to Slide %s, Online Balance Feature"
+            },
+
+            breakpoints: {
+                769: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0px", right: "0rem" },
+                },
+                321: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: true,
+                    gap: "0.75rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "3rem" },
+                },
+                1: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<!--Add classes for 320px breakpoint-->
+<script>
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptOnlineBalanceSplide = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const addOnlineBalanceClasses = () => { //EDIT: Update function name in all locations for each new accordion.
+
+        const onlineBalanceHtmlWidget = currentScriptOnlineBalanceSplide.parentElement.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        if (onlineBalanceHtmlWidget.classList.contains("widget") && onlineBalanceHtmlWidget.classList.contains("item-absolute")) {
+            onlineBalanceHtmlWidget.classList.add("online-balance-splide__resize-320");
+        } else {
+            console.error("Online Balance could not add class to HTML Widget for 320px breakpoint");
+        };
+
+        const onlineBalanceSectionBlock = onlineBalanceHtmlWidget.parentElement.parentElement;
+
+        if (onlineBalanceSectionBlock.classList.contains("section-block")) {
+            onlineBalanceSectionBlock.classList.add("online-balance-splide__resize-320");
+        } else {
+            console.error("Online Balance could not add class to Instapage section-block for 320px breakpoint");
+        };
+
+        const onlineBalanceSectionRelative = onlineBalanceSectionBlock.parentElement;
+
+        if (onlineBalanceSectionRelative.classList.contains("section-relative")) {
+            onlineBalanceSectionRelative.classList.add("online-balance-splide__resize-320");
+        } else {
+            console.error("Online Balance could not add class to Instapage section-relative for 320px breakpoint");
+        };
+    }
+
+    document.addEventListener("DOMContentLoaded", addOnlineBalanceClasses);
+</script>
+
+<div class="online-balance__heading-wrapper">
+    <img class="online-balance__ai-bubble" src="//v.fastcdn.co/u/bff2cbd9/65433638-0-Powered-by-AI.png"
+        alt="Powered by AI" />
+    <div class="headline desktop-slider-headline">
+        <h2>
+            Help Your Kids Find Balance Online <br class="is-mobile">(New!)
+        </h2>
+        <p>
+            We've partnered with child psychologists to create powerful tools to help protect your child from
+            technology’s negative
+            effects. Gain insights into their online habits and get expert recommendations to support healthy screen
+            time and
+            wellbeing.
+        </p>
+    </div>
+</div>
+<div id="online-balance-slider" class="splide splide-mobile" role="group" aria-label="Online Balance Feature">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list">
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65433730-0-Balance-Summary--Ins.png"
+                            alt="Aura Balance Insights Screenshot. Emma's Day showing a Summary of Apps & Websites." />
+                        <div class="card-text-container">
+                            <div class="card-header-wrapper">
+                                <h3 class="card-header-text in-header-wrapper">Balance Summary & Insights</h3>
+                            </div>
+                            <p class="card-paragraph-text">
+                                View trends in your kid’s online routines, including changes to their social
+                                interactions, daytime activity, or sleep
+                                habits to help you spot meaningful changes in their wellbeing.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65436337-0-Daytime--Nighttime-A.png"
+                            alt="Aura Balance Nighttime Screenshot. Shows Nighttime Score indicating the user's nighttime device habits could use improvement." />
+                        <div class="card-text-container">
+                            <h3 class="card-header-text">Daytime & Nighttime Activity</h3>
+                            <p class="card-paragraph-text">
+                                Gain a personalized view of your kid’s online usage patterns, making it easier to
+                                understand behaviors that may impact
+                                their sleep or general wellbeing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65433734-0-Social-Interactions-.png"
+                            alt="Social Persona Aura App Screenshot. Shows the user is a Social Maven that thrives on social interaction on multiple platforms." />
+                        <div class="card-text-container">
+                            <h3 class="card-header-text">Social Interactions & Messaging</h3>
+                            <p class="card-paragraph-text">
+                                Get insight into your kid’s social persona, including online messaging trends and the
+                                tone of their online interactions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide is-mobile">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65433736-0-Personalized-Recomme.png"
+                            alt="Personalized Recommendations Aura App Screenshot" />
+                        <div class="card-text-container">
+                            <h3 class="card-header-text">Personalized Recommendations</h3>
+                            <p class="card-paragraph-text">
+                                Access science-backed recommendations, tips, and conversation starters based on your
+                                kid’s daytime and nighttime
+                                activity and their unique social persona.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="online-balance__personal-rec-container is-desktop">
+            <div class="online-balance__personal-rec-card">
+                <div class="online-balance__personal-rec-text-wrapper">
+                    <h3>Personalized Recommendations</h3>
+                    <p>Access science-backed recommendations, tips, and conversation starters based on your kid’s
+                        daytime and nighttime
+                        activity and their unique social persona.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="online-balance__ios-only-container">
+    <img class="online-balance__ios-icon" alt="Apple iOS logo"
+        src="https://v.fastcdn.co/u/bff2cbd9/65433766-0-white-apple-logo.svg" />
+    <p>Balance features available on iOS only</p>
+</div>
+<div class="online-balance__mobile-img-absolute is-mobile">
+    <div class="online-balance__mobile-img-relative">
+        <img class="online-balance__dad-son-mobile" alt="Father and Son smiling with laptop"
+            src="https://v.fastcdn.co/u/bff2cbd9/64608885-0-Father-and-SOn.png" />
+    </div>
+</div>
+
+<style>
+    .reviews-button-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 4rem 0rem;
+    }
+
+    .review-button {
+        width: 18.75rem;
+        height: 3.875rem;
+    }
+
+    .card-header-superscript {
+        font-size: 1.5rem;
+    }
+
+    .online-balance-splide__resize-320 {
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+        margin-top: -1.5rem;
+        overflow: visible !important;
+    }
+
+    /*Online Balance Styles START*/
+    /*Desktop Only Styles*/
+    @media (min-width: 769px) {
+        .is-mobile {
+            display: none;
+        }
+
+        #online-balance-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #online-balance-slider .splide__list {
+            justify-content: center !important;
+            gap: 1.5rem;
+        }
+
+        #online-balance-slider .splide__track {
+            margin-top: 2rem;
+        }
+    }
+
+    /*Desktop Only END*/
+
+    #online-balance-slider .card-container {
+        margin: 0;
+    }
+
+    .online-balance__heading-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5rem;
+    }
+
+    .online-balance__heading-wrapper h2 {
+        color: #FFFFFF;
+        font-family: 'Clarendon Graphic';
+        font-size: 3rem;
+        line-height: 115%;
+    }
+
+    .online-balance__heading-wrapper p {
+        color: #FFFFFF;
+        font-family: "Basel Grotesk";
+        font-size: 1.125rem;
+    }
+
+    #online-balance-slider .card-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1.5rem;
+    }
+
+    #online-balance-slider .card-header-wrapper {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #online-balance-slider .card-header-text {
+        line-height: 130%;
+        text-align: left;
+        font-family: 'Basel Grotesk';
+        font-size: 1.75rem;
+        margin: 0;
+    }
+
+    #online-balance-slider .card-paragraph-text {
+        width: auto;
+        font-size: inherit;
+        line-height: 22px;
+    }
+
+    #online-balance-slider .card-image {
+        height: auto;
+        width: 100%;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: unset;
+        border-bottom-left-radius: unset;
+    }
+
+    #online-balance-slider .card-background-wrapper {
+        background-color: #D6E6FF;
+        border-radius: 18px;
+        width: 21.875rem;
+        height: 28.75rem;
+    }
+
+    .online-balance__heading-wrapper .headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        max-width: 49rem;
+        min-width: unset;
+    }
+
+    .online-balance__ai-bubble {
+        height: 2rem;
+        width: 9.375rem;
+        box-shadow: 0px 0px 12px 0px #C5EFB880;
+        border-radius: 3.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .online-balance__personal-rec-container {
+        margin-top: 2rem;
+    }
+
+    .online-balance__personal-rec-text-wrapper {
+        border-radius: 1rem;
+        background: no-repeat center/cover url("//v.fastcdn.co/u/bff2cbd9/65433764-0-Personalized-Remedia.png");
+        text-align: left;
+        max-width: 25.5rem;
+        padding: 6.0625rem 41.5625rem 6.0625rem 2rem;
+        border-radius: 1rem;
+    }
+
+    .online-balance__personal-rec-text-wrapper h3 {
+        font-size: 1.75rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .online-balance__ios-only-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3.5rem;
+        gap: 0.5rem;
+    }
+
+    .online-balance__ios-only-container p {
+        color: white;
+    }
+
+    .online-balance__ios-icon {
+        margin-top: -0.2rem;
+    }
+
+    /*Mobile Below*/
+    @media (max-width: 768px) {
+
+        .is-desktop {
+            display: none;
+        }
+
+        #online-balance-slider .card-background-wrapper {
+            border-radius: 18px;
+            width: 16.25rem;
+            height: 30.625rem;
+            min-height: unset;
+        }
+
+        #online-balance-slider .card-text-container {
+            gap: 1rem;
+            padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+        }
+
+        #online-balance-slider .card-image {
+            height: 13.5rem;
+            object-fit: cover;
+            margin-top: 0;
+        }
+
+        #online-balance-slider .card-header-wrapper {
+            gap: 0.75rem;
+        }
+
+        #online-balance-slider .card-header-text {
+            font-size: 1.5rem;
+        }
+
+        #online-balance-slider .desktop-slider-headline h2 {
+            max-width: 20rem;
+            margin: 0 auto;
+        }
+
+        #online-balance-slider .splide__pagination {
+            bottom: -2.5rem;
+        }
+
+        #online-balance-slider .splide__pagination__page.is-active {
+            background: #FFFFFF;
+        }
+
+        #online-balance-slider .splide__pagination__page {
+            border: solid 1px rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0);
+            opacity: 1;
+        }
+
+        .online-balance__heading-wrapper {
+            padding-top: 3.5rem;
+            padding-bottom: 2rem;
+        }
+
+        .online-balance__heading-wrapper .headline {
+            margin-bottom: 2rem;
+            gap: 0;
+        }
+
+        .online-balance__heading-wrapper h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .online-balance__heading-wrapper p {
+            font-size: 1rem;
+        }
+
+        .online-balance__ai-bubble {
+            margin-bottom: 2rem;
+        }
+
+        .online-balance__ios-only-container {
+            margin-top: 0rem;
+            padding-top: 5rem;
+        }
+
+        .online-balance__mobile-img-absolute {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .online-balance__mobile-img-relative {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .online-balance__dad-son-mobile {
+            width: 100vw;
+            max-width: 28.5rem;
+            position: absolute;
+            margin: auto;
+            bottom: -1.5rem;
+        }
+    }
+
+    @media (max-width: 321px) {
+        #online-balance-slider .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #online-balance-slider .splide__slide {
+            align-items: center;
+        }
+
+        .online-balance__ios-only-container {
+            padding-bottom: 3rem;
+        }
+
+        .online-balance-splide__resize-320 {
+            height: 2270px !important;
+        }
+
+
+    }
+
+    /*Online Balance Styles END*/
+</style>
