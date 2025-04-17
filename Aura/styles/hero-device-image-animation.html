@@ -1,35 +1,55 @@
-<!--Gradient Background Rising Animation-->
+<!--Hero Device Image Animations-->
 <style>
-    section.section.section-relative:nth-of-type(2) > .section-block {
-        animation: 3s ease-in 0s background-rise;
-        animation-fill-mode: forwards;
+    #element-6455 {
+        animation: mobilebob 15s linear infinite;
     }
-    
-    @keyframes background-rise {
-        from {
-            background-position-y: 0%;
+
+    #element-6456 {
+        animation: tabletbob 15s linear infinite;
+    }
+
+    /*Define Animations*/
+    @keyframes mobilebob {
+        0% {
+            transform: translate(0px, 0px);
         }
-      
-      to {
-              background-position-y: 100%;
-      }
-    }
-    </style>
-    
-    <!--Gradient Background Rising Animation + Banner-->
-    <style>
-    section.section.section-relative:nth-of-type(3) > .section-block {
-        animation: 3s ease-in 0s background-rise;
-        animation-fill-mode: forwards;
-    }
-    
-    @keyframes background-rise {
-        from {
-            background-position-y: 0%;
+
+        25% {
+            transform: translate(0px, 15px);
         }
-      
-      to {
-              background-position-y: 100%;
-      }
+
+        50% {
+            transform: translate(0px, 0px);
+        }
+
+        75% {
+            transform: translate(0px, 15px);
+        }
+
+        100% {
+            transform: translate(0px, 0px);
+        }
     }
-    </style>
+
+    @keyframes tabletbob {
+        0% {
+            transform: translate(0px, 15px);
+        }
+
+        25% {
+            transform: translate(0px, 0px);
+        }
+
+        50% {
+            transform: translate(0px, 15px);
+        }
+
+        75% {
+            transform: translate(0px, 0px);
+        }
+
+        100% {
+            transform: translate(0px, 15px);
+        }
+    }
+</style>
