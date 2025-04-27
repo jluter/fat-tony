@@ -2,7 +2,6 @@
 <!--Aura's Recovery Plan Checklist Accordion = arpc-->
 
 <style id="arpcAccordionStyles">
-
     #arpcAccordionHtml ul {
         list-style-type: none;
         margin: 0;
@@ -14,7 +13,7 @@
         display: flex !important;
         justify-content: center !important
     }
-    
+
     .arpc-accordion-block {
         background-color: #161616;
         border-radius: 1.5rem 1.5rem 0 0;
@@ -41,7 +40,7 @@
         padding-bottom: 1rem;
         color: #ffffff;
     }
-    
+
     .arpc-subheadline {
         font-family: 'Basel Grotesk';
         font-size: 1.125rem;
@@ -65,7 +64,7 @@
         padding-bottom: 1rem;
         color: #888888;
     }
-    
+
     .arpc-accordion__list-item:hover {
         cursor: pointer;
         color: #ffffff;
@@ -99,7 +98,7 @@
         transition: max-height 0.3s ease-out;
         /* height: 100%; */
         width: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: stretch;
         justify-content: left;
@@ -183,7 +182,7 @@
         .arpc-headline-wrapper {
             width: 100%;
             text-align: center;
-            padding:  2rem 0;
+            padding: 2rem 0;
         }
 
         .arpc-accordion__question {
@@ -226,13 +225,14 @@
 <div id="arpcAccordionHtml" class="arpc-accordion-container">
     <div class="arpc-headline-wrapper">
         <h2 class="arpc-headline">Aura’s Recovery Plan Checklist</h2>
-        <p class="arpc-subheadline">If you’ve been a victim of identity theft, see how our Expert Fraud Remediation team will work with you to create a personalized recovery plan.</p>
+        <p class="arpc-subheadline">If you’ve been a victim of identity theft, see how our Expert Fraud Remediation team
+            will work with you to create a personalized recovery plan.</p>
     </div>
     <div class="arpc-container">
         <div class="arpc-accordion__alignment">
             <div class="arpc-accordion">
                 <ul role="list" class="arpc-accordion__list">
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block first-permanent-block">
                             <div class="arpc-accordion__question">1. Report identity theft</div>
                             <div class="arpc-accordion__plus-minus">
@@ -247,11 +247,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Aura records the specifics of your case and guides you through steps like changing passwords or securing bank accounts to prevent further unauthorized access.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Aura records the specifics of your case and guides you
+                                through steps like changing passwords or securing bank accounts to prevent further
+                                unauthorized access.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block">
                             <div class="arpc-accordion__question">2. Lock your credit profiles</div>
                             <div class="arpc-accordion__plus-minus">
@@ -266,11 +268,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Lock your Experian credit file with a single tap inside Aura’s app. Also, receive assistance to place a credit freeze with other major credit bureaus.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Lock your Experian credit file with a single tap inside
+                                Aura’s app. Also, receive assistance to place a credit freeze with other major credit
+                                bureaus.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block">
                             <div class="arpc-accordion__question">3. Flag fraudulent transactions</div>
                             <div class="arpc-accordion__plus-minus">
@@ -285,11 +289,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Identify and dispute any unauthorized charges on your accounts. Aura can liaise with banks and lenders to help reverse fraudulent charges or close new accounts.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Identify and dispute any unauthorized charges on your
+                                accounts. Aura can liaise with banks and lenders to help reverse fraudulent charges or
+                                close new accounts.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block">
                             <div class="arpc-accordion__question">4. Identity restoration and recovery</div>
                             <div class="arpc-accordion__plus-minus">
@@ -304,11 +310,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Lean on Aura to help report losses with the right financial institutions, reclaim lost funds, and rebuild your credit after any type of identity theft.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Lean on Aura to help report losses with the right
+                                financial institutions, reclaim lost funds, and rebuild your credit after any type of
+                                identity theft.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block">
                             <div class="arpc-accordion__question">5. Insurance for eligible losses</div>
                             <div class="arpc-accordion__plus-minus">
@@ -323,11 +331,14 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Aura offers up to $1 million per adult (up to $5 million total with the Family plan) as insurance for out-of-pocket expenses incurred due to identity theft &mdash; legal fees, travel expenses, or Certified Public Accountant costs.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Aura offers up to $1 million per adult (up to $5 million
+                                total with the Family plan) as insurance for out-of-pocket expenses incurred due to
+                                identity theft — legal fees, travel expenses, or Certified Public Accountant costs.
+                            </div>
                         </div>
                     </li>
-                    <li role="listitem" class="arpc-accordion__list-item">
+                    <li role="listitem" class="arpc-accordion__list-item" aria-expanded="false">
                         <div role="button" class="arpc-accordion__permanent-block">
                             <div class="arpc-accordion__question">6. Ongoing conitnuous monitoring</div>
                             <div class="arpc-accordion__plus-minus">
@@ -342,8 +353,10 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="arpc-accordion__expand-block">
-                            <div class="arpc-accordion__answer">Receive alerts for any changes to your credit file, suspicious use of your sensitive information, or if your Social Security number (SSN) is found on the Dark Web.</div>
+                        <div class="arpc-accordion__expand-block" aria-hidden="true">
+                            <div class="arpc-accordion__answer">Receive alerts for any changes to your credit file,
+                                suspicious use of your sensitive information, or if your Social Security number (SSN) is
+                                found on the Dark Web.</div>
                         </div>
                     </li>
                 </ul>
@@ -353,7 +366,8 @@
             </button>
         </div>
         <picture>
-            <source media="(min-width: 768px)" srcset="https://v.fastcdn.co/u/bff2cbd9/65334361-0-Financial-Fraud-Prot.png">
+            <source media="(min-width: 768px)"
+                srcset="https://v.fastcdn.co/u/bff2cbd9/65334361-0-Financial-Fraud-Prot.png">
             <img class="arpc-img" alt="Call center agent talking on headset"
                 src="https://v.fastcdn.co/u/bff2cbd9/65336088-0-Alex-1-Critical-Aler.png" />
         </picture>
@@ -412,14 +426,27 @@
                 buttonArrow.classList.toggle('is-open');
 
                 if (accordionContent.style.maxHeight) {
+                    accordionContent.style.display = "none";
                     accordionContent.style.maxHeight = null;
                 } else {
+                    accordionContent.style.display = "flex"; //Display needs to be set before height can be adjusted.
                     accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            //Function to dynamically change aria attributes
+            let handleAriaOnClick = (element, ariaType) => {
+                if (element.getAttribute(`aria-${ariaType}`) !== null) {
+                    element.setAttribute(`aria-${ariaType}`, (element.getAttribute(`aria-${ariaType}`) === "true" ? "false" : "true"));
+                } else {
+                    console.error(`Element does not have aria-${ariaType} attribute. View element:`, element);
                 }
             }
 
             toggle.addEventListener('click', (event) => {
                 handleToggle();
+                handleAriaOnClick(toggle, "expanded");
+                handleAriaOnClick(accordionContent, "hidden");
             });
             toggle.addEventListener('keydown', (event) => {
 
@@ -429,6 +456,8 @@
 
                 if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
                     handleToggle();
+                    handleAriaOnClick(toggle, "expanded");
+                    handleAriaOnClick(accordionContent, "hidden");
                 }
             });
         });

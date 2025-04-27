@@ -1,146 +1,16 @@
-<!--FAQ Accordion Script -->
-<script data-cfasync="false">
+<!--GB Name: FAQ Global Block Version - Parental Controls (North Star) -->
+<!--Frequently Asked Questions Accordion = FAQ-->
 
-    // function setFocusToIndividualCta(event) {
-    //     const { key, which } = event;
-    //     const famCta = document.querySelector(".faq-accordion__permanent-block");
-
-    //     if ((key === "Tab" || which === 9) && famCta) {
-    //         event.preventDefault();
-    //         famCta.focus();
-    //         return window.removeEventListener("keydown", setFocusToIndividualCta);
-    //     }
-    // };
-
-    const createAccordion = () => {
-        // HTML that will be inserted. Recommended to copy it into another HTML file for edits.
-        const accordionHTML = `<div class="faq-accordion-container">
-	<div class="faq-accordion__alignment">
-		<h1 class="faq-headline">Frequently Asked Questions</h1>
-		<div class="faq-accordion">
-			<div role="list" class="faq-accordion__list">
-				<div role="listitem" class="faq-accordion__list-item">
-					<div role="button" class="faq-accordion__permanent-block">
-						<div class="faq-accordion__question">What is a Password Manager?</div>
-						<div class="faq-accordion__plus-minus">
-							<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-								<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="faq-accordion__expand-block">
-						<div class="faq-accordion__answer">Aura Password Manager simplifies your digital life by taking the headache out of memorizing usernames and passwords. We
-						make it easy to automatically save your passwords as you browse and get access whenever you need them. Plus, we’ll let
-						you know if your passwords are weak or have been compromised, and help you update them in just a few clicks.</div>
-					</div>
-				</div>
-				<div role="listitem" class="faq-accordion__list-item">
-					<div role="button" class="faq-accordion__permanent-block">
-						<div class="faq-accordion__question">Which devices and browsers support Password Manager?</div>
-						<div class="faq-accordion__plus-minus">
-							<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-								<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="faq-accordion__expand-block">
-						<div class="faq-accordion__answer">Aura Password Manager is available for iOS, Android, and browser extensions: Chrome, FireFox, and Edge.</div>
-					</div>
-				</div>
-				<div role="listitem" class="faq-accordion__list-item">
-					<div role="button" class="faq-accordion__permanent-block">
-						<div class="faq-accordion__question">Will my passwords be synced across all my devices?</div>
-						<div class="faq-accordion__plus-minus">
-							<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-								<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="faq-accordion__expand-block">
-						<div class="faq-accordion__answer">Yes! Passwords that you add on each platform and browser will be synced across all supported desktops, tablets and
-						mobile devices. This also includes any edits you make to an account.</div>
-					</div>
-				</div>
-				<div role="listitem" class="faq-accordion__list-item">
-					<div role="button" class="faq-accordion__permanent-block">
-						<div class="faq-accordion__question">How do you keep my passwords secure?</div>
-						<div class="faq-accordion__plus-minus">
-							<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-								<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-								<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-							</svg>
-						</div>
-					</div>
-					<div class="faq-accordion__expand-block">
-						<div class="faq-accordion__answer">Your information is secured with 256-AES (Advanced Encryption Standard), the same encryption technology generally used
-						by major banks and the military.</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>`;
-
-        //Insert the block/module where the accordion will be inserted
-        const instaPageBlock = document.querySelector('#page-block-pexirk4o0eo');
-
-        //Apply stylings via CSS
-        instaPageBlock.classList.add('accordion-block');
-
-        //Insert HTML onto the page
-        instaPageBlock.innerHTML = accordionHTML;
-
-        //Add accordion functionality. Must be after HTML is inserted.
-        const faqListItemArray = document.querySelectorAll('.faq-accordion__list-item');
-        const faqBlocksToExpandArray = document.querySelectorAll('.faq-accordion__expand-block');
-
-        faqListItemArray.forEach((toggle, index) => {
-            toggle.setAttribute('tabindex', '0');
-            // toggle.addEventListener('keydown', setFocusToIndividualCta);
-            let accordionContent = faqBlocksToExpandArray[index];
-            let buttonArrow = toggle.querySelector('.faq-accordion__plus-minus');
-
-            let handleToggle = () => {
-                toggle.classList.toggle('is-open');
-                accordionContent.classList.toggle('is-open');
-                buttonArrow.classList.toggle('is-open');
-
-                if (accordionContent.style.maxHeight) {
-                    accordionContent.style.maxHeight = null;
-                } else {
-                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-                }
-            }
-
-            toggle.addEventListener('click', (event) => {
-                handleToggle();
-            });
-            toggle.addEventListener('keydown', (event) => {
-
-                const { key, which } = event;
-                const keysToMatch = ["Enter", " "];
-                const whichCodesToMatch = [32, 13];
-
-                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
-                    handleToggle();
-                }
-            });
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", createAccordion);
-</script>
-
-<!--Accordion Styles NOTE: Must be applied in footer. Could be done native to InstaPage or appended via JS
-<style>
+<style id="faqAccordionStyles">
 	.accordion-block {
 		background-color: #F7F6F7;
 		height: auto !important;
-    	display: flex !important;
-    	justify-content: center !important
+		display: flex !important;
+		justify-content: center !important
+	}
+
+	.faq-accordion-block {
+		background-color: #f7f6f7;
 	}
 
 	.faq-accordion-container {
@@ -148,10 +18,11 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
-		padding-bottom: 9rem;
+		padding: 3.5rem 0;
 	}
 
 	.faq-headline {
+		text-align: center;
 		font-family: 'Clarendon Graphic';
 		font-size: 3.625rem;
 		padding-bottom: 2rem;
@@ -170,8 +41,12 @@
 		cursor: pointer;
 	}
 
-	.faq-accordion__list-item:hover > .faq-accordion__permanent-block {
+	.faq-accordion__list-item:hover>.faq-accordion__permanent-block {
 		padding-left: 1rem;
+	}
+
+	.faq-accordion__answer:hover {
+		cursor: default;
 	}
 
 
@@ -189,7 +64,7 @@
 		transition: max-height 0.3s ease-out;
 		/* height: 100%; */
 		width: 100%;
-		display: flex;
+		display: none;
 		flex-direction: column;
 		align-items: stretch;
 		justify-content: left;
@@ -197,6 +72,7 @@
 	}
 
 	.faq-accordion__question {
+		font-family: "Clarendon Graphic";
 		font-size: 2.25rem;
 	}
 
@@ -205,8 +81,11 @@
 	}
 
 	.faq-accordion__plus-minus {
-		height: 1.375rem;
-		width: 1.375rem;
+		height: 2rem;
+		width: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.faq-accordion__svg-vertical-line {
@@ -220,7 +99,8 @@
 	/*Mobile Styles*/
 	@media (max-width: 767px) {
 		.faq-accordion-container {
-			padding-bottom: 4rem;
+			padding-top: 1.5rem;
+			padding-bottom: 1rem;
 		}
 
 		.faq-accordion__alignment {
@@ -234,6 +114,8 @@
 		}
 
 		.faq-accordion__question {
+			font-family: 'Basel Grotesk';
+			max-width: 24ch;
 			font-size: 1.125rem;
 			padding-top: 1.5rem;
 		}
@@ -243,13 +125,17 @@
 		}
 
 		.faq-accordion__permanent-block {
-			padding-top: 1.5rem;
+			padding-top: 0;
 			align-items: flex-end;
+		}
+
+		.faq-accordion__list-item {
+			padding-bottom: 1.5rem;
 		}
 
 		.faq-accordion__plus-minus {
 			height: 1.5rem;
-			width:  1.5rem;
+			width: 1.5rem;
 		}
 
 		.faq-accordion__svg-icon {
@@ -258,4 +144,396 @@
 		}
 	}
 </style>
--->
+
+<!--HTML that will be inserted into the InstaPage <section> element-->
+<div id="faqAccordionHtml" class="faq-accordion-container">
+	<div class="faq-accordion-container">
+		<div class="faq-accordion__alignment">
+			<h2 class="faq-headline">Frequently Asked Questions</h2>
+			<div class="faq-accordion">
+				<div role="list" class="faq-accordion__list">
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">When should I start using parental controls?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								A good time to consider using parental controls is when your kid gets their first device
+								or
+								smartphone or starts using a device without supervision. </p>
+								<p>Aura’s parental controls help you to understand and control your child’s activities
+									on
+									their devices. For example, you can block inappropriate content, set time limits for
+									specific apps and receive notifications when they go over, view their web browser
+									history, and get insights into their online activity. </p>
+								<p>Kids today are surrounded by technology and their relationship with it changes over
+									time.
+									At times, you may want to consider adjusting your parental controls settings for
+									each
+									child’s account. Aura Parental Controls are flexible and customizable making them a
+									great tool for kids of all ages.</p>
+							</div>
+						</div>
+					</div>
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">When is a good time to talk to kids about online
+								safety?
+							</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>It’s never too late to talk to kids about online safety, but experts and parents
+									agree:
+									the sooner, the better. </p>
+								<p>Talking to your kids about why online safety is important is much more impactful than
+									setting rules and boundaries without explanation. During your talk, make sure to
+									address
+									issues, such as:</p>
+								<ul role="list">
+									<li>Screen time: Explain the need for screen-free time and why you will set limits
+										on
+										your child’s device.</li>
+									<li>Social media: Show them how social networking sites work and what’s appropriate
+										(or
+										not) to share.</li>
+									<li>Mature content: Warn them about adult content and make sure they know who to
+										talk to
+										if they come across it.</li>
+									<li>Malware: Explain how viruses make devices sick and how they should ask before
+										downloading apps or trying to watch tv shows on streaming sites you haven’t
+										approved. </li>
+									<li>Online privacy: Teach your children not to share private or personal information
+										online — even their address, school name, or phone number.</li>
+								</ul>
+								<p>Talking to your kids about online safety and screen time is a lot like talking to
+									them
+									about any other activity with clear rules and boundaries (following a curfew or
+									driving
+									a car for the first time). If you start from the outset, there are fewer surprises
+									down
+									the road.</p>
+							</div>
+						</div>
+					</div>
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">What devices does Aura Parental Controls work with?
+							</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">Aura Parental Controls work with Apple iPhones and iPads
+								(iOS
+								13 or later) as well as Android mobile devices (Android 9.0 or later). Online Balance
+								features work only
+								on Apple iPhones and iPads (15.1 and later).</div>
+						</div>
+					</div>
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">What is Safe Gaming? What does it do?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>Aura has partnered with Kidas to offer Safe Gaming powered by ProtectMe as part of
+									Family
+									plans. ProtectMe is gaming’s safest privacy and protection software for your
+									family’s
+									PC. Kidas scans all gaming-related communications in the background and sends alerts
+									to
+									your email if cyberbullying or online predators are detected. Each week, you’ll get
+									a
+									full report with your child’s overall threat severity exposure score, a break down
+									of
+									all threats detected, and gaming time insights. Install the software to your child’s
+									PC
+									to get instantly connected and protected. </p>
+								<p>Take the next step to protect your child online. Call us at 1-844-939-3681 to learn
+									more
+									about our award-winning child safety features.</p>
+							</div>
+						</div>
+					</div>
+					<!-- List Item 5 -->
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">What does the Balance Overview show parents?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>The Balance Overview looks at online behavior throughout the day and night to
+									identify trends and
+									patterns unique to your child. Online Balance establishes a personalized
+									understanding — or baseline
+									— of your child’s digital wellbeing by tracking patterns of behavior over time.
+								</p>
+								<p>
+									Aura Intelligence recognizes any shifts in behavior and alerts parents to these
+									shifts, providing
+									science-backed recommendations for what to do next.
+								</p>
+							</div>
+						</div>
+					</div>
+					<!-- List item 6 -->
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">What types of online interactions are included in the
+								social behavior
+								patterns?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>The feature covers messagings, posts, comments, and direct messages across supported
+									platforms, both
+									public and private. Platform coverage will be expanded over time.</p>
+							</div>
+						</div>
+					</div>
+					<!-- List item 7 -->
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">How does Aura establish a kid’s social persona?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>Aura has identified six social personas that characterize the average social
+									behaviors of connected
+									kids. Based on your kid’s digital social patterns over time, Aura will assign your
+									child one of these
+									social personas. This dynamic feature adjusts over time and flags changes that might
+									matter — like
+									major shifts in social connections.</p>
+							</div>
+						</div>
+					</div>
+					<!-- List item 8 -->
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">How does Aura develop the parent recommendations and
+								insights?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>Powered by Aura Intelligence, we spot meaningful shifts in your kid’s behavior,
+									including sleep or
+									late-night device usage trends. Aura alerts parents, along with conversation
+									startes, insights into
+									potential causes, tactical tips, and science-backed suggestions to overcome
+									challenges.</p>
+							</div>
+						</div>
+					</div>
+					<!-- List item 9 -->
+					<div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+						<div role="button" class="faq-accordion__permanent-block">
+							<div class="faq-accordion__question">How does Aura protect my child's privacy?</div>
+							<div class="faq-accordion__plus-minus">
+								<svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="32"
+									height="32" viewBox="0 0 32 32" fill="none">
+									<path class="faq-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+									<path class="faq-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+										stroke="#161616" stroke-width="2" stroke-linecap="round"
+										stroke-linejoin="round"></path>
+								</svg>
+							</div>
+						</div>
+						<div class="faq-accordion__expand-block" aria-hidden="true">
+							<div class="faq-accordion__answer">
+								<p>Aura takes privacy seriously. Data is used only to improve our products and support
+									research that
+									benefits families. You can find more details in our <u><a
+											href="https://www.aura.com/legal/privacy-policy" rel="noopener noreferrer"
+											aria-label="Open Aura's privacy policy">privacy policy</a></u>.</p>
+							</div>
+						</div>
+					</div>
+					<!-- End of 9 -->
+				</div>
+				<!-- End of Lists -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--faq Accordion Script -->
+<script data-cfasync="false">
+
+	//Grab the HTML Element/Object that this script is currently running in
+	const currentScriptfaq = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+	const createFaqAccordion = () => { //EDIT: Update function name in all locations for each new accordion.
+
+		//Loop through parent elements in ascending order until IP's section element is found
+		let isSectionBlock = false;
+		let currentElementToCheck = currentScriptfaq.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+		while (!isSectionBlock) {
+			if (currentElementToCheck.nodeName === "SECTION") {
+				isSectionBlock = true;
+			} else {
+				currentElementToCheck = currentElementToCheck.parentElement;
+			}
+		}
+
+		//Apply stylings via CSS
+		currentElementToCheck.classList.add('accordion-block');
+		currentElementToCheck.classList.add('faq-accordion-block'); //EDIT: Update classlist name for each new accordion.
+
+		//Grab HTML & Style elements
+		const accordionHTML = document.querySelector("#faqAccordionHtml");
+		const accordionStyles = document.querySelector("#faqAccordionStyles");
+
+		//Overwrite current HTML
+		currentElementToCheck.innerHTML = '';
+
+		//Insert HTML & Styles into block
+		currentElementToCheck.appendChild(accordionHTML);
+		currentElementToCheck.appendChild(accordionStyles);
+
+		//Add accordion functionality. Must be after HTML is inserted.
+		const faqListItemArray = document.querySelectorAll('.faq-accordion__list-item');
+		const faqBlocksToExpandArray = document.querySelectorAll('.faq-accordion__expand-block');
+
+		faqListItemArray.forEach((toggle, index) => {
+			toggle.setAttribute('tabindex', '0');
+			// toggle.addEventListener('keydown', setFocusToIndividualCta);
+			let accordionContent = faqBlocksToExpandArray[index];
+			let buttonArrow = toggle.querySelector('.faq-accordion__plus-minus');
+
+			let handleToggle = () => {
+				toggle.classList.toggle('is-open');
+				accordionContent.classList.toggle('is-open');
+				buttonArrow.classList.toggle('is-open');
+
+				if (accordionContent.style.maxHeight) {
+					accordionContent.style.display = "none";
+					accordionContent.style.maxHeight = null;
+				} else {
+					accordionContent.style.display = "flex"; //Display needs to be set before height can be adjusted.
+					accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+				}
+			}
+
+			//Function to dynamically change aria attributes
+			let handleAriaOnClick = (element, ariaType) => {
+				if (element.getAttribute(`aria-${ariaType}`) !== null) {
+					element.setAttribute(`aria-${ariaType}`, (element.getAttribute(`aria-${ariaType}`) === "true" ? "false" : "true"));
+				} else {
+					console.error(`Element does not have aria-${ariaType} attribute. View element:`, element);
+				}
+			}
+
+			toggle.addEventListener('click', (event) => {
+				handleToggle();
+				handleAriaOnClick(toggle, "expanded");
+				handleAriaOnClick(accordionContent, "hidden");
+			});
+			
+			toggle.addEventListener('keydown', (event) => {
+				
+				const { key, which } = event;
+				const keysToMatch = ["Enter", " "];
+				const whichCodesToMatch = [32, 13];
+				
+				if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+					handleToggle();
+					handleAriaOnClick(toggle, "expanded");
+					handleAriaOnClick(accordionContent, "hidden");
+				}
+			});
+		});
+	};
+
+	document.addEventListener("DOMContentLoaded", createFaqAccordion);
+</script>

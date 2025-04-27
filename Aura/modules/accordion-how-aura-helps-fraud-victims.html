@@ -2,7 +2,6 @@
 <!--How Aura Helps Victim Fraud Accordion = HAHVFA-->
 
 <style id="hahvfaAccordionStyles">
-    
     #hahvfaAccordionHtml ul {
         list-style-type: none;
         margin: 0;
@@ -14,7 +13,7 @@
         display: flex !important;
         justify-content: center !important
     }
-    
+
     .hahvfa-accordion-block {
         background-color: #ffffff;
     }
@@ -82,7 +81,7 @@
         transition: max-height 0.3s ease-out;
         /* height: 100%; */
         width: 100%;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: stretch;
         justify-content: left;
@@ -136,8 +135,8 @@
         .hahvfa-accordion-container {
             padding: 2rem 2.5rem 4rem 2.5rem;
         }
-        
-        .hahvfa-container {            
+
+        .hahvfa-container {
             flex-direction: column-reverse;
             align-items: center;
             width: auto;
@@ -202,8 +201,10 @@
 <div id="hahvfaAccordionHtml" class="hahvfa-accordion-container">
     <div class="hahvfa-container">
         <picture>
-            <source media="(min-width: 768px)" srcset="https://v.fastcdn.co/u/bff2cbd9/65312558-0-Woman-working-from-h.png">
-            <img class="hahvfa-img" src="https://v.fastcdn.co/u/bff2cbd9/65335979-0-Woman-working-from-h.png" alt="Woman working from home using headset">
+            <source media="(min-width: 768px)"
+                srcset="https://v.fastcdn.co/u/bff2cbd9/65312558-0-Woman-working-from-h.png">
+            <img class="hahvfa-img" src="https://v.fastcdn.co/u/bff2cbd9/65335979-0-Woman-working-from-h.png"
+                alt="Woman working from home using headset">
         </picture>
         <div class="hahvfa-accordion__alignment">
             <h2 class="hahvfa-headline">How Aura Helps When You’re a Victim of Fraud</h2>
@@ -212,7 +213,7 @@
                 forces of identity theft and fraud resolution.</p>
             <div class="hahvfa-accordion">
                 <ul role="list" class="hahvfa-accordion__list">
-                    <li role="listitem" class="hahvfa-accordion__list-item">
+                    <li role="listitem" class="hahvfa-accordion__list-item" aria-expanded="false">
                         <div role="button" class="hahvfa-accordion__permanent-block">
                             <div class="hahvfa-accordion__question">Dedicated & Expert Help</div>
                             <div class="hahvfa-accordion__plus-minus">
@@ -227,12 +228,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hahvfa-accordion__expand-block">
+                        <div class="hahvfa-accordion__expand-block" aria-hidden="true">
                             <div class="hahvfa-accordion__answer">Following a fraud incident, you are assigned a
                                 dedicated agent to closely work with you and understand your situation.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="hahvfa-accordion__list-item">
+                    <li role="listitem" class="hahvfa-accordion__list-item" aria-expanded="false">
                         <div role="button" class="hahvfa-accordion__permanent-block">
                             <div class="hahvfa-accordion__question">Personalized Recovery Plan</div>
                             <div class="hahvfa-accordion__plus-minus">
@@ -247,12 +248,12 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hahvfa-accordion__expand-block">
+                        <div class="hahvfa-accordion__expand-block" aria-hidden="true">
                             <div class="hahvfa-accordion__answer">Our agents will create a personalized recovery plan
                                 and help you navigate government agencies, creditors, and more.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="hahvfa-accordion__list-item">
+                    <li role="listitem" class="hahvfa-accordion__list-item" aria-expanded="false">
                         <div role="button" class="hahvfa-accordion__permanent-block">
                             <div class="hahvfa-accordion__question">Active Guidance</div>
                             <div class="hahvfa-accordion__plus-minus">
@@ -267,13 +268,13 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hahvfa-accordion__expand-block">
+                        <div class="hahvfa-accordion__expand-block" aria-hidden="true">
                             <div class="hahvfa-accordion__answer">Our agents will go the extra mile and call government
                                 agencies on your behalf, set up 3-way calls betweeen you and your financial
                                 institutions, and make light work of complicated forms.</div>
                         </div>
                     </li>
-                    <li role="listitem" class="hahvfa-accordion__list-item">
+                    <li role="listitem" class="hahvfa-accordion__list-item" aria-expanded="false">
                         <div role="button" class="hahvfa-accordion__permanent-block">
                             <div class="hahvfa-accordion__question">Thorough Fraud Resolution</div>
                             <div class="hahvfa-accordion__plus-minus">
@@ -288,7 +289,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="hahvfa-accordion__expand-block">
+                        <div class="hahvfa-accordion__expand-block" aria-hidden="true">
                             <div class="hahvfa-accordion__answer">After your fraud incident has been resolved, our
                                 agents will continue to monitor your accounts for 90 days to ensure no new threats
                                 arise.</div>
@@ -338,7 +339,7 @@
         currentElementToCheck.appendChild(accordionHTML);
         currentElementToCheck.appendChild(accordionStyles);
 
-        //Add accordion functionality. Must be after HTML is inserted.
+        //Add accordion functionality. 
         const hahvfaListItemArray = document.querySelectorAll('.hahvfa-accordion__list-item');
         const hahvfaBlocksToExpandArray = document.querySelectorAll('.hahvfa-accordion__expand-block');
 
@@ -355,13 +356,26 @@
 
                 if (accordionContent.style.maxHeight) {
                     accordionContent.style.maxHeight = null;
+                    accordionContent.style.display = "none";
                 } else {
+                    accordionContent.style.display = "flex"; //Display needs to be set before height can be adjusted.
                     accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            //Function to dynamically change aria attributes
+            let handleAriaOnClick = (element, ariaType) => {
+                if (element.getAttribute(`aria-${ariaType}`) !== null) {
+                    element.setAttribute(`aria-${ariaType}`, (element.getAttribute(`aria-${ariaType}`) === "true" ? "false" : "true"));
+                } else {
+                    console.error(`Element does not have aria-${ariaType} attribute. View element:`, element);
                 }
             }
 
             toggle.addEventListener('click', (event) => {
                 handleToggle();
+                handleAriaOnClick(toggle, "expanded");
+                handleAriaOnClick(accordionContent, "hidden");
             });
             toggle.addEventListener('keydown', (event) => {
 
@@ -371,6 +385,8 @@
 
                 if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
                     handleToggle();
+                    handleAriaOnClick(toggle, "expanded");
+                    handleAriaOnClick(accordionContent, "hidden");
                 }
             });
         });

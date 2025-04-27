@@ -1,19 +1,6 @@
-<!--Hero Card Accordion Script -->
-<script data-cfasync="false">
-
-    // function setFocusToIndividualCta(event) {
-    //     const { key, which } = event;
-    //     const famCta = document.querySelector(".faq-accordion__permanent-block");
-
-    //     if ((key === "Tab" || which === 9) && famCta) {
-    //         event.preventDefault();
-    //         famCta.focus();
-    //         return window.removeEventListener("keydown", setFocusToIndividualCta);
-    //     }
-    // };
-
-    const accordionStyles = `
-<style>
+<!--Credit Protection Hero Slide Accordion Block-->
+<!--Credit Protection Hero Slide Accordion = cphsa -->
+<style id="cphsaAccordionStyles">
     section.section.section-relative:nth-of-type(n+5) {
         overflow: hidden;
     }
@@ -101,7 +88,8 @@
         max-height: 0px;
         width: 18.625rem;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
+        display: none;
+        /* transition: max-height 0.3s ease-out; */
     }
 
     #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
@@ -157,16 +145,16 @@
 
         /*Slider gradient */
         /* #credit-protection-hero-slide-acc .splide__track:after {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          bottom: 0;
-          pointer-events: none;
-          background-image: linear-gradient(270deg, rgb(246, 246, 246) 36.84%, rgba(236, 244, 255, 0) 100%);
-          width: 3.5rem;
-          height: 100%;
-          right: -5px;
-      } */
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            pointer-events: none;
+            background-image: linear-gradient(270deg, rgb(246, 246, 246) 36.84%, rgba(236, 244, 255, 0) 100%);
+            width: 3.5rem;
+            height: 100%;
+            right: -5px;
+            } */
     }
 
     #credit-protection-hero-slide-acc {
@@ -215,6 +203,12 @@
         gap: 3rem;
     }
 
+    #credit-protection-hero-slide-acc .card-accordion-wrapper {
+        width: 100%;
+        padding: 0 1rem;
+        overflow: hidden;
+    }
+
     #credit-protection-hero-slide-acc .card-container.second-hero-card {
         gap: 2.4rem;
     }
@@ -224,8 +218,8 @@
     }
 
     /* #credit-protection-hero-slide-acc .card-icon {
-padding-bottom: 1.5rem;
-} */
+        padding-bottom: 1.5rem;
+        } */
 
     #credit-protection-hero-slide-acc .card-text-container {
         display: flex;
@@ -255,11 +249,14 @@ padding-bottom: 1.5rem;
         }
 
         #credit-protection-hero-slide-acc .splide__track {
-            height: 24rem;
+            /* height: 24rem; */
+            height: 100%;
+            padding-bottom: 4rem;
         }
 
         #credit-protection-hero-slide-acc .splide__track.is-open {
-            height: 33.5rem;
+            /* height: 33.5rem; */
+            height: 100%;
         }
 
         .accordion-block {
@@ -312,14 +309,17 @@ padding-bottom: 1.5rem;
             margin: 0;
             border-radius: 1rem;
             background: #ecf4ff;
-            transition: height 0.3s ease-out;
-            height: 20.6875rem;
+            /* height: 20.6875rem; */
+            height: 100%;
             gap: 0 !important;
             justify-content: flex-start !important;
+            transition: height 0.3s ease-out,
+                min-height 0.3s ease-out;
         }
 
         #credit-protection-hero-slide-acc .card-container.is-open {
-            height: 30.1875rem;
+            min-height: 30.1875rem;
+            height: 100%;
         }
 
         #credit-protection-hero-slide-acc .card-icon {
@@ -495,19 +495,13 @@ padding-bottom: 1.5rem;
         }
     }
 </style>
-    `;
 
-    const stylesToAppend = document.createElement("style");
-    stylesToAppend.innerHTML = accordionStyles;
-    document.querySelector("head").append(stylesToAppend);
-
-    const createAccordion = () => {
-        // HTML that will be inserted. Recommended to copy it into another HTML file for edits.
-        const accordionHTML = `<div id="credit-protection-hero-slide-acc" class="splide" role="group" aria-label="Aura Reviews">
+<div id="credit-protection-hero-slide-acc" class="splide" role="group" aria-label="Aura Reviews">
     <div class="hero-title-container">
         <h1 class="hero-title">How to Protect Your Credit</h1>
-        <p class="hero-sub-text">If your information was compromised from a recent data breach, it’s important to act quickly so you can protect your
-        credit from fraud.</p>
+        <p class="hero-sub-text">If your information was compromised from a recent data breach, it’s important to act
+            quickly so you can protect your
+            credit from fraud.</p>
     </div>
     <div class="splide__track">
         <div class="splide__list">
@@ -523,7 +517,7 @@ padding-bottom: 1.5rem;
                             src="https://v.fastcdn.co/u/bff2cbd9/65325070-0-Credit-Card-Lock-Ill.png"
                             alt="Aura App Bedtime Function Screnshot">
                         <div class="card-accordion-wrapper first-hero-card">
-                            <div class="card-accordion-title-wrapper">
+                            <div role="button" class="card-accordion-title-wrapper" aria-expanded="false">
                                 <p class="card-paragraph-text">
                                     Why It's Important
                                 </p>
@@ -535,7 +529,7 @@ padding-bottom: 1.5rem;
                                         fill="#191C1F" />
                                 </svg>
                             </div>
-                            <div class="card-accordion-body-wrapper">
+                            <div class="card-accordion-body-wrapper" aria-hidden="true">
                                 <p class="accordion-body-text">
                                     A credit freeze (or credit lock) limits access to your credit report, preventing
                                     others from opening new credit accounts in your name.
@@ -557,7 +551,7 @@ padding-bottom: 1.5rem;
                             src="https://v.fastcdn.co/u/bff2cbd9/65311840-0-Monitory-Credit-Secu.png"
                             alt="Aura App Bedtime Function Screnshot">
                         <div class="card-accordion-wrapper">
-                            <div class="card-accordion-title-wrapper">
+                            <div role="button" class="card-accordion-title-wrapper" aria-expanded="false">
                                 <p class="card-paragraph-text">
                                     Why It's Important
                                 </p>
@@ -569,7 +563,7 @@ padding-bottom: 1.5rem;
                                         fill="#191C1F" />
                                 </svg>
                             </div>
-                            <div class="card-accordion-body-wrapper">
+                            <div class="card-accordion-body-wrapper" aria-hidden="true">
                                 <p class="accordion-body-text">
                                     Keep a close eye on your credit card statements and credit report. Unfamiliar
                                     transactions or newly opened accounts you didn’t authorize could be warning signs of
@@ -592,7 +586,7 @@ padding-bottom: 1.5rem;
                             src="https://v.fastcdn.co/u/bff2cbd9/65325071-0-Adult-Safety-Illustr.png"
                             alt="Aura App Bedtime Function Screnshot">
                         <div class="card-accordion-wrapper">
-                            <div class="card-accordion-title-wrapper">
+                            <div role="button" class="card-accordion-title-wrapper" aria-expanded="false">
                                 <p class="card-paragraph-text">
                                     Why It's Important
                                 </p>
@@ -604,7 +598,7 @@ padding-bottom: 1.5rem;
                                         fill="#191C1F" />
                                 </svg>
                             </div>
-                            <div class="card-accordion-body-wrapper">
+                            <div class="card-accordion-body-wrapper" aria-hidden="true">
                                 <p class="accordion-body-text">
                                     Fraud alerts tell creditors to verify your identity before approving new credit in
                                     your name. If you’re worried about your compromised information, you can set up
@@ -617,52 +611,79 @@ padding-bottom: 1.5rem;
             </div>
         </div>
     </div>
-</div>`;
+</div>
 
-        //Grab the block/module where the accordion will be inserted
-        const instaPageBlock = document.querySelector('#page-block-9h5opztp07');
+
+<script data-cfasync="false">
+
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptCphsa = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const createCphsaAccordion = () => {
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptCphsa.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
 
         //Apply stylings via CSS
-        instaPageBlock.classList.add('accordion-block');
+        currentElementToCheck.classList.add('accordion-block');
+        currentElementToCheck.classList.add('cphsa-accordion-block'); //EDIT: Update classlist name for each new accordion.
 
-        //Insert HTML onto the page
-        instaPageBlock.innerHTML = accordionHTML;
+
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#credit-protection-hero-slide-acc");
+        const accordionStyles = document.querySelector("#cphsaAccordionStyles");
+
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = '';
+
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
 
         //Add accordion functionality. Must be after HTML is inserted.
 
         //Accordion DOM element variables
-        const faqListItemArray = document.querySelectorAll('.card-accordion-title-wrapper');
-        const faqBlocksToExpandArray = document.querySelectorAll('.card-accordion-body-wrapper');
-        const faqCardArray = document.querySelectorAll('#credit-protection-hero-slide-acc .card-container');
-        const splideTrack = document.querySelector("#credit-protection-hero-slide-acc .splide__track");
+        const cphsaFaqListItemArray = document.querySelectorAll('.card-accordion-title-wrapper');
+        const cphsaFaqBlocksToExpandArray = document.querySelectorAll('.card-accordion-body-wrapper');
+        const cphsaFaqCardArray = document.querySelectorAll('#credit-protection-hero-slide-acc .card-container');
+        const cphsaSplideTrack = document.querySelector("#credit-protection-hero-slide-acc .splide__track");
 
         //Original card height before accordion is opened
-        // const cardHeight = faqCardArray[0].scrollHeight;
-        const trackHeight = splideTrack.scrollHeight;
-        const blockWidth = instaPageBlock.getBoundingClientRect().width;
+        // const cardHeight = cphsaFaqCardArray[0].scrollHeight;
+        const trackHeight = cphsaSplideTrack.scrollHeight;
+        const blockWidth = currentElementToCheck.getBoundingClientRect().width;
 
 
         let isAccordionOpen = 0;
         const checkAccordion = () => {
             if (!isAccordionOpen) {
-                splideTrack.classList.toggle("is-open");
+                cphsaSplideTrack.classList.toggle("is-open");
             }
         };
 
-        faqListItemArray.forEach((toggle, index) => {
+        cphsaFaqListItemArray.forEach((toggle, index) => {
             toggle.setAttribute('tabindex', '0');
             // toggle.addEventListener('keydown', setFocusToIndividualCta);
-            let accordionContent = faqBlocksToExpandArray[index];
-            let card = faqCardArray[index];
+            let accordionContent = cphsaFaqBlocksToExpandArray[index];
+            let card = cphsaFaqCardArray[index];
             let buttonArrow = toggle.querySelector('.card-accordion-arrow');
 
-            // splideTrack.addEventListener("scroll", (event) => {
+            // cphsaSplideTrack.addEventListener("scroll", (event) => {
             //     event.preventDefault();
             //     //Adjust track height based on how many accordions are open
             //     if (!isAccordionOpen) {
-            //         splideTrack.style.height = trackHeight / 16 + 'rem';
+            //         cphsaSplideTrack.style.height = trackHeight / 16 + 'rem';
             //     } else {
-            //         splideTrack.style.height = ((trackHeight / 16) + heightAdjustment) + 'rem';
+            //         cphsaSplideTrack.style.height = ((trackHeight / 16) + heightAdjustment) + 'rem';
             //     }
             // });
 
@@ -680,25 +701,36 @@ padding-bottom: 1.5rem;
 
                 //NOTE: Readjust to be edited in CSS by toggling "is-open"
                 if (accordionContent.classList.contains("is-open")) {
-                    // accordionContent.style.maxHeight = null;
-                    // card.style.height = cardHeight + 'rem';
                     isAccordionOpen += 1;
-                    // card.classList.remove("is-open");
-                    // splideTrack.classList.remove("is-open");
                 } else {
-                    // accordionContent.style.maxHeight = heightAdjustment + 'rem';
-                    // card.style.height = ((cardHeight) + heightAdjustment) + 'rem';
                     isAccordionOpen -= 1;
-                    // card.classList.add("is-open");
-                    // splideTrack.classList.add("is-open");
+                }
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.display = "none";
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.display = "flex"; //Display needs to be set before height can be adjusted.
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
                 }
 
                 checkAccordion();
             };
 
+            //Function to dynamically change aria attributes
+            let handleAriaOnClick = (element, ariaType) => {
+                if (element.getAttribute(`aria-${ariaType}`) !== null) {
+                    element.setAttribute(`aria-${ariaType}`, (element.getAttribute(`aria-${ariaType}`) === "true" ? "false" : "true"));
+                } else {
+                    console.error(`Element does not have aria-${ariaType} attribute. View element:`, element);
+                }
+            }
+
             toggle.addEventListener('click', (event) => {
                 event.preventDefault();
                 handleToggle();
+                handleAriaOnClick(toggle, "expanded");
+                handleAriaOnClick(accordionContent, "hidden");
             });
 
             toggle.addEventListener('keydown', (event) => {
@@ -710,12 +742,14 @@ padding-bottom: 1.5rem;
 
                 if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
                     handleToggle();
+                    handleAriaOnClick(toggle, "expanded");
+                    handleAriaOnClick(accordionContent, "hidden");
                 }
             });
         });
     }
 
-    document.addEventListener("DOMContentLoaded", createAccordion);
+    document.addEventListener("DOMContentLoaded", createCphsaAccordion);
 </script>
 
 <!-- Splide Slider Mount  -->
@@ -767,486 +801,3 @@ padding-bottom: 1.5rem;
         splide.mount();
     });
 </script>
-
-<style>
-    section.section.section-relative:nth-of-type(n+5) {
-        overflow: hidden;
-    }
-
-    .accordion-block {
-        background: url(https://v.fastcdn.co/u/bff2cbd9/65322815-0-Credit-Monitoring-Bl.png) repeat 50% 50% / cover;
-        display: flex;
-        justify-content: center;
-        height: 100% !important;
-        padding-bottom: 3.5rem;
-    }
-
-    .hero-title-container {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        padding: 5.75rem 0 2.5rem 0;
-    }
-
-    .hero-title {
-        font-family: 'Clarendon Graphic';
-        color: #ffffff;
-        font-size: 3.625rem;
-        width: 33.375rem;
-        line-height: 100%;
-    }
-
-    .hero-sub-text {
-        font-family: 'Basel Grotesk';
-        color: #ffffff;
-        font-size: 1.375rem;
-        width: 33.375rem;
-    }
-
-    #credit-protection-hero-slide-acc .splide__track {
-        overflow: visible;
-        height: 29.125rem;
-        transition: height 0.3s ease-out;
-    }
-
-    #credit-protection-hero-slide-acc .splide__track.is-open {
-        height: 36.625rem;
-    }
-
-
-    #credit-protection-hero-slide-acc .card-header-text {
-        font-size: 2rem;
-        line-height: 36px;
-        text-align: center;
-        margin: 0;
-        font-family: 'Clarendon Graphic';
-        font-weight: 300;
-        padding-top: 3.125rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-header-text.middle-card {
-        padding-top: 2rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-accordion-title-wrapper {
-        display: flex;
-        border-top: 1px solid black;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
-    }
-
-    #credit-protection-hero-slide-acc .accordion-body-text {
-        margin-bottom: 1rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-accordion-arrow {
-        width: 1.5rem;
-        height: 1.5rem;
-        margin-right: -0.25rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-accordion-arrow.is-open {
-        transform: rotate(180deg);
-    }
-
-    #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
-        max-height: 0px;
-        width: 18.625rem;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-    }
-
-    #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
-        max-height: 7.5rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-background-wrapper {
-        background: none;
-    }
-
-    #credit-protection-hero-slide-acc .card-container {
-        border-radius: 1rem;
-        transition: height 0.3s ease-out;
-        background-color: #ecf4ff;
-        height: 29.125rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-container.is-open {
-        height: 36.625rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-paragraph-text {
-        font-family: 'Basel Grotesk';
-
-    }
-
-
-    /*Desktop*/
-    @media (min-width: 769px) {
-
-        #credit-protection-hero-slide-acc {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 68.75rem;
-        }
-
-        #credit-protection-hero-slide-acc .arrow-header-container {
-            width: 100%;
-        }
-
-        #credit-protection-hero-slide-acc .card-background-wrapper {
-            border-radius: 16px;
-            width: 100%;
-            height: 29.125rem;
-            min-height: 100%;
-        }
-
-        #credit-protection-hero-slide-acc .splide__track {
-            width: 113%;
-            align-self: baseline;
-        }
-
-        /*Slider gradient */
-        /* #credit-protection-hero-slide-acc .splide__track:after {
-          content: "";
-          position: absolute;
-          z-index: 1;
-          bottom: 0;
-          pointer-events: none;
-          background-image: linear-gradient(270deg, rgb(246, 246, 246) 36.84%, rgba(236, 244, 255, 0) 100%);
-          width: 3.5rem;
-          height: 100%;
-          right: -5px;
-      } */
-    }
-
-    #credit-protection-hero-slide-acc {
-        margin: 3.063rem auto;
-        /*width: 1300px;*/
-    }
-
-    #credit-protection-hero-slide-acc .card-green-bubble-header-container {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-    }
-
-    #credit-protection-hero-slide-acc .green-bubble-text,
-    #know-where-slider .card-header-span {
-        background-color: #D2FFAF;
-        border-radius: 24px;
-        padding: 0.25rem 0.75rem;
-    }
-
-
-    #credit-protection-hero-slide-acc .headline,
-    #know-where-slider .headline {
-        max-width: 50.3125rem;
-    }
-
-    #credit-protection-hero-slide-acc .headline h2,
-    #know-where-slider .headline h2 {
-        font-size: 3.625rem;
-    }
-
-    #credit-protection-hero-slide-acc .headline p,
-    #know-where-slider .headline p {
-        font-family: 'Basel Grotesk';
-        margin: 0.75rem 3rem;
-        line-height: 25px;
-    }
-
-
-
-    #credit-protection-hero-slide-acc .card-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* justify-content: space-between; */
-        gap: 3rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-container.second-hero-card {
-        gap: 2.4rem;
-    }
-
-    #credit-protection-hero-slide-acc .card-container.second-hero-card .card-image {
-        height: 12.5rem;
-    }
-
-    /* #credit-protection-hero-slide-acc .card-icon {
-padding-bottom: 1.5rem;
-} */
-
-    #credit-protection-hero-slide-acc .card-text-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        width: 18.375rem;
-    }
-
-    .card-paragraph-text {
-        text-align: left;
-        line-height: 22px;
-        font-weight: 500;
-    }
-
-    #credit-protection-hero-slide-acc .card-image {
-        object-fit: contain;
-        height: 12.5rem;
-    }
-
-    /*MOBILE BELOW*/
-
-    @media (max-width: 768px) {
-
-        #credit-protection-hero-slide-acc {
-            margin: 0;
-        }
-
-        #credit-protection-hero-slide-acc .splide__track {
-            height: 24rem;
-        }
-
-        #credit-protection-hero-slide-acc .splide__track.is-open {
-            height: 33.5rem;
-        }
-
-        .accordion-block {
-            padding-bottom: 0;
-        }
-
-
-        .hero-title-container {
-            flex-direction: column;
-            text-align: center;
-            gap: 1rem;
-            padding-top: 7.625rem;
-        }
-
-        .hero-title {
-            font-size: 2.25rem;
-            width: 19.6875rem;
-        }
-
-        .hero-sub-text {
-            font-size: 1.125rem;
-            width: 22.6875rem;
-        }
-
-        #credit-protection-hero-slide-acc {
-            width: 100%;
-        }
-
-        #credit-protection-hero-slide-acc .headline h2,
-        #know-where-slider .headline h2 {
-            font-size: 2.25rem;
-        }
-
-        #credit-protection-hero-slide-acc .headline p,
-        #know-where-slider .headline p {
-            font-family: 'Basel Grotesk';
-            text-align: center;
-            margin: 0.75rem 3rem 2rem 3rem;
-            line-height: 22px;
-        }
-
-        #credit-protection-hero-slide-acc .card-background-wrapper {
-            height: auto;
-            background: none;
-            width: 16.25rem;
-            min-height: 100%;
-        }
-
-        #credit-protection-hero-slide-acc .card-container {
-            margin: 0;
-            border-radius: 1rem;
-            background: #ecf4ff;
-            transition: height 0.3s ease-out;
-            height: 20.6875rem;
-            gap: 0 !important;
-            justify-content: flex-start !important;
-        }
-
-        #credit-protection-hero-slide-acc .card-container.is-open {
-            height: 30.1875rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-icon {
-            padding: 0;
-        }
-
-        #credit-protection-hero-slide-acc .card-header-text {
-            font-size: 1.5rem;
-            padding: 1.375rem 1.5rem 0 1.5rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-header-text.middle-card {
-            padding-top: 1rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-image {
-            height: 10.625rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-text-container {
-            width: 16.25rem;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding-bottom: 0rem !important;
-        }
-
-        #credit-protection-hero-slide-acc .desktop-slider-headline h2 {
-            max-width: 20rem;
-            margin: 0 auto;
-        }
-
-        #credit-protection-hero-slide-acc .card-accordion-body-wrapper {
-            width: 13.75rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-accordion-body-wrapper.is-open {
-            max-height: 9.5rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-accordion-title-wrapper {
-            width: 13.75rem;
-            padding-top: 0.5rem;
-            padding-bottom: 1rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-container.second-hero-card .card-image {
-            height: 9.45rem;
-        }
-    }
-
-    /* } */
-    /*Build Healthy Online Habits Styles END*/
-
-    /* Mobile Styles*/
-    @media (max-width: 768px) {
-
-        .accordion-block {
-            background: url(https://v.fastcdn.co/u/bff2cbd9/65322815-0-Credit-Monitoring-Bl.png) repeat 50% 50% / cover;
-        }
-
-        .splide__track {
-            width: 100vw;
-        }
-
-        .section.section-relative {
-            overflow: hidden;
-        }
-
-        .card-background-wrapper {
-            width: 17.425rem;
-            background-color: #ffffff;
-            border-radius: 24px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            min-height: 31rem;
-        }
-
-        .card-container {
-            display: flex;
-            flex-direction: column;
-            width: inherit;
-            height: inherit;
-            /* padding-top: 1rem; */
-        }
-
-        #credit-protection-hero-slide-acc .card-image {
-            height: 11rem;
-            width: 100%;
-            border-radius: unset;
-        }
-
-        .card-image.opacity-0 {
-            opacity: 0%;
-        }
-
-        .card-icon {
-            height: 2.313rem;
-            width: 2.313rem;
-        }
-
-        .card-icon.multi-icon {
-            width: auto;
-        }
-
-        .card-header-wrapper {
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            align-items: center;
-            margin: 0;
-        }
-
-        #credit-protection-hero-slide-acc .card-header-text {
-            font-weight: 400;
-            line-height: normal;
-            font-size: 1.5rem;
-            display: flex;
-            margin: 0;
-        }
-
-        .card-header-superscript {
-            /* font-size: 0.7rem; */
-            margin-left: 0.05rem;
-            margin-top: 0.7rem;
-        }
-
-        .card-header-text.in-header-wrapper {
-            margin-top: 0rem;
-            margin-bottom: 0rem;
-        }
-
-        .card-header-span {
-            padding: 0.3rem 0.7rem;
-            font-size: 0.75rem;
-            background-color: #d2ffaf;
-            border-radius: 1.188rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-paragraph-text {
-            font-family: "Basel Grotesk";
-            font-size: 1rem;
-            font-weight: 500;
-            line-height: 1.5625rem;
-            letter-spacing: 0px;
-            text-align: left;
-            width: 100%;
-            justify-self: flex-end;
-            align-self: flex-end;
-        }
-
-        #credit-protection-hero-slide-acc .card-text-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #credit-protection-hero-slide-acc .accordion-body-text {
-            margin-bottom: 1rem;
-        }
-
-        #credit-protection-hero-slide-acc .card-accordion-wrapper {
-            margin-top: 1rem;
-        }
-
-    }
-
-    /*TABLET STYLES*/
-    @media (max-width: 1100px) {
-        #credit-protection-hero-slide-acc .card-container {
-            gap: 0 !important;
-            justify-content: space-between;
-        }
-    }
-</style>

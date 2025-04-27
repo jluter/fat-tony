@@ -1,0 +1,489 @@
+<!--Online Safety for Families & Individuals Accordion Global Block-->
+<!--Online Safety for Families & Individuals = osffi-->
+
+<style id="osffiAccordionStyles">
+    #osffiAccordionHtml ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .accordion-block {
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important
+    }
+
+    .osffi-accordion-block {
+        background-color: #ffffff;
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .osffi-container {
+        display: flex;
+        align-items: center;
+        width: 69.375rem;
+        gap: 4rem;
+        padding: 2.5rem 4rem 2.5rem 2.5rem;
+    }
+
+    .osffi-accordion-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 6.5rem;
+    }
+
+    .osffi-headline {
+        font-family: 'Clarendon Graphic';
+        font-size: 3rem;
+        padding-bottom: 1rem;
+        color: #161616;
+    }
+
+    .osffi-subheadline {
+        font-family: 'Basel Grotesk';
+        font-size: 1.125rem;
+        padding-bottom: 2rem;
+        color: #161616;
+    }
+
+    .osffi-headline-wrapper {
+        width: 41.625rem;
+        text-align: center;
+        padding-top: 6.5rem;
+    }
+
+    .osffi-accordion {
+        width: 30.125rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .osffi-accordion__list-item {
+        border-bottom: 1px solid #161616;
+        padding-bottom: 1.5rem;
+        color: #161616;
+    }
+
+    .osffi-accordion__list-item:hover {
+        cursor: pointer;
+        color: #161616;
+        transition: color 0.2s linear;
+    }
+
+    .osffi-accordion__list-item.is-open {
+        color: #161616;
+    }
+
+    /* .osffi-accordion__list-item:hover>.osffi-accordion__permanent-block {
+        padding-left: 1rem;
+    } */
+
+
+    .osffi-accordion__permanent-block {
+        padding-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: padding-left 0.2s linear;
+    }
+
+    .osffi-accordion__permanent-block.first-permanent-block {
+        padding-top: 0;
+    }
+
+    .osffi-accordion__expand-block {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /* height: 100%; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
+
+    .osffi-accordion__question {
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
+
+    .osffi-accordion__answer {
+        padding-top: 1rem;
+        font-size: 1.125rem;
+    }
+
+    .osffi-accordion__plus-minus {
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .osffi-accordion__svg-vertical-line {
+        transition: opacity 200ms ease-out;
+    }
+
+    .osffi-accordion__plus-minus.is-open .osffi-accordion__svg-vertical-line {
+        opacity: 0%;
+    }
+
+    .osffi-pic {
+        align-self: flex-start;
+    }
+
+    .osffi-img {
+        width: 33.75rem;
+        height: 43.875rem;
+    }
+
+    .osffi-button {
+        padding: 0;
+        margin: 0;
+        border: unset;
+        background-color: transparent;
+    }
+
+    .osffi-button a {
+        height: 3.9375rem;
+        width: 19.0625rem;
+    }
+
+    /*Mobile Styles*/
+    @media (max-width: 767px) {
+        .osffi-accordion-container {
+            padding: 0;
+        }
+
+        .osffi-container {
+            flex-direction: column-reverse;
+            align-items: center;
+            width: auto;
+            padding: 0 0 6rem 0;
+            gap: 2rem;
+        }
+
+        .osffi-accordion__alignment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+        }
+
+        .osffi-headline {
+            text-align: center;
+            font-size: 1.875rem;
+            padding: 0 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .osffi-subheadline {
+            padding: 0 2rem;
+        }
+
+        .osffi-headline-wrapper {
+            width: 100%;
+            max-width: 24rem;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .osffi-accordion__question {
+            font-size: 1.375rem;
+            padding-top: 1rem;
+        }
+
+        .osffi-accordion__answer {
+            padding: 1.5rem 3.5rem 0 3.5rem;
+        }
+
+        .osffi-accordion__permanent-block {
+            padding: 0 3.5rem;
+            align-items: flex-end;
+        }
+
+        .osffi-accordion__plus-minus {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .osffi-accordion__svg-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .osffi-pic {
+            align-self: auto;
+        }
+
+        .osffi-img {
+            object-fit: cover;
+            object-position: 50% 25%;
+            border-radius: 1rem;
+            width: 19.6875rem;
+            height: 19.6875rem;
+        }
+
+        .osffi-button a.aura-cta {
+            width: 22.3125rem;
+        }
+
+    }
+</style>
+
+<!--HTML that will be inserted into the InstaPage <section> element-->
+<div id="osffiAccordionHtml" class="osffi-accordion-container">
+    <div class="osffi-headline-wrapper">
+        <h2 class="osffi-headline">Online Safety For Families & Individuals</h2>
+        <p class="osffi-subheadline">Keep your identity, finances, family, and devices safe with Aura's proactive
+            protection.</p>
+    </div>
+    <div class="osffi-container">
+        <div class="osffi-accordion__alignment">
+            <div class="osffi-accordion">
+                <ul role="list" class="osffi-accordion__list">
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block first-permanent-block">
+                            <div class="osffi-accordion__question">Credit Monitoring</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Get the fastest, near real-time alerts of inquiries
+                                into your credit files across Equifax, TransUnion, and Experian and
+                                instantly lock your credit when you need protection.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">Fraud, Identity Theft Protection, & Insurance</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Get comprehensive coverage and real-time monitoring to
+                                safeguard your personal, financial, and digital information. From
+                                $1M insurance per adult to expert fraud remediation, dark web alerts, and title, court,
+                                and identity monitoring, Aura keeps your personal information safe.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">VPN & Online Privacy</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Our VPN (Virtual Private Network) uses military-grade
+                                encryption so you can shop, bank, and work online privately and
+                                securely. With 100+ virtual locations to choose from, you can access global content from
+                                anywhere.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">Antivirus</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Keep your devices safe from all types of malware, such
+                                as viruses, ransomware, spyware and more.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">Password Manager & Vault</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Vault is like your digital lockbox. It allows you to
+                                securely store your most important digital files and passwords and
+                                easily share them with family members so everyone can stay connected and safe.
+                            </div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">Spam Call Protection</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Stay safe from annoying robocalls and costly phone
+                                scams. Aura’s proprietary AI adds multiple layers of protection - for
+                                unknown calls, it will verify the call details before forwarding it to you.</div>
+                        </div>
+                    </li>
+                    <li role="listitem" class="osffi-accordion__list-item">
+                        <div role="button" class="osffi-accordion__permanent-block">
+                            <div class="osffi-accordion__question">Parental Controls & Safe Gaming</div>
+                            <div class="osffi-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="osffi-accordion__svg-icon" width="32"
+                                    height="32" viewBox="0 0 32 32" fill="none">
+                                    <path class="osffi-accordion__svg-vertical-line" d="M16 5.3335V26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                    <path class="osffi-accordion__svg-horizontal-line" d="M5.3335 16H26.6668"
+                                        stroke="#161616" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="osffi-accordion__expand-block">
+                            <div class="osffi-accordion__answer">Keep your kids safe online and in-game with powerful
+                                parental controls and real-time cyberbullying alerts. Filter
+                                harmful content, set screen time limits, and get notified of threats across popular apps
+                                and games.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="osffi-button">
+                <a class="aura-cta btn">Start Your Free Trial</a>
+            </button>
+        </div>
+        <picture class="osffi-pic">
+            <source media="(min-width: 768px)"
+                srcset="https://v.fastcdn.co/u/bff2cbd9/65472207-0-Financial-Fraud-Prot.png">
+            <img class="osffi-img" alt="Call center agent talking on headset"
+                src="https://v.fastcdn.co/u/bff2cbd9/65472207-0-Financial-Fraud-Prot.png" />
+        </picture>
+    </div>
+</div>
+
+<!--osffi Accordion Script -->
+<script data-cfasync="false">
+
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptosffi = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const createosffiAccordion = () => { //EDIT: Update function name in all locations for each new accordion.
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptosffi.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
+
+        //Apply stylings via CSS
+        currentElementToCheck.classList.add('accordion-block');
+        currentElementToCheck.classList.add('osffi-accordion-block'); //EDIT: Update classlist name for each new accordion.
+
+
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#osffiAccordionHtml");
+        const accordionStyles = document.querySelector("#osffiAccordionStyles");
+
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = '';
+
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
+
+        //Add accordion functionality. Must be after HTML is inserted.
+        const osffiListItemArray = document.querySelectorAll('.osffi-accordion__list-item');
+        const osffiBlocksToExpandArray = document.querySelectorAll('.osffi-accordion__expand-block');
+
+        osffiListItemArray.forEach((toggle, index) => {
+            toggle.setAttribute('tabindex', '0');
+            // toggle.addEventListener('keydown', setFocusToIndividualCta);
+            let accordionContent = osffiBlocksToExpandArray[index];
+            let buttonArrow = toggle.querySelector('.osffi-accordion__plus-minus');
+
+            let handleToggle = () => {
+                toggle.classList.toggle('is-open');
+                accordionContent.classList.toggle('is-open');
+                buttonArrow.classList.toggle('is-open');
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            toggle.addEventListener('click', (event) => {
+                handleToggle();
+            });
+            toggle.addEventListener('keydown', (event) => {
+
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    handleToggle();
+                }
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", createosffiAccordion);
+</script>

@@ -1,0 +1,767 @@
+<!--GB Name: Single Plan Card Parental Controls D2P-->
+<!--NOTE: This plan card is unique to two pages: /parental-controls-app-d2p-a & /parental-controls-app-d2p-m -->
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* PLAN CARD STYLES */
+    #singlePlanCard {
+        width: 45.1875rem;
+        margin: 0 auto;
+    }
+
+    .plan-card__u-list {
+        padding: 0;
+        margin: 0;
+    }
+
+    .plan-card__parent-list-item {
+        width: 50%;
+    }
+
+    .plan-card__topper-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .plan-card__title {
+        font-family: "Basel Grotesk";
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
+
+    .plan-card__title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .plan-card__price-and-button-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 1rem 0 2rem 0;
+        border-bottom: 1px solid #161616;
+    }
+
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        padding: 2rem 2rem 0 2rem;
+        background-color: #ffffff;
+        border: 2px solid rgba(29, 47, 80, 0);
+        border-radius: 1rem;
+    }
+
+    .plan-card__list-wrapper {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card__plan-name,
+    .plan-card__feature-header {
+        font-size: 1.375rem;
+    }
+
+    .plan-card__plan-name {
+        display: flex;
+    }
+
+    .plan-card__name-ss {
+        font-size: 1rem;
+        color: rgba(37, 81, 184, 1);
+    }
+
+    .plan-card__feature-header {
+        max-width: 22ch;
+    }
+
+    .plan-card__sub-feature-p {
+        color: #4c5570;
+        font-size: 0.875rem;
+        max-width: 50%;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card__discount-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        background-color: #d2ffaf;
+        border-radius: 9999rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card__discount-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Button */
+    .plan-card__button {
+        width: 17.375rem;
+        height: 3.9375rem;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card__price-wrapper,
+    .plan-card__feature-content-wrapper {
+        text-align: left;
+    }
+
+    .plan-card__price-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card__price-text {
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card__mo-span {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card Text */
+    .plan-card__feature-text {
+        font-size: 1rem;
+    }
+
+    .plan-card__billed-text {
+        padding-top: 0.75rem;
+        padding-bottom: 0.2rem;
+    }
+
+    .plan-card__special-intro-text {
+        font-size: 0.875rem;
+        color: #6E6E6E;
+        text-align: left;
+    }
+
+    .plan-card__feature-text--new {
+        padding: 0.1rem 0.65rem;
+        background-color: #d2ffaf;
+        border-radius: 9999rem;
+        font-size: 0.75rem;
+        margin-left: 0.75rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card__feature-wrapper,
+    .plan-card__feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card__feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card__feature-wrapper {
+        align-items: start;
+        padding: 0.25rem 0;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card__checkmark {
+        background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    .plan-card__feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 1rem;
+    }
+
+    .plan-card__feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .plan-card__feature-block:nth-of-type(2) {
+        border-top: 1px solid #EBEBEB;
+        border-bottom: 1px solid #EBEBEB;
+    }
+
+    .plan-card__disclaimer-block {
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+
+    .plan-card__disclaimer {
+        font-size: 0.875rem;
+        color: #4c5570;
+    }
+
+    .plan-card__disclaimer-link {
+        text-decoration: underline;
+    }
+
+    .plan-card__disclaimer-link:hover {
+        cursor: pointer;
+        color: #1c3deb;
+    }
+
+    .plan-card__feature-text {
+        max-width: 29ch;
+    }
+
+    .plan-card__circle-badge {
+        width: 7.375rem;
+    }
+
+    .plan-card__badge {
+        position: absolute;
+        top: -3rem;
+        right: 9.5rem;
+        width: 7.75rem;
+        height: 7.75rem;
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+
+        #singlePlanCard {
+            width: 22.5rem;
+        }
+
+        .plan-card {
+            padding: 2rem 1.5rem 0 1.5rem;
+            gap: 0;
+        }
+
+        .plan-card__feature-block:nth-of-type(2) {
+            border: unset;
+            padding: 0;
+        }
+
+        .plan-card__price-text {
+            font-size: 1.985rem;
+        }
+
+        .plan-card__parent-list-item {
+            width: 100%;
+        }
+
+        .plan-card__title-wrapper {
+            gap: 0;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .plan-card__price-and-button-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+
+        .plan-card__feature-content-wrapper {
+            gap: 0.5rem;
+        }
+
+        .plan-card__feature-header {
+            font-size: 1.15rem;
+        }
+
+        .plan-card__list-wrapper {
+            flex-direction: column;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card__button {
+            width: 100%;
+            height: 3.438rem;
+            font-size: 1.375rem !important;
+        }
+
+        .plan-card__checkmark {
+            height: 1rem;
+            width: 1rem;
+            margin-top: 0.1rem;
+        }
+
+        .plan-card__ribbon,
+        .plan-card__discount-text {
+            font-size: 0.875rem !important;
+        }
+
+        .plan-card__feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card__feature-text {
+            max-width: 25ch;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-card__feature-header {
+            max-width: 18ch;
+        }
+
+        .plan-card__sub-feature-p {
+            font-size: 0.75rem;
+            max-width: unset;
+        }
+
+        .plan-card__sup {
+            margin-top: -0.4rem;
+        }
+
+        .plan-card__badge {
+            position: absolute;
+            top: -3.25rem;
+            right: 0;
+            left: 0;
+            margin-inline: auto;
+            width: 6.8125rem;
+            height: 6.8125rem;
+        }
+    }
+</style>
+
+<div id="singlePlanCard" class="plan-card">
+    <header class="plan-card__topper-wrapper">
+        <div class="plan-card__title-wrapper">
+            <h3 class="plan-card__title">Aura</h3>
+            <div class="plan-card__discount-wrapper">
+                <span id="planDiscountIndividual" class="plan-card__discount-text">Save up to XX%</span>
+            </div>
+        </div>
+        <div class="plan-card__price-and-button-wrapper">
+            <div class="plan-card__price-wrapper">
+                <span id="planPriceIndividual" class="plan-card__price-text">$XX/mo</span>
+                <span id="planAnnuallyIndividual" class="plan-card__billed-text">then $XXX billed annually,</span>
+                <span class="plan-card__special-intro-text">Special intro offer<sup>‡</sup></span>
+            </div>
+            <a id="planButtonIndividual" class="plan-card__button btn url-link">Get Protection Now</a>
+        </div>
+    </header>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">What's Included</h4>
+            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">3 Devices for Password Manager, Antivirus, VPN</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Ad Blocker & Anti-Track</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">24/7 U.S. Based Customer Support</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">Online & Device Security</h4>
+            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Real-Time Antivirus Protection</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Unlimited VPN</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Scam & Phishing Site Protection</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="plan-card__feature-block">
+        <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__feature-header-wrapper">
+                <h4 class="plan-card__feature-header">Password Manager</h4>
+            </div>
+            <ul class="plan-card__list-wrapper">
+                <li class="plan-card__parent-list-item">
+                    <ul class="plan-card__u-list">
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Save & Autofill Passwords</span>
+                        </li>
+                        <li class="plan-card__feature-wrapper">
+                            <div class="plan-card__checkmark"></div>
+                            <span class="plan-card__feature-text">Unlimited Passwords Storage</span>
+                        </li>
+                </li>
+                <li class="plan-card__feature-wrapper">
+                    <div class="plan-card__checkmark"></div>
+                    <span class="plan-card__feature-text">Strong Password Generator</span>
+                </li>
+            </ul>
+            </li>
+            <li class="plan-card__parent-list-item">
+                <ul class="plan-card__u-list">
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Compromised Password Alert</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Email Alias Protection</span>
+                    </li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+    <div class="plan-card__disclaimer-block">
+        <p class="plan-card__disclaimer 
+       intro-offer-details-text 
+       plan-card_special-intro-text">
+            <sup>‡</sup>Introductory offer <a class="plan-card__disclaimer-link intro-offer-details-button"
+                aria-label="Open introductory offer modal" tabindex="0">details</a>.
+        </p>
+    </div>
+</div>
+
+<!--Plan Card Modal for Splide-->
+<style>
+    /*Native Dialog Style Overrwites*/
+    .plan-card-modal {
+        border: unset;
+        border-radius: 1rem;
+        padding: 0;
+    }
+
+    .plan-card-modal[open] {
+        display: flex;
+        height: fit-content;
+    }
+
+    /*Modal pop-up*/
+    .plan-card-modal__list-title {
+        font-weight: 500;
+    }
+
+    .plan-card-modal__ul {
+        padding-left: 1rem;
+        margin-bottom: 0;
+    }
+
+    li.plan-card-modal__li {
+        padding: 0.5rem 0;
+    }
+
+    .plan-card-modal__li::marker {
+        content: "  •  ";
+    }
+
+    /*Desktop Styles */
+    @media (min-width: 769px) {
+        .offer-details-modal-background {
+            background-color: rgb(246, 246, 246);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            /* height: 100% !important; */
+            width: 100% !important;
+            max-width: 36.0625rem;
+        }
+
+        .offer-details-card-container-modal {
+            background-color: #ffffff;
+            width: inherit;
+            /* height: inherit; */
+            position: relative;
+            margin: 0;
+            padding: 3rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.75rem;
+            right: 1.75rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-exit-button:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 500;
+            line-height: 1.4625rem;
+            font-size: 1.375rem;
+            text-align: left;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+            padding-bottom: 1rem;
+        }
+    }
+
+    /*Desktop Styles End*/
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        .offer-details-modal-background {
+            /* height: 100% !important; */
+            width: 100% !important;
+            background-color: rgb(246, 246, 246);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .offer-details-card-container-modal {
+            width: inherit;
+            /* height: inherit; */
+            position: relative;
+            margin: 0;
+            padding: 2rem 1rem;
+            background-color: #ffffff;
+        }
+
+        .plan-card-modal-text-container {
+            max-width: 21rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.1875rem;
+            right: 1.1875rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button-wrapper:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 500;
+            line-height: 1.4625rem;
+            font-size: 1.125rem;
+            text-align: left;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+        }
+
+        .plan-card-modal-text {
+            height: 100% !important;
+            max-width: 80vw;
+        }
+    }
+
+    /*MODAL STYLES*/
+
+    .plan-card-modal-background {
+        position: fixed;
+        top: 0;
+        z-index: 9999999;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .intro-offer-details-button:hover {
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .intro-offer-details-text {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+    }
+</style>
+
+<dialog class="plan-card-modal" id="planCardModal">
+    <div class="offer-details-modal-background">
+        <div class="offer-details-card-container-modal">
+            <div class="plan-card-modal-text-container">
+                <h2 class="plan-card-modal-header-text">Introductory Offer</h2>
+                <p class="plan-card-modal-text">The introductory offer is valid for the first term of your subscription.
+                    At the end of the expiration of the initial term, you will be automatically renewed at the renewal
+                    price. This price is subject to change. We will always email you in advance prior to annual renewal.
+                </p>
+                <div class="plan-card-modal__ul-wrapper">
+                    <ul class="plan-card-modal__ul">
+                        <li id="modalIndividualAnnual" class="plan-card-modal__li">Deluxe - pay $49.99 after free
+                            trial, renews at $99.99/year</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-card-modal-exit-button-wrapper" tabindex="0" role="button">
+                <img class="plan-card-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"
+                    alt="Close modal button" />
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<script defer>
+    const currentScriptPlanCard = document.currentScript;
+    "use strict";
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        let createdmodalElement = document.querySelector("#planCardModal");
+        function modalFactory(modalElement) {
+            // //Modal HTML
+            // let modalHtml = document.querySelector("#planCardModal");
+
+            // //Create modal HTML object and add it to top of the Main HTML element
+            // modalElement.classList.add("plan-card-modal-background");
+            // modalElement.innerHTML = modalHtml;
+            // modalElement.style.display = "none";
+
+
+            const handleModalInsertion = (divToInsert) => {
+
+                let isSectionBlock = false;
+
+                let currentElementToCheck = currentScriptPlanCard.parentElement;
+
+                while (!isSectionBlock) {
+                    if (currentElementToCheck.nodeName === "SECTION") {
+                        isSectionBlock = true;
+                    } else {
+                        currentElementToCheck = currentElementToCheck.parentElement;
+                    }
+                }
+
+                currentElementToCheck.classList.add("planCardSectionBlock");
+                currentElementToCheck.after(divToInsert)
+
+            }
+
+
+            handleModalInsertion(modalElement);
+
+            let closeButton = document.querySelector(
+                `.plan-card-modal-exit-button-wrapper`
+            );
+            closeButton.setAttribute("aria-label", `Close Introductory Offer Pop-up`);
+            closeButton.addEventListener("click", () => {
+                modalElement.close();
+                // modalElement.style.display = "none";
+            });
+
+            closeButton.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    // modalElement.style.display = "none";
+                    modalElement.close();
+                }
+            });
+
+            //Add Modal display functionality on 'read more' click
+            let readMoreLink = document.querySelectorAll(
+                `.intro-offer-details-button`
+            );
+            readMoreLink.forEach((link) => {
+                link.setAttribute("aria-label", `Open Introductory Offer Details`);
+                link.addEventListener("click", () => {
+                    modalElement.showModal();
+                    // modalElement.style.display = "flex";
+                });
+
+                link.addEventListener("keydown", (event) => {
+                    const { key, which } = event;
+                    const keysToMatch = ["Enter", " "];
+                    const whichCodesToMatch = [32, 13];
+
+                    if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                        modalElement.showModal();
+                    }
+                });
+
+                // //Add Modal hide functionality on background click
+                modalElement.addEventListener("click", (event) => {
+                    if (event.target === modalElement) {
+                        // modalElement.style.display = "none";
+                        modalElement.close();
+                    }
+                });
+            });
+        }
+
+        modalFactory(createdmodalElement);
+    });
+</script>
