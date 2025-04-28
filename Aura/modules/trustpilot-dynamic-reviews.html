@@ -1,30 +1,26 @@
 <!--GB NAME: TrustPilot Dynamic Reviews Module -->
-<div id="tp-dynamic-slider" class="splide tp-dynamic-slider" role="group" aria-label="Aura Reviews">
-
+<div id="tp-dynamic-slider" class="splide tp-dynamic-slider" role="group" aria-label="Aura Customers Reviews">
     <div class="tp-dynamic__arrow-slide-wrapper">
         <div class="splide__arrows splide__arrows--ltr left-arrow-container">
-            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide"
-                aria-controls="tp-dynamic-slider-track">
+            <button class="splide__arrow splide__arrow--prev" type="button" aria-controls=" tp-dynamic-slider-track">
                 <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M10.2927 3.70715C10.6832 3.31663 11.3164 3.31663 11.7069 3.70715C12.0974 4.09768 12.0974 4.73084 11.7069 5.12137L6.34236 10.4859L19.9998 
-            10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
-            19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z"></path>
+          10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
+          19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z"></path>
                 </svg>
             </button>
         </div>
 
         <div class="splide__track">
-            <ul class="splide__list trustpilot-dynamic-splide-list">
-
-            </ul>
+            <ul class="splide__list trustpilot-dynamic-splide-list"></ul>
             <div class="splide-gradient"></div>
         </div>
 
         <div class="splide__arrows splide__arrows--ltr right-arrow-container">
-            <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide"
-                aria-controls="tp-dynamic-slider-track" disabled="">
+            <button class="splide__arrow splide__arrow--next" type="button" aria-controls="tp-dynamic-slider-track"
+                disabled="">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path class="right-arrow-svg" fill-rule="evenodd" clip-rule="evenodd"
                         d="M13.7073 3.70715C13.3168 3.31663 12.6836 3.31663 12.2931 3.70715C11.9026 4.09768 11.9026 4.73084 12.2931 5.12137L17.6576 10.4859L4.00024 10.4859C3.44796 10.4859 3.00024 10.9336 3.00024 11.4859C3.00024 12.0382 3.44796 12.4859 4.00024 12.4859L17.6565 12.4859L12.2931 17.8493C11.9026 18.2398 11.9026 18.873 12.2931 19.2635C12.6836 19.654 13.3168 19.654 13.7073 19.2635L20.7784 12.1924C21.1689 11.8019 21.1689 11.1687 20.7784 10.7782L13.7073 3.70715Z">
@@ -33,7 +29,6 @@
             </button>
         </div>
     </div>
-
 </div>
 <div class="tp-dynamic reviews-button-wrapper">
     <a class="tp-dynamic review-button btn"></a>
@@ -41,7 +36,7 @@
 
 <style>
     /* SPLIDE DESKTOP/MOBILE STYLES */
-    section.section.section-relative {
+    section.section.section-relative:nth-of-type(n + 4) {
         overflow: hidden;
     }
 
@@ -54,26 +49,25 @@
     }
 
     /* .splide__list {
-    justify-content: start;
-  } */
+  justify-content: start;
+} */
 
     /* .splide__slide {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: space-between;
-    transition: all 200ms ease;
-    overflow: hidden;
-  } */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  transition: all 200ms ease;
+  overflow: hidden;
+} */
 
     /* .splide__slide.is-active {
-    opacity: 1;
-  } */
+  opacity: 1;
+} */
 
     /* .no-gap {
-    margin-right: 0 !important;
-  } */
-
+  margin-right: 0 !important;
+} */
 
     .tp-dynamic-card-text-container {
         display: flex;
@@ -95,17 +89,20 @@
         cursor: pointer;
     }
 
-
     /* SPLIDE CARD STYLES - PAGE SPECIFIC*/
 
     @media (min-width: 1250px) {
         #tp-dynamic-slider .splide__arrows {
             padding: 0 2rem !important;
+            width: auto;
         }
     }
 
     /*Desktop Styles */
     @media (min-width: 769px) {
+        #tp-dynamic-slider-track {
+            overflow: hidden !important;
+        }
 
         .tp-dynamic__arrow-slide-wrapper {
             position: relative;
@@ -122,6 +119,7 @@
             gap: 1.5rem;
             align-items: center;
             justify-content: space-between;
+            width: auto;
         }
 
         #tp-dynamic-slider .splide__arrows .splide__arrow svg {
@@ -129,13 +127,12 @@
         }
 
         #tp-dynamic-slider .splide__arrows .splide__arrow svg:hover {
-            fill: #FFFFFF;
+            fill: #ffffff;
         }
 
         #tp-dynamic-slider .left-arrow-svg {
             transform: scaleX(1) !important;
         }
-
 
         #tp-dynamic-slider .splide__arrow {
             background: rgba(255, 255, 255, 0) !important;
@@ -151,7 +148,7 @@
 
         #tp-dynamic-slider .splide__arrow--prev:hover svg,
         #tp-dynamic-slider .splide__arrow--next:hover svg {
-            fill: #FFFFFF !important;
+            fill: #ffffff !important;
         }
 
         .tp-dynamic-card-background {
@@ -186,15 +183,12 @@
             top: 1.75rem;
             right: 1.75rem;
             z-index: 9;
-
         }
 
         .tp-dynamic-modal-exit-button {
             height: 1rem;
             width: 1rem;
         }
-
-
 
         .tp-dynamic-card-header-text {
             font-family: "Basel Grotesk";
@@ -207,10 +201,8 @@
             display: flex;
         }
 
-
-
         .tp-dynamic-card-text {
-            font-family: 'Basel Grotesk';
+            font-family: "Basel Grotesk";
             font-size: 1.125rem;
             font-weight: 400;
             line-height: 1.5625rem;
@@ -220,14 +212,11 @@
             min-height: 6.25rem;
             justify-self: flex-end;
             margin-bottom: 2rem;
-            margin-top: 1.5rem;
         }
-
 
         .tp-dynamic-date-wrapper {
             margin-bottom: 2rem;
         }
-
 
         .copyright-r {
             font-family: "basel-for-copy";
@@ -251,7 +240,6 @@
 
         .splide-gradient {
             display: none;
-
         }
     }
 
@@ -259,14 +247,13 @@
 
     /* Mobile Styles*/
     @media (max-width: 768px) {
-
         .tp-dynamic__arrow-slide-wrapper {
             position: static;
             display: block;
         }
 
         #tp-dynamic-slider-track {
-            overflow: visible;
+            overflow: visible !important;
         }
 
         #tp-dynamic-slider .aura-trustpilot-rating.star-size-mobile-12 .aura-trustpilot-rating-star {
@@ -275,7 +262,7 @@
         }
 
         #tp-dynamic-slider .aura-trustpilot-rating-text {
-            color: #4C4C4C;
+            color: #4c4c4c;
         }
 
         #tp-dynamic-slider .aura-trustpilot-rating-stars-wrapper.rating-stars-review-wrapper,
@@ -355,13 +342,11 @@
             max-width: 21rem;
         }
 
-
         .tp-dynamic-modal-exit-button-wrapper {
             position: absolute;
             top: 1.1875rem;
             right: 1.1875rem;
             z-index: 9;
-
         }
 
         .tp-dynamic-modal-exit-button {
@@ -387,7 +372,7 @@
 
         .tp-dynamic-card-text {
             height: 7.75rem;
-            font-family: 'Basel Grotesk';
+            font-family: "Basel Grotesk";
             font-size: 1rem;
             font-weight: 400;
             line-height: 1.3rem;
@@ -395,7 +380,6 @@
             text-align: left;
             justify-self: flex-end;
             margin-bottom: 2rem;
-            margin-top: 1.5rem;
         }
 
         .tp-dynamic-date-wrapper {
@@ -439,7 +423,7 @@
             border: 1px solid black !important;
             height: 6px !important;
             width: 6px !important;
-            transition: background .2s linear !important;
+            transition: background 0.2s linear !important;
         }
 
         #tp-dynamic-slider .splide__pagination__page.is-active {
@@ -451,13 +435,13 @@
         .splide-gradient {
             display: none;
             /* background-image: linear-gradient(270deg, rgba(236, 244, 255, 1) 36.84%, rgba(236, 244, 255, 0) 100%);
-            position: absolute;
-            content: "";
-            bottom: 0;
-            height: 100%;
-            width: 3rem;
-            right: -3px;
-            pointer-events: none; */
+          position: absolute;
+          content: "";
+          bottom: 0;
+          height: 100%;
+          width: 3rem;
+          right: -3px;
+          pointer-events: none; */
         }
     }
 
@@ -467,12 +451,28 @@
         position: fixed;
         top: 0;
         z-index: 9999999;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(236, 244, 255, 0.2);
         height: 100vh;
         width: 100vw;
+        align-content: center;
+        max-width: unset;
+        /*Override Dialog API Styles*/
+        max-height: unset;
+        /*Override Dialog API Styles*/
+        border: unset;
+        /*Override Dialog API Styles*/
+    }
+
+    .review-modal {
         display: flex;
-        align-items: center;
         justify-content: center;
+    }
+
+    .modal-guts {
+        background-color: rgb(236, 244, 255);
+        border-radius: 1.5rem;
+        width: fit-content;
+        margin: auto;
     }
 
     .tp-dynamic-read-more {
@@ -486,19 +486,16 @@
 
 <!-- TrustPilot Dynamic Review Script -->
 <script>
+    let currentScriptTpDynamic = document.currentScript;
     "use strict";
     //This variable is the Splide container where the carousel will go
     //Carousel is generated as HTML later in this script
-    const splideContainer = document.querySelector('.trustpilot-dynamic-splide-list');
+    const splideContainer = document.querySelector(
+        ".trustpilot-dynamic-splide-list"
+    );
 
     document.addEventListener("DOMContentLoaded", function () {
         // getTrustPilotTaggedReviews();
-
-
-
-
-
-
 
         //Main HTML is used to add modals
         const main = document.querySelector("main");
@@ -506,144 +503,196 @@
         //Make our stars based on their color! Thanks, Josh.
         function starSvgFactory(starColor) {
             return `<svg style="color: ${starColor}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd" clip-rule="evenodd" d="M12 18L4.94658 21.7082L6.29366 13.8541L0.587322 8.2918L8.47329 7.1459L12 0L15.5267 7.1459L23.4127 8.2918L17.7063 13.8541L19.0534 21.7082L12 18Z" fill="currentColor"/>
-				</svg>`;
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18L4.94658 21.7082L6.29366 13.8541L0.587322 8.2918L8.47329 7.1459L12 0L15.5267 7.1459L23.4127 8.2918L17.7063 13.8541L19.0534 21.7082L12 18Z" fill="currentColor"/>
+      </svg>`;
         }
 
         function modalFactory(colorWrapper, starColor, reviewObject, modalDiv) {
             //Modal HTML
             let modalHtml = `
-			<div class="review-modal">
-				<div class="tp-dynamic-card-background tp-dynamic-card-background-modal">
-					<div class="tp-dynamic-card-container tp-dynamic-card-container-modal">
-						<div class="tp-dynamic-modal-exit-button-wrapper" id=${reviewObject.reviewId}-exit tabindex="0" role="button">
-							<img class="tp-dynamic-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"/>
-						</div>
-						<div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
-						<div class="aura-trustpilot-rating-stars-wrapper aura-trustpilot-rating-stars-wrapper-modal" role="img" aria-label="5 stars image - stars are white on a green background">
+    <div class="review-modal">
+      <div class="tp-dynamic-card-background tp-dynamic-card-background-modal">
+        <div class="tp-dynamic-card-container tp-dynamic-card-container-modal">
+          <div class="tp-dynamic-modal-exit-button-wrapper" id=${reviewObject.reviewId
+                }-exit tabindex="0" role="button">
+            <img class="tp-dynamic-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"/>
+          </div>
+          <div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
+          <div class="aura-trustpilot-rating-stars-wrapper aura-trustpilot-rating-stars-wrapper-modal" role="img" aria-label="5 star rating">
 
-							<div class="aura-trustpilot-rating-star">
-					<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_1"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
-                starColor
-            )}</div>
-				</div>
-			<div class="aura-trustpilot-rating-star">
-					<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_2"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
-                starColor
-            )}</div>
-				</div>
-			<div class="aura-trustpilot-rating-star">
-					<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_3"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
-                starColor
-            )}</div>
-				</div>
-			<div class="aura-trustpilot-rating-star">
-					<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
-                starColor
-            )}</div>
-				</div>
-			<div class="aura-trustpilot-rating-star">
-					<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
-					<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
-                starColor
-            )}</div>
-				</div>
-				</div>
-							</div>
-						<div class="tp-dynamic-card-text-container card-text-container-modal">
-							<p class="tp-dynamic-card-text tp-dynamic-card-text-modal">${reviewObject.reviewParagraph}</p>
-							<div class="tp-dynamic-date-wrapper">
-								<p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor}</p>
-								<p class="tp-dynamic-created-at-text">Trustpilot, ${reviewObject.reviewDate}</p>
-							</div>
-						</div>
-					</div>
-		
-				</div>
-			</div>
-			`;
+            <div class="aura-trustpilot-rating-star">
+        <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_1"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+      </div>
+    <div class="aura-trustpilot-rating-star">
+        <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_2"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+      </div>
+    <div class="aura-trustpilot-rating-star">
+        <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_3"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+      </div>
+    <div class="aura-trustpilot-rating-star">
+        <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+      </div>
+    <div class="aura-trustpilot-rating-star">
+        <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
+        <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+      </div>
+      </div>
+            </div>
+          <div class="tp-dynamic-card-text-container card-text-container-modal">
+            <h3 class="tp-dynamic-card-header-text tp-dynamic-card-header-text-modal">${reviewObject.reviewTitle
+                }</h3>
+            <p class="tp-dynamic-card-text tp-dynamic-card-text-modal">${reviewObject.reviewParagraph
+                }</p>
+            <div class="tp-dynamic-date-wrapper">
+              <p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor
+                }</p>
+              <p class="tp-dynamic-created-at-text">Trustpilot, ${reviewObject.reviewDate
+                }</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+    `;
 
             //Create modal HTML object and add it to top of the Main HTML element
-            modalDiv.id = reviewObject.reviewId + '-modal';
-            modalDiv.classList.add('review-modal-background');
-            modalDiv.innerHTML = modalHtml;
-            modalDiv.style.display = 'none';
-            main.prepend(modalDiv);
+            modalDiv.id = reviewObject.reviewId + "-modal";
+            modalDiv.classList.add("review-modal-background");
+            let modalGuts = document.createElement("div");
+            modalGuts.classList.add("modal-guts")
+            modalGuts.innerHTML = modalHtml;
+            modalDiv.appendChild(modalGuts);
+            // modalDiv.style.display = "none";
 
-            let closeButton = document.getElementById(`${reviewObject.reviewId}-exit`);
-            closeButton.setAttribute('aria-label', `Close ${reviewObject.reviewAuthor}'s review of Aura`);
-            closeButton.addEventListener('click', () => {
-                modalDiv.style.display = 'none';
+            const handleModalInsertion = (divToInsert) => {
+
+                let isSectionBlock = false;
+
+                let currentElementToCheck = currentScriptTpDynamic.parentElement;
+
+                while (!isSectionBlock) {
+                    if (currentElementToCheck.nodeName === "SECTION") {
+                        isSectionBlock = true;
+                    } else {
+                        currentElementToCheck = currentElementToCheck.parentElement;
+                    }
+                }
+
+                currentElementToCheck.after(divToInsert)
+
+            }
+
+
+            handleModalInsertion(modalDiv);
+
+            let closeButton = document.getElementById(
+                `${reviewObject.reviewId}-exit`
+            );
+            closeButton.setAttribute(
+                "aria-label",
+                `Close ${reviewObject.reviewAuthor}'s review of Aura`
+            );
+            closeButton.addEventListener("click", () => {
+                modalDiv.close();
             });
 
-            closeButton.addEventListener('keydown', (event) => {
+            closeButton.addEventListener("keydown", (event) => {
                 const { key, which } = event;
-                const keysToMatch = ['Enter', ' '];
+                const keysToMatch = ["Enter", " "];
                 const whichCodesToMatch = [32, 13];
 
                 if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
-                    modalDiv.style.display = 'none';
+                    modalDiv.close();
                 }
-            })
-
+            });
         }
 
         function slideFactory(colorWrapper, starColor, reviewObject, modalDiv) {
             //Generate Splide card/slide HTML
             let slideHtml = `
-			<div class="tp-dynamic-card-background">
-				<div class="tp-dynamic-card-container">
-					<div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
-					<div class="aura-trustpilot-rating-stars-wrapper rating-stars-review-wrapper">
-						<div class="aura-trustpilot-rating-star">
-							<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-							<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_1"></div>
-							<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(starColor)}</div>
-			</div>
-							<div class="aura-trustpilot-rating-star">
-								<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_2"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(starColor)}</div>
-							</div>
-						<div class="aura-trustpilot-rating-star">
-								<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_3"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(starColor)}</div>
-							</div>
-						<div class="aura-trustpilot-rating-star">
-								<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(starColor)}</div>
-							</div>
-						<div class="aura-trustpilot-rating-star">
-								<div class="aura-trustpilot-rating-star-wrapper-grey"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
-								<div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(starColor)}</div>
-							</div>
+    <div class="tp-dynamic-card-background">
+      <div class="tp-dynamic-card-container">
+        <div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
+        <div class="aura-trustpilot-rating-stars-wrapper rating-stars-review-wrapper" role="img" aria-label="5 Stars">
+          <div class="aura-trustpilot-rating-star">
+            <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+            <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_1"></div>
+            <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+    </div>
+            <div class="aura-trustpilot-rating-star">
+              <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_2"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+            </div>
+          <div class="aura-trustpilot-rating-star">
+              <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_3"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+            </div>
+          <div class="aura-trustpilot-rating-star">
+              <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+            </div>
+          <div class="aura-trustpilot-rating-star">
+              <div class="aura-trustpilot-rating-star-wrapper-grey"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-${colorWrapper} shade_4"></div>
+              <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+            </div>
 
-						</div>
-					</div>
-					<div class="tp-dynamic-card-text-container">
-						<p class="tp-dynamic-card-text">${cleanUpText(reviewObject.reviewParagraph, 220)} <span id="${reviewObject.reviewId}-link" class="tp-dynamic-read-more" tabindex="0" role="button">Read More</span></p>
-						<div class="tp-dynamic-date-wrapper">
-							<p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor}</p>
-							<p class="tp-dynamic-created-at-text"><span>Trustpilot,</span> <span>${reviewObject.reviewDate}</span></p>
-						</div>
-						</div>
-	
-				</div>
-	
-			</div>
-			`;
+          </div>
+        </div>
+        <div class="tp-dynamic-card-text-container">
+          <h3 class="tp-dynamic-card-header-text">${cleanUpText(
+                reviewObject.reviewTitle,
+                50
+            )}</h3>
+          <p class="tp-dynamic-card-text">${cleanUpText(
+                reviewObject.reviewParagraph,
+                130
+            )} <span id="${reviewObject.reviewId
+                }-link" class="tp-dynamic-read-more" role="button">Read More</span></p>
+          <div class="tp-dynamic-date-wrapper">
+            <p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor}</p>
+            <p class="tp-dynamic-created-at-text"><span>Trustpilot,</span> <span>${reviewObject.reviewDate
+                }</span></p>
+          </div>
+          </div>
+
+      </div>
+
+    </div>
+    `;
 
             //Insert Splide card/slide HTML
             let splideSlide = document.createElement("li");
@@ -652,83 +701,64 @@
             splideContainer.appendChild(splideSlide);
 
             //Add Modal display functionality on 'read more' click
-            let readMoreLink = document.getElementById(`${reviewObject.reviewId}-link`);
-            readMoreLink.setAttribute('aria-label', `Open ${reviewObject.reviewAuthor}'s review of Aura`)
-            readMoreLink.addEventListener('click', () => {
-                modalDiv.style.display = 'flex';
+            let readMoreLink = document.getElementById(
+                `${reviewObject.reviewId}-link`
+            );
+            readMoreLink.setAttribute(
+                "aria-label",
+                `Open ${reviewObject.reviewAuthor}'s review of Aura`
+            );
+            readMoreLink.addEventListener("click", () => {
+                // modalDiv.style.display = "flex";
+                modalDiv.showModal();
             });
 
-            readMoreLink.addEventListener('keydown', (event) => {
+            readMoreLink.addEventListener("keydown", (event) => {
                 const { key, which } = event;
-                const keysToMatch = ['Enter', ' '];
+                const keysToMatch = ["Enter", " "];
                 const whichCodesToMatch = [32, 13];
 
                 if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
-                    modalDiv.style.display = 'flex';
+                    // modalDiv.style.display = "flex";
+                    modalDiv.showModal();
                 }
-            })
+            });
         }
 
         function cleanUpText(string, maxLength) {
-            let uglyShortText = string.length > maxLength ? string.slice(0, maxLength) : string;
-            let lastSpace = uglyShortText.lastIndexOf(' ', 500);
+            let uglyShortText =
+                string.length > maxLength ? string.slice(0, maxLength) : string;
+            let lastSpace = uglyShortText.lastIndexOf(" ", 500);
             let cleanShortText = uglyShortText.substring(0, lastSpace);
-            let textWithDots = uglyShortText === string ? uglyShortText : cleanShortText.concat('', '... ');
+            let textWithDots =
+                uglyShortText === string
+                    ? uglyShortText
+                    : cleanShortText.concat("", "... ");
             return textWithDots;
         }
 
         // function handleTrustPilotAPIResponseError() {
         const createStaticReviews = async () => {
             const staticReviews = [
-                {
-                    id: "c170b4askhg",
-                    stars: 5,
-                    title: "Aura agent was extremely helpful and knowledgeable…",
-                    text: "Aura is great when it comes to digital security. They are always on the alert for activity connected to my name and finances. In one instance Aura alerted me to a company that was trying to charge me for a service that I had turned down. I was able to immediately contact my credit card company to stop the transaction. They’ve also been great about removing my name from data bases so I no longer have an email box full of unsolicited messages. ",
-                    consumer: {
-                        displayName: 'Robert E B.'
-                    },
-                    createdAt: "10.17.2023"
-                },
-                {
-                    id: "1c92b846v7z",
-                    stars: 5,
-                    title: "Aura is the best identity monitoring service out there.",
-                    text: "Aura representatives are the best. Today I had a few questions on Aura’s Data Broker service and how Aura can help me out with minimizing my online presence. I knew that it takes a company with real experience to truly protect clients, but today’s interaction really impressed me over and beyond expectation. Aura brings to the table knowledge, expertise, and dedication, in an industry purposefully designed to market and sell my personal information through data mining, data selling, data brokering. I think I made the right choice with Aura and I’m sticking with them!",
-                    consumer: {
-                        displayName: 'The.Stuart.Group'
-                    },
-                    createdAt: "07.10.2024"
-                },
-                {
-                    id: "a6vsd45cpnq",
-                    stars: 5,
-                    title: "Aura is the best identity monitoring service out there.",
-                    text: "This was a concerning situation, discovered while I was out of the country. The Aura staff was exceptional in managing the matter with grace, patience and kindness. Thank you so much to both of the representatives I worked with to quickly resolve the matter!",
-                    consumer: {
-                        displayName: 'Faith M.'
-                    },
-                    createdAt: "10.26.2023"
-                },
-                {
-                    id: "zwo2vpy6utlb",
-                    stars: 5,
-                    title: "Aura is the best identity monitoring service out there.",
-                    text: "I have been a long-term subscriber of Aura since May of 2022. After identity was stolen due to having been a victim of multiple major data breaches. I was on the hunt to find a solid identity monitoring service that would assist me in keeping my information safe from identity thieves, scam artists, and hackers. After looking into multiple companies, I ultimately decided to try Aura, and a year and a half later, I am still using their services. At this point, it’s 100% safe to say that I will continue using their services for many years to come. Aura monitors everything. From your social security number and identification cards to Internet safety and filtering phone calls, Aura truly does it all. They also provide parental controls and even a secure vault where you can safely store all of your passwords (they even monitor those for you too). As someone who has also been a member of Experian’s identity monitoring services for over three years, while I like both services, Aura offers so much more. The biggest value is in their family plan, but honestly, no matter which plan you subscribe to, it is absolutely worth it. All other identity services pale in comparison to what Aura can do. I highly recommend using their services because of how truly valuable they are and what they can really do for you. Seriously, thank you Aura for providing such a necessary service. Thank you for going above and beyond to protect those of us who truly do need your protection. Every day, I am thankful to have stumbled across your website, and without you, I really don’t know what I’d do.",
-                    consumer: {
-                        displayName: 'Samantha'
-                    },
-                    createdAt: "10.31.2023"
-                },
+                // {
+                //     id: "zwo2vpy6utlb",
+                //     stars: 5,
+                //     title: "Aura is the best identity monitoring service out there.",
+                //     text: "I have been a long-term subscriber of Aura since May of 2022. After identity was stolen due to having been a victim of multiple major data breaches. I was on the hunt to find a solid identity monitoring service that would assist me in keeping my information safe from identity thieves, scam artists, and hackers. After looking into multiple companies, I ultimately decided to try Aura, and a year and a half later, I am still using their services. At this point, it’s 100% safe to say that I will continue using their services for many years to come. Aura monitors everything. From your social security number and identification cards to Internet safety and filtering phone calls, Aura truly does it all. They also provide parental controls and even a secure vault where you can safely store all of your passwords (they even monitor those for you too). As someone who has also been a member of Experian’s identity monitoring services for over three years, while I like both services, Aura offers so much more. The biggest value is in their family plan, but honestly, no matter which plan you subscribe to, it is absolutely worth it. All other identity services pale in comparison to what Aura can do. I highly recommend using their services because of how truly valuable they are and what they can really do for you. Seriously, thank you Aura for providing such a necessary service. Thank you for going above and beyond to protect those of us who truly do need your protection. Every day, I am thankful to have stumbled across your website, and without you, I really don’t know what I’d do.",
+                //     consumer: {
+                //         displayName: 'Samantha'
+                //     },
+                //     createdAt: "10.31.2023"
+                // },
                 {
                     id: "u9isfrhk2uso",
                     stars: 5,
                     title: "Aura agent was extremely helpful and knowledgeable…",
                     text: "Juanita was extremely helpful and knowledgeable.  She guided me through several calls to creditors that had either issued me credit or denied.  I did not apply for any of these accounts.  She served as my liason to get the company to cancel any request received in my name and remove them from my credit reports.  Two days she spent 1-2 hours on the phone with me and was patient, kind and competent.  I am so grateful I subscribed to Aura and have their help in this identity theft matter.  She is calling again on Monday to finish the last few applications I did not make.  Thank you Juanita - she deserves an accolade and a written review of how pleased I am with her assistance.  Ami Pagana",
                     consumer: {
-                        displayName: 'Ami Pagana'
+                        displayName: "Ami Pagana",
                     },
-                    createdAt: "12.03.2023"
+                    createdAt: "12.03.2023",
                 },
                 {
                     id: "1zeubfckmwbc",
@@ -736,9 +766,9 @@
                     title: "Aura is Awesome",
                     text: `After being a victim of identity theft when my social security card got "lost" in the mail, my credit was ruined. It's taken me years to build it back up. Once I did, I signed up with Aura to protect it. I have nothing but positive things to say about Aura. The alerts I get when I open a new account let's me know that they are monitoring 24/7. And the customer service agents are awesome. I can sleep better knowing that my accounts are protected with Aura.`,
                     consumer: {
-                        displayName: 'Stephen Basile'
+                        displayName: "Stephen Basile",
                     },
-                    createdAt: "10.26.2023"
+                    createdAt: "10.26.2023",
                 },
                 {
                     id: "jqm6hu8miaw2",
@@ -746,9 +776,9 @@
                     title: "Made my life a lot easier and secure.",
                     text: "Made my life a lot easier with 24hr protection. I feel safe with Aura watching over my identity and my electronic devices.",
                     consumer: {
-                        displayName: 'Demetrius Moultrie'
+                        displayName: "Demetrius Moultrie",
                     },
-                    createdAt: "10.26.2023"
+                    createdAt: "10.26.2023",
                 },
                 {
                     id: "325vqvgpo024",
@@ -756,9 +786,9 @@
                     title: "Best product I've used",
                     text: "I've used this product for a couple of years now and have not had any problems. I have on both of my devices never a problem. a little costly but it's a lot better than the alternative. I've used a few different ones, but this suits me the best.",
                     consumer: {
-                        displayName: 'Maurice Leistman'
+                        displayName: "Maurice Leistman",
                     },
-                    createdAt: "10.27.2023"
+                    createdAt: "10.27.2023",
                 },
                 {
                     id: "ygqlaxzdx0ah",
@@ -766,9 +796,9 @@
                     title: "Someone tried to open a credit card in…",
                     text: "Someone tried to open a credit card in my name today. I got a notification, a email and a txt from Aura. When I called, I couldn’t have been happier with Jeff. He had very crisp and clear communication and enunciation. I ddnt have to ask him to repeat himself once. He went above and beyond my expectations. Very smooth and I felt like I was really being taken care of. One of the best customer service interactions I've ever had. Congrats Jeff!! Great job.",
                     consumer: {
-                        displayName: 'TCJC'
+                        displayName: "TCJC",
                     },
-                    createdAt: "10.31.2023"
+                    createdAt: "10.31.2023",
                 },
                 {
                     id: "v5wm5lk3r3tw",
@@ -776,9 +806,9 @@
                     title: "Great Company",
                     text: "This company is great for the price. They keep me updated on recent transactions, my credit reports, removing dark web activity and more. You also speak with real people, lololol, who are friendly. Would recommend this company for your internet security needs.",
                     consumer: {
-                        displayName: 'CoolGirl'
+                        displayName: "CoolGirl",
                     },
-                    createdAt: "10.26.2023"
+                    createdAt: "10.26.2023",
                 },
                 {
                     id: "ew4zcaq5mgem",
@@ -786,9 +816,9 @@
                     title: "21 century security",
                     text: "Your service has been great and comforting during my short time as a Aura customer.",
                     consumer: {
-                        displayName: 'David Arnold'
+                        displayName: "David Arnold",
                     },
-                    createdAt: "10.26.2023"
+                    createdAt: "10.26.2023",
                 },
                 {
                     id: "y8nel1xij6kn",
@@ -796,9 +826,9 @@
                     title: "Excellent Customer Support",
                     text: "I contacted Aura's support team to help me resolve an issue and they were extremely patient and helpful. I appreciate the care and concern for my situation. The representative helped me through every step of the process. Although I am upset my personal information was compromised, I feel better knowing Aura will immediately alert me of any account activity and that their support team will be quick and willing to help me.",
                     consumer: {
-                        displayName: 'Brooke McEntee'
+                        displayName: "Brooke McEntee",
                     },
-                    createdAt: "10.18.2023"
+                    createdAt: "10.18.2023",
                 },
                 {
                     id: "tm8eedhx16r0",
@@ -806,45 +836,44 @@
                     title: "Thanks Aura for making me feel safe…",
                     text: "Thanks Aura for making me feel safe while working on my computer. I also appreciate the reports detailing what has been going on behind the scenes security wise. First thing I do everyday when I turn on the computer is enable the security features.",
                     consumer: {
-                        displayName: 'Gary D.'
+                        displayName: "Gary D.",
                     },
-                    createdAt: "10.26.2023"
-                }
-            ]
+                    createdAt: "10.26.2023",
+                },
+            ];
 
-
-            await staticReviews.forEach(staticReview => {
-                let modalDiv = document.createElement("div");
+            await staticReviews.forEach((staticReview) => {
+                let modalDiv = document.createElement("dialog");
                 let reviewObject = {
                     reviewId: staticReview.id,
                     reviewRating: staticReview.stars,
                     reviewTitle: staticReview.title,
                     reviewParagraph: staticReview.text,
                     reviewAuthor: staticReview.consumer.displayName,
-                    reviewDate: staticReview.createdAt
+                    reviewDate: staticReview.createdAt,
                 };
 
                 //Create and insert our HTML
-                modalFactory('green', 'white', reviewObject, modalDiv);
-                slideFactory('green', 'white', reviewObject, modalDiv);
+                modalFactory("green", "white", reviewObject, modalDiv);
+                slideFactory("green", "white", reviewObject, modalDiv);
 
                 //Add Modal hide functionality on background click
-                modalDiv.addEventListener('click', (event) => {
+                modalDiv.addEventListener("click", (event) => {
                     if (event.target === modalDiv) {
-                        modalDiv.style.display = 'none';
+                        // modalDiv.style.display = "none";
+                        modalDiv.close();
                     }
                 });
-            })
+            });
 
             splideFactory();
-        }
+        };
         createStaticReviews();
         // }
 
-
         // async function getTrustPilotTaggedReviews() {
         // 	// Make an API fetch/GET request for each review tag we want.
-        // 	// TODO: How can we turn this into a single request? 
+        // 	// TODO: How can we turn this into a single request?
         // 	await Promise.all([
         // 		fetch("https://api.trustpilot.com/v1/business-units/604265ff4919ec0001a76b27/reviews?apikey=cu49p5uyt3Jb3taT8yaurWUP2S56CRwa&tagValue=identity-theft"),
         // 		fetch("https://api.trustpilot.com/v1/business-units/604265ff4919ec0001a76b27/reviews?apikey=cu49p5uyt3Jb3taT8yaurWUP2S56CRwa&tagValue=antivirus"),
@@ -872,12 +901,12 @@
         // 		})
         // 		//Turn our Filtered reviews back into an Array data type and return it
         // 		return Array.from(filteredReviews.values());
-        // 	}).then(data => {	
+        // 	}).then(data => {
 
         // 		//Adjust number of desired reviews here
         // 		let numberOfReviewsWanted = 10;
 
-        // 		//Now that we have the Data, we need to randomly extract some reviews, and only create slides for that number of reviews. 
+        // 		//Now that we have the Data, we need to randomly extract some reviews, and only create slides for that number of reviews.
         // 		let i = 0;
         // 		while (i <= (numberOfReviewsWanted - 1)) {
         // 			//get a random number between 0 and the length of our Array
@@ -915,7 +944,6 @@
         // 				}
         // 			});
 
-
         // 			//Remove this review from the Array so that it doesn't get accidentally duplicated
         // 			data.splice(randomNumber, 1);
         // 			i++;
@@ -934,8 +962,13 @@
 
         const splideFactory = () => {
             const splide = new Splide("#tp-dynamic-slider", {
-                destroy: true,
-                mediaQuery: 'min',
+                destroy: false,
+                mediaQuery: "min",
+                i18n: {
+                    prev: "Previous Review, Customer Reviews",
+                    next: "Next Review, Customer Reviews",
+                    slideX: "Go to Slide %s, Customer Reviews",
+                },
                 breakpoints: {
                     769: {
                         destroy: false,
@@ -949,7 +982,7 @@
                         drag: true,
                         flickPower: 200,
                         flickMaxPages: 1,
-                        padding: { left: "0px", right: "0rem" },
+                        padding: { left: "0rem", right: "0rem" },
                     },
                     1: {
                         destroy: false,
@@ -961,15 +994,34 @@
                         drag: true,
                         flickPower: 200,
                         flickMaxPages: 1,
-                        padding: { left: "0px", right: "0rem" },
-                    }
+                        padding: { left: "0rem", right: "0rem" },
+                    },
                 },
             });
+
+            //Add tabindex only to the VISIBLE read more links
+            //Must be run before splide.mount();
+            splide.on('ready', () => {
+                const visibleReadMores = document.querySelectorAll("#tp-dynamic-slider .splide__slide.is-visible .tp-dynamic-read-more");
+                visibleReadMores.forEach(link => {
+                    link.setAttribute("tabindex", "0");
+                });
+            });
+
             splide.mount();
-        }
 
+
+            //Slide that leaves view becomes untabbable 
+            splide.on('hidden', (slide) => {
+                const currentReadMoreLink = slide.slide.querySelector(".tp-dynamic-read-more");
+                currentReadMoreLink.setAttribute("tabindex", "-1");
+            });
+
+            //Slide that becomes visible becomes tabbable
+            splide.on('visible', (slide) => {
+                const currentReadMoreLink = slide.slide.querySelector(".tp-dynamic-read-more");
+                currentReadMoreLink.setAttribute("tabindex", "0");
+            });
+        };
     });
-
-
-
 </script>
