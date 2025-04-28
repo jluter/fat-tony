@@ -1355,7 +1355,15 @@
         height: fit-content;
     }
 
+    .plan-card-modal::backdrop {
+        background-color: rgba(246, 246, 246, 0.6);
+    }
+
     /*Modal pop-up*/
+    .plan-card-modal {
+        background-color: rgb(246, 246, 246);
+    }
+
     .plan-card-modal__list-title {
         font-weight: 500;
     }
@@ -1429,7 +1437,7 @@
         .offer-details-modal-background {
             /* height: 100% !important; */
             width: 100% !important;
-            background-color: #ffffff;
+            background-color: rgb(246, 246, 246);
             border-radius: 24px;
             display: flex;
             flex-direction: row;
@@ -1579,6 +1587,7 @@
                 }
 
                 currentElementToCheck.classList.add("planCardSectionBlock");
+                divToInsert.style.backgroundColor = "rgb(246, 246, 246)";
                 currentElementToCheck.after(divToInsert)
 
             }
