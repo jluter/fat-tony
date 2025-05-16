@@ -171,6 +171,9 @@
         align-items: start;
         justify-content: left;
         gap: 0.5rem;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
     }
 
     .plan-card__feature-block {
@@ -190,7 +193,7 @@
         width: 7.375rem;
     }
 
-    
+
     .plan-card__circle-badge-wrapper {
         display: flex;
         align-items: center;
@@ -210,7 +213,7 @@
         }
 
         .plan-card__button {
-            width: 16.1rem;
+            width: 18.75rem;
             height: 3.438rem;
             font-size: 1.125rem !important;
         }
@@ -233,328 +236,357 @@
         }
 
         .plan-card__feature-header {
-            max-width: 18ch;
+            max-width: 19ch;
         }
 
     }
 </style>
 
-    <div class="plan-cards__list">
-        <div class="plan-cards__slide">
-            <div class="plan-card__ribbon">
-                <span class="plan-card__ribbon-text"><p>Best Value. Most Protection.</p><p>Now 75% Off!</p></span>
+<div class="plan-cards__list">
+    <div class="plan-cards__slide">
+        <div class="plan-card__ribbon">
+            <span class="plan-card__ribbon-text">
+                <p>Best Value. Most Protection.</p>
+                <p>Now 75% Off!</p>
+            </span>
+        </div>
+        <div class="plan-card">
+            <div class="plan-card__topper-wrapper">
+                <h3 class="plan-card__plan-name">Parental<br>Controls</h3>
+                <div class="plan-card__discount-wrapper">
+                    <span id="planDiscountCouple" class="plan-card__discount-text">Save up to XX%</span>
+                </div>
             </div>
-            <div class="plan-card">
-                <div class="plan-card__topper-wrapper">
-                    <h3 class="plan-card__plan-name">Parental<br>Controls</h3>
-                    <div class="plan-card__discount-wrapper">
-                        <span id="planDiscountCouple" class="plan-card__discount-text">Save up to XX%</span>
-                    </div>
-                </div>
-                <div class="plan-card__price-wrapper">
-                    <span id="planPriceCouple" class="plan-card__price-text">$XX<span class="plan-cards__per-text per" role="img" aria-label="per month">/mo</span></span>
-                </div>
-                <div class="plan-card__billed-wrapper">
-                    <span id="planAnnuallyCouple" class="plan-card__billed-text">$XXX billed annually</span>
-                </div>
-                <a id="planButtonCouple" class="plan-card__button btn url-link">Get Protection Now</a>
-                <div class="plan-card__feature-block">
-                    <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__price-wrapper">
+                <span id="planPriceCouple" class="plan-card__price-text">$XX<span class="plan-cards__per-text per"
+                        role="img" aria-label="per month">/mo</span></span>
+            </div>
+            <div class="plan-card__billed-wrapper">
+                <span id="planAnnuallyCouple" class="plan-card__billed-text">$XXX billed annually</span>
+            </div>
+            <a id="planButtonCouple" class="plan-card__button btn url-link">Get Protection Now</a>
+            <div class="plan-card__feature-block">
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">What's Included:</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">1 Adult, Unlimited Kids</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Online & Device Security (10 devices)</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">24/7 U.S. Based Customer Support</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
-                        <div class="plan-card__circle-badge-wrapper">
-                            <h4 class="plan-card__feature-header">
-                                Parental Controls
-                            </h4>
-                            <img alt="Powered By Circle" class="plan-card__feature-header--logo"
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">1 Adult, Unlimited Kids</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Online & Device Security (10 devices)</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">24/7 U.S. Based Customer Support</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li class="plan-card__circle-badge-wrapper">
+                        <h4 class="plan-card__feature-header">
+                            Parental Controls
+                        </h4>
+                        <img alt="Powered By Circle" class="plan-card__feature-header--logo"
                             src="https://v.fastcdn.co/u/bff2cbd9/62700479-0-Group-76224.svg" />
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Mobile Device Management</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Filter & Block Inappropriate Content</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Screen Time Limits</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Pause the Internet</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Customize for Each Family Member</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Unlimited Family Profiles</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Works on iOS & Android</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Mobile Device Management</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Filter & Block Inappropriate Content</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Screen Time Limits</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Pause the Internet</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Customize for Each Family Member</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Unlimited Family Profiles</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Works on iOS & Android</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Online & Device Security</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Antivirus</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">VPN</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Safe Gaming + Online Predator Alerts</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Safe Browsing</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Password Manager</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Sensitive Files Vault (1GB)</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Antivirus</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">VPN</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Safe Gaming + Online Predator Alerts</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Safe Browsing</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Password Manager</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Sensitive Files Vault (1GB)</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Identity Theft Protection</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Online Account Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Covers up to 10 Email Addresses</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Online Account Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Covers up to 10 Email Addresses</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Safe Gaming (Online Predator Alerts)</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">24/7 In-Game Voice & Text Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Cyberbullying & Predator Alerts</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">24/7 In-Game Voice & Text Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Cyberbullying & Predator Alerts</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div class="plan-cards__slide with-ribbon no-gap">
-            <div class="plan-card__ribbon ribbon-is-active">
-                <span class="plan-card__ribbon-text"><p>Best Value. Most Protection.</p><p>Now 75% Off!</p></span>
+    </div>
+    <div class="plan-cards__slide with-ribbon no-gap">
+        <div class="plan-card__ribbon ribbon-is-active">
+            <span class="plan-card__ribbon-text">
+                <p>Best Value. Most Protection.</p>
+                <p>Now 75% Off!</p>
+            </span>
+        </div>
+        <div class="plan-card has-ribbon">
+            <div class="plan-card__topper-wrapper">
+                <h3 class="plan-card__plan-name">Ultimate<br>Family</h3>
+                <div class="plan-card__discount-wrapper">
+                    <span id="planDiscountFamily" class="plan-card__discount-text">Save up to XX%</span>
+                </div>
             </div>
-            <div class="plan-card has-ribbon">
-                <div class="plan-card__topper-wrapper">
-                    <h3 class="plan-card__plan-name">Ultimate<br>Family</h3>
-                    <div class="plan-card__discount-wrapper">
-                        <span id="planDiscountFamily" class="plan-card__discount-text">Save up to XX%</span>
-                    </div>
-                </div>
-                <div class="plan-card__price-wrapper">
-                    <span id="planPriceFamily" class="plan-card__price-text">$XX<span class="plan-cards__per-text per" role="img" aria-label="per month">/mo</span>
-                </div>
-                <div class="plan-card__billed-wrapper">
-                    <span id="planAnnuallyFamily" class="plan-card__billed-text">$XXX billed annually</span>
-                </div>
-                <a id="planButtonFamily" class="plan-card__button btn url-link">Get Protection Now</a>
-                <div class="plan-card__feature-block">
-                    <div class="plan-card__feature-content-wrapper">
+            <div class="plan-card__price-wrapper">
+                <span id="planPriceFamily" class="plan-card__price-text">$XX<span class="plan-cards__per-text per"
+                        role="img" aria-label="per month">/mo</span>
+            </div>
+            <div class="plan-card__billed-wrapper">
+                <span id="planAnnuallyFamily" class="plan-card__billed-text">$XXX billed annually</span>
+            </div>
+            <a id="planButtonFamily" class="plan-card__button btn url-link">Get Protection Now</a>
+            <div class="plan-card__feature-block">
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">What's Included:</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">5 Adults, Unlimited Kids</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Up to $5 Million Insurance* ($1M insurance per adult)</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">White Glove Fraud Resolution</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Online & Device Security (10 devices)</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">24/7 U.S. Based Customer Support</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
-                        <div class="plan-card__circle-badge-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">5 Adults, Unlimited Kids</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Up to $5 Million Insurance* ($1M insurance per
+                            adult)</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">White Glove Fraud Resolution</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Online & Device Security (10 devices)</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">24/7 U.S. Based Customer Support</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li class="plan-card__circle-badge-wrapper">
+                        <div>
                             <h4 class="plan-card__feature-header">
                                 Parental Controls
                             </h4>
-                            <img alt="Powered By Circle" class="plan-card__feature-header--logo"
-                                src="https://v.fastcdn.co/u/bff2cbd9/62700479-0-Group-76224.svg" />
                         </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Mobile Device Management</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Filter & Block Inappropriate Content</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Screen Time Limits</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Pause the Internet</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Customize for Each Family Member</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Unlimited Family Profiles</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Works on iOS & Android</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                        <img alt="Powered By Circle" class="plan-card__feature-header--logo"
+                            src="https://v.fastcdn.co/u/bff2cbd9/62700479-0-Group-76224.svg" />
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Mobile Device Management</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Filter & Block Inappropriate Content</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Screen Time Limits</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Pause the Internet</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Customize for Each Family Member</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Unlimited Family Profiles</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Works on iOS & Android</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Online & Device Security</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Antivirus</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">VPN</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Safe Gaming + Online Predator Alerts</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Safe Browsing</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Password Manager</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Sensitive Files Vault (5GB)</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">AI-Powered Scam Call Protection</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Antivirus</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">VPN</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Safe Gaming + Online Predator Alerts</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Safe Browsing</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Password Manager</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Sensitive Files Vault (5GB)</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">AI-Powered Scam Call Protection</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Identity Theft Protection</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Online Account Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">SSN & Personal Info Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Spam & Junk Mail Removal</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Identity Verification Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Home & Auto Title Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Criminal & Court Records Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Child SSN Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Child 3-Bureau Credit Freeze</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Online Account Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">SSN & Personal Info Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Spam & Junk Mail Removal</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Identity Verification Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Home & Auto Title Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Criminal & Court Records Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Child SSN Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Child 3-Bureau Credit Freeze</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Financial Fraud Protection</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">3-Bureau Credit Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Credit Lock</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Bank Fraud Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Financial Transaction Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Monthly Credit Score<sup>¹</sup></span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Annual Credit Reports</span>
-                        </div>
-                    </div>
-                    <div class="plan-card__feature-content-wrapper">
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">3-Bureau Credit Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Credit Lock</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Bank Fraud Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Financial Transaction Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Monthly Credit Score<sup>¹</sup></span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Annual Credit Reports</span>
+                    </li>
+                </ul>
+                <ul class="plan-card__feature-content-wrapper">
+                    <li>
                         <h4 class="plan-card__feature-header">Safe Gaming (Online Predator Alerts)</h4>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">24/7 In-Game Voice & Text Monitoring</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Cyberbullying & Predator Alerts</span>
-                        </div>
-                        <div class="plan-card__feature-wrapper">
-                            <div class="plan-card__checkmark"></div>
-                            <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">24/7 In-Game Voice & Text Monitoring</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Cyberbullying & Predator Alerts</span>
+                    </li>
+                    <li class="plan-card__feature-wrapper">
+                        <div class="plan-card__checkmark"></div>
+                        <span class="plan-card__feature-text">Weekly Gaming Activity Report</span>
+                    </li>
+                </ul>
             </div>
-        </div>        
+        </div>
     </div>
+</div>
