@@ -1,0 +1,1230 @@
+<!-- GB Name: See Why People Choose Aura - Table - (North Star) - Parental Controls -->
+<style>
+    .is-mobile {
+        display: none;
+    }
+
+    .comparison-table-data {
+        border-top: 1px solid #4c5570;
+        font-size: 1.125rem;
+        line-height: 140%;
+        vertical-align: top;
+    }
+
+    .comparison-table {
+        border-spacing: 0px;
+        width: 100%;
+    }
+
+    .comparison-chart-icon {
+        margin-bottom: 0.25rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .comparison-table-data,
+    .comparison-table-header {
+        padding: 1.5rem;
+        max-width: 9rem;
+    }
+
+    .comparison-table-header {
+        font-size: 1.375rem;
+        line-height: 140%;
+        font-weight: 485;
+    }
+
+    .comparison-chart-aura-logo.aura {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 6.438rem;
+    }
+
+    .comparison-chart-paragraph {
+        max-width: 26ch;
+        font-size: 1rem;
+        line-height: 140%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .comparison-chart-paragraph.desktop {
+        display: block;
+    }
+
+    .comparison-chart-paragraph.mobile {
+        display: none;
+    }
+
+    .comparison-chart-paragraph.smaller-width {
+        max-width: 17ch;
+    }
+
+    .left-align {
+        padding-left: 0rem;
+        text-align: left;
+        font-size: 1.375rem;
+        font-weight: 485;
+        max-width: 13ch;
+        padding-right: 7rem;
+    }
+
+    .add-white-background {
+        background-color: white;
+    }
+
+    .add-border-radius-top {
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+
+    .add-border-radius-bottom {
+        border-radius: 0rem 0rem 1rem 1rem;
+    }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    .add-medium-weight {
+        font-weight: 485;
+    }
+
+    .comparison-chart-btn-desktop {
+        width: 16.813rem;
+        height: 3.938rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-chart-btn-mobile {
+        display: none;
+        width: 16.813rem;
+        height: 3.938rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-tp-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .comparison-chart-footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .comparison-tp-wrapper.mobile {
+        display: none;
+    }
+
+    .comparison-chart-disclaimer {
+        max-width: 100%;
+        font-size: 0.875rem;
+        color: #4c5770;
+        line-height: 140%;
+        text-align: left;
+        margin-top: 5rem;
+    }
+
+    .comparison-chart-paragraph.add-margin-bottom {
+        margin-bottom: 3.5rem;
+    }
+
+    .comparison-table-header.mobile {
+        display: none;
+    }
+
+    .comparison-pc-wrapper {
+        font-size: 1rem;
+        line-height: 140%;
+        font-weight: 500;
+    }
+
+    .pc-span {
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    /* MODAL STYLES */
+    .comparison-modal_link_wrapper {
+        margin-top: 0.8rem;
+        text-align: center;
+    }
+
+    .comparison-modal_link {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #161616;
+        cursor: pointer;
+    }
+
+    .underline-link {
+        text-decoration: underline;
+    }
+
+    .comparison-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: fade-in 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000030;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+
+    .comparison-modal_close-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #6e6e6e;
+        opacity: 70%;
+        z-index: 1;
+    }
+
+    .comparison-modal_content-wrapper {
+        position: relative;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 2;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: left;
+    }
+
+    .comparison-modal_exit-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .comparison-modal_header {
+        font-size: 1.375rem;
+        font-weight: 485;
+    }
+
+    .comparison-modal_p {
+        font-size: 1.125rem;
+        line-height: 150%;
+        max-width: 40ch;
+    }
+
+    @media (max-width: 767px) {
+        .is-mobile {
+            display: unset;
+        }
+
+        .is-desktop {
+            display: none;
+        }
+
+        .comparison-table-header {
+            line-height: 100%;
+        }
+
+        .comparison-pc-wrapper {
+            font-size: 0.75rem;
+        }
+
+        .comparison-chart-paragraph.desktop {
+            display: none;
+        }
+
+        .comparison-chart-paragraph.mobile {
+            display: block;
+        }
+
+        .comparison-table-header.desktop {
+            display: none;
+        }
+
+        .comparison-table-header.mobile {
+            display: block;
+        }
+
+        .comparison-table-header {
+            font-size: 0.875rem;
+        }
+
+        .comparison-chart-paragraph {
+            max-width: 13ch;
+            font-size: 0.75rem;
+            line-height: 140%;
+        }
+
+        .comparison-table-data {
+            font-size: 0.875rem;
+        }
+
+        .comparison-chart-icon {
+            margin-bottom: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .comparison-tp-wrapper.desktop {
+            display: none;
+        }
+
+        .comparison-chart-aura-logo.aura {
+            margin-bottom: 0.5rem;
+            margin-top: 0.25rem;
+            width: 3.438rem;
+        }
+
+        .comparison-table-data,
+        .comparison-table-header {
+            padding: 1rem 0.5rem;
+            max-width: 5rem;
+        }
+
+        .comparison-chart-btn-desktop {
+            display: none;
+        }
+
+        .comparison-chart-btn-mobile {
+            display: flex;
+            width: 22.1875rem;
+        }
+
+        .comparison-tp-wrapper.mobile {
+            display: block;
+        }
+
+        .comparison-chart-paragraph.smaller-width {
+            max-width: 9ch;
+        }
+
+        .comparison-table-data.smaller-mobile {
+            font-size: 0.75rem;
+        }
+
+        .add-medium-weight {
+            max-width: 10ch;
+        }
+
+        .comparison-chart-paragraph.add-margin-bottom {
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-chart-disclaimer {
+            font-size: 0.75rem;
+            max-width: 92%;
+            margin-top: 0rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-tp-wrapper {
+            margin-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .left-align {
+            font-size: 0.875rem;
+            max-width: 5ch;
+            padding-right: 2rem;
+        }
+
+        /* MODAL STYLES */
+        .comparison-modal_content-wrapper {
+            padding: 2.25rem 1.5rem;
+        }
+
+        .comparison-modal_p {
+            font-size: 1rem;
+            max-width: 26ch;
+        }
+
+        .comparison-modal_header {
+            font-size: 1.125rem;
+            max-width: 18ch;
+        }
+
+        .comparison-modal_link_wrapper.add-margin-bottom {
+            margin-bottom: 1.5rem;
+        }
+    }
+</style>
+<!--Us vs Them Comparison table HTML-->
+<table class="comparison-table">
+    <tr class="comparison-table-row header-row">
+        <th scope="col" class="comparison-table-header opacity-0">Features</th>
+        <th scope="col" class="comparison-table-header add-white-background add-border-radius-top">
+            <svg class="comparison-chart-aura-logo aura" aria-label="Aura" alt="Aura" width="100%" height="auto"
+                viewBox="0 0 53 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.93041 0.831055H9.8898V2.42602H2.93041V0.831055ZM23.1037 13.4012C23.2897 12.9936 23.384 12.5525 23.384 12.0902V5.60988H25.0542V12.0902C25.0542 13.4366 24.4989 14.6812 23.4905 15.5949C23.0061 16.0339 22.4397 16.3771 21.8073 16.615C21.1637 16.8571 20.4779 16.9798 19.7689 16.9798C19.0599 16.9798 18.3742 16.8571 17.7306 16.615C17.0982 16.3771 16.5318 16.0339 16.0474 15.5949C15.039 14.6812 14.4837 13.4366 14.4837 12.0902V5.61586H16.1539V12.0902C16.1539 12.5525 16.2482 12.9936 16.4342 13.4012C16.6124 13.7919 16.869 14.1407 17.1971 14.4379C17.871 15.0485 18.7844 15.3849 19.7689 15.3849C20.7535 15.3849 21.6669 15.0485 22.3408 14.4379C22.6688 14.1407 22.9255 13.7919 23.1037 13.4012ZM30.9076 16.7807V12.9358H35.2081L37.2553 16.7807H39.129L36.7 12.2186C36.8506 12.1125 36.9935 11.9957 37.1281 11.8684C37.4825 11.5332 37.761 11.1428 37.956 10.708C38.1588 10.2558 38.2617 9.77611 38.2617 9.28226C38.2617 8.78871 38.159 8.30867 37.9564 7.8555C37.7617 7.41977 37.4836 7.02819 37.1299 6.69155C36.7766 6.35521 36.3657 6.09085 35.9088 5.90574C35.4342 5.71345 34.9316 5.61598 34.4153 5.61598H29.2373V16.7807H30.9076ZM30.9076 7.21102H34.4153C34.9921 7.21102 35.5374 7.42774 35.9508 7.82124C36.3639 8.21452 36.5914 8.7334 36.5914 9.28233C36.5914 9.82957 36.3646 10.3456 35.9526 10.7353C35.5399 11.1258 34.9939 11.3409 34.4153 11.3409H30.9076V7.21102ZM43.2663 16.7807L46.7715 8.0198L50.2767 16.7807H52.0647L47.5977 5.61598H45.9453L41.4783 16.7807H43.2663ZM5.58045 5.61598L1.11353 16.7807H2.90155L6.40668 8.0198L9.9119 16.7807H11.6999L7.23292 5.61598H5.58045Z"
+                    fill="#161616" />
+            </svg>
+
+            <div class="comparison-pc-wrapper">
+                Parental Controls <br /><span class="pc-span">(Powered by Circle)</span>
+            </div>
+        </th>
+        <th scope="col" class="comparison-table-header">Bark</th>
+        <th scope="col" class="comparison-table-header">Qustodio</th>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="contentFilteringHeader" scope="row" class="comparison-table-data left-align">
+            Content Filtering
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="contentFilteringDetails" class="comparison-chart-paragraph desktop">
+                Set a filter level for each family member and decide which apps,
+                sites, and streaming services should have restricted, limited, or
+                unlimited access.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Set a filter level for each family member</p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="contentFilteringModalLink"
+                        aria-label="Open Content Filtering Feature Pop-up with full details" tabindex="0" role="link"
+                        class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="screenTimeHeader" scope="row" class="comparison-table-data left-align">
+            Screen Time Limits
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="screenTimeDetails" class="comparison-chart-paragraph desktop">
+                Customize Screen Time Limits for each kid's profile and set different limits for apps, categories of
+                sites, and a
+                Daily Time Limit.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Customize Screen Time for each kid's profile</p>
+                <!-- <div class="comparison-modal_link_wrapper">
+              <div
+                id="screenTimeModalLink"
+                aria-label="Open Screen Time Limits Feature Pop-up with full details"
+                tabindex="0"
+                role="link"
+                class="comparison-modal_link underline-link">
+                Learn More
+              </div>
+            </div> -->
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="bedtimeHeader" scope="row" class="comparison-table-data left-align">
+            Bedtime
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="bedtimeDetails" class="comparison-chart-paragraph desktop">
+                Set Bedtimes for weeknights and weekends. When bedtime rolls around,
+                all devices associated with your child's profile will automatically
+                disconnect from the Internet.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>
+                    Set Bedtimes when devices automatically disconnect from the
+                    Internet.
+                </p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="bedtimeModalLink" aria-label="Open Bedtime Feature Pop-up with full details" tabindex="0"
+                        role="link" class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="pauseInternetHeader" scope="row" class="comparison-table-data left-align">
+            Pause the Internet<sup>®</sup>
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="pauseInternetDetails" class="comparison-chart-paragraph desktop">
+                Pause the Internet at the press of a button. Hit unpause when you're
+                ready to give back their internet access.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Pause the Internet at the press of a button.</p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="pauseInternetModalLink" aria-label="Open Pause the Internet Feature Pop-up with full details"
+                        tabindex="0" role="link" class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="internetUsageHeader" scope="row" class="comparison-table-data left-align">
+            Internet Usage Report
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="internetUsageDetails" class="comparison-chart-paragraph desktop">
+                Get a complete picture of kids internet use across all devices so you
+                can make informed decisions about the amount of screen time that's
+                right for your family.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>See kids' internet use across all devices</p>
+                <!-- <div class="comparison-modal_link_wrapper">
+              <div
+                id="internetUsageModalLink"
+                aria-label="Open Safe Browsing Feature Pop-up with full details"
+                tabindex="0"
+                role="link"
+                class="comparison-modal_link underline-link">
+                Learn More
+              </div>
+            </div> -->
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">
+            Internet History
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                Track your kids' online habits to spot overuse on apps and websites
+                and see which sites were blocked.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">
+            Bonus Online Time
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                Extend your kid's daily time online with Bonus Time to reward good
+                behavior or celebrate successes.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">
+            Social Interactions
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                Uncover your kid’s unique social persona based on their social patterns over time and how they compare
+                to others.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">
+            <span class="is-desktop">Parent Recommendations</span>
+            <span class="is-mobile">Parent Recomme-<br>ndations</span>
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                Get science-backed recommendations based on your kid’s online activity, personalized for you by Aura
+                Intelligence.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">
+            Online Activity Trends
+        </th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                View trends in your kid's online usage and routines, as well as shifts in their social interactions,
+                daytime activity,
+                or sleep habits.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Partially included" width="32" height="32" viewBox="0 0 32 32"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="15.2" stroke="#606B85" stroke-width="1.6" />
+                <path
+                    d="M8 16.3736C9.29032 14.707 12.2706 12.9247 15.7419 16.3736C19.0968 19.7068 22.5376 17.3736 24 15.707"
+                    stroke="#606B85" stroke-width="2.4" stroke-linecap="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align">Safe Gaming</th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="comparison-chart-paragraph">
+                Get alerted to threats with 24/7 in-game voice and text monitoring for
+                over 200 of the most popular PC games.
+            </p>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="safeBrowsingHeader" scope="row" class="comparison-table-data left-align">Safe Browsing</th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="safeBrowsingDetails" class="comparison-chart-paragraph desktop">
+                Get alerted to dangerous sites to prevent you and your family from entering malicious sites that may
+                steal your personal and financial info.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Alerts prevent you from entering malicious sites</p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="safeBrowsingModalLink"
+                        aria-label="Open Safe Browsing Pop-up with full details" tabindex="0" role="link"
+                        class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#606B85" />
+                <path d="M8.80005 15.9731L13.618 20.8001L23.2 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="antivirusHeader" scope="row" class="comparison-table-data left-align">Antivirus Protection for 10 Devices</th>
+        <td class="comparison-table-data with-icon add-white-background">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="antivirusDetails" class="comparison-chart-paragraph desktop">
+                Secure your family's devices—protect against malware, spyware, adware, and ransomware by automatically
+                detecting and isolating threats.
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Secure your family’s devices against threats</p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="antivirusModalLink"
+                        aria-label="Open Antivirus Protection for 10 Devices Pop-up with full details" tabindex="0" role="link"
+                        class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="darkWebHeader" scope="row" class="comparison-table-data left-align">Dark Web Monitoring and Data Breach Alerts</th>
+        <td class="comparison-table-data with-icon add-white-background add-border-radius-bottom">
+            <svg class="comparison-chart-icon" alt="Included" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="16" cy="16" r="16" fill="#3366FF" />
+                <path d="M8.7998 15.9731L13.6177 20.8001L23.1998 11.2001" stroke="white" stroke-width="2.4"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p id="darkWebDetails" class="comparison-chart-paragraph desktop">
+                Receive alerts if we detect your identity, passwords, or accounts have been exposed in a data breach or
+                found on the
+                Dark Web - where cybercriminals sell information (e.g. email and SSN numbers).
+            </p>
+            <div class="comparison-chart-paragraph mobile">
+                <p>Get alerts if your info shows up on the Dark Web</p>
+                <div class="comparison-modal_link_wrapper">
+                    <div id="darkWebModalLink"
+                        aria-label="Open Dark Web Monitoring and Data Breach Alerts Pop-up with full details" tabindex="0" role="link"
+                        class="comparison-modal_link underline-link">
+                        Learn More
+                    </div>
+                </div>
+            </div>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+        <td class="comparison-table-data with-icon">
+            <svg class="comparison-chart-icon" alt="Not included" width="36" height="36" viewBox="0 0 36 36" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="18" r="16.8" stroke="#606B85" stroke-width="1.6" />
+                <path d="M12.4 12.4L23.6 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                <path d="M23.6 12.4L12.4 23.6" stroke="#606B85" stroke-width="2.13333" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </td>
+    </tr>
+</table>
+<!-- <div class="comparison-chart-footer-wrapper">
+      <p class="comparison-chart-disclaimer">
+        Our comparison methodology combines ratings and reviews from third-party
+        professional and consumer review sources as of April 2024. This comparison
+        does not solely reflect Aura's subjective opinions, tests, or experiences.
+      </p>
+    </div> -->
+
+<!-- Comparison Chart Modal Script  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
+        const ipBody = document.querySelector("#landing-page");
+
+        const comparisonModalParent = document.createElement("div");
+        comparisonModalParent.classList.add("comparison-modal");
+        ipBody.appendChild(comparisonModalParent);
+
+        const modalHTML = `<div
+    id="comparisonModal"
+    role="dialog"
+    aria-label="Feature Extended Details"
+    class="comparison-modal_content-wrapper">
+    <div id="comparisonModalHeader" class="comparison-modal_header">
+      Bedtimes
+    </div>
+    <p id="comparisonModalParagraph" class="comparison-modal_p">
+      Set Bedtimes for weeknights and weekends. When bedtime rolls around, all
+      devices associated with your child's profile will automatically disconnect
+      from the Internet.
+    </p>
+    <svg
+      aria-label="Exit Modal"
+      class="comparison-modal_exit-icon"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L13.4142 12L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L12 13.4142L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L10.5858 12L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L12 10.5858L18.2929 4.29289Z"
+        fill="#55595E" />
+    </svg>
+  </div>
+  <div class="comparison-modal_close-area"></div>
+    `;
+
+        comparisonModalParent.innerHTML = modalHTML;
+
+        // All Links & Modal Elements
+        const comparisonModal = document.querySelector("#comparisonModal");
+        const comparisonModalLinks = document.querySelectorAll(
+            ".comparison-modal_link"
+        );
+
+        // Exit elements
+        const comparisonModalExitIcon = document.querySelector(
+            ".comparison-modal_exit-icon"
+        );
+        const comparisonModalExitArea = document.querySelector(
+            ".comparison-modal_close-area"
+        );
+
+        // Make Exit elements tabbable
+        comparisonModalExitIcon.setAttribute("tabindex", "0");
+        comparisonModalExitArea.setAttribute("tabindex", "0");
+
+        const comparisonModalParagraph = document.querySelector(
+            "#comparisonModalParagraph"
+        );
+        const comparisonModalHeader = document.querySelector(
+            "#comparisonModalHeader"
+        );
+
+        // Feature Links | This is used to dynamically change the modal text by targeting each feature paragraph ID & Link ID
+
+        // Content Filtering Elements
+        const contentFilteringHeader = document.querySelector(
+            "#contentFilteringHeader"
+        );
+        const contentFilteringDetails = document.querySelector(
+            "#contentFilteringDetails"
+        );
+        const contentFilteringModalLink = document.querySelector(
+            "#contentFilteringModalLink"
+        );
+
+        // Screen Time Elements
+        const screenTimeHeader = document.querySelector("#screenTimeHeader");
+        const screenTimeDetails = document.querySelector("#screenTimeDetails");
+        const screenTimeModalLink = document.querySelector("#screenTimeModalLink");
+
+        // Bedtime Elements
+        const bedtimeHeader = document.querySelector("#bedtimeHeader");
+        const bedtimeDetails = document.querySelector("#bedtimeDetails");
+        const bedtimeModalLink = document.querySelector("#bedtimeModalLink");
+
+        // Pause the Internet Elements
+        const pauseInternetHeader = document.querySelector("#pauseInternetHeader");
+        const pauseInternetDetails = document.querySelector(
+            "#pauseInternetDetails"
+        );
+        const pauseInternetModalLink = document.querySelector(
+            "#pauseInternetModalLink"
+        );
+
+        // Internet Usage Elements
+        const internetUsageHeader = document.querySelector("#internetUsageHeader");
+        const internetUsageDetails = document.querySelector(
+            "#internetUsageDetails"
+        );
+        const internetUsageModalLink = document.querySelector(
+            "#internetUsageModalLink"
+        );
+
+        // Safe Browsing Elements
+        const safeBrowsingHeader = document.querySelector("#safeBrowsingHeader");
+        const safeBrowsingDetails = document.querySelector("#safeBrowsingDetails");
+        const safeBrowsingModalLink = document.querySelector(
+          "#safeBrowsingModalLink"
+        );
+
+        // Antivirus Elements
+        const antivirusHeader = document.querySelector("#antivirusHeader");
+        const antivirusDetails = document.querySelector("#antivirusDetails");
+        const antivirusModalLink = document.querySelector("#antivirusModalLink");
+
+        // Dark Web Elements
+        const darkWebHeader = document.querySelector("#darkWebHeader");
+        const darkWebDetails = document.querySelector("#darkWebDetails");
+        const darkWebModalLink = document.querySelector("#darkWebModalLink");
+
+        // Modal Functions
+        function openModal(event) {
+            comparisonModalParent.classList.add("visible");
+            document.body.classList.add("modal-on");
+        }
+
+        function closeModal(event) {
+            comparisonModalParent.classList.remove("visible");
+            document.body.classList.remove("modal-on");
+        }
+
+        // For all links, make tabbable, open modal, & change modal elements based on link clicked ID
+        comparisonModalLinks.forEach((element) => {
+            element.setAttribute("tabindex", "0");
+            element.addEventListener("click", function (id) {
+                id = element.getAttribute("id");
+
+                if (id === contentFilteringModalLink.id) {
+                    let ariaLabelHeader = contentFilteringHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = contentFilteringHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML =
+                        contentFilteringDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                }
+                // else if (id === screenTimeModalLink.id) {
+                // let ariaLabelHeader = screenTimeHeader.innerText;
+
+                //   comparisonModalHeader.innerHTML = screenTimeHeader.innerHTML;
+                //   comparisonModalParagraph.innerHTML = screenTimeDetails.innerHTML;
+                //   comparisonModal.setAttribute(
+                //     "aria-label",
+                //     `${ariaLabelHeader} Extended Details`
+                //   );
+                // }
+                else if (id === bedtimeModalLink.id) {
+                    let ariaLabelHeader = bedtimeHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = bedtimeHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = bedtimeDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                } else if (id === pauseInternetModalLink.id) {
+                    let ariaLabelHeader = pauseInternetHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = pauseInternetHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = pauseInternetDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                }
+                // else if (id === internetUsageModalLink.id) {
+                // let ariaLabelHeader = internetUsageHeader.innerText;
+
+                //   comparisonModalHeader.innerHTML = internetUsageHeader.innerHTML;
+                //   comparisonModalParagraph.innerHTML = internetUsageDetails.innerHTML;
+                //   comparisonModal.setAttribute(
+                //     "aria-label",
+                //     `${ariaLabelHeader} Extended Details`
+                //   );
+                // }
+                else if (id === safeBrowsingModalLink.id) {
+                  let ariaLabelHeader = safeBrowsingHeader.innerText;
+
+                  comparisonModalHeader.innerHTML = safeBrowsingHeader.innerHTML;
+                  comparisonModalParagraph.innerHTML = safeBrowsingDetails.innerHTML;
+                  comparisonModal.setAttribute(
+                    "aria-label",
+                    `${ariaLabelHeader} Extended Details`
+                  );
+                }
+                else if (id === antivirusModalLink.id) {
+                  let ariaLabelHeader = antivirusHeader.innerText;
+
+                  comparisonModalHeader.innerHTML = antivirusHeader.innerHTML;
+                  comparisonModalParagraph.innerHTML = antivirusDetails.innerHTML;
+                  comparisonModal.setAttribute(
+                    "aria-label",
+                    `${ariaLabelHeader} Extended Details`
+                  );
+                }
+                else if (id === darkWebModalLink.id) {
+                  let ariaLabelHeader = darkWebHeader.innerText;
+
+                  comparisonModalHeader.innerHTML = darkWebHeader.innerHTML;
+                  comparisonModalParagraph.innerHTML = darkWebDetails.innerHTML;
+                  comparisonModal.setAttribute(
+                    "aria-label",
+                    `${ariaLabelHeader} Extended Details`
+                  );
+                }
+                openModal();
+            });
+            element.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    element.click();
+                    comparisonModalExitIcon.focus();
+                }
+            });
+        });
+
+        // Exit Elements, close Modal
+        comparisonModalExitIcon.addEventListener("click", function () {
+            closeModal();
+        });
+        comparisonModalExitIcon.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                comparisonModalExitArea.click();
+            }
+        });
+
+        comparisonModalExitArea.addEventListener("click", function () {
+            closeModal();
+        });
+        comparisonModalExitArea.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                comparisonModalExitArea.click();
+            }
+        });
+
+        // Exit Elements, close Modal on Escape
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    });
+</script>
