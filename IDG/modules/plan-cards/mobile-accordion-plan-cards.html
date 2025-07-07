@@ -1,0 +1,1094 @@
+<!--GB Name: FAQ Global Block Version - Privacy -->
+<!--Frequently Asked Questions Accordion = FAQ-->
+
+<style id="planCardAccordionStyles">
+    .plan-card-accordion-block {
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        background-color: #F4F1EE;
+        width: 100%;
+    }
+
+    .faq-accordion-container {
+        max-width: 30rem;
+        width: 100%;
+    }
+
+    .is-mobile {
+        display: none;
+    }
+
+    /* PLAN CARD STYLES */
+
+    .plan-cards__list {
+        display: flex;
+        flex-direction: column;
+        /* gap: 2rem; */
+        justify-content: center;
+        border-bottom: 1px solid #55595E;
+    }
+
+    .plan-cards__slide {
+        border-radius: 4px;
+    }
+
+    .plan-cards__slide.with-ribbon,
+    .plan-card__ribbon.ribbon-is-active {
+        background-color: #3E3B57;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .plan-card__ribbon-text {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+
+    .plan-cards__slide.with-ribbon .plan-card.has-ribbon {
+        background-color: #ffffff !important;
+    }
+
+    /* Plan Card Parent Wrapper */
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0.5rem;
+        padding: 1.5rem 2rem;
+        background-color: #ffffff;
+        border: 2px solid rgba(51, 102, 255, 0);
+        border-radius: 0px;
+    }
+
+    .plan-card.has-ribbon {
+        /* border: 2px solid #ECF2F3; */
+        border: unset;
+    }
+
+    /* Plan Card | Ribbon holding Ribbon Text */
+    .plan-card__ribbon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: rgba(51, 102, 255, 0);
+        color: rgba(255, 255, 255, 0);
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Ribbon Active */
+    .ribbon-is-active {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    /* Plan Card | Topper holding Plan Name & Discount Bubble */
+    .plan-card__topper-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .plan-card__top-features-wrapper {
+        max-width: 10.75rem;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card__plan-name {
+        font-size: 1.5rem;
+        text-align: left;
+        font-weight: 600;
+        max-width: 10rem;
+        line-height: 130%;
+    }
+
+    .plan-card__feature-header {
+        font-size: 1.125rem;
+        text-align: left;
+        font-weight: 600;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card__discount-bubble {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        background-color: #ECF2F3;
+        border-radius: 0.5rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card__discount-text {
+        font-size: 0.875rem;
+        color: #417D86;
+        font-weight: 600;
+    }
+
+    /* Plan Card | Button */
+    .plan-card__button {
+        width: 19.0625rem;
+        height: 3.125rem;
+        margin: 0.5rem 0rem;
+        background-color: #E99469;
+        color: #232A30;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-weight: 600;
+        margin: 0 auto;
+    }
+
+    .plan-card__button.btn-small {
+        width: 100%;
+        max-width: 9.5rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card__price-wrapper,
+    .plan-card__billed-wrapper,
+    .plan-card__feature-content-wrapper {
+        width: 100%;
+        text-align: left;
+    }
+
+    .plan-card__price-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .plan-card__billed-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.3rem;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card__price-text {
+        font-size: 2.25rem;
+        font-weight: 600;
+    }
+
+    .plan-cards__per-text.per {
+        font-size: 1rem;
+        margin-left: 0 !important;
+        font-weight: 400;
+        color: #55595E;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card__mo-span {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Billed Monthly Text */
+    .plan-card__billed-text {
+        font-size: 0.875rem !important;
+    }
+
+    .plan-card__feature-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card__feature-wrapper,
+    .plan-card__feature-header-wrapper {
+        /* display: flex; */
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card__feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card__feature-wrapper {
+        align-items: start;
+        line-height: 130%;
+
+    }
+
+    .plan-card__feature-wrapper::marker {
+        font-size: 0.75rem;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card__checkmark {
+        background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    .plan-card__feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 5px;
+        padding: 0 0 0 1.55rem;
+        /* list-style-type: none; */
+    }
+
+    .plan-card__feature-alignment {
+        text-align: left;
+        margin-top: 0.5rem;
+    }
+
+    .plan-card__feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+    }
+
+    .plan-card__feature-header--logo {
+        margin-top: 0.5rem;
+    }
+
+    .plan-card__feature-text {
+        max-width: 29ch;
+    }
+
+    .plan-card__circle-badge {
+        width: 7.375rem;
+    }
+
+    .plan-card__circle-badge-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .plan-card__special-intro-text {
+        font-size: 0.875rem;
+        color: #888888;
+        text-align: left;
+        margin-top: 0.2rem;
+    }
+
+    .intro-offer-details-button:hover {
+        cursor: pointer;
+    }
+
+    .plan-card__expand-block {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: none;
+    }
+
+    .plan-card__expand-block.is-open {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    .plan-card__sku-wrapper {
+        display: flex;
+        gap: 1.625rem;
+        justify-content: space-between;
+    }
+
+    .plan-card__strike-text {
+        text-decoration: line-through;
+        font-size: 0.75rem;
+    }
+
+    .plan-card__discount-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        align-self: flex-start;
+    }
+
+    .plan-card__intro-text {
+        font-size: 0.75rem;
+        color: #55595E;
+        line-height: 140%;
+        margin-bottom: 1rem;
+    }
+
+    .plan-card__modal-link {
+        text-decoration: underline;
+    }
+
+    .plan-card__modal-link:hover {
+        text-decoration: underline;
+    }
+
+    .plan-card__view-all {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .plan-card__view-all-button {
+        display: flex;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #191C1F;
+        font-family: 'Hind';
+        text-decoration: underline;
+        gap: 0.5rem;
+        border: unset;
+        background-color: unset;
+        transition: color 0.2s linear;
+    }
+
+    .plan-card__view-all-button:hover {
+        color: #E99469;
+        cursor: pointer;
+    }
+
+    .plan-card__accordion-arrow {
+        height: 0.875rem;
+        width: 0.875rem;
+    }
+
+    .plan-card__accordion-arrow>svg {
+        transition: transform 0.2s linear;
+    }
+
+    .plan-card__accordion-arrow.is-open>svg {
+        transform: rotateX(180deg)
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+        .is-mobile {
+            display: unset;
+        }
+
+        .plan-cards__list {
+            flex-direction: column;
+            /* width: 21.625rem; */
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card__button {
+            width: 19.5rem;
+            height: 3.125rem;
+            font-size: 1.125rem !important;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+
+        .plan-card__ribbon,
+        .plan-card__discount-text {
+            font-size: 0.875rem !important;
+        }
+
+        .plan-card__feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card__feature-text,
+        .plan-card__billed-wrapper {
+            max-width: 24ch;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .faq-accordion-container {
+            max-width: unset;
+        }
+
+        .plan-card__list {
+            padding: unset;
+            padding-bottom: 2rem;
+        }
+
+        .plan-card.has-ribbon {
+            border: none;
+            border-radius: unset;
+        }
+
+
+        .plan-card__billed-intro-wrapper {
+            display: inline;
+            max-width: 25ch;
+            text-align: left;
+        }
+
+        .intro-offer-details-text {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .plan-card__billed-wrapper,
+        .plan-card__special-intro-text {
+            display: inline;
+            margin-top: 0;
+        }
+
+        .plan-card__feature-alignment:nth-child(3) {
+            margin-bottom: 1rem;
+        }
+    }
+</style>
+
+<!--Plan Card Modal for Splide-->
+<style id="planCardModalStyles">
+    /*Native Dialog Style Overrwites*/
+    .plan-card-modal {
+        border: unset;
+        /* border-radius: 1rem; */
+        padding: 0;
+    }
+
+    .plan-card-modal[open] {
+        display: flex;
+        height: fit-content;
+    }
+
+    /*Modal pop-up*/
+    .plan-card-modal__list-title {
+        font-weight: 500;
+    }
+
+    .plan-card-modal__ul-wrapper {
+        margin: 0.5rem 0;
+    }
+
+    .plan-card-modal__ul {
+        padding-left: 1rem;
+        margin: 0;
+    }
+
+
+    .plan-card-modal__li::marker {
+        content: "  •  ";
+    }
+
+    /*Desktop Styles */
+    @media (min-width: 769px) {
+        .offer-details-modal-background {
+            background-color: rgb(246, 246, 246);
+            /* border-radius: 24px; */
+            display: flex;
+            flex-direction: row;
+            /* height: 100% !important; */
+            width: 100% !important;
+            max-width: 36.0625rem;
+        }
+
+        .offer-details-card-container-modal {
+            background-color: #ffffff;
+            width: inherit;
+            /* height: inherit; */
+            position: relative;
+            margin: 0;
+            padding: 3rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.75rem;
+            right: 1.75rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-exit-button:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Hind";
+            font-weight: 600;
+            line-height: 1.4625rem;
+            font-size: 1.125rem;
+            text-align: left;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+            padding-bottom: 1rem;
+        }
+    }
+
+    /*Desktop Styles End*/
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        .offer-details-modal-background {
+            /* height: 100% !important; */
+            width: 100% !important;
+            background-color: rgb(246, 246, 246);
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .offer-details-card-container-modal {
+            width: inherit;
+            /* height: inherit; */
+            position: relative;
+            margin: 0;
+            padding: 2rem 1rem;
+            background-color: #ffffff;
+        }
+
+        .plan-card-modal-text-container {
+            max-width: 21rem;
+        }
+
+        .plan-card-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.1875rem;
+            right: 1.1875rem;
+            z-index: 9;
+        }
+
+        .plan-card-modal-exit-button-wrapper:hover {
+            cursor: pointer;
+        }
+
+        .plan-card-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .plan-card-modal-header-text {
+            font-family: "Hind";
+            font-weight: 500;
+            line-height: 1.4625rem;
+            font-size: 1.125rem;
+            text-align: left;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 3.875rem;
+            display: flex;
+            height: 100% !important;
+        }
+
+        .plan-card-modal-text {
+            height: 100% !important;
+            max-width: 80vw;
+        }
+    }
+
+    /*MODAL STYLES*/
+
+    .plan-card-modal-background {
+        position: fixed;
+        top: 0;
+        z-index: 9999999;
+        background-color: rgba(0, 0, 0, 0.2);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .plan-card__modal-link:hover {
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .intro-offer-details-text {
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+    }
+</style>
+
+<!--HTML that will be inserted into the InstaPage <section> element-->
+<div id="planCardAccordionHTML" class="faq-accordion-container">
+    <div class="plan-cards__list">
+        <div class="plan-cards__slide with-ribbon no-gap">
+            <div class="plan-card__ribbon ribbon-is-active">
+                <span class="plan-card__ribbon-text">
+                    <p>Protects 1 Adult</p>
+                </span>
+            </div>
+            <div class="plan-card has-ribbon">
+                <div class="plan-card__sku-wrapper">
+                    <div class="plan-card__top-features-wrapper">
+                        <h3 class="plan-card__plan-name">Ultra Individual</h3>
+                        <div class="plan-card__top-features">
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">24/7 U.S.-Based Customer Support</li>
+                                <li class="plan-card__feature-wrapper">$1 Million Identity Theft Insurance</li>
+                                <li class="plan-card__feature-wrapper">Dark Web Monitoring</li>
+                                <li class="plan-card__feature-wrapper">3-Bureau Credit Monitoring</li>
+                                <li class="plan-card__feature-wrapper">Monthly Credit Score</li>
+                                <li class="plan-card__feature-wrapper">Password Manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="plan-card__topper-wrapper">
+                        <div class="plan-card__discount-wrapper">
+                            <div class="plan-card__discount-bubble">
+                                <span id="planDiscountIndividual" class="plan-card__discount-text">Save XX%</span>
+                            </div>
+                            <span class="plan-card__strike-text" id="planAnnuallyIndividual">$X.XX</span>
+                        </div>
+                        <div class="plan-card__price-wrapper">
+                            <span id="planPriceIndividual" class="plan-card__price-text">$XX.99<span
+                                    class="plan-cards__per-text per" role="img" aria-label="per month">/mo</span></span>
+                            <span class="plan-card__intro-text">Billed annually, <br />
+                                <span class="plan-card__modal-link" role="button"
+                                    aria-label="Open intro offer details modal" tabindex="0">special intro
+                                    offer</span>
+                            </span>
+                            <a id="planButtonIndividual" class="plan-card__button btn btn-small url-link"
+                                tabindex="0">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-card__feature-block" aria-expanded="false">
+                    <div class="plan-card__view-all">
+                        <button class="plan-card__view-all-button">View All Features<span
+                                class="plan-card__accordion-arrow"><svg width="14" height="14" viewBox="0 0 14 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="plan-card-accordion__svg-icon">
+                                    <path
+                                        d="M1.69625 5.07878C1.46866 4.85099 1.46862 4.48231 1.69625 4.25456C1.92405 4.02675 2.29364 4.02675 2.52144 4.25456L7.05855 8.79167L11.5957 4.25456C11.8235 4.02675 12.1931 4.02675 12.4209 4.25456C12.6483 4.48227 12.6482 4.85103 12.4209 5.07878L7.47066 10.029C7.24285 10.2567 6.87323 10.2567 6.64547 10.029L1.69625 5.07878Z"
+                                        fill="#191C1F" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="plan-card__expand-block" aria-hidden="true">
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Premium Identity Protection</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Data Breach Notifications</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Dark Web Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">High Risk Transaction Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Bank Account Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Credit & Debit Card Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">401k & Investment Account Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Home & Auto Title Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Criminal & Sex Offense Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">USPS Address Change Monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Premium Credit Protection</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">3-Bureau Credit Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">3-Bureau Annual Credit Report</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Experian Credit Lock</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Monthly Credit Score*</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Online and Device Security</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Safe Browsing Tools</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Password Manager</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a id="planButtonIndividual" class="plan-card__button btn url-link"
+                                href="https://my.identityguard.com/enrollment/v1/1?cc=idg_2025_ultra_intro&offer_code=o00fjrp310">Get
+                                Protection Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="plan-cards__slide with-ribbon no-gap">
+            <div class="plan-card__ribbon ribbon-is-active">
+                <span class="plan-card__ribbon-text">
+                    <p>Protects 5 Adults, Unlimited Kids</p>
+                </span>
+            </div>
+            <div class="plan-card has-ribbon">
+                <div class="plan-card__sku-wrapper">
+                    <div class="plan-card__top-features-wrapper">
+                        <h3 class="plan-card__plan-name">Ultra Family</h3>
+                        <div class="plan-card__top-features">
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">24/7 U.S.-Based Customer Support</li>
+                                <li class="plan-card__feature-wrapper">$1 Million Identity Theft Insurance</li>
+                                <li class="plan-card__feature-wrapper">Dark Web Monitoring</li>
+                                <li class="plan-card__feature-wrapper">3-Bureau Credit Monitoring</li>
+                                <li class="plan-card__feature-wrapper">Monthly Credit Score</li>
+                                <li class="plan-card__feature-wrapper">Password Manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="plan-card__topper-wrapper">
+                        <div class="plan-card__discount-wrapper">
+                            <div class="plan-card__discount-bubble">
+                                <span id="planDiscountFamily" class="plan-card__discount-text">Save XX%</span>
+                            </div>
+                            <span class="plan-card__strike-text" id="planAnnuallyFamily">$XX.XX</span>
+                        </div>
+                        <div class="plan-card__price-wrapper">
+                            <span id="planPriceFamily" class="plan-card__price-text">$XX.99<span
+                                    class="plan-cards__per-text per" role="img" aria-label="per month">/mo</span></span>
+                            <span class="plan-card__intro-text">Billed annually, <br />
+                                <span class="plan-card__modal-link" role="button"
+                                    aria-label="Open intro offer details modal" tabindex="0">special intro
+                                    offer</span>
+                            </span>
+                            <a id="planButtonFamily" class="plan-card__button btn btn-small url-link"
+                                tabindex="0">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-card__feature-block" aria-expanded="false">
+                    <div class="plan-card__view-all">
+                        <button class="plan-card__view-all-button">View All Features<span
+                                class="plan-card__accordion-arrow"><svg width="14" height="14" viewBox="0 0 14 14"
+                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                    class="plan-card-accordion__svg-icon">
+                                    <path
+                                        d="M1.69625 5.07878C1.46866 4.85099 1.46862 4.48231 1.69625 4.25456C1.92405 4.02675 2.29364 4.02675 2.52144 4.25456L7.05855 8.79167L11.5957 4.25456C11.8235 4.02675 12.1931 4.02675 12.4209 4.25456C12.6483 4.48227 12.6482 4.85103 12.4209 5.07878L7.47066 10.029C7.24285 10.2567 6.87323 10.2567 6.64547 10.029L1.69625 5.07878Z"
+                                        fill="#191C1F" />
+                                </svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="plan-card__expand-block" aria-hidden="true">
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Premium Identity Protection</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Data Breach Notifications</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Dark Web Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">High Risk Transaction Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Bank Account Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Credit & Debit Card Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">401k & Investment Account Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Home & Auto Title Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Criminal & Sex Offense Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">USPS Address Change Monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Premium Credit Protection</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">3-Bureau Credit Monitoring</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">3-Bureau Annual Credit Report</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Experian Credit Lock</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Monthly Credit Score*</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card__feature-header">Online and Device Security</h4>
+                            <ul class="plan-card__feature-content-wrapper">
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Safe Browsing Tools</span>
+                                </li>
+                                <li class="plan-card__feature-wrapper">
+                                    <span class="plan-card__feature-text">Password Manager</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a id="planButtonFamily" class="plan-card__button btn url-link"
+                                href="https://my.identityguard.com/enrollment/v1/1?cc=idg_2025_ultra_intro&offer_code=528wntpuqc">Get
+                                Protection Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<dialog class="plan-card-modal" id="planCardModal">
+    <div class="offer-details-modal-background">
+        <div class="offer-details-card-container-modal">
+            <div class="plan-card-modal-text-container">
+                <h2 class="plan-card-modal-header-text">Introductory Offer</h2>
+                <p class="plan-card-modal-text">The introductory offer is valid for the first term of your subscription.
+                    At the end of the expiration of the initial
+                    term, you will be automatically renewed at the renewal price. This price is subject to change. We
+                    will always email you
+                    in advance prior to annual renewal.
+                </p>
+                <div class="plan-card-modal__ul-wrapper">
+                    <span>Ultra Individual:</span>
+                    <ul class="plan-card-modal__ul">
+                        <li id="modalIndividualAnnual" class="plan-card-modal__li">Annual - pay $95.88, renews at
+                            $239.70/year</li>
+                    </ul>
+                </div>
+                <div class="plan-card-modal__ul-wrapper">
+                    <span>Ultra Family:</span>
+                    <ul class="plan-card-modal__ul">
+                        <li id="modalIndividualAnnual" class="plan-card-modal__li">Annual - pay $179.88, renews at
+                            $449.70/year</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="plan-card-modal-exit-button-wrapper" tabindex="0" role="button">
+                <img class="plan-card-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"
+                    alt="Close modal button" />
+            </div>
+        </div>
+    </div>
+</dialog>
+
+<!--faq Accordion Script -->
+<script data-cfasync="false">
+
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptfaq = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const createFaqAccordion = () => { //EDIT: Update function name in all locations for each new accordion.
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptfaq.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
+
+        //Apply stylings via CSS
+        currentElementToCheck.classList.add('accordion-block');
+        currentElementToCheck.classList.add('plan-card-accordion-block'); //EDIT: Update classlist name for each new accordion.
+
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#planCardAccordionHTML");
+        const accordionStyles = document.querySelector("#planCardAccordionStyles");
+        const accordionModal = document.querySelector("#planCardModal");
+        const accordionModalStyles = document.querySelector("#planCardModalStyles")
+
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = '';
+
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
+
+        //Insert Modal After as it will be rewritten
+        currentElementToCheck.after(accordionModal);
+        currentElementToCheck.after(accordionModalStyles)
+
+        //Add accordion functionality. Must be after HTML is inserted.
+        const faqListItemArray = document.querySelectorAll('.plan-card__view-all-button');
+        const faqBlocksToExpandArray = document.querySelectorAll('.plan-card__expand-block');
+        const planCardFeatureBlocks = document.querySelectorAll('.plan-card__feature-block'); //Element that wraps accordion button and hidden accordion content
+
+        faqListItemArray.forEach((toggle, index) => {
+            toggle.setAttribute('tabindex', '0');
+            // toggle.addEventListener('keydown', setFocusToIndividualCta);
+            let accordionContent = faqBlocksToExpandArray[index];
+            let buttonArrow = toggle.querySelector('.plan-card__accordion-arrow');
+
+            let handleToggle = () => {
+                toggle.classList.toggle('is-open');
+                accordionContent.classList.toggle('is-open');
+                buttonArrow.classList.toggle('is-open');
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.display = "none";
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.display = "flex"; //Display needs to be set before height can be adjusted.
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+                }
+            }
+
+            //Function to dynamically change aria attributes
+            let handleAriaOnClick = (element, ariaType) => {
+                if (element.getAttribute(`aria-${ariaType}`) !== null) {
+                    element.setAttribute(`aria-${ariaType}`, (element.getAttribute(`aria-${ariaType}`) === "true" ? "false" : "true"));
+                } else {
+                    console.error(`Element does not have aria-${ariaType} attribute. View element:`, element);
+                }
+            }
+
+            toggle.addEventListener('click', (event) => {
+                handleToggle();
+                handleAriaOnClick(planCardFeatureBlocks[index], "expanded");
+                handleAriaOnClick(accordionContent, "hidden");
+            });
+
+            toggle.addEventListener('keydown', (event) => {
+
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    handleToggle();
+                    handleAriaOnClick(planCardFeatureBlocks[index], "expanded");
+                    handleAriaOnClick(accordionContent, "hidden");
+                }
+            });
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", createFaqAccordion);
+</script>
+
+<script defer>
+    const currentScriptPlanCard = document.currentScript;
+    "use strict";
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        let createdmodalElement = document.querySelector("#planCardModal");
+        function modalFactory(modalElement) {
+            // //Modal HTML
+            // let modalHtml = document.querySelector("#planCardModal");
+
+            // //Create modal HTML object and add it to top of the Main HTML element
+            // modalElement.classList.add("plan-card-modal-background");
+            // modalElement.innerHTML = modalHtml;
+            // modalElement.style.display = "none";
+
+            //NOTE: Modal was inserted in accordion script
+            // const handleModalInsertion = (divToInsert) => {
+            //     const accordionBlock = document.querySelector(".plan-card-accordion-block");
+            //     accordionBlock.after(divToInsert)
+            // }
+
+
+            // handleModalInsertion(modalElement);
+
+            let closeButton = document.querySelector(
+                `.plan-card-modal-exit-button-wrapper`
+            );
+            closeButton.setAttribute("aria-label", `Close Introductory Offer Pop-up`);
+            closeButton.addEventListener("click", () => {
+                modalElement.close();
+                // modalElement.style.display = "none";
+            });
+
+            closeButton.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    // modalElement.style.display = "none";
+                    modalElement.close();
+                }
+            });
+
+            //Add Modal display functionality on 'read more' click
+            let readMoreLink = document.querySelectorAll(
+                `.plan-card__modal-link`
+            );
+            readMoreLink.forEach((link) => {
+                link.setAttribute("aria-label", `Open Introductory Offer Details`);
+                link.addEventListener("click", () => {
+                    modalElement.showModal();
+                    // modalElement.style.display = "flex";
+                });
+
+                link.addEventListener("keydown", (event) => {
+                    const { key, which } = event;
+                    const keysToMatch = ["Enter", " "];
+                    const whichCodesToMatch = [32, 13];
+
+                    if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                        modalElement.showModal();
+                    }
+                });
+
+                // //Add Modal hide functionality on background click
+                modalElement.addEventListener("click", (event) => {
+                    if (event.target === modalElement) {
+                        // modalElement.style.display = "none";
+                        modalElement.close();
+                    }
+                });
+            });
+        }
+
+        modalFactory(createdmodalElement);
+    });
+</script>

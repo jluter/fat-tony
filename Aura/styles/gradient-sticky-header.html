@@ -54,6 +54,20 @@
       .sticky-header > .section-block {
           background-color: rgba(22, 22, 22, 0) !important; /*Desired sticky header background color on scroll/hover*/
       }
+
+      /*CSS trick to get around low contrast errors*/
+      .sticky-header p, .sticky-header .aura-cta-sticky-header {
+        background-color: black;
+        background-clip: text;
+      }
+
+      .sticky-header.scrolled-background p, .sticky-header.scrolled-background .aura-cta-sticky-header {
+        background-clip: unset;
+      }
+
+      .sticky-header:hover p, .sticky-header:hover .aura-cta-sticky-header {
+        background-clip: unset;
+      }
   
       .sticky-header:hover > .section-block {
           background-color: rgba(22, 22, 22, 1) !important;

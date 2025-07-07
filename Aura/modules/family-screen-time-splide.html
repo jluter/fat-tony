@@ -1,443 +1,546 @@
 <!-- Splide Slider Mount -->
-<!-- GB Name: Family Screen Time Sidescroll (North Star) - /parental-controls-4-rdj -->
+<!-- GB Name: Build Healthy Splide (North Star) - parental-controls-4-rdj  -->
 <script>
     "use strict";
     document.addEventListener("DOMContentLoaded", function () {
-        const screenTimeSplide1 = new Splide("#screenTimeSplide1", {
-            type: "loop",
-            drag: "free",
-            focus: "center",
-            fixedWidth: "6.5rem",
-            arrows: false,
-            pagination: false,
-            autoScroll: {
-                pauseOnHover: false,
-                pauseOnFocus: false,
-                speed: 0.78,
-            },
+        const splide = new Splide("#healthy-habits-slider", {
+            destroy: true,
+            mediaQuery: "min",
             i18n: {
-                prev: "Previous Feature, Family Screen Time Covered",
-                next: "Next Feature, Family Screen Time Covered",
-                slideX: "Go to Slide %s, Family Screen Time Covered"
+                prev: "Previous Feature, Aura Parental Controls",
+                next: "Next Feature, Aura Parental Controls",
+                slideX: "Go to Slide %s, Aura Parental Controls Feature",
             },
             breakpoints: {
                 769: {
-                    fixedWidth: "4rem",
-                    autoScroll: {
-                        speed: 0.65,
-                    },
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: true,
+                    pagination: false,
+                    gap: "2rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0px", right: "20rem" },
+                },
+                321: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: true,
+                    gap: "0.75rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "3rem" },
+                },
+                1: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    padding: { left: "0rem", right: "0rem" },
                 },
             },
         });
 
-        // SECOND ROW ICONS, ASKED TO BE REMOVED BEFORE LAUNCH BUT KEPT HERE IN CASE REVERTING BACK
-
-        // const screenTimeSplide2 = new Splide("#screenTimeSplide2", {
-        //   type: "loop",
-        //   drag: "free",
-        //   focus: "center",
-        //   fixedWidth: "6.5rem",
-        //   arrows: false,
-        //   pagination: false,
-        //   autoScroll: {
-        //     pauseOnHover: false,
-        //     pauseOnFocus: false,
-        //     speed: -0.8,
-        //   },
-        //   breakpoints: {
-        //     769: {
-        //       fixedWidth: "3.25em",
-        //       autoScroll: {
-        //         speed: -0.4,
-        //       },
-        //     },
-        //   },
-        // });
-        screenTimeSplide1.mount(window.splide.Extensions);
-        // screenTimeSplide2.mount(window.splide.Extensions);
+        splide.mount();
     });
 </script>
 
-<!-- Script to add class to InstaPage parent block -->
-<script>
-    //Grab the HTML Element/Object that this script is currently running in
-    //Variables and functions REQUIRE a unique name, so as to not negatively interact with other scripts
+<div id="healthy-habits-slider" class="splide" role="group" aria-label="Aura Reviews">
+    <div class="headline desktop-slider-headline" data-at=" headline">
+        <h2>Build Healthy Online Habits</h2>
+        <p>
+            Technology is an unavoidable part of everyday life. Help your kids develop
+            balanced, healthy digital habits with Aura’s Time Limits, laying the
+            foundation for a more constructive relationship with technology.
+        </p>
+    </div>
+    <div class="arrow-header-container">
+        <div class="splide__arrows splide__arrows--ltr">
+            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide"
+                aria-controls="slider-track">
+                <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.2927 3.70715C10.6832 3.31663 11.3164 3.31663 11.7069 3.70715C12.0974 4.09768 12.0974 4.73084 11.7069 5.12137L6.34236 10.4859L19.9998 
+  10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
+  19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z" />
+                </svg>
+            </button>
+            <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide"
+                aria-controls="slider-track">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path class="right-arrow-svg" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.7073 3.70715C13.3168 3.31663 12.6836 3.31663 12.2931 3.70715C11.9026 4.09768 11.9026 4.73084 12.2931 5.12137L17.6576 10.4859L4.00024 10.4859C3.44796 10.4859 3.00024 10.9336 3.00024 11.4859C3.00024 12.0382 3.44796 12.4859 4.00024 12.4859L17.6565 12.4859L12.2931 17.8493C11.9026 18.2398 11.9026 18.873 12.2931 19.2635C12.6836 19.654 13.3168 19.654 13.7073 19.2635L20.7784 12.1924C21.1689 11.8019 21.1689 11.1687 20.7784 10.7782L13.7073 3.70715Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
 
-    const currentScriptFamilyScrenTime1 = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
-
-    const addClassFamilyScreenTime1 = () => { //EDIT: Update function name in all locations for each new accordion.
-
-        //Loop through parent elements in ascending order until IP's section element is found
-        let isSectionBlock = false;
-        let currentElementToCheck = currentScriptFamilyScrenTime1.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
-
-        while (!isSectionBlock) {
-            console.log(currentElementToCheck);
-            if (currentElementToCheck.classList.contains("widget") && currentElementToCheck.classList.contains("item-absolute")) {
-                isSectionBlock = true;
-            } else {
-                currentElementToCheck = currentElementToCheck.parentElement;
-            }
-        }
-
-        //Add class. Styling is included in CSS
-        currentElementToCheck.classList.add("splide-full-width");
-    }
-
-    document.addEventListener("DOMContentLoaded", addClassFamilyScreenTime1);
-</script>
-
-<style>
-    #screenTimeSplide1 .splide__track {
-        overflow: visible !important;
-    }
-
-    .splide-full-width {
-        width: 100% !important;
-    }
-</style>
-<div class="screentime1_text-wrapper">
-    <h2 class="screentime1_h2">Family Screen Time, Covered</h2>
-    <p class="screentime1_p">From social media to gaming, start managing your kids' online activity to support healthy
-        screen time and overall wellbeing. Aura Parental Controls allows you to restrict internet access and limit
-        screen time on your child's iPhone, iPad or Android phones and tablets.</p>
-</div>
-<div class="screentime_button-wrapper">
-    <a class="screentime_button btn"></a>
-</div>
-<div id="screenTimeSplide1" class="splide .screentime-splide_1" role="group"
-    aria-label="List of platform that Aura covers in a parental control feature">
     <div class="splide__track">
         <div class="splide__list">
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image facebook"></div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <div class="card-text-container">
+                            <img class="card-icon"
+                                src="https://storage.googleapis.com/instapage-user-media/bff2cbd9/64943409-0-Moon-Icon.svg"
+                                alt="" />
+                            <h3 class="card-header-text">Bedtime</h3>
+                            <p class="card-paragraph-text">
+                                When Bedtime rolls around, your child’s devices will be
+                                automatically disconnected from the internet.
+                            </p>
+                        </div>
+                        <img class="card-image"
+                            src="//storage.googleapis.com/instapage-user-media/bff2cbd9/64943420-0-Bedtime-Screenshot.png"
+                            alt="Aura App Bedtime Function Screnshot" />
+                    </div>
+                </div>
             </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image instagram"></div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <div class="card-text-container">
+                            <img class="card-icon"
+                                src="https://storage.googleapis.com/instapage-user-media/bff2cbd9/65162149-0-Group-6959826.svg"
+                                alt="Open Book Icon" />
+                            <h3 class="card-header-text">Focus Time</h3>
+                            <p class="card-paragraph-text">
+                                Focus Time allows you to set times during the day with limited
+                                or no Internet distractions.
+                            </p>
+                        </div>
+                        <img class="card-image"
+                            src="//storage.googleapis.com/instapage-user-media/bff2cbd9/65162150-0-Time-Limit.png"
+                            alt="Aura App Focus Time Screnshot" />
+                    </div>
+                </div>
             </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image youtube"></div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <div class="card-text-container">
+                            <img class="card-icon"
+                                src="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b2b5affb1740795557db4a_Group%206960375.svg"
+                                alt="" />
+                            <h3 class="card-header-text">Time Limits</h3>
+                            <p class="card-paragraph-text">
+                                Set customized Time Limits on your child’s app and website
+                                usage.
+                            </p>
+                        </div>
+                        <img class="card-image"
+                            src="//storage.googleapis.com/instapage-user-media/bff2cbd9/64943423-0-Time-Limits.png"
+                            alt="Aura App ScreenShot showing how to set Time Limits" />
+                    </div>
+                </div>
             </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image tiktok"></div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <div class="card-text-container">
+                            <img class="card-icon"
+                                src="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b2b60515911ad2b417b448_Group%206960376.svg"
+                                alt="" />
+                            <h3 class="card-header-text">
+                                Pause the Internet<sup class="card-header-superscript">®</sup>
+                            </h3>
+                            <p class="card-paragraph-text">
+                                Easily enforce screen time limits with our Pause the Internet
+                                feature.
+                            </p>
+                        </div>
+                        <img class="card-image"
+                            src="//storage.googleapis.com/instapage-user-media/bff2cbd9/64943424-0-Pause-The-Internet-2.png"
+                            alt="Aura App ScreenShot for pausing the internet at custom times." />
+                    </div>
+                </div>
             </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image apple"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image snapchat"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image twitter"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image hulu"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image netflix"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image discord"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image playstation"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image game"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image xbox"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image reddit"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image vimeo"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image whatsapp"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image disney"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image blox"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image slack"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image twitch"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image android"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image wii"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image amazon"></div>
-            </div>
-            <div class="splide__slide .screentime_slide">
-                <div class="screentime1_image steam"></div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <div class="card-text-container">
+                            <img class="card-icon"
+                                src="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b2b606592f8d38ccd61df2_Group%206960377.svg"
+                                alt="" />
+                            <h3 class="card-header-text">Bonus Time</h3>
+                            <p class="card-paragraph-text">
+                                Reward your child’s successes by extending their daily time
+                                online.
+                            </p>
+                        </div>
+                        <img class="card-image"
+                            src="//storage.googleapis.com/instapage-user-media/bff2cbd9/64943425-0-Bonus-Time.png"
+                            alt="Aura App ScreenShot for giving a user bonus internet time." />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- SECOND ROW ICONS, ASKED TO BE REMOVED BEFORE LAUNCH BUT KEPT HERE IN CASE REVERTING BACK -->
-
-<!-- <div
-    id="screenTimeSplide2"
-    class="splide .screentime-splide_2"
-    role="group"
-    aria-label="Aura Reviews">
-    <div class="splide__track">
-      <div class="splide__list">
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image xbox"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image reddit"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image vimeo"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image whatsapp"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image disney"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image blox"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image slack"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image twitch"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image android"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image wii"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image amazon"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image steam"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image facebook"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image instagram"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image youtube"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image tiktok"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image apple"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image snapchat"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image twitter"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image hulu"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image netflix"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image discord"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image playstation"></div>
-        </div>
-        <div class="splide__slide .screentime_slide">
-          <div class="screentime1_image game"></div>
-        </div>
-      </div>
-    </div>
+<!-- <div class="reviews-button-wrapper">
+    <a class="review-button btn"></a>
   </div> -->
 
 <style>
-    /* AutoScroll Splide Styles*/
-    .screentime1_text-wrapper {
+    #healthy-habits-slider .splide__track {
+        overflow: visible;
+    }
+
+    /*DESKTOP STYLE FOR ARROWS & GRADIENT*/
+    @media (min-width: 769px) {
+        .splide__arrows {
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .splide__arrows .splide__arrow svg {
+            fill: #161616;
+        }
+
+        .splide__arrows .splide__arrow svg:hover {
+            fill: #ffffff;
+        }
+
+        .left-arrow-svg {
+            transform: scaleX(1) !important;
+        }
+
+        .splide__arrow {
+            background: #f6f6f6 !important;
+            position: static !important;
+            border: 1px solid #161616 !important;
+            height: 2rem !important;
+            width: 2rem !important;
+        }
+
+        .splide__arrow:hover {
+            background: #161616 !important;
+        }
+
+        .splide__arrow--prev:hover svg,
+        .splide__arrow--next:hover svg {
+            fill: #ffffff !important;
+        }
+
+        .arrow-header-container {
+            justify-content: flex-end;
+            display: flex;
+            position: static;
+            align-items: end;
+            gap: 5rem;
+            padding-top: 3rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .card-image {
+            width: 100%;
+        }
+    }
+
+    /*Build Healthy Online Habits Styles START*/
+    /*Desktop*/
+    @media (min-width: 769px) {
+        #healthy-habits-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 68.75rem;
+        }
+
+        #healthy-habits-slider .arrow-header-container {
+            width: 100%;
+        }
+
+        #healthy-habits-slider .card-background-wrapper {
+            background-color: #ffffff;
+            border-radius: 16px;
+            width: 21.625rem;
+            height: 30rem;
+        }
+
+        #healthy-habits-slider .splide__track {
+            width: 113%;
+            align-self: baseline;
+        }
+
+        /*Slider gradient */
+        /* #healthy-habits-slider .splide__track:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            pointer-events: none;
+            background-image: linear-gradient(270deg, rgb(246, 246, 246) 36.84%, rgba(236, 244, 255, 0) 100%);
+            width: 3.5rem;
+            height: 100%;
+            right: -5px;
+        } */
+    }
+
+    #healthy-habits-slider {
+        margin: auto;
+        /*width: 1300px;*/
+    }
+
+    #know-where-slider .card-header-span {
+        background-color: #d2ffaf;
+        border-radius: 24px;
+        padding: 0.25rem 0.75rem;
+    }
+
+    #healthy-habits-slider .headline {
+        max-width: 50.3125rem;
+    }
+
+    #healthy-habits-slider .headline h2,
+    #know-where-slider .headline h2 {
+        font-size: 3.625rem;
+    }
+
+    #healthy-habits-slider .headline p,
+    #know-where-slider .headline p {
+        font-family: "Basel Grotesk";
+        margin: 0.75rem 3rem;
+        line-height: 25px;
+    }
+
+    #healthy-habits-slider .card-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        width: 100%;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+        height: 100%;
+        justify-content: space-between;
     }
 
-    .screentime1_h2 {
-        font-family: "Clarendon Graphic";
-        font-weight: 400;
-        font-size: 3.5913rem;
-        line-height: 4.35rem;
-        text-align: center;
-    }
+    /* #healthy-habits-slider .card-icon {
+  padding-bottom: 1.5rem;
+  } */
 
-    .screentime1_p {
-        font-size: 1.3622rem;
-        line-height: 1.925rem;
-        text-align: center;
-        max-width: 66ch;
-    }
-
-    .screentime_button-wrapper {
-        width: 100%;
+    #healthy-habits-slider .card-text-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 4rem;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 3rem;
+        gap: 1rem;
     }
 
-    .screentime_button {
-        width: 18.75rem;
-        height: 3.875rem;
+    .card-header-text {
+        font-size: 1.75rem;
+        line-height: 22px;
     }
 
-    .screentime1_image {
-        background-position: center;
-        background-size: cover;
-        width: 7.5rem;
-        height: 7.5rem;
+    .card-paragraph-text {
+        text-align: left;
+        line-height: 22px;
     }
 
-    .screentime1_image.facebook {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f485ff284837fccedf5a_Facebook.png");
+    #healthy-habits-slider .card-image {
+        height: 15.25rem;
+        object-fit: contain;
     }
 
-    .screentime1_image.instagram {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486add15982fc7e5cb4_Instagram.png");
-    }
-
-    .screentime1_image.youtube {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48533bdf8db8fbfaa4b_Youtube.png");
-    }
-
-    .screentime1_image.tiktok {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f485109db84affe48874_Tiktok.png");
-    }
-
-    .screentime1_image.apple {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f4869bf317e74d1f76e6_Group%2076018.png");
-    }
-
-    .screentime1_image.snapchat {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48658731458d50850e2_Snapchat.png");
-    }
-
-    .screentime1_image.twitter {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486de51738e9577cbbf_Twitter.png");
-    }
-
-    .screentime1_image.hulu {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f484735b42b8de568aac_Hulu.png");
-    }
-
-    .screentime1_image.netflix {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f48534048dbcdc2249ca_Netflix.png");
-    }
-
-    .screentime1_image.discord {
-        background-image: url("https://storage.googleapis.com/instapage-user-media/bff2cbd9/64760770-0-Discord.png");
-    }
-
-    .screentime1_image.playstation {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f4840396b6c82237461a_Group%2076031.png");
-    }
-
-    .screentime1_image.game {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3f486add15982fc7e5cd3_Group%2076029.png");
-    }
-
-    .screentime1_image.xbox {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fa5d805c462a22d65e19_Group%2076019.png");
-    }
-
-    .screentime1_image.reddit {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fa80c3f0fe523355171e_Reddit.png");
-    }
-
-    .screentime1_image.vimeo {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb0615b2adbd28db2517_Vimeo.png");
-    }
-
-    .screentime1_image.whatsapp {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb42981fde7d66b9b441_WhatsApp.png");
-    }
-
-    .screentime1_image.disney {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb79a5dd59d76ea26365_Disney%20Plus.png");
-    }
-
-    .screentime1_image.blox {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fb9da3901d87a9cd3efa_Blox.png");
-    }
-
-    .screentime1_image.slack {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbbba3901d87a9cd5659_Group%2076020.png");
-    }
-
-    .screentime1_image.twitch {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbd6c2533736a639c0ad_Twitch.png");
-    }
-
-    .screentime1_image.android {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fbf881c1be73970299ed_android.png");
-    }
-
-    .screentime1_image.wii {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fc270f8e3fc623c5713f_wii.png");
-    }
-
-    .screentime1_image.amazon {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fc88a75a0fd2e2e1408d_Amazon.png");
-    }
-
-    .screentime1_image.steam {
-        background-image: url("https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/65b3fcbb69d978a1d29f8695_Steam.png");
-    }
+    /*MOBILE BELOW*/
 
     @media (max-width: 768px) {
-        .screentime1_image {
-            width: 4.25rem;
-            height: 4.25rem;
+        #healthy-habits-slider {
+            width: 100%;
         }
 
-        .screentime1_h2 {
-            font-size: 2rem;
-            line-height: 2.625rem;
-            max-width: 12ch;
+        #healthy-habits-slider .headline h2,
+        #know-where-slider .headline h2 {
+            font-size: 2.25rem;
         }
 
-        .screentime1_p {
-            font-size: 1.1146rem;
+        #healthy-habits-slider .headline p,
+        #know-where-slider .headline p {
+            font-family: "Basel Grotesk";
+            text-align: center;
+            margin: 0.75rem 3rem 2rem 3rem;
+            line-height: 22px;
+        }
+
+        #healthy-habits-slider .card-background-wrapper {
+            height: 26.25rem;
+            width: 17.1875rem;
+            min-height: 100%;
+        }
+
+        #healthy-habits-slider .card-container {
+            margin: 0;
+        }
+
+        #healthy-habits-slider .card-icon {
+            padding: 0;
+        }
+
+        #healthy-habits-slider .card-header-text {
+            font-size: 1.5rem;
+        }
+
+        #healthy-habits-slider .card-image {
+            height: 10.625rem;
+        }
+
+        #healthy-habits-slider .card-text-container {
+            width: 17.1875rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-bottom: 0rem !important;
+        }
+
+        #healthy-habits-slider .desktop-slider-headline h2 {
+            max-width: 20rem;
+            margin: 0 auto;
+        }
+    }
+
+    /* } */
+    /*Build Healthy Online Habits Styles END*/
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        .splide__track {
+            width: 100vw;
+        }
+
+        .card-background-wrapper {
+            width: 17.425rem;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            min-height: 31rem;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            width: inherit;
+            height: inherit;
+            /* padding-top: 1rem; */
+        }
+
+        .card-image {
+            height: 10.625rem;
+            width: 100%;
+            object-fit: contain;
+            margin-top: auto;
+            border-radius: unset;
+        }
+
+        .card-image.opacity-0 {
+            opacity: 0%;
+        }
+
+        .card-icon {
+            height: 2.313rem;
+            width: 2.313rem;
+        }
+
+        .card-icon.multi-icon {
+            width: auto;
+        }
+
+        .card-header-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            align-items: center;
+            margin: 0;
+        }
+
+        .card-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 400;
+            line-height: 1.9375rem;
+            font-size: 1.5rem;
+            text-align: left;
+            display: flex;
+            margin: 0;
+        }
+
+        .card-header-superscript {
+            /* font-size: 0.7rem; */
+            margin-left: 0.05rem;
+            margin-top: 0.7rem;
+        }
+
+        .card-header-text.in-header-wrapper {
+            margin-top: 0rem;
+            margin-bottom: 0rem;
+        }
+
+        .card-header-span {
+            padding: 0.3rem 0.7rem;
+            font-size: 0.75rem;
+            background-color: #d2ffaf;
+            border-radius: 1.188rem;
+        }
+
+        .card-paragraph-text {
+            font-family: "Basel Grotesk";
+            font-size: 1rem;
+            font-weight: 400;
             line-height: 1.5625rem;
-            max-width: 30ch;
+            letter-spacing: 0px;
+            text-align: left;
+            width: 100%;
+            justify-self: flex-end;
+            align-self: flex-end;
         }
 
-        .screentime_button-wrapper {
-            margin-bottom: 2rem;
+        .card-text-container {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+    }
+
+    /* 320px Width Styles*/
+    @media (max-width: 320px) {
+        #healthy-habits-slider .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .screentime_button {
-            width: 21.3125rem;
-            height: 3.5rem;
+        #healthy-habits-slider .splide__slide {
+            align-items: center;
+        }
+
+        /* Change Height of Splide IP Section Parents*/
+        section:has(#healthy-habits-slider),
+        .section-block:has(#healthy-habits-slider) {
+            height: 169.1rem !important;
+        }
+
+        #healthy-habits-slider>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        #healthy-habits-slider .splide__list {
+            align-items: center;
         }
     }
 </style>
