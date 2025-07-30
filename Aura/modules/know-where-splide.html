@@ -1,0 +1,250 @@
+<!-- Splide Slider Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#know-where-slider", {
+            destroy: true,
+            mediaQuery: "min",
+
+            i18n: {
+                prev: "Previous Feature, Know Where They’re Spending Their Time Online Feature",
+                next: "Next Feature, Know Where They’re Spending Their Time Online Feature",
+                slideX:
+                    "Go to Slide %s, Know Where They’re Spending Their Time Online Feature",
+            },
+
+            breakpoints: {
+                769: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0px", right: "0rem" },
+                },
+                321: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: true,
+                    gap: "0.75rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "3rem" },
+                },
+                1: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<div id="know-where-slider" class="splide splide-mobile" role="group"
+    aria-label="Know Where They’re Spending Their Time Online Feature">
+    <div class="headline desktop-slider-headline" data-at="headline">
+        <h2>Know Where They’re Spending Their Time Online</h2>
+        <p>
+            You can’t be everywhere your kids are—and let’s be honest, you don’t want
+            to be. Aura Parental Controls helps you understand how your kids are
+            spending time online.
+        </p>
+    </div>
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list">
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image" src="//v.fastcdn.co/u/bff2cbd9/64943496-0-Children-on-phone-in.png"
+                            alt="Two children in car viewing cell phones, Aura UI overlay showing onlive activity, TikTok 12 visits, and Instagram 3 visits." />
+                        <div class="card-text-container">
+                            <div class="card-header-wrapper">
+                                <h3 class="card-header-text in-header-wrapper">History</h3>
+                            </div>
+                            <p class="card-paragraph-text">
+                                Knowledge is power when it comes to protecting your kids. With
+                                History, know what your kids are viewing online and spot
+                                potential overuse of apps and websites.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide">
+                <div class="card-background-wrapper">
+                    <div class="card-container">
+                        <img class="card-image" src="//v.fastcdn.co/u/bff2cbd9/64943489-0-Son-and-Mother-Looki.png"
+                            alt="Tenn and parent viewing cell phone. Aura UI overlay showing Time Online widgfet. Time Spent: 5h 45m, 1h 15m left " />
+                        <div class="card-text-container">
+                            <h3 class="card-header-text">Internet Usage</h3>
+                            <p class="card-paragraph-text">
+                                Get a complete picture of your kids' internet use across all
+                                devices so you can make informed decisions about the right
+                                amount of screen time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .reviews-button-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 4rem 0rem;
+    }
+
+    .review-button {
+        width: 18.75rem;
+        height: 3.875rem;
+    }
+
+    .card-header-superscript {
+        font-size: 1.5rem;
+    }
+
+    /*Know Where Styles START*/
+    /*Desktop Only Styles*/
+    @media (min-width: 769px) {
+        #know-where-slider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #know-where-slider .splide__list {
+            justify-content: center !important;
+            gap: 1.5rem;
+        }
+
+        #know-where-slider .splide__track {
+            margin-top: 2rem;
+        }
+    }
+
+    #know-where-slider .headline {
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+    }
+
+    #know-where-slider .headline h2 {
+        max-width: 55rem;
+    }
+
+    #know-where-slider .headline p {
+        max-width: 44rem;
+    }
+
+    #know-where-slider .card-text-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 2rem;
+    }
+
+    #know-where-slider .card-header-wrapper {
+        display: flex;
+        gap: 0.75rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #know-where-slider .card-image {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    #know-where-slider .card-background-wrapper {
+        background-color: #ffffff;
+        border-radius: 16px;
+        width: 33.25rem;
+        height: 32.5rem;
+    }
+
+    /*Mobile Below*/
+    @media (max-width: 768px) {
+        #know-where-slider .card-background-wrapper {
+            background-color: #ffffff;
+            border-radius: 16px;
+            width: 17.1875rem;
+            height: 25.25rem;
+            min-height: unset;
+        }
+
+        #know-where-slider .card-text-container {
+            gap: 1rem;
+            padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        #know-where-slider .card-image {
+            object-fit: cover;
+            margin-top: 0;
+        }
+
+        #know-where-slider .card-header-wrapper {
+            gap: 0.75rem;
+        }
+
+        #know-where-slider .desktop-slider-headline h2 {
+            max-width: 20rem;
+            margin: 0 auto;
+            line-height: 115%;
+        }
+    }
+
+    /* 320px Width Styles*/
+    @media (max-width: 320px) {
+        #know-where-slider .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #know-where-slider .splide__slide {
+            align-items: center;
+        }
+
+        /* Change Height of Splide IP Section Parents*/
+        section:has(#know-where-slider),
+        .section-block:has(#know-where-slider) {
+            height: 79.1rem !important;
+        }
+
+        #know-where-slider>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        #know-where-slider .splide__list {
+            align-items: center;
+        }
+    }
+
+    /*Know Where Styles END*/
+</style>

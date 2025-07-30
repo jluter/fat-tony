@@ -1,0 +1,61 @@
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/TextPlugin.min.js"></script>
+<h1 class="gsap-header">
+    Protect<br class="is-mobile" />
+    Yourself <br class="is-desktop" />From
+    <span class="gsap-header_animated-text">Identity Theft</span>
+</h1>
+
+<style>
+    .gsap-header {
+        font-family: "Clarendon Graphic";
+        text-align: left;
+        line-height: 3.625rem;
+        font-size: 3.5913rem;
+        color: #ffffff;
+    }
+
+    .gsap-header_animated-text {
+        color: #d2ffaf;
+        display: inline-block;
+    }
+
+    @media (max-width: 767px) {
+        .gsap-header {
+            text-align: center;
+            line-height: 2.6875rem;
+            font-size: 2.2291rem;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", (event) => {
+        gsap.registerPlugin(SplitText, TextPlugin);
+        let split = SplitText.create(".gsap-header", {
+            type: "words", // only split into words and lines (not characters)
+            // mask: "lines", // adds extra wrapper element around lines with overflow: clip (v3.13.0+)
+            wordsClass: "gsapWord++", // adds "line" class to each line element, plus an incremented one too ("line1", "line2", "line3", etc.)
+            aria: "auto",
+            // there are many other options - see below for a complete list
+        });
+
+        const gsapAnimatedHeader = document.querySelector(
+            ".gsap-header_animated-text"
+        );
+
+        let tl = gsap.timeline({ repeat: -1, repeatDelay: 0, ease: "none" });
+        tl.from(gsapAnimatedHeader, { aria: "hidden", opacity: 0, duration: 0.3 })
+            .to(gsapAnimatedHeader, { delay: 1.5, opacity: 0, duration: 0.2 })
+            .to(gsapAnimatedHeader, 0, { text: "Scams" })
+            .to(gsapAnimatedHeader, 0.4, { opacity: 1 })
+            .to(gsapAnimatedHeader, { delay: 1.5, opacity: 0, duration: 0.2 })
+            .to(gsapAnimatedHeader, 0, { text: "Data Breaches" })
+            .to(gsapAnimatedHeader, 0.4, { opacity: 1 })
+            .to(gsapAnimatedHeader, { delay: 1.5, opacity: 0, duration: 0.2 })
+            .to(gsapAnimatedHeader, 0, { text: "Financial Fraud" })
+            .to(gsapAnimatedHeader, 0.4, { opacity: 1 })
+            .to(gsapAnimatedHeader, { delay: 1.5, opacity: 0, duration: 0.2 })
+            .to(gsapAnimatedHeader, 0, { text: "Identity Theft" });
+    });
+</script>
