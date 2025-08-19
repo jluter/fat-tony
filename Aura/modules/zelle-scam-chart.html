@@ -1,180 +1,413 @@
 <!-- GB Name: Zelle Scam Chart  -->
 <style>
     /* Media Queries */
-    .zelle-scam_table-wrapper {
+    .zelle-scam__table-wrapper {
         text-align: left;
         border-radius: 1.5rem;
-        background-color: white;
+        background-color: rgba(236, 244, 255, 1);
         padding: 2rem 2rem;
-        box-shadow: 0px 4px 32px 0px rgba(37, 81, 184, 0.12);
+        width: 39.25rem;
+        height: 44.375rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* box-shadow: 0px 4px 32px 0px rgba(37, 81, 184, 0.12); */
     }
 
-    .zelle-scam_table-row {
-        margin-bottom: 0.5rem;
+    .zelle-scam__descriptor {
+        font-size: 1.375rem;
+        font-weight: 500;
+        text-align: left;
+        margin-bottom: 2.75rem;
     }
 
-    .zelle-scam_btn {
+    .zelle-scam__table-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .zelle-scam__table-head {
+        display: none;
+    }
+
+    .zelle-scam__table-row {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .zelle-scam__percentage-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        position: relative;
+    }
+
+    .zelle-scam__percentage {
+        color: rgba(88, 88, 88, 1);
+        font-size: 1rem;
+        line-height: 140%;
+    }
+
+    .zelle-scam__fill-bar {
+        display: inline-flex;
+        height: 1rem;
+        border-radius: 1.5rem;
+        background: rgba(37, 81, 184, 1);
+    }
+
+    .paypal-bar {
+        width: 19.75rem;
+    }
+
+    .credit-card-bar {
+        width: 15.125rem;
+    }
+
+    .bank-bar {
+        width: 8.3125rem;
+    }
+
+    .venmo-bar {
+        width: 5.9375rem;
+    }
+
+    .apple-bar {
+        width: 5rem;
+    }
+
+    .prepaid-bar {
+        width: 4.6875rem;
+    }
+
+    .google-pay-bar {
+        width: 3.25rem;
+    }
+
+    .cash-app-bar {
+        width: 1.625rem;
+    }
+
+    .wire-transfer-bar {
+        width: 0.875rem;
+    }
+
+    .zelle-bar {
+        width: 0.5rem;
+    }
+
+    .zelle-scam__btn {
         height: 3.6875rem;
         width: 19.0625rem;
         margin: 0 auto;
     }
 
-    .zelle-scam_data-text {
-        font-size: 1.125rem;
-        line-height: 140%;
-        margin-bottom: 1.5rem;
-    }
-
-    .zelle-scam_data-text.last {
-        margin-bottom: 0;
-    }
-
-    .zelle-scam_cta-text {
+    .zelle-scam__cta-text {
         font-size: 1.375rem;
         text-align: center;
         line-height: 140%;
         margin-bottom: 1.5rem;
     }
 
-    .zelle-scam_table-data {
+    .zelle-scam__text-wrapper {
+        width: 10rem;
+    }
+
+    .zelle-scam__header {
+        font-size: 1.125rem;
+        line-height: 140%;
         display: flex;
-        margin-bottom: 0.5rem;
-        gap: 1.5rem;
+        justify-content: flex-end;
+        font-weight: 500;
     }
 
-    .zelle-scam_icon {
-        flex: 0 0 auto;
-        margin-top: 0.5rem;
+    .zelle-scam__aside-article {
+        width: 13.75rem;
+        height: 7.25rem;
+        background-color: rgba(214, 230, 255, 1);
+        position: absolute;
+        border-radius: 0.5rem;
+        right: 2rem;
+        bottom: 5.75rem;
     }
 
-    .zelle-scam_number-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 auto;
-        align-items: center;
-        gap: 1rem;
+    .zelle-scam__aside-text {
+        font-size: 1rem;
+        padding: 0.5rem 0.5rem 1.625rem 1rem;
+        line-height: 140%;
     }
 
-    .zelle-scam_line {
-        width: 1px;
-        flex-grow: 1;
-        background-color: #cfd5e3;
+    .zelle-scam__source-wrapper {
+        font-size: 0.75rem;
+        color: rgba(88, 88, 88, 1);
+        line-height: 110%;
+        margin-top: auto;
     }
 
-    .zelle-scam_header {
-        font-size: 1.75rem;
-        line-height: 130%;
-        margin-bottom: 0.5rem;
-        display: flex;
-    }
-
-    .superscript-star {
-        font-size: 1.6rem;
+    .zelle-scam__link {
+        text-decoration: underline;
     }
 
     @media (max-width: 768px) {
-        .zelle-scam_header {
+        .zelle-scam__table-wrapper {
+            height: 100%;
+            width: 100%;
+            border-radius: unset;
+            padding: 3rem 2rem;
+        }
+
+        .zelle-scam__descriptor {
+            text-align: center;
             font-size: 1.125rem;
+            margin-bottom: 1.5rem;
         }
 
-        .zelle-scam_icon {
-            width: 1rem;
-            height: 1rem;
+        .zelle-scam__header {
+            font-size: 0.875rem;
         }
 
-        .zelle-scam_data-text {
-            font-size: 1rem;
+        .zelle-scam__table-body {
+            gap: 0.5rem;
         }
 
-        .superscript-star {
-            font-size: 1.2rem;
+        .zelle-scam__table-row {
+            gap: 0.5rem;
+        }
+
+        .zelle-scam__text-wrapper {
+            width: 7.85rem;
+            text-align: right;
+        }
+
+        .zelle-scam__fill-bar {
+            height: 0.5875rem;
+        }
+
+        .zelle-scam__percentage {
+            font-size: 0.575rem;
+        }
+
+        .paypal-bar {
+            width: 11.375rem;
+        }
+
+        .credit-card-bar {
+            width: 8.75rem;
+        }
+
+        .bank-bar {
+            width: 4.8125rem;
+        }
+
+        .venmo-bar {
+            width: 3.4375rem;
+        }
+
+        .apple-bar {
+            width: 2.875rem;
+        }
+
+        .prepaid-bar {
+            width: 2.6875rem;
+        }
+
+        .google-pay-bar {
+            width: 1.875rem;
+        }
+
+        .cash-app-bar {
+            width: 0.95rem;
+        }
+
+        .wire-transfer-bar {
+            width: 0.5rem;
+        }
+
+        .zelle-bar {
+            width: 0.275rem;
+        }
+
+        .zelle-scam__aside-article {
+            right: unset;
+            bottom: unset;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .zelle-scam__aside-text {
+            padding: 1rem;
+        }
+
+        .section-inner:has(.zelle-scam__table-wrapper) {
+            margin: 0;
+            max-width: unset;
+        }
+
+        .widget.item-absolute:has(.zelle-scam__table-wrapper) {
+            width: 100% !important;
         }
     }
 </style>
 
-<div class="zelle-scam_table-wrapper">
-    <table class="zelle-scam_table">
+<div class="zelle-scam__table-wrapper">
+    <p class="zelle-scam__descriptor">Percentage of survey respondents who were able to get money back through payment processing company</p>
+    <table class="zelle-scam__table">
         <caption style="display: none">
             Scam Survey Response Table
         </caption>
-        <tr class="zelle-scam_table-row">
-            <td class="zelle-scam_table-data">
-                <div class="zelle-scam_number-wrapper">
-                    <svg alt="Gurantee" class="zelle-scam_icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M21.7078 6.70645C22.0979 6.31556 22.0973 5.68239 21.7064 5.29223C21.3156 4.90207 20.6824 4.90267 20.2922 5.29355L9.02239 16.5845L3.70777 11.2599C3.31761 10.869 2.68444 10.8684 2.29355 11.2586C1.90267 11.6487 1.90207 12.2819 2.29223 12.6728L8.31463 18.7064C8.50222 18.8944 8.75685 19 9.02239 19C9.28793 19 9.54257 18.8944 9.73016 18.7064L21.7078 6.70645Z"
-                            fill="#3366FF" />
-                    </svg>
-                    <div class="zelle-scam_line"></div>
-                </div>
-                <div class="zelle-scam_text-wrapper">
-                    <h3 class="zelle-scam_header">
-                        $1,000,000 Coverage<span class="superscript-star">*</span>
-                    </h3>
-                    <p class="zelle-scam_data-text">
-                        Every adult member gets $1M insurance to cover eligible losses and
-                        fees due to identity theft.
+        <thead class="zelle-scam__table-head">
+            <tr>
+                <th colspan="1" scope="col">
+                    Payment Processor
+                </th>
+                <th colspan="2" scope="col">
+                    Percentage of successful recovery
+                </th>
+            </tr>
+        </thead>
+        <tbody class="zelle-scam__table-body">
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        PayPal
                     </p>
-                </div>
-            </td>
-        </tr>
-        <tr class="zelle-scam_table-row">
-            <td class="zelle-scam_table-data">
-                <div class="zelle-scam_number-wrapper">
-                    <svg alt="Gurantee" class="zelle-scam_icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M21.7078 6.70645C22.0979 6.31556 22.0973 5.68239 21.7064 5.29223C21.3156 4.90207 20.6824 4.90267 20.2922 5.29355L9.02239 16.5845L3.70777 11.2599C3.31761 10.869 2.68444 10.8684 2.29355 11.2586C1.90267 11.6487 1.90207 12.2819 2.29223 12.6728L8.31463 18.7064C8.50222 18.8944 8.75685 19 9.02239 19C9.28793 19 9.54257 18.8944 9.73016 18.7064L21.7078 6.70645Z"
-                            fill="#3366FF" />
-                    </svg>
-                    <div class="zelle-scam_line"></div>
-                </div>
-                <div class="zelle-scam_text-wrapper">
-                    <h3 class="zelle-scam_header">Certified Data Security & Privacy</h3>
-                    <p class="zelle-scam_data-text">
-                        Your data is safeguarded using the same security standards as banks
-                        and the military. Plus, we never sell your data to third parties.
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar paypal-bar"></span>
+                        <span class="zelle-scam__percentage">47.4%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Credit Card
                     </p>
-                </div>
-            </td>
-        </tr>
-        <tr class="zelle-scam_table-row">
-            <td class="zelle-scam_table-data">
-                <div class="zelle-scam_number-wrapper">
-                    <svg alt="Gurantee" class="zelle-scam_icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M21.7078 6.70645C22.0979 6.31556 22.0973 5.68239 21.7064 5.29223C21.3156 4.90207 20.6824 4.90267 20.2922 5.29355L9.02239 16.5845L3.70777 11.2599C3.31761 10.869 2.68444 10.8684 2.29355 11.2586C1.90267 11.6487 1.90207 12.2819 2.29223 12.6728L8.31463 18.7064C8.50222 18.8944 8.75685 19 9.02239 19C9.28793 19 9.54257 18.8944 9.73016 18.7064L21.7078 6.70645Z"
-                            fill="#3366FF" />
-                    </svg>
-                    <div class="zelle-scam_line"></div>
-                </div>
-                <div class="zelle-scam_text-wrapper">
-                    <h3 class="zelle-scam_header">60-Day Money Back Guarantee²</h3>
-                    <p class="zelle-scam_data-text">
-                        Try Aura risk-free, love us or your money back.
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar credit-card-bar"></span>
+                        <span class="zelle-scam__percentage">36.2%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Bank Account Debit
                     </p>
-                </div>
-            </td>
-        </tr>
-        <tr class="zelle-scam_table-row">
-            <td class="zelle-scam_table-data">
-                <div class="zelle-scam_number-wrapper">
-                    <svg alt="Gurantee" class="zelle-scam_icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M21.7078 6.70645C22.0979 6.31556 22.0973 5.68239 21.7064 5.29223C21.3156 4.90207 20.6824 4.90267 20.2922 5.29355L9.02239 16.5845L3.70777 11.2599C3.31761 10.869 2.68444 10.8684 2.29355 11.2586C1.90267 11.6487 1.90207 12.2819 2.29223 12.6728L8.31463 18.7064C8.50222 18.8944 8.75685 19 9.02239 19C9.28793 19 9.54257 18.8944 9.73016 18.7064L21.7078 6.70645Z"
-                            fill="#3366FF" />
-                    </svg>
-                </div>
-                <div class="zelle-scam_text-wrapper">
-                    <h3 class="zelle-scam_header">24/7 U.S. Based Support</h3>
-                    <p class="zelle-scam_data-text last">
-                        Around the clock US fraud specialists are available to help.
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar bank-bar"></span>
+                        <span class="zelle-scam__percentage">20.0%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Venmo
                     </p>
-                </div>
-            </td>
-        </tr>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar venmo-bar"></span>
+                        <span class="zelle-scam__percentage">14.3%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Apple Pay
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar apple-bar"></span>
+                        <span class="zelle-scam__percentage">11.9%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Prepaid Card
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar prepaid-bar"></span>
+                        <span class="zelle-scam__percentage">11.5%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Google Pay
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar google-pay-bar"></span>
+                        <span class="zelle-scam__percentage">7.7%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Cash App
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar cash-app-bar"></span>
+                        <span class="zelle-scam__percentage">3.7%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Wire Transfer
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar wire-transfer-bar"></span>
+                        <span class="zelle-scam__percentage">2.0%</span>
+                    </div>
+                </td>
+            </tr>
+            <tr class="zelle-scam__table-row">
+                <td class="zelle-scam__text-wrapper" scope="row">
+                    <p class="zelle-scam__header">
+                        Zelle
+                    </p>
+                </td>
+                <td class="zelle-scam__table-data">
+                    <div class="zelle-scam__percentage-wrapper">
+                        <span class="zelle-scam__fill-bar zelle-bar"></span>
+                        <span class="zelle-scam__percentage">0.9%</span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
     </table>
+    <div class="zelle-scam__aside-article">
+        <p class="zelle-scam__aside-text">
+            Those who paid via PayPal or credit card were much more likely to report recovering their funds.
+        </p>
     </div>
+    <p class="zelle-scam__source-wrapper">
+        Source: <a class="zelle-scam__link" href="https://www.bbb.org/all/bbbi/online-purchase-scams-2021" target="_blank" rel="noreferrer noopener">BBB 2021 Online Purchase Scams Report</a>
+    </p>
+</div>
