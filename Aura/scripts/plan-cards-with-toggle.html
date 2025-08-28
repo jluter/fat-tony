@@ -17,6 +17,7 @@
     const TOGGLE = document.querySelector('.aura-plan-cards-plan-toggle-checkbox');
     const TOGGLE_BAR = document.querySelector('.aura-plan-cards-bar');
     const TOGGLE_TEXT = document.querySelectorAll('.aura-plan-cards-toggle-text');
+    const TOGGLE_STATUS = document.querySelector(".aura-plan-cards-toggle-status");
 
     const PLAN_DATA = {
         // forty: {
@@ -331,6 +332,8 @@
         individualButton.setAttribute('aria-label', PLAN_DATA[DISCOUNT].individual[billing].ariaLabel);
         coupleButton.setAttribute('aria-label', PLAN_DATA[DISCOUNT].couple[billing].ariaLabel);
         familyButton.setAttribute('aria-label', PLAN_DATA[DISCOUNT].family[billing].ariaLabel);
+
+        TOGGLE_STATUS.innerText = `${billing} plan selected.`
     }
 
     cardHeaderHeadline.innerHTML = HEADER_TEXT;
