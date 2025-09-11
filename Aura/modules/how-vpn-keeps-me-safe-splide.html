@@ -1,0 +1,356 @@
+<!-- GB Name: How VPN Keeps Me Safe Online - Splide  -->
+<!-- Splide protectData Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#protectData", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: "1rem",
+            arrowPath:
+                "M22.8449 6.17835C22.194 5.52747 21.1387 5.52747 20.4879 6.17835C19.837 6.82922 19.837 7.8845 20.4879 8.53537L29.4287 17.4762L6.66643 17.4762C5.74595 17.4762 4.99976 18.2224 4.99976 19.1429C4.99976 20.0634 5.74595 20.8096 6.66643 20.8096L29.4269 20.8096L20.4879 29.7486C19.837 30.3994 19.837 31.4547 20.4879 32.1056C21.1387 32.7565 22.194 32.7565 22.8449 32.1056L34.63 20.3205C35.2809 19.6696 35.2809 18.6143 34.63 17.9635L22.8449 6.17835Z",
+            i18n: {
+                prev: "Previous Feature, How Aura Protects",
+                next: "Next Feature, How Aura Protects",
+                slideX: "Go to Slide %s, How Aura Protects Feature",
+            },
+            classes: {
+                arrows: "splide__arrows protect-data_arrows_wrapper",
+                arrow: "splide__arrow protect-data_arrow",
+                prev: "splide__arrow--prev protect-data_prev",
+                next: "splide__arrow--next protect-data_next",
+                pagination: "splide__pagination protect-data_pagination-mobile",
+                page: "splide__pagination__page protect-data_page-dot",
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    arrows: true,
+                    pagination: true,
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "1.5rem" },
+                },
+                320: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<!-- Splide protectData Library  -->
+<style>
+    #protectData .splide__track {
+        overflow: visible !important;
+    }
+
+    .protect-data_list {
+        align-items: stretch;
+    }
+
+    .protect-data_slide {
+        display: flex;
+        flex-direction: column;
+        max-width: 21.563rem;
+        align-items: stretch;
+        justify-content: stretch;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+
+    .protect-data_image {
+        width: 100%;
+        height: 12.625rem;
+    }
+
+    .protect-data_image.one {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .protect-data_image.two {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .protect-data_image.three {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .protect-data_content-wrapper {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: start;
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    .protect-data_pill {
+        padding: 0.25rem 0.625rem;
+        margin-bottom: 0.75rem;
+        border-radius: 1.188rem;
+        font-weight: 485;
+    }
+
+    .protect-data_pill.blue {
+        color: #2551b8;
+        background-color: #d6e6ff;
+    }
+
+    .protect-data_pill.purple {
+        color: #9909e0;
+        background-color: #f7e5ff;
+    }
+
+    .protect-data_pill.green {
+        color: #028258;
+        background-color: #e9ffd7;
+    }
+
+    .protect-data_header {
+        color: #161616;
+        font-size: 1.375rem;
+        font-weight: 485;
+        line-height: 130%;
+        font-family: "Basel Grotesk";
+        margin-bottom: 0.5rem;
+    }
+
+    .protect-data_paragraph {
+        color: #161616;
+        font-family: "Basel Grotesk";
+        font-size: 1rem;
+        line-height: 140%;
+    }
+
+    .protect-data_how-wrapper {
+        padding-top: 1rem;
+    }
+
+    .protect-data_how-wrapper.second-wrapper {
+        padding-top: 2rem;
+    }
+
+    .protect-data_how-header {
+        color: #161616;
+        font-size: 1.125rem;
+        font-weight: 535;
+        line-height: 130%;
+        font-family: "Basel Grotesk";
+        margin-bottom: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    .protect-data_ul {
+        display: flex;
+        padding-left: 1.5rem;
+        margin: 0;
+        gap: 1rem;
+        flex-direction: column;
+        line-height: 140%;
+        margin-top: 1rem;
+    }
+
+    .protect-data_ul li::marker {
+        content: "᛫    ";
+    }
+
+    /* Arrow Styles */
+
+    #protectData .splide__arrows {
+        display: none !important;
+    }
+
+    .protect-data_arrows_wrapper {
+        width: auto;
+        top: 120%;
+        right: 0%;
+    }
+
+    .protect-data_arrow {
+        background: transparent !important;
+        opacity: 1 !important;
+        border: 1px solid #161616;
+        bottom: -3.5%;
+        top: auto;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .protect-data_prev {
+        left: 1.375rem;
+    }
+
+    .protect-data_next {
+        right: 1.375rem;
+    }
+
+    .protect-data_pagination-mobile {
+        margin-bottom: -3rem;
+    }
+
+    .protect-data_page-dot {
+        background: transparent;
+        border: #161616 solid 1px;
+        opacity: 1;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .protect-data_page-dot.is-active {
+        transform: scale(1);
+        background: #161616;
+    }
+
+    @media (max-width: 768px) {
+        .protect-data_slide {
+            max-width: 17.438rem;
+        }
+
+        .protect-data_image {
+            height: 10.25rem;
+        }
+
+        .protect-data_pill {
+            font-size: 0.875rem;
+        }
+
+        .protect-data_header {
+            font-size: 1.125rem;
+        }
+
+        .protect-data_how-header {
+            font-size: 1rem;
+        }
+
+        .protect-data_content-wrapper {
+            padding: 1rem;
+        }
+
+        .protect-data_ul {
+            margin-top: 0.5rem;
+            gap: 0.5rem;
+        }
+    }
+
+    /* Change Height of Splide Section Parents*/
+    @media (max-width: 320px) {
+        #protectData .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #protectData .splide__slide {
+            align-items: center;
+        }
+
+        section:has(.protect-data_list),
+        .section-block:has(.protect-data_list) {
+            height: 120.5625rem !important;
+        }
+
+        .protect-data_list>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        .protect-data_list {
+            align-items: center;
+        }
+    }
+</style>
+
+<div id="protectData" class="splide" role="group" aria-label="How Does Aura Help Protect My Data Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list protect-data_list">
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image one"
+                    src="https://v.fastcdn.co/u/bff2cbd9/65633178-0-Man-Using-Tablet-VPN.png"
+                    alt="Man using tablet. Aura app overlay says: Online Security. VPN is on and Network has been encrypted for 12 minutes. USA Location is toggled on." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_pill blue">Military-Grade Encryption</h3>
+                    <h4 class="protect-data_header">
+                        Fast, Secure VPN Connection
+                    </h4>
+                    <p class="protect-data_paragraph">
+                        Whether you're getting some work done at the local coffee shop or browsing from your hotel room,
+                        hackers and snoops can steal your information when you’re using public Wi-Fi.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura Helps</h5>
+                        <p class="protect-data_paragraph">
+                            We protect your online activities with military-grade encryption, shielding your identity
+                            and info from cybercriminals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image two"
+                    src="https://v.fastcdn.co/u/bff2cbd9/65633188-0-Woman-Using-Tablet.png"
+                    alt="Woman using tablet. Aura App overlay shows a virtual locations tab is open. Options include United States showing connected. Great Britain and Singapore are other optins. All countries list includes albania." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_pill purple">100+ Virtual Locations</h3>
+                    <h4 class="protect-data_header">
+                        Safely Access Content From Around the World
+                    </h4>
+                    <p class="protect-data_paragraph">
+                        Streaming services and online content are frequently restricted by geographic location.
+                    </p>
+                    <div class="protect-data_how-wrapper second-wrapper">
+                        <h5 class="protect-data_how-header">How Aura Helps</h5>
+                        <p class="protect-data_paragraph">
+                            We let you browse, game, and stream content from all over the world, securely and privately,
+                            no matter where you are.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image three"
+                    src="https://v.fastcdn.co/u/bff2cbd9/65633191-0-Hand-Holding-Phone.png"
+                    alt="Hand holding a phone. Aura app overlay shows VPN settings tab open. Settings show split tunneling option is toggeled on. Settings show kill switch is toggled on." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_pill green">Advanced Features</h3>
+                    <h4 class="protect-data_header">
+                        More Control Over Your Data and Experience
+                    </h4>
+                    <p class="protect-data_paragraph">
+                        Our advanced VPN features keep you in control of both your data and your browsing experience.
+                    </p>
+                    <ul class="protect-data_ul">
+                        <li class="protect-data_li-item"><strong>Kill Switch:</strong> Aura’s Kill Switch automatically
+                            cuts your internet if the VPN disconnects—so your data is never accidentally exposed.</li>
+                        <li class="protect-data_li-item"><strong>Split Tunnel:</strong> Control which apps go through
+                            the VPN to optimize connection performance.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
