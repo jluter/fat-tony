@@ -163,7 +163,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const playPauseButton = document.querySelector("#splidePausePlay");
-        const credRibbonSplide = new Splide(".splide", {
+        const credRibbonSplide = new Splide("#darkBlueAutoScroll", {
             type: "loop",
             drag: "free",
             pauseOnHover: true,
@@ -198,7 +198,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
 </div>
 
 <!-- Cred Bar HTML -->
-<div class="splide cred-ribbon" role="group" aria-label="Highly reviewed and acclaimed scrolling stats bar about Aura">
+<div id="darkBlueAutoScroll" class="splide cred-ribbon" role="group"
+    aria-label="Highly reviewed and acclaimed scrolling stats bar about Aura">
     <button id="splidePausePlay" class="splide__toggle" tabindex="0">
         <svg class="splide__toggle__pause" width="6" height="10" viewBox="0 0 6 10" fill="none"
             xmlns="http://www.w3.org/2000/svg">
@@ -237,7 +238,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
                     <path
                         d="M9.15711 2.87553H11.1246C13.382 2.87553 13.751 2.91946 14.5503 3.31472C15.7098 3.88567 16.553 5.00999 17.2996 6.96876C17.5983 7.76808 17.5983 7.75929 18.2658 7.55726L18.7138 7.42551L18.6699 4.54445C18.6435 2.96337 18.6084 1.54919 18.5909 1.40865L18.5469 1.16271L9.93007 1.14514C5.18686 1.13636 1.21661 1.14514 1.1112 1.16271L0.900391 1.19784L0.917958 1.7073L0.935526 2.21675L1.59431 2.29581C2.44633 2.40122 2.95579 2.63838 3.25443 3.07756C3.93079 4.07012 4.05376 5.42282 4.05376 11.8349C4.05376 18.6687 3.91321 20.3288 3.25443 21.1896C2.91186 21.6376 2.63957 21.7781 1.87539 21.9187C0.874039 22.1031 0.909174 22.0767 0.909174 22.5951C0.909174 22.8849 0.935526 23.0342 0.988228 23.0606C1.10242 23.1044 12.126 23.1133 12.2402 23.0606C12.3896 22.9991 12.3807 22.1909 12.2314 22.1119C12.1699 22.0767 11.801 22.0065 11.4057 21.945C11.0104 21.8836 10.5713 21.7869 10.4396 21.7254C9.71926 21.4092 9.31521 20.5397 9.16589 18.9674C9.06048 17.843 8.97264 15.7613 8.97264 14.2241V12.8187L9.64021 12.8363C11.072 12.8802 11.8098 12.9593 12.1085 13.091C12.7585 13.3808 13.2767 14.1714 13.549 15.2869L13.6895 15.8843L14.199 15.9019L14.7085 15.9194V8.42685L14.199 8.44442L13.6895 8.462L13.5402 9.0505C13.2503 10.2011 12.7848 10.9039 12.0909 11.2289C11.8098 11.3606 11.6077 11.3958 10.9314 11.4397C10.4834 11.466 9.85981 11.4923 9.53481 11.4923H8.95508V9.63023C8.95508 7.76808 9.0517 3.81539 9.12198 3.20053L9.15711 2.87553Z"
                         fill="white" />
-                </svg><span class="cred-item__span-text" style="color: #fff; display: inline-block; padding-left: 10px; margin-top: 5px;">Rated Best
+                </svg><span class="cred-item__span-text"
+                    style="color: #fff; display: inline-block; padding-left: 10px; margin-top: 5px;">Rated Best
                     Identity Theft Protection Services, 2025</span>
             </li>
 
@@ -255,7 +257,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
                     <path
                         d="M88.7433 6.10352e-05V8.32203H87.6725C87.2103 3.74428 85.297 1.61779 81.7037 1.2313V15.295C81.7037 17.7395 82.5658 18.7172 85.721 18.9214V19.9989H71.7662V18.9214C74.922 18.7167 75.7841 17.7395 75.7841 15.295V1.23074C72.1908 1.61723 70.2775 3.74371 69.8153 8.32147H68.7439V6.10352e-05H88.7433Z"
                         fill="white" />
-                </svg><span class="cred-item__span-text" style="color: #fff; display: inline-block; padding-left: 10px; margin-top: 5px;">Rated Best
+                </svg><span class="cred-item__span-text"
+                    style="color: #fff; display: inline-block; padding-left: 10px; margin-top: 5px;">Rated Best
                     Identity Theft Protection, 2025</span>
             </li>
 
@@ -284,7 +287,8 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-auto-scroll@0.5.3/dist/j
                         </clipPath>
                     </defs>
                 </svg>
-                <span class="cred-item__span-text" style="color: #fff; display: inline-block; padding-left: 10px; ">Rated Best Identity Theft
+                <span class="cred-item__span-text"
+                    style="color: #fff; display: inline-block; padding-left: 10px; ">Rated Best Identity Theft
                     Protection Overall, 2025</span>
             </li>
 
