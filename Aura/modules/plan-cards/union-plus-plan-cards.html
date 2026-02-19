@@ -1,0 +1,968 @@
+<!-- Global Block Name: Splide Plan Cards - No Gap, .99 version -->
+<!-- Splide Slider Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#sliderPlanCards", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: false,
+            drag: false,
+            gap: "0rem",
+            i18n: {
+                prev: "Previous Feature, Aura Plan Cards",
+                next: "Next Feature, Aura Plan Cards",
+                slideX: "Go to Slide %s, Aura Plan Cards"
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    gap: "1rem",
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<div id="sliderPlanCards" class="splide" role="group" aria-label="Aura Plan Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list plan-card_list">
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card_ribbon">
+                    <span class="plan-card_ribbon-text">Most Protection</span>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <div class="plan-card_protection-badge-wrapper">
+                            <span class="plan-card_protection-badge-text">Identity & Fraud Protection</span>
+                        </div>
+                        <h3 id="basicName" class="plan-card_plan-name">Basic Individual</h3>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceIndividual" class="plan-card_price-text">$--</span>
+                        </div>
+                        <div class="plan-card_billed-wrapper">
+                            <span id="planMonthlyIndividual" class="plan-card_billed-text">1 adult, 10 devices</span>
+                        </div>
+                    </div>
+                    <a id="planButtonIndividual" class="plan-card_button btn url-link">Choose Plan</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card_ul-wrapper">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Identity Theft Protection</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">SSN and Personal Info Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Account Breach Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">$1M Identity Theft Insurance*</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">24/7 Customer Support</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Expert Fraud Recovery Assistance</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Lost Wallet Remediation</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_ul-wrapper">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Online & Device Protection</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Digital Vault</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Safe Web Browsing</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Anti-Track & Anti-Blocker</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Google Data Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">People Search Site & Spam List Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Email Alias</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_ul-wrapper family-features">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Family Features</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Parental Controls</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Online Balance</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Family Fraud Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Child SSN Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Child Credit Freeze</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Sex Offender Geo-Alerts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card_ribbon">
+                    <span class="plan-card_ribbon-text">Insert Ribbon Text</span>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <div class="plan-card_protection-badge-wrapper">
+                            <span class="plan-card_protection-badge-text">Identity & Fraud Protection</span>
+                        </div>
+                        <h3 id="plusName" class="plan-card_plan-name">Plus Individual</h3>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceCouple" class="plan-card_price-text">$--</span>
+                        </div>
+                        <div class="plan-card_billed-wrapper">
+                            <span id="planMonthlyCouple" class="plan-card_billed-text">1 adult, 10 devices</span>
+                        </div>
+                    </div>
+                    <a id="planButtonCouple" class="plan-card_button btn url-link">Choose Plan</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card_ul-wrapper">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Identity Theft Protection</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">SSN and Personal Info Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Account Breach Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">$5M Identity Theft Insurance*</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">24/7 Customer Support</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Expert Fraud Recovery Assistance</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Lost Wallet Remediation</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Social Media Monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_ul-wrapper">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Online & Device Protection</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Digital Vault</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Safe Web Browsing</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Anti-Track & Anti-Blocker</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Google Data Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">People Search Site & Spam List Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Email Alias</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Mobile Phone Takeover Protection</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_ul-wrapper">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Financial Fraud Protection</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Credit Monitoring & Alerts (1 Bureau)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Annual Credit Report (1 Bureau)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Monthly Credit Score</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_ul-wrapper family-features">
+                            <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                <path
+                                    d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                    clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                            </svg>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text"><strong>Family Features</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Parental Controls</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Online Balance</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Family Fraud Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Child SSN Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Child Credit Freeze</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <span class="plan-card_feature-text">Sex Offender Geo-Alerts</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide splide-card_family-wrapper">
+                <div class="plan-card_slide with-ribbon no-gap">
+                    <div class="plan-card_ribbon ribbon-is-active">
+                        <span class="plan-card_ribbon-text">Most Protection</span>
+                    </div>
+                    <div class="plan-card has-ribbon">
+                        <div class="plan-card_topper-wrapper">
+                            <div class="plan-card_protection-badge-wrapper">
+                                <span class="plan-card_protection-badge-text">Identity & Fraud
+                                    Protection</span>
+                            </div>
+                            <h3 id="completeName" class="plan-card_plan-name">Complete Individual</h3>
+                        </div>
+                        <div class="plan-card_plan-data-wrapper">
+                            <div class="plan-card_price-wrapper">
+                                <span id="planPriceFamily" class="plan-card_price-text">$--</span>
+                            </div>
+                            <div class="plan-card_billed-wrapper">
+                                <span id="planMonthlyFamily" class="plan-card_billed-text">1 adult, 10 devices</span>
+                            </div>
+                        </div>
+                        <a id="planButtonFamily" class="plan-card_button btn url-link">Choose Plan</a>
+                        <div class="plan-card_feature-block">
+                            <div class="plan-card_ul-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <ul class="plan-card_feature-content-wrapper">
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text"><strong>Identity Theft Protection</strong></span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">SSN and Personal Info Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Account Breach Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">$5M Identity Theft Insurance*</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">24/7 Customer Support</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Expert Fraud Recovery Assistance</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Lost Wallet Remediation</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Social Media Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Home & Auto Title Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Criminal & Court Records Monitoring</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-card_ul-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <ul class="plan-card_feature-content-wrapper">
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text"><strong>Online & Device Protection</strong></span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Digital Vault</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Safe Web Browsing</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Anti-Track & Anti-Blocker</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Password Manager</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Google Data Removal</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">People Search Site & Spam List Removal</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Email Alias</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Mobile Phone Takeover Protection</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Spam Call & Text Protection</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">VPN (Unlimited Devices)</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Antivirus (Unlimited Devices)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-card_ul-wrapper">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <ul class="plan-card_feature-content-wrapper">
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text"><strong>Financial Fraud Protection</strong></span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Credit Monitoring & Alerts (3 Bureau)</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Annual Credit Report (3 Bureau)</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Monthly Credit Score</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">One Tap Credit Lock</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Credit Score Simulator</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Bank Fraud Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Financial Transaction Monitoring</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="plan-card_ul-wrapper family-features">
+                                <svg class="plan-card_checkmark" alt="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 12">
+                                    <path
+                                        d="m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z"
+                                        clip-rule="evenodd" fill="#161616" fill-rule="evenodd" />
+                                </svg>
+                                <ul class="plan-card_feature-content-wrapper">
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text"><strong>Family Features</strong></span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Parental Controls</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Online Balance</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Family Fraud Alerts</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Child SSN Monitoring</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Child Credit Freeze</span>
+                                    </li>
+                                    <li class="plan-card_feature-wrapper">
+                                        <span class="plan-card_feature-text">Sex Offender Geo-Alerts</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #sliderPlanCards .splide__track {
+        overflow: visible;
+    }
+
+    /* SPLIDE STYLES */
+    .plan-card_list {
+        justify-content: center;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .plan-card_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        transition: all 200ms ease;
+        border-radius: 1.5rem 1.5rem 1rem 1rem;
+        overflow: hidden;
+        background-color: rgba(29,
+                47,
+                80,
+                0);
+        /* Set to transparent for no ribbion */
+    }
+
+    .plan-card_slide.with-ribbon,
+    .plan-card_ribbon.ribbon-is-active {
+        background-color: rgba(37, 81, 184, 1);
+        /* Sets to full color when active */
+    }
+
+    .no-gap {
+        margin-right: 0 !important;
+    }
+
+    /* PLAN CARD STYLES */
+
+    /* Native Plan Cards Style Overrides  */
+    #page-block-mjqoqa1yiw .section-block {
+        background-color: #ffffff !important;
+    }
+
+    .per {
+        margin-left: 0rem !important;
+    }
+
+    .price-div:not(.ft-price-div) {
+        font-size: 2.25rem !important;
+    }
+
+    .discount-div {
+        font-size: 0.813rem !important;
+    }
+
+    .per {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 1.375rem !important;
+        font-weight: 300 !important;
+        line-height: 1.375rem !important;
+        margin-left: -1rem !important;
+    }
+
+    .price-div:not(.ft-price-div) {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 3.625rem !important;
+        font-weight: 300 !important;
+        line-height: 3.625rem !important;
+    }
+
+    .price-div.ft-price-div {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 2.25rem !important;
+        font-weight: 300 !important;
+        line-height: 2.25rem !important;
+    }
+
+    .discount-div {
+        color: #1d2f50 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+        line-height: 1.3rem !important;
+    }
+
+    .annual-monthly-div {
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 0.875rem !important;
+        font-weight: 400 !important;
+        line-height: 1.3rem !important;
+    }
+
+    .price-div {
+        display: flex;
+    }
+
+    .mo-cent-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+    }
+
+    .cent-text {
+        font-weight: 400;
+        line-height: 1.125rem;
+        font-size: 1.35rem;
+        margin-top: 0.7rem;
+    }
+
+    .per.mo-text {
+        color: #6c7693 !important;
+        font-weight: 400 !important;
+        font-size: 1.125rem !important;
+        margin-left: 0 !important;
+    }
+
+    /* Plan Card Parent Wrapper */
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+        padding: 2rem 1.2rem;
+        background-color: #ffffff;
+        border: 0.5px solid #A3ABBF;
+        border-radius: 1rem;
+    }
+
+    /* Family Plan Card Parent Wrapper */
+    .splide-card_family-wrapper {
+        background-color: white;
+    }
+
+    .plan-card.has-ribbon {
+        border: 1px solid rgba(37, 81, 184, 1);
+        border-top: 0px;
+    }
+
+    /* Plan Card | Ribbon holding Ribbon Text */
+    .plan-card_ribbon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: rgba(37, 81, 184, 0);
+        color: rgba(255, 255, 255, 0);
+        font-size: 0.875rem;
+    }
+
+    /* Plan Card | Ribbon Active */
+    .ribbon-is-active {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    /* Plan Card | Topper holding Plan Name & Discount Bubble */
+    .plan-card_topper-wrapper,
+    .plan-card_plan-data-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    .plan-card_topper-wrapper {
+        margin-bottom: 0.5rem;
+        gap: 0.6rem;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card_plan-name,
+    .plan-card_feature-header {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    .plan-card_child-feature-header {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    .plan-card_child-feature-header-wrapper.add-margin-top {
+        margin-top: 0.3rem;
+    }
+
+    /* Plan Card | Devices */
+    .plan-card_feature-header {
+        max-width: 23ch;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card_protection-badge-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        border-radius: 9999rem;
+    }
+
+    .plan-card_protection-badge-wrapper {
+        background-color: #d2ffaf;
+        margin-bottom: 0.75rem;
+    }
+
+    .plan-card_protection-badge-wrapper.is-family {
+        background-color: #d6e6ff;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card_discount-text,
+    .plan-card_protection-badge-text,
+    .discount-div {
+        font-size: 0.813rem !important;
+        color: #008542 !important;
+    }
+
+    .plan-card_protection-badge-text {
+        font-weight: 485 !important;
+    }
+
+    .discount-div {
+        font-weight: 600 !important;
+    }
+
+    .plan-card_protection-badge-text.is-family {
+        color: #3366ff !important;
+    }
+
+    /* Plan Card | Button */
+    .plan-card_button {
+        width: 17.4375rem;
+        height: 2.5rem;
+        margin: 1rem 0rem;
+        font-size: 1rem !important;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card_price-wrapper,
+    .plan-card_billed-wrapper,
+    .plan-card_feature-content-wrapper {
+        /* width: 100%; */
+        text-align: left;
+    }
+
+    .plan-card_billed-wrapper {
+        margin-top: 0.8rem;
+    }
+
+    .plan-card_price-wrapper {
+        display: flex;
+        align-items: end;
+        justify-content: start;
+        gap: 1rem;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card_price-text {
+        font-size: 2.25rem !important;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card_mo-span {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* Plan Card | Billed Monthly Text */
+    .plan-card_billed-text {
+        font-size: 0.75rem !important;
+        color: #6C7693 !important;
+    }
+
+    .plan-card_feature-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card_feature-wrapper,
+    .plan-card_feature-header-wrapper,
+    .plan-card_child-feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+        max-width: 15.5rem;
+    }
+
+    .plan-card_ul-wrapper {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .plan-card_feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card_feature-wrapper {
+        align-items: start;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card_checkmark {
+        /* background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.1rem;
+    }
+
+    .plan-card_feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 0.6rem;
+        padding: 0;
+        margin: 3px 0 0 0;
+    }
+
+    .plan-card_feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 1.5rem;
+    }
+
+    .plan-card_feature-text {
+        max-width: 29ch;
+    }
+
+    .plan-card_circle-badge {
+        width: 6.375rem;
+    }
+
+    .plan-card_ribbon-text {
+        font-weight: 500;
+    }
+
+    .plan-card_ul-wrapper.family-features {
+        display: none;
+    }
+
+    .section-block:has(.aura-plan-cards-toggle-text.monthly.active) .plan-card_ul-wrapper.family-features {
+        display: flex;
+    }
+
+    /* Media Queries */
+
+    @media (min-width: 768px) {
+        .show-desktop {
+            display: block;
+        }
+
+        .show-mobile {
+            display: none;
+        }
+
+        .plan-card_list {
+            align-items: stretch;
+        }
+
+        .plan-card_slide {
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+
+        .plan-card {
+            justify-content: start;
+            flex-grow: 1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .show-desktop {
+            display: none;
+        }
+
+        .show-mobile {
+            display: block;
+        }
+
+        #sliderPlanCards .splide__slide {
+            margin-right: 0 !important;
+        }
+
+        .mo-cent-wrapper {
+            margin: auto 0 0.5rem 0.25rem;
+        }
+
+        .price-div:not(.ft-price-div) {
+            font-size: 2.875rem !important;
+        }
+
+        .plan-card {
+            gap: 0.8rem;
+            border: 1px solid #d9d9d9;
+        }
+
+        .plan-card_list {
+            justify-content: start;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .plan-card_slide.with-ribbon {
+            margin-top: 1rem;
+        }
+
+        .splide-card_family-wrapper {
+            background-color: transparent;
+            border-bottom: 0px;
+            border-radius: 1.5rem 1.5rem 1rem 0rem;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card_plan-name,
+        .plan-card_feature-header {
+            font-size: 1.125rem;
+        }
+
+        .plan-card_child-feature-header {
+            max-width: 22ch;
+            font-size: 1rem;
+        }
+
+        .plan-card_button {
+            width: 16.6875rem;
+            height: 2.5rem;
+            font-size: 1rem !important;
+        }
+
+        .plan-card_ribbon,
+        .plan-card_discount-text {
+            font-size: 0.8rem !important;
+        }
+
+        .plan-card_feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card_feature-text,
+        .plan-card_billed-wrapper {
+            max-width: 24.72ch;
+            margin: 0;
+        }
+
+        .plan-card_feature-header {
+            max-width: 23ch;
+        }
+
+
+        #element-__gpage-block-mjqoqa1yiw-2214 {
+            width: 23rem;
+        }
+    }
+</style>
