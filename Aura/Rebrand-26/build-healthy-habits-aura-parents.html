@@ -1,0 +1,356 @@
+<!-- GB Name: Build Healthy Habits - Aura Parents -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const healthyHabitsSlider = new Splide("#healthyHabitsSlider", {
+            destroy: false,
+            type: "slide",
+            autoWidth: true,
+            arrows: true,
+            pagination: true,
+            gap: "1.5rem",
+            perPage: 1,
+            perMove: 1,
+            drag: true,
+            flickPower: 100,
+            flickMaxPages: 1,
+            padding: { left: "0rem", right: "32rem" },
+            i18n: {
+                prev: "Previous Feature, Build Healthy Online Habits",
+                next: "Next Feature, Build Healthy Online Habits",
+                slideX: "Go to Slide %s, Build Healthy Online Habits Feature",
+            },
+            breakpoints: {
+                767: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: true,
+                    pagination: true,
+                    gap: "1rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "1.5rem" },
+                },
+                320: {
+                    perPage: 3,
+                    perMove: 1,
+                    arrows: false,
+                    pagination: false,
+                    drag: false,
+                },
+            },
+        });
+        healthyHabitsSlider.mount();
+    });
+</script>
+
+<style>
+    #healthyHabitsSlider .splide__track {
+        overflow: visible;
+    }
+
+    .healthy-habits__header {
+        font-size: 2.75rem;
+        font-weight: 600;
+        line-height: 115%;
+    }
+
+    .healthy-habits__header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 4rem;
+    }
+
+    .healthy-habits-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .healthy-habits-image {
+        width: 22.375rem;
+        margin-bottom: 2rem;
+    }
+
+    .healthy-habits-text-wrapper {
+        max-width: 21.875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: left;
+        line-height: 140%;
+    }
+
+    .healthy-habits-card-header {
+        font-size: 1.375rem;
+        font-weight: 485;
+    }
+
+    .healthy-habits-card-paragraph {
+        font-size: 1.125rem;
+    }
+
+    /* ARROW STYLES */
+    #healthyHabitsSlider .splide__arrows {
+        width: auto;
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+        justify-content: space-between;
+        top: 0%;
+        right: 0%;
+        position: absolute;
+    }
+
+    #healthyHabitsSlider .splide__arrow {
+        background: rgba(22, 22, 22, 0.15) !important;
+        position: static !important;
+        border: none !important;
+        height: 2.5rem !important;
+        width: 2.5rem !important;
+        transform: none;
+        opacity: 1;
+    }
+
+    #healthyHabitsSlider .splide__arrow:hover {
+        background: #161616 !important;
+    }
+
+    #healthyHabitsSlider .splide__pagination {
+        bottom: -10.5% !important;
+    }
+
+    #healthyHabitsSlider .splide__pagination__page {
+        border: none !important;
+        background: rgba(22, 22, 22, 0.25) !important;
+        opacity: 1 !important;
+        height: 0.625rem !important;
+        width: 0.625rem !important;
+    }
+
+    #healthyHabitsSlider .splide__pagination__page.is-active {
+        border: 1px solid #161616 !important;
+        background: #161616 !important;
+        transform: scale(1) !important;
+    }
+
+    .splide__arrows .splide__arrow svg {
+        fill: #161616;
+        position: relative;
+    }
+
+    .splide__arrows .splide__arrow svg:hover {
+        fill: #ffffff;
+    }
+
+    .left-arrow-svg {
+        transform: scaleX(1) !important;
+    }
+
+    .splide__arrow:hover {
+        background: #161616 !important;
+    }
+
+    #healthyHabitsSlider .splide__arrow:disabled {
+        opacity: 0.7;
+    }
+
+    .splide__arrow--prev:hover svg,
+    .splide__arrow--next:hover svg {
+        fill: #ffffff !important;
+    }
+
+
+
+    @media screen and (max-width: 767px) {
+
+        /*MOBILE SPLIDE PAGINATION*/
+        #healthyHabitsSlider .splide__pagination {
+            display: flex;
+            gap: 0rem;
+            position: static;
+            padding-top: 2rem;
+        }
+
+        .healthy-habits__header-wrapper {
+            padding-bottom: 2rem;
+        }
+
+        .healthy-habits__header {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+
+        .healthy-habits-image {
+            width: 14.875rem;
+            margin-bottom: 2rem;
+        }
+
+        .healthy-habits-card-paragraph {
+            font-size: 1rem;
+            line-height: 115%;
+        }
+
+        .healthy-habits-card-header {
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        .healthy-habits-text-wrapper {
+            max-width: 25ch;
+        }
+
+        #healthyHabitsSlider .arrow-header-container {
+            display: none;
+        }
+
+        #healthyHabitsSlider .splide__arrows {
+            width: 100%;
+            display: flex;
+            top: auto;
+            bottom: -15%;
+        }
+
+        #healthyHabitsSlider .splide__arrow {
+            height: 2rem !important;
+            width: 2rem !important;
+        }
+
+        .healthy-habits-text-wrapper {
+            gap: 0.5rem;
+        }
+    }
+
+    /* Change Height of Plan Cards Parents*/
+    @media (max-width: 320px) {
+        #healthyHabitsSlider .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        #healthyHabitsSlider .splide__slide {
+            align-items: center;
+        }
+
+        section:has(#healthyHabitsSlider),
+        .section-block:has(#healthyHabitsSlider) {
+            height: 177.5625rem !important;
+        }
+
+        #healthyHabitsSlider>.splide__slide {
+            margin-right: 0rem !important;
+        }
+    }
+</style>
+<div id="healthyHabitsSlider" class="splide" role="group" aria-label="Build Healthy Online Habits Slider">
+    <div class="healthy-habits__header-wrapper">
+        <h2 class="healthy-habits__header">Build healthy online habits</h2>
+        <div class="arrow-header-container">
+            <div class="splide__arrows splide__arrows--ltr">
+                <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide"
+                    aria-controls="slider-track">
+                    <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.2927 3.70715C10.6832 3.31663 11.3164 3.31663 11.7069 3.70715C12.0974 4.09768 12.0974 4.73084 11.7069 5.12137L6.34236 10.4859L19.9998 
+        10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
+        19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z" />
+                    </svg>
+                </button>
+                <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide"
+                    aria-controls="slider-track">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path class="right-arrow-svg" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.7073 3.70715C13.3168 3.31663 12.6836 3.31663 12.2931 3.70715C11.9026 4.09768 11.9026 4.73084 12.2931 5.12137L17.6576 10.4859L4.00024 10.4859C3.44796 10.4859 3.00024 10.9336 3.00024 11.4859C3.00024 12.0382 3.44796 12.4859 4.00024 12.4859L17.6565 12.4859L12.2931 17.8493C11.9026 18.2398 11.9026 18.873 12.2931 19.2635C12.6836 19.654 13.3168 19.654 13.7073 19.2635L20.7784 12.1924C21.1689 11.8019 21.1689 11.1687 20.7784 10.7782L13.7073 3.70715Z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="splide__track">
+        <ul class="splide__list">
+            <li class="splide__slide">
+                <div class="healthy-habits-card-wrapper">
+                    <img class="healthy-habits-image"
+                        src="https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/69aa2a0129e5c0c044880848_Bedtimes%20Thumbnail.webp"
+                        alt="Add schedule Aura app screen. Tap to select days you'd like to schedule bedtime. Sleep time shows 9PM. Wake time options available." />
+                    <div class="healthy-habits-text-wrapper">
+                        <h4 class="healthy-habits-card-header">Bedtimes</h4>
+                        <p class="healthy-habits-card-paragraph">
+                            Set Bedtimes for weeknights and weekends. When bedtime rolls around, all devices associated
+                            with your child’s profile
+                            will automatically disconnect from the internet.  
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="healthy-habits-card-wrapper">
+                    <img class="healthy-habits-image"
+                        src="https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/69aa2a033e38d7c63261f38d_Focus%20Time%20Thumbnail.webp"
+                        alt="Set Focus Time image showing young girl doing homework." />
+                    <div class="healthy-habits-text-wrapper">
+                        <h4 class="healthy-habits-card-header">Focus Time</h4>
+                        <p class="healthy-habits-card-paragraph">
+                            Focus Time lets you set times during the day with limited or no Internet distractions, where
+                            only selected apps and
+                            websites are allowed.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="healthy-habits-card-wrapper">
+                    <img class="healthy-habits-image"
+                        src="https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/69aa2a03f10b73c9c5a646af_Time%20Limits%20Thumbnail.webp"
+                        alt="Smiling boy using headphones." />
+                    <div class="healthy-habits-text-wrapper">
+                        <h4 class="healthy-habits-card-header">Time Limits</h4>
+                        <p class="healthy-habits-card-paragraph">
+                            Know that your kids are safe from too much of a good thing—the internet. Set time limits for
+                            apps and websites and
+                            customize per child profile.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="healthy-habits-card-wrapper">
+                    <img class="healthy-habits-image"
+                        src="https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/69aa2a02c4af0ce23ef9e1f7_Pause%20the%20Internet%20Thumbnail.webp"
+                        alt="Settings profile for Emma S. Quick actions show unpause and bonus time. Set boundaries indicate you can guide your child's experience with time limits." />
+                    <div class="healthy-habits-text-wrapper">
+                        <h4 class="healthy-habits-card-header">
+                            Pause the Internet<sup>®</sup>
+                        </h4>
+                        <p class="healthy-habits-card-paragraph">
+                            No more asking your kids three times to set down the iPad and start their homework. Pause
+                            the Internet easily enforces
+                            screen time limits.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="splide__slide">
+                <div class="healthy-habits-card-wrapper">
+                    <img class="healthy-habits-image"
+                        src="https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/69aa2a04d5f786251e9bd404_Bonus%20Time%20Thumbnail.webp"
+                        alt="Child laughing with their parent." />
+                    <div class="healthy-habits-text-wrapper">
+                        <h4 class="healthy-habits-card-header">Bonus Time</h4>
+                        <p class="healthy-habits-card-paragraph">
+                            Extend your kid’s daily time online with Bonus Time to reward good behavior or celebrate
+                            successes.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

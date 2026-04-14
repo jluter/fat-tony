@@ -1,0 +1,187 @@
+<!-- GB Name: How Aura Works Cards Slides - Safety  -->
+<style>
+    section:has(#howAuraWorks) {
+        display: none;
+    }
+
+
+  .how-aura-works {
+    padding: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: white;
+  }
+
+  /* Splide Track Overflow visibile for full width look */
+  #howAuraWorks > .splide__track {
+    overflow: visible !important;
+  }
+
+  /* Splide Track Overflow visibile for full width look */
+  #howAuraWorks > .splide__track > .splide__list {
+    align-items: stretch;
+  }
+
+  .how-aura-works_image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 16.6rem;
+    width: 100%;
+  }
+
+  .how-aura-works_image.first {
+    background-image: url(https://v.fastcdn.co/u/bff2cbd9/65907884-0-Data-Broker-Opt-Out-.png);
+  }
+
+  .how-aura-works_image.second {
+    background-image: url(https://v.fastcdn.co/u/bff2cbd9/65907885-0-Personal-Data-Ping-P.png);
+  }
+
+  .how-aura-works_image.third {
+    background-image: url(https://v.fastcdn.co/u/bff2cbd9/65907886-0-Auto-Scan-Ping-Pong.png);
+  }
+
+  .how-aura-works_text-wrapper {
+    max-width: 20ch;
+    text-align: left;
+    font-size: 1.375rem;
+    line-height: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .how-aura-works_header {
+    font-family: "Clarendon Graphic";
+    font-size: 1.75rem;
+    line-height: 2.45rem;
+    margin-bottom: 1rem;
+  }
+
+  .how-aura-works_paragraph {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .how-aura-works-arrows {
+    width: auto;
+    top: 120%;
+    right: 0%;
+  }
+
+  .how-aura-works-pagination-mobile {
+    bottom: -2rem;
+  }
+
+  .how-aura-works-page-dot {
+    background: transparent;
+    border: #161616 solid 1px;
+    opacity: 1;
+  }
+
+  .how-aura-works-page-dot.is-active {
+    transform: scale(1);
+    background: #161616;
+  }
+
+  @media screen and (max-width: 768px) {
+    .how-aura-works {
+      padding: 0.75rem;
+      gap: 1rem;
+    }
+
+    .how-aura-works_image {
+      height: 12rem;
+    }
+
+    .how-aura-works_text-wrapper {
+      max-width: 100%;
+    }
+
+    .how-aura-works_header {
+      font-size: 1.375rem;
+      line-height: 1.925rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .how-aura-works_paragraph {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+</style>
+
+<!-- How Aura Works Cards Slider Mount  -->
+<script>
+  "use strict";
+  document.addEventListener("DOMContentLoaded", function () {
+    const splide = new Splide("#howAuraWorks", {
+      type: "slide",
+      drag: "free",
+      autoWidth: true,
+      perPage: 1,
+      perMove: 1,
+      arrows: false,
+      pagination: true,
+      gap: "1rem",
+      snap: true,
+      destroy: true,
+      arrowPath:
+        "M22.8449 6.17835C22.194 5.52747 21.1387 5.52747 20.4879 6.17835C19.837 6.82922 19.837 7.8845 20.4879 8.53537L29.4287 17.4762L6.66643 17.4762C5.74595 17.4762 4.99976 18.2224 4.99976 19.1429C4.99976 20.0634 5.74595 20.8096 6.66643 20.8096L29.4269 20.8096L20.4879 29.7486C19.837 30.3994 19.837 31.4547 20.4879 32.1056C21.1387 32.7565 22.194 32.7565 22.8449 32.1056L34.63 20.3205C35.2809 19.6696 35.2809 18.6143 34.63 17.9635L22.8449 6.17835Z",
+      classes: {
+        arrows: "splide__arrows how-aura-works-arrows",
+        pagination: "splide__pagination how-aura-works-pagination-mobile",
+        page: "splide__pagination__page how-aura-works-page-dot",
+      },
+      breakpoints: {
+        768: {
+          destroy: false,
+          padding: { left: "1.5rem", right: "1.5rem" },
+        },
+      },
+    });
+
+    splide.mount();
+  });
+</script>
+
+<!-- How Aura Works Cards Slider HTML  -->
+<div id="howAuraWorks" class="splide" aria-label="How Aura Works Slider">
+  <div class="splide__track">
+    <div class="splide__list">
+      <div class="splide__slide how-aura-works">
+        <div class="how-aura-works_image first"></div>
+        <div class="how-aura-works_text-wrapper">
+          <h3 class="how-aura-works_header">Proactively Protects Your Data</h3>
+          <p class="how-aura-works_paragraph">
+            Aura sends requests to over 30 people search sites & data brokers to
+            remove your personal information to reduce exposure to spam and
+            scams.
+          </p>
+        </div>
+      </div>
+      <div class="splide__slide how-aura-works">
+        <div class="how-aura-works_image second"></div>
+        <div class="how-aura-works_text-wrapper">
+          <h3 class="how-aura-works_header">24/7 Breach & Fraud Monitoring</h3>
+          <p class="how-aura-works_paragraph">
+            Aura continually monitors the Dark Web and public records to alert
+            you if your data has been compromised.
+          </p>
+        </div>
+      </div>
+      <div class="splide__slide how-aura-works">
+        <div class="how-aura-works_image third"></div>
+        <div class="how-aura-works_text-wrapper">
+          <h3 class="how-aura-works_header">Security For Data & Devices</h3>
+          <p class="how-aura-works_paragraph">
+            Aura protects your online activities with VPN encryption, Antivirus,
+            and Password Manager.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

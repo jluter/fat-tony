@@ -1,0 +1,572 @@
+<!-- GB Name: All In One Protection Chart - Safety -->
+<style>
+    .is-mobile {
+        display: none;
+    }
+
+    .comparison-table__title {
+        font-size: 2.75rem;
+        color: #ffffff;
+        letter-spacing: -2%;
+        font-weight: 535;
+        line-height: 115%;
+        text-align: left;
+        padding-bottom: 2rem;
+        max-width: 38rem;
+    }
+
+    .comparison-table-data {
+        border-top: 1px solid #4d4d4d;
+        font-size: 1.125rem;
+        line-height: 140%;
+        vertical-align: top;
+    }
+
+    .vertical-align-middle {
+        vertical-align: middle;
+    }
+
+    .comparison-table {
+        border-spacing: 0px;
+        width: 38rem;
+        position: relative;
+    }
+
+    .comparison-table-icon {
+        /* margin-bottom: 0.25rem; */
+        margin-left: auto;
+        margin-right: auto;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .comparison-table-data,
+    .comparison-table-header {
+        padding: 1rem;
+        max-width: 9rem;
+        color: #fff;
+        align-content: center;
+    }
+
+    .comparison-table-header {
+        font-size: 1rem;
+        line-height: 140%;
+        font-weight: 485;
+    }
+
+    /*Chart Gradient*/
+    .comparison-table tbody::before {
+        width: 7.1875rem;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 52%;
+        height: 100%;
+        background: linear-gradient(180deg, #CDDEFF 0%, #FFD4B6 100%);
+        z-index: -1;
+        border-radius: 1rem 1rem 1rem 1rem;
+    }
+
+    .comparison-table-aura-logo.aura {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 4.25rem;
+    }
+
+    .comparison-table-paragraph {
+        max-width: 26ch;
+        font-size: 1rem;
+        line-height: 140%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #161616;
+    }
+
+    .comparison-table-paragraph.not_Aura {
+        color: #BABABA;
+    }
+
+    .comparison-table-paragraph.desktop {
+        display: block;
+    }
+
+    .comparison-table-paragraph.mobile {
+        display: none;
+    }
+
+    .comparison-table-paragraph.smaller-width {
+        max-width: 17ch;
+    }
+
+    .left-align {
+        padding: 1rem 5rem 1rem 0;
+        text-align: left;
+        font-size: 1.125rem;
+        font-weight: 485;
+        width: 50%;
+    }
+
+    .left-align.vertical-center {
+        vertical-align: middle;
+    }
+
+
+    .add-border-radius-top {
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+
+    .add-border-radius-bottom {
+        border-radius: 0rem 0rem 1rem 1rem;
+    }
+
+    .starting-price {
+        padding-left: 0rem;
+        text-align: left;
+        font-size: 1.375rem;
+        font-weight: 485;
+        max-width: 13ch;
+        padding-right: 7rem;
+        margin-top: auto;
+        vertical-align: bottom;
+    }
+
+    .add-medium-weight {
+        font-weight: 485;
+    }
+
+    .comparison-table-btn-desktop {
+        width: 11.875rem;
+        height: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+    }
+
+    .comparison-table-btn-mobile {
+        display: none;
+        width: 16.813rem;
+        height: 3.938rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-tp-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .comparison-table-footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .comparison-tp-wrapper.mobile {
+        display: none;
+    }
+
+    .comparison-table-disclaimer {
+        max-width: 100%;
+        font-size: 0.875rem;
+        color: #4c5770;
+        line-height: 140%;
+        text-align: left;
+        margin-top: 5rem;
+        max-width: 25rem;
+    }
+
+    .comparison-table-paragraph.add-margin-bottom {
+        margin-bottom: 3.5rem;
+    }
+
+    .comparison-table-header.mobile {
+        display: none;
+    }
+
+    .comparison-pc-wrapper {
+        font-size: 1.125rem;
+        line-height: 140%;
+        font-weight: 500;
+        /* margin-top: 3rem; */
+    }
+
+    .comparison-pc-wrapper.others {
+        font-weight: 400;
+    }
+
+    .pc-span {
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    /* MODAL STYLES */
+    .comparison-modal_link_wrapper {
+        margin-top: 0.8rem;
+        text-align: center;
+    }
+
+    .comparison-modal_link {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #161616;
+        cursor: pointer;
+    }
+
+    .underline-link {
+        text-decoration: underline;
+    }
+
+    .comparison-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: fade-in 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000030;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+
+    .comparison-modal_close-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #6e6e6e;
+        opacity: 70%;
+        z-index: 1;
+    }
+
+    .comparison-modal_content-wrapper {
+        position: relative;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 2;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: left;
+    }
+
+    .comparison-modal_exit-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .comparison-modal_header {
+        font-size: 1.375rem;
+        font-weight: 485;
+    }
+
+    .comparison-modal_p {
+        font-size: 1.125rem;
+        line-height: 150%;
+        max-width: 40ch;
+    }
+
+    .comparison-tp-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .comparison-tp-wrapper.mobile {
+        display: none;
+    }
+
+    .comparison-table-mobile-header {
+        display: none;
+    }
+
+    .comparison-table__disclaimer {
+        padding-top: 2rem;
+        text-align: left;
+        color: rgba(186, 186, 186, 1);
+        line-height: 140%;
+        font-size: 0.75rem;
+        max-width: 25rem;
+    }
+
+    .comparison-table-data.middle-price {
+        color: #161616;
+        font-weight: 485;
+    }
+
+    .comparison-table__badge {
+        position: absolute;
+        bottom: 10%;
+        right: 24%;
+        width: 4.5rem;
+        height: 4.5rem;
+        z-index: 3;
+    }
+
+    @media (max-width: 767px) {
+        .comparison-table-mobile-header {
+            display: block;
+            font-size: 0.625rem;
+        }
+
+        .comparison-table__badge {
+            width: 3.5rem;
+            height: 3.5rem;
+            right: 22%;
+        }
+
+        .comparison-table {
+            width: 100%;
+        }
+
+        .is-mobile {
+            display: inherit;
+        }
+
+        .is-desktop {
+            display: none;
+        }
+
+        .comparison-table__title {
+            font-size: 1.75rem;
+            text-align: center;
+            max-width: 20rem;
+            margin: 0 auto;
+        }
+
+        .comparison-table-header {
+            line-height: 100%;
+        }
+
+        .comparison-pc-wrapper {
+            font-size: 0.75rem;
+        }
+
+        .comparison-table-paragraph.desktop {
+            display: none;
+        }
+
+        .comparison-table-paragraph.mobile {
+            display: block;
+        }
+
+        .comparison-table-header.desktop {
+            display: none;
+        }
+
+        .comparison-table-header.mobile {
+            display: block;
+        }
+
+        .comparison-table-header {
+            font-size: 0.75rem;
+        }
+
+        .comparison-table-paragraph {
+            max-width: 13ch;
+            font-size: 0.75rem;
+            line-height: 140%;
+        }
+
+        .comparison-table-data {
+            font-size: 0.875rem;
+        }
+
+        .comparison-table-icon {
+            margin-bottom: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            overflow: visible;
+        }
+
+        .comparison-tp-wrapper.desktop {
+            display: none;
+        }
+
+        .comparison-table-aura-logo.aura {
+            margin-bottom: 0.25rem;
+            margin-top: 0.25rem;
+            width: 3.438rem;
+            max-height: 1.1rem;
+        }
+
+        .comparison-table-data,
+        .comparison-table-header {
+            padding: 1rem 0rem;
+        }
+
+        .comparison-table-btn-desktop {
+            display: none;
+        }
+
+        .comparison-table-btn-mobile {
+            display: flex;
+            width: 22.1875rem;
+        }
+
+        .comparison-tp-wrapper.mobile {
+            display: block;
+        }
+
+        .comparison-table-paragraph.smaller-width {
+            max-width: 9ch;
+        }
+
+        .comparison-table-data.smaller-mobile {
+            font-size: 0.75rem;
+        }
+
+        .add-medium-weight {
+            max-width: 10ch;
+        }
+
+        .comparison-table-paragraph.add-margin-bottom {
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-table-disclaimer {
+            font-size: 0.75rem;
+            margin-top: 0rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-tp-wrapper {
+            margin-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .comparison-table-header.left-align {
+            font-size: 0.875rem;
+        }
+
+        .left-align {
+            font-size: 1rem;
+        }
+
+        .with-icon.vertical-middle {
+            vertical-align: middle;
+        }
+
+        .comparison-table tbody::before {
+            width: 4.75rem;
+            left: 50.5%;
+        }
+
+        .comparison-table__disclaimer {
+            text-align: center;
+            max-width: 18rem;
+            margin: 0 auto;
+        }
+    }
+</style>
+<!--Us vs Them Comparison table HTML-->
+<h2 class="comparison-table__title">All-in-one protection for a fraction of the cost</h2>
+<table class="comparison-table">
+    <tr class="comparison-table-row header-row">
+        <th scope="col" class="comparison-table-header left-align">Aura includes</th>
+        <th scope="col" class="comparison-table-header add-border-radius-top">
+            <svg class="comparison-table-aura-logo aura" aria-label="Aura" alt="Aura" width="100%" height="100%"
+                viewBox="0 0 53 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.93041 0.831055H9.8898V2.42602H2.93041V0.831055ZM23.1037 13.4012C23.2897 12.9936 23.384 12.5525 23.384 12.0902V5.60988H25.0542V12.0902C25.0542 13.4366 24.4989 14.6812 23.4905 15.5949C23.0061 16.0339 22.4397 16.3771 21.8073 16.615C21.1637 16.8571 20.4779 16.9798 19.7689 16.9798C19.0599 16.9798 18.3742 16.8571 17.7306 16.615C17.0982 16.3771 16.5318 16.0339 16.0474 15.5949C15.039 14.6812 14.4837 13.4366 14.4837 12.0902V5.61586H16.1539V12.0902C16.1539 12.5525 16.2482 12.9936 16.4342 13.4012C16.6124 13.7919 16.869 14.1407 17.1971 14.4379C17.871 15.0485 18.7844 15.3849 19.7689 15.3849C20.7535 15.3849 21.6669 15.0485 22.3408 14.4379C22.6688 14.1407 22.9255 13.7919 23.1037 13.4012ZM30.9076 16.7807V12.9358H35.2081L37.2553 16.7807H39.129L36.7 12.2186C36.8506 12.1125 36.9935 11.9957 37.1281 11.8684C37.4825 11.5332 37.761 11.1428 37.956 10.708C38.1588 10.2558 38.2617 9.77611 38.2617 9.28226C38.2617 8.78871 38.159 8.30867 37.9564 7.8555C37.7617 7.41977 37.4836 7.02819 37.1299 6.69155C36.7766 6.35521 36.3657 6.09085 35.9088 5.90574C35.4342 5.71345 34.9316 5.61598 34.4153 5.61598H29.2373V16.7807H30.9076ZM30.9076 7.21102H34.4153C34.9921 7.21102 35.5374 7.42774 35.9508 7.82124C36.3639 8.21452 36.5914 8.7334 36.5914 9.28233C36.5914 9.82957 36.3646 10.3456 35.9526 10.7353C35.5399 11.1258 34.9939 11.3409 34.4153 11.3409H30.9076V7.21102ZM43.2663 16.7807L46.7715 8.0198L50.2767 16.7807H52.0647L47.5977 5.61598H45.9453L41.4783 16.7807H43.2663ZM5.58045 5.61598L1.11353 16.7807H2.90155L6.40668 8.0198L9.9119 16.7807H11.6999L7.23292 5.61598H5.58045Z"
+                    fill="#161616" />
+            </svg>
+        </th>
+        <th scope="col" class="comparison-table-header">Average cost <br />per month<sup>‡</sup></th>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="contentFilteringHeader" scope="row" class="comparison-table-data left-align">
+            Identity Theft Protection
+        </th>
+        <td class="comparison-table-data with-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                    fill="#161616" />
+            </svg>
+        </td>
+        <td class="comparison-table-data">
+            $17
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="bedtimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+            Antivirus
+        </th>
+        <td class="comparison-table-data with-icon vertical-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                    fill="#161616" />
+            </svg>
+        </td><td class="comparison-table-data">
+            $4
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="screenTimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+            VPN
+        </th>
+        <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                    fill="#161616" />
+            </svg>
+        </td>
+        <td class="comparison-table-data">
+            $7
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="bedtimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+            Password Manager
+        </th>
+        <td class="comparison-table-data with-icon vertical-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                    fill="#161616" />
+            </svg>
+        </td>
+        <td class="comparison-table-data">
+            $3
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th id="pauseInternetHeader" scope="row" class="comparison-table-data left-align vertical-center">
+            Data Broker Removal
+        </th>
+        <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                    fill="#161616" />
+            </svg>
+        </td>
+        <td class="comparison-table-data">
+            $11
+        </td>
+    </tr>
+    <tr class="comparison-table-row">
+        <th scope="row" class="comparison-table-data left-align vertical-center">Total Per Month</th>
+        <td class="comparison-table-data vertical-middle vertical-align-middle middle-price">
+            $9.99
+        </td>
+        <td class="comparison-table-data">
+            $42
+        </td>
+    </tr>
+    <img class="comparison-table__badge" alt="Average 78% Savings" src="https://v.fastcdn.co/u/bff2cbd9/65906463-0-78-Percent-Badge.png"/>
+</table>
+<p class="comparison-table__disclaimer">Savings calculation is based on paid plans of popular service providers. Prices subject to change</p>

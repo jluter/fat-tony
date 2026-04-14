@@ -1,0 +1,687 @@
+<!-- GB Name: Digital Blind Spots - Aura Parents -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var splide = new Splide("#digital-blind-spots-carousel", {
+            type: "fade",
+            pagination: true,
+            arrows: false,
+            drag: false,
+        });
+
+        var thumbnails = document.getElementsByClassName("thumbnail");
+        var current;
+
+        // Handler - btn keydown
+        const handleThumbnailKeydown = (event) => {
+            const { key, which } = event;
+            const keysToMatch = ["Enter", " "];
+            const whichCodesToMatch = [32, 13];
+
+            if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                handleThumbnailClick(event);
+            }
+        };
+
+        for (var i = 0; i < thumbnails.length; i++) {
+            initThumbnail(thumbnails[i], i);
+        }
+
+        function initThumbnail(thumbnail, index) {
+            thumbnail.addEventListener("click", function () {
+                splide.go(index);
+            });
+
+            thumbnail.addEventListener("keydown", function (event) {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    splide.go(index);
+                }
+            });
+        }
+
+        splide.on("mounted move", function () {
+            var thumbnail = thumbnails[splide.index];
+
+            if (thumbnail) {
+                if (current) {
+                    current.classList.remove("is-active");
+                    current.setAttribute('aria-expanded', 'false');
+                    current.querySelector('.digital-blind-spots__plus-minus').classList.toggle("is-open");
+                }
+
+                thumbnail.classList.add("is-active");
+                thumbnail.setAttribute('aria-expanded', 'true');
+                thumbnail.querySelector('.digital-blind-spots__plus-minus').classList.toggle("is-open");
+                current = thumbnail;
+            }
+        });
+
+        splide.mount();
+    });
+</script>
+
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#digital-blind-spots-carousel-mobile-version", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: true,
+            drag: true,
+            gap: "1rem",
+            i18n: {
+                prev: "Previous Feature, Digital Blind Spots",
+                next: "Next Feature, Digital Blind Spots",
+                slideX: "Go to Slide %s, Digital Blind Spots Feature",
+            },
+            classes: {
+                arrows: "splide__arrows protect-data_arrows_wrapper",
+                arrow: "splide__arrow protect-data_arrow",
+                prev: "splide__arrow--prev protect-data_prev",
+                next: "splide__arrow--next protect-data_next",
+                pagination: "splide__pagination protect-data_pagination-mobile",
+                page: "splide__pagination__page protect-data_page-dot",
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    arrows: false,
+                    pagination: true,
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "3rem" },
+                },
+                320: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: true,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<style>
+    /* SPLIDE STYLES */
+
+    #digital-blind-spots-carousel .splide__slide {
+        width: unset !important;
+    }
+
+    #digital-blind-spots-carousel-list {
+        width: 33.375rem;
+    }
+
+    .carousel-img.desktop {
+        width: 33.375rem;
+        height: 41.625rem;
+    }
+
+    .gallery-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .thumbnails-wrapper {
+        width: 30.4375rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .no-gap {
+        margin-bottom: 0 !important;
+    }
+
+    /* THUMBNAIL STYLES */
+    .thumbnails {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 0;
+        justify-content: center;
+        margin: 0rem !important;
+    }
+
+    .thumbnail {
+        display: flex;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .thumbnail {
+        width: 100%;
+        height: auto;
+        border-bottom: 1px solid rgba(21, 21, 21, 0.65);
+        transition: all 100ms ease;
+    }
+
+    .thumbnail.is-active {
+        border-bottom: 1px solid rgba(22, 22, 22, 1);
+    }
+
+    .thumbnail.is-active .digital-blind-spots__text-wrapper {
+        color: #161616;
+    }
+
+    .digital-blind-spots__text-wrapper {
+        color: rgba(21, 21, 21, 0.65);
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 1.5rem 0;
+        gap: 1.25rem;
+        width: 100%;
+    }
+
+    .digital-blind-spots__link-header {
+        font-family: "Basel Grotesk";
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 130%;
+    }
+
+    .digital-blind-spots__link-paragraph {
+        font-family: "Basel Grotesk";
+        font-size: 1.125rem;
+        font-weight: 430;
+        line-height: 130%;
+        height: 0%;
+        display: none;
+        text-align: left;
+        color: rgba(77, 77, 77, 1);
+    }
+
+    .thumbnail.is-active .digital-blind-spots__link-paragraph {
+        height: 100%;
+        display: block;
+    }
+
+    .digital-blind-spots__section-header {
+        max-width: 23ch;
+        font-size: 2.75rem;
+        color: #161616;
+        margin: 1rem 0;
+        text-align: left;
+        font-weight: 535;
+        line-height: 115%;
+    }
+
+    .digital-blind-spots__eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .digital-blind-spots__eyebrow-bullet {
+        display: inline-block;
+        width: 0.375rem;
+        height: 0.375rem;
+        background-color: currentColor;
+        font-size: 0;
+        line-height: 0;
+        vertical-align: middle;
+    }
+
+    .digital-blind-spots__plus-minus-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 1.5rem;
+    }
+
+    .image-wrapper {
+        max-width: 100%;
+    }
+
+    .digital-blind-spots__plus-minus {
+        height: 1.5rem;
+        width: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .digital-blind-spots__svg-vertical-line {
+        transition: opacity 200ms ease-out;
+    }
+
+    .digital-blind-spots__plus-minus.is-open .digital-blind-spots__svg-vertical-line {
+        opacity: 0%;
+    }
+
+    .digital-blind-spots__cta {
+        width: 12rem;
+        height: 3rem;
+        margin-top: 2rem;
+        font-size: 1.125rem !important;
+    }
+
+
+    @media screen and (min-width: 768px) {
+        .carousel-mobile-wrapper.mobile {
+            display: none;
+        }
+
+        .carousel-img.desktop {
+            display: inline;
+        }
+
+        .carousel-img.mobile {
+            display: none;
+        }
+    }
+
+    /*DESKTOP SPLIDE PAGINATION*/
+    #digital-blind-spots-carousel .splide__pagination {
+        display: none;
+    }
+
+    #digital-blind-spots-carousel-mobile-version {
+        display: none;
+    }
+
+    /* SPLIDE STYLES */
+    @media screen and (max-width: 767px) {
+
+        .digital-blind-spots__section-header {
+            font-size: 1.75rem;
+            line-height: 115%;
+        }
+
+        .digital-blind-spots__link-header {
+            font-size: 1.125rem;
+            color: #161616;
+        }
+
+        .digital-blind-spots__text-wrapper {
+            padding: 1rem 0;
+            gap: 0.5rem;
+        }
+
+        .digital-blind-spots__link-paragraph {
+            font-size: 1rem;
+            display: block;
+            padding-right: 0.75rem;
+            font-weight: 400;
+        }
+
+        .digital-blind-spots__eyebrow-bullet {
+            margin-top: 0;
+        }
+
+        .image-wrapper {
+            max-width: 100%;
+        }
+
+        .thumbnails-wrapper {
+            width: auto;
+        }
+
+        .carousel-mobile-wrapper.mobile {
+            display: block;
+            max-width: 15.9375rem;
+        }
+
+        #digital-blind-spots-carousel-mobile-version {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #digital-blind-spots-carousel {
+            display: none !important;
+        }
+
+        #digital-blind-spots-carousel-mobile-version .splide__track {
+            overflow: visible;
+        }
+
+        #digital-blind-spots-carousel-mobile-version .splide__pagination {
+            position: static;
+            padding: 1rem;
+        }
+
+        #digital-blind-spots-carousel-mobile-version .splide__pagination__page {
+            border: none !important;
+            background: rgba(22, 22, 22, 0.25) !important;
+            opacity: 1 !important;
+            height: 0.625rem !important;
+            width: 0.625rem !important;
+        }
+
+        #digital-blind-spots-carousel-mobile-version .splide__pagination__page.is-active {
+            border: 1px solid #161616 !important;
+            background: #161616 !important;
+            transform: scale(1) !important;
+        }
+
+        #digital-blind-spots-carousel-list {
+            display: flex;
+            width: 100%;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .thumbnails {
+            display: none;
+        }
+
+        .thumbnails-wrapper .digital-blind-spots__cta {
+            display: none;
+        }
+
+        .digital-blind-spots__cta {
+            margin: 1rem auto 0 auto;
+            width: 9rem;
+            height: 2.75rem;
+        }
+
+        .digital-blind-spots__cta:not([data-text="Start free trial"]) {
+            width: 10rem;
+        }
+
+        .gallery-wrapper {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .carousel-img.desktop {
+            display: none;
+        }
+
+        .carousel-img.mobile {
+            display: inline;
+            height: 20rem;
+            width: 15.9375rem;
+        }
+    }
+
+    @media (max-width: 320px) {
+        #digital-blind-spots-carousel .splide__pagination__page {
+            width: 2.7rem;
+        }
+    }
+</style>
+
+<div class="gallery-wrapper">
+    <div id="digital-blind-spots" aria-hidden="true" style="top: -120px; position: absolute;"></div>
+    <div class="image-wrapper">
+        <div id="digital-blind-spots-carousel" class="splide" aria-label="Aura Photo Gallery">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img id="galleryImageOne" class="carousel-img desktop"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65862705-0-Digital-Blind-Spots-.png"
+                            alt="Aura app screenshot. Top navigation shows insights, usage, and settings with insights selected. Emma's profile shows Safety, no risk alerts found, 55 wellbeing score scored moderate. Trends shows sleep opportunity on 28th of October needs attention." />
+                    </li>
+                    <li class="splide__slide">
+                        <img class="carousel-img desktop"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65862706-0-Digital-Blind-Spots-.png"
+                            alt="AI Activity Aura screenshot. Tabs include recent, week, and month. Recent is selected. October 29th top AI apps. 2 risky apps used. ChatGPT 32 messages, Gemini 19 messages, Character.AI 9 messages and risky, Replika 15 messages and risky, Grok 3 messages" />
+                    </li>
+                    <li class="splide__slide">
+                        <img id="galleryImageThree" class="carousel-img desktop"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65862707-0-Digital-Blind-Spots-.png"
+                            alt="Digital wellbeing screenshot. October 15. Doing Great, 86. Emma's habits are consistent and positive. Contributing factors show sleep." />
+                    </li>
+                    <li class="splide__slide">
+                        <img id="galleryImageFour" class="carousel-img desktop"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65862708-0-Digital-Blind-Spots-.png"
+                            alt="Weekly snapshot screenshot. These insights are based on AI. Summary from 12 - 18 March show Emma is thoughtful and creative, but experiences adolescent stress. Academic stressors show that Emma manages stress well." />
+                    </li>
+                    <li class="splide__slide">
+                        <img class="carousel-img desktop" id="galleryImageFive"
+                            src="https://v.fastcdn.co/u/bff2cbd9/65862709-0-Digital-Blind-Spots-.png"
+                            alt="Overnight Usage screenshot. October 16-29. High. Emma was online during 6 nights in the last 2 weeks. Top apps used at night show Minecraft, Tiktok, and Snapchat. Recommendations are to set up a bed time." />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="digital-blind-spots-carousel-mobile-version" class="splide" aria-label="Aura Photo Gallery">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="carousel-mobile-wrapper mobile">
+                            <img class="carousel-img mobile"
+                                src="https://v.fastcdn.co/u/bff2cbd9/65862710-0-Digital-Blind-Spots-.png"
+                                alt="Aura app screenshot. Top navigation shows insights, usage, and settings with insights selected. Emma's profile shows Safety, no risk alerts found, 55 wellbeing score scored moderate. Trends shows sleep opportunity on 28th of October needs attention." />
+                            <div class="digital-blind-spots__text-wrapper">
+                                <h3 class="digital-blind-spots__link-header">Day 1: Protect</h3>
+                                <p class="digital-blind-spots__link-paragraph">
+                                    We start by blocking explicit content and establishing a baseline of digital habits.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="carousel-mobile-wrapper mobile">
+                            <img id="galleryImageMobile" class="carousel-img mobile"
+                                src="https://v.fastcdn.co/u/bff2cbd9/65862711-0-Digital-Blind-Spots-.png"
+                                alt="AI Activity Aura screenshot. Tabs include recent, week, and month. Recent is selected. October 29th top AI apps. 2 risky apps used. ChatGPT 32 messages, Gemini 19 messages, Character.AI 9 messages and risky, Replika 15 messages and risky, Grok 3 messages" />
+                            <div class="digital-blind-spots__text-wrapper">
+                                <h3 class="digital-blind-spots__link-header">Day 2: Observe</h3>
+                                <p class="digital-blind-spots__link-paragraph">
+                                    See early insights into AI chats and social media messaging.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="carousel-mobile-wrapper mobile">
+                            <img id="galleryImageMobile" class="carousel-img mobile"
+                                src="https://v.fastcdn.co/u/bff2cbd9/65862712-0-Digital-Blind-Spots-.png"
+                                alt="Digital wellbeing screenshot. October 15. Doing Great, 86. Emma's habits are consistent and positive. Contributing factors show sleep." />
+                            <div class="digital-blind-spots__text-wrapper">
+                                <h3 class="digital-blind-spots__link-header">Day 4: Understand</h3>
+                                <p class="digital-blind-spots__link-paragraph">
+                                    Your kid’s Wellbeing Score appears—built using multiple behavioral signals to help
+                                    you see changes.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="carousel-mobile-wrapper mobile">
+                            <img id="galleryImageMobile" class="carousel-img mobile"
+                                src="https://v.fastcdn.co/u/bff2cbd9/65862713-0-Digital-Blind-Spots-.png"
+                                alt="Weekly snapshot screenshot. These insights are based on AI. Summary from 12 - 18 March show Emma is thoughtful and creative, but experiences adolescent stress. Academic stressors show that Emma manages stress well." />
+                            <div class="digital-blind-spots__text-wrapper">
+                                <h3 class="digital-blind-spots__link-header">Day 7: Connect</h3>
+                                <p class="digital-blind-spots__link-paragraph">
+                                    The Weekly Snapshot shows the highlights of weekly online activities to support
+                                    ongoing conversations with your kid.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="carousel-mobile-wrapper mobile">
+                            <img id="galleryImageMobile" class="carousel-img mobile"
+                                src="https://v.fastcdn.co/u/bff2cbd9/65862714-0-Digital-Blind-Spots-.png"
+                                alt="Overnight Usage screenshot. October 16-29. High. Emma was online during 6 nights in the last 2 weeks. Top apps used at night show Minecraft, Tiktok, and Snapchat. Recommendations are to set up a bed time." />
+                            <div class="digital-blind-spots__text-wrapper">
+                                <h3 class="digital-blind-spots__link-header">Day 14: Support</h3>
+                                <p class="digital-blind-spots__link-paragraph">
+                                    With 2 weeks of activity data, we provide insights on trends to help you see changes
+                                    in their online life.
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <ul class="splide__pagination"></ul>
+            <a class="digital-blind-spots__cta aura-cta btn" data-at="button" aria-label="Scroll to Plan Cards"
+                href="/#page-block-mjqoqa1yiw" tabindex="0">Start free trial</a>
+        </div>
+    </div>
+    <div class="thumbnails-wrapper">
+        <div class="digital-blind-spots__eyebrow">
+            <span class="digital-blind-spots__eyebrow-bullet">■</span>
+            <p class="digital-blind-spots__eyebrow-text">How it works</p>
+        </div>
+        <h2 class="digital-blind-spots__section-header">
+            From digital blind spots to clear insights
+        </h2>
+        <ul id="thumbnails" class="thumbnails">
+            <li class="thumbnail" id="digital-blind-spots__observe" tabindex="0"
+                aria-label="Shows Observe image on click" aria-controls="galleryImageOne" aria-expanded="false">
+                <div class="digital-blind-spots__text-wrapper">
+                    <div class=digital-blind-spots__plus-minus-wrapper>
+                        <h3 class="digital-blind-spots__link-header">Day 1: Protect</h3>
+                        <div class="digital-blind-spots__plus-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="digital-blind-spots__svg-icon" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="digital-blind-spots__svg-vertical-line" d="M12 0V24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path class="digital-blind-spots__svg-horizontal-line" d="M0 12H24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="digital-blind-spots__link-paragraph">
+                        We start by blocking explicit content and establishing a baseline of digital habits.
+                    </p>
+                </div>
+            </li>
+            <li class="thumbnail" id="digital-blind-spots__understand" tabindex="0"
+                aria-label="Shows Understand image on click" aria-controls="galleryImageTwo" aria-expanded="false">
+                <div class="digital-blind-spots__text-wrapper">
+                    <div class=digital-blind-spots__plus-minus-wrapper>
+                        <h3 class="digital-blind-spots__link-header">Day 2: Observe</h3>
+                        <div class="digital-blind-spots__plus-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="digital-blind-spots__svg-icon" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="digital-blind-spots__svg-vertical-line" d="M12 0V24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path class="digital-blind-spots__svg-horizontal-line" d="M0 12H24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="digital-blind-spots__link-paragraph">
+                        See early insights into AI chats and social media messaging.
+                    </p>
+                </div>
+            </li>
+            <li class="thumbnail" id="digital-blind-spots__connect" tabindex="0"
+                aria-label="Shows Connect image on click" aria-controls="galleryImageThree" aria-expanded="false">
+                <div class="digital-blind-spots__text-wrapper">
+                    <div class=digital-blind-spots__plus-minus-wrapper>
+                        <h3 class="digital-blind-spots__link-header">Day 4: Understand</h3>
+                        <div class="digital-blind-spots__plus-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="digital-blind-spots__svg-icon" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="digital-blind-spots__svg-vertical-line" d="M12 0V24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path class="digital-blind-spots__svg-horizontal-line" d="M0 12H24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="digital-blind-spots__link-paragraph">
+                        Your kid’s Wellbeing Score appears—built using multiple behavioral signals to help you see
+                        changes.
+                    </p>
+                </div>
+            </li>
+            <li class="thumbnail" id="digital-blind-spots__respond" tabindex="0"
+                aria-label="Shows Respond image on click" aria-controls="galleryImageFour" aria-expanded="false">
+                <div class="digital-blind-spots__text-wrapper">
+                    <div class=digital-blind-spots__plus-minus-wrapper>
+                        <h3 class="digital-blind-spots__link-header">Day 7: Connect</h3>
+                        <div class="digital-blind-spots__plus-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="digital-blind-spots__svg-icon" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="digital-blind-spots__svg-vertical-line" d="M12 0V24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path class="digital-blind-spots__svg-horizontal-line" d="M0 12H24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="digital-blind-spots__link-paragraph">
+                        The Weekly Snapshot shows the highlights of weekly online activities to support ongoing
+                        conversations with your kid.
+                    </p>
+                </div>
+            </li>
+            <li class="thumbnail" id="digital-blind-spots__support" tabindex="0"
+                aria-label="Shows Support image on click" aria-controls="galleryImageFive" aria-expanded="false">
+                <div class="digital-blind-spots__text-wrapper">
+                    <div class=digital-blind-spots__plus-minus-wrapper>
+                        <h3 class="digital-blind-spots__link-header">Day 14: Support</h3>
+                        <div class="digital-blind-spots__plus-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="digital-blind-spots__svg-icon" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none">
+                                <path class="digital-blind-spots__svg-vertical-line" d="M12 0V24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path class="digital-blind-spots__svg-horizontal-line" d="M0 12H24" stroke="#161616"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="digital-blind-spots__link-paragraph">
+                        With 2 weeks of activity data, we provide insights on trends to help you see changes in their
+                        online life.
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <a class="digital-blind-spots__cta aura-cta btn" data-at="button" aria-label="Scroll to Plan Cards"
+            href="/#page-block-mjqoqa1yiw" tabindex="0">Start free trial</a>
+    </div>
+</div>
+
+<!-- Script to handle scroll-on-load from aura.com -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        //Grab only UTM parameters from browser address bar
+        const searchParams = new URLSearchParams(window.location.search);
+
+        //Function to click module tab
+        const clickDigitalBlindSpotsTab = (tab) => {
+            document.querySelector(`#digital-blind-spots__${tab}`).click();
+        }
+
+        //Confirm UTM parameters contain necessary module param
+        if (searchParams.has("digital-blind-spots")) {
+
+            //Assign 'digital-blind-spots' param value to a variable
+            const moduleParam = searchParams.get("digital-blind-spots");
+
+            //Call click function with correct module param
+            clickDigitalBlindSpotsTab(moduleParam);
+        }
+
+
+    });
+</script>

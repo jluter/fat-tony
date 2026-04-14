@@ -1,0 +1,992 @@
+<!--GB NAME: TrustPilot Dynamic Reviews Module -->
+<div id="protecting-customers-slider" class="splide protecting-customers-slider" aria-label="Aura Customers Reviews">
+    <div class="arrow-header-container">
+        <h2 class="protecting-customers__title">Protecting over 1,000,000 happy customers</h2>
+        <div class="splide__arrows splide__arrows--ltr">
+            <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide"
+                aria-controls="slider-track">
+                <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10.2927 3.70715C10.6832 3.31663 11.3164 3.31663 11.7069 3.70715C12.0974 4.09768 12.0974 4.73084 11.7069 5.12137L6.34236 10.4859L19.9998 
+            10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
+            19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z" />
+                </svg>
+            </button>
+            <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide"
+                aria-controls="slider-track">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path class="right-arrow-svg" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M13.7073 3.70715C13.3168 3.31663 12.6836 3.31663 12.2931 3.70715C11.9026 4.09768 11.9026 4.73084 12.2931 5.12137L17.6576 10.4859L4.00024 10.4859C3.44796 10.4859 3.00024 10.9336 3.00024 11.4859C3.00024 12.0382 3.44796 12.4859 4.00024 12.4859L17.6565 12.4859L12.2931 17.8493C11.9026 18.2398 11.9026 18.873 12.2931 19.2635C12.6836 19.654 13.3168 19.654 13.7073 19.2635L20.7784 12.1924C21.1689 11.8019 21.1689 11.1687 20.7784 10.7782L13.7073 3.70715Z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="tp-dynamic__arrow-slide-wrapper">
+        <div class="splide__track">
+            <ul class="splide__list trustpilot-dynamic-splide-list"></ul>
+            <div class="splide-gradient"></div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* SPLIDE DESKTOP/MOBILE STYLES */
+    section.section.section-relative:nth-of-type(n + 4) {
+        overflow: hidden;
+    }
+
+    .right-arrow-container {
+        left: 100%;
+    }
+
+    .left-arrow-container {
+        right: 100%;
+    }
+
+    #protecting-customers-slider .arrow-header-container {
+        justify-content: space-between;
+        position: relative;
+    }
+
+    /* .splide__list {
+  justify-content: start;
+  } */
+
+    /* .splide__slide {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  transition: all 200ms ease;
+  overflow: hidden;
+  } */
+
+    /* .splide__slide.is-active {
+  opacity: 1;
+  } */
+
+    /* .no-gap {
+  margin-right: 0 !important;
+  } */
+
+    .tp-dynamic-card-text-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+    }
+
+    .tp-dynamic-author-text,
+    .tp-dynamic-created-at-text {
+        text-align: left;
+    }
+
+    .tp-dynamic-author-text {
+        font-weight: 500;
+        margin-bottom: 0.8rem;
+    }
+
+    .tp-dynamic-modal-exit-button-wrapper:hover {
+        cursor: pointer;
+    }
+
+    .protecting-customers__title {
+        font-weight: 535;
+        font-size: 2.75rem;
+        line-height: 115%;
+        letter-spacing: -2%;
+        text-align: left;
+        max-width: 35.625rem;
+    }
+
+    #protecting-customers-slider .splide__pagination {
+        display: none;
+    }
+
+    /* SPLIDE CARD STYLES - PAGE SPECIFIC*/
+
+    @media (min-width: 1250px) {
+        #protecting-customers-slider .splide__arrows {
+            width: auto;
+        }
+    }
+
+    /*Desktop Styles */
+    @media (min-width: 769px) {
+        #protecting-customers-slider-track {
+            overflow: visible !important;
+        }
+
+        .tp-dynamic__arrow-slide-wrapper {
+            position: relative;
+        }
+
+        .aura-trustpilot-rating-star-wrapper-icon svg {
+            height: 100% !important;
+            width: 100% !important;
+            z-index: 2;
+        }
+
+        /*Slider gradient */
+
+        #protecting-customers-slider .splide__arrows {
+            width: auto;
+            display: flex;
+            gap: 0.75rem;
+            align-items: center;
+            justify-content: space-between;
+            bottom: 0%;
+            right: 0%;
+            position: absolute;
+        }
+
+        #protecting-customers-slider .splide__arrows .splide__arrow svg {
+            fill: #161616;
+        }
+
+        #protecting-customers-slider .splide__arrows .splide__arrow svg:hover {
+            fill: #ffffff;
+        }
+
+        #protecting-customers-slider .left-arrow-svg {
+            transform: scaleX(1) !important;
+        }
+
+        #protecting-customers-slider .splide__arrow {
+            background: rgba(22, 22, 22, 0.15) !important;
+            position: static !important;
+            border: none !important;
+            height: 2.5rem !important;
+            width: 2.5rem !important;
+            transform: none;
+            opacity: 1;
+        }
+
+        #protecting-customers-slider .splide__arrow:hover {
+            background: #161616 !important;
+        }
+
+        #protecting-customers-slider .splide__arrow:disabled {
+            opacity: 0.7;
+        }
+
+        #protecting-customers-slider .splide__arrow--prev:hover svg,
+        #protecting-customers-slider .splide__arrow--next:hover svg {
+            fill: #ffffff !important;
+        }
+
+        .tp-dynamic-card-background {
+            height: 22.875rem;
+            width: 21.875rem;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .tp-dynamic-card-background-modal {
+            height: 100% !important;
+            width: 100% !important;
+            max-width: 46.875rem;
+        }
+
+        .tp-dynamic-card-container {
+            width: inherit;
+            height: inherit;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+        }
+
+        .tp-dynamic-card-container-modal {
+            position: relative;
+            margin: 0;
+            padding: 3rem;
+        }
+
+        .tp-dynamic-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.75rem;
+            right: 1.75rem;
+            z-index: 9;
+        }
+
+        .tp-dynamic-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .tp-dynamic-card-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 400;
+            height: 3.875rem;
+            line-height: 1.925rem;
+            font-size: 1.375rem;
+            text-align: left;
+            margin-top: 1.5rem;
+            display: flex;
+        }
+
+        .tp-dynamic-card-text {
+            font-family: "Basel Grotesk";
+            font-size: 1.375rem;
+            font-weight: 400;
+            line-height: 140%;
+            letter-spacing: 0px;
+            text-align: left;
+            max-width: 33vw;
+            min-height: 6.25rem;
+            justify-self: flex-end;
+            margin: 2rem 0;
+        }
+
+        .tp-dynamic-date-wrapper {
+            margin-bottom: 2rem;
+        }
+
+        .copyright-r {
+            font-family: "basel-for-copy";
+            font-size: 1.125rem;
+            position: relative;
+            top: -0.5rem;
+        }
+
+        .tp-dynamic.reviews-button-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10rem;
+        }
+
+        .review-button {
+            width: 18.75rem;
+            height: 3.875rem;
+        }
+
+        .splide-gradient {
+            display: none;
+        }
+    }
+
+    /*Desktop Styles End*/
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        #protecting-customers-slider .splide__track {
+            width: auto;
+        }
+
+        .aura-trustpilot-rating-star-wrapper-icon svg {
+            height: 100% !important;
+            width: 100% !important;
+            z-index: 2;
+        }
+
+        .protecting-customers__title {
+            font-size: 1.75rem;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 20rem;
+            padding-bottom: 2rem;
+        }
+
+        .tp-dynamic__arrow-slide-wrapper {
+            position: static;
+            display: block;
+        }
+
+        #protecting-customers-slider-track {
+            overflow: visible !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating.star-size-mobile-12 .aura-trustpilot-rating-star {
+            height: 13.29px !important;
+            width: 13.29px !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-text {
+            color: #4c4c4c;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-stars-wrapper.rating-stars-review-wrapper,
+        #protecting-customers-slider .aura-trustpilot-rating-stars-wrapper.aura-trustpilot-rating-stars-wrapper-modal {
+            max-width: 100% !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating.layout-mobile-stacked.star-size-mobile-12 {
+            row-gap: 0.6875rem !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating.layout-mobile-stacked {
+            grid-template-columns: repeat(1, auto);
+            grid-template-rows: repeat(3, auto);
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-text {
+            width: 74px;
+            font-size: 12px !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-icon {
+            max-width: 80px !important;
+            max-height: 19px !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-icon svg {
+            height: 19.2px !important;
+            width: 80px !important;
+        }
+
+        #protecting-customers-slider .aura-trustpilot-rating-stars-wrapper {
+            max-width: 77.5px !important;
+        }
+
+        .review-button {
+            width: 22.1875rem;
+            height: 3.875rem;
+        }
+
+        .review-button>.aura-cta {
+            width: 1.375rem !important;
+        }
+
+        .tp-dynamic.reviews-button-wrapper {
+            margin-top: 11.4375rem;
+        }
+
+        .tp-dynamic-card-background {
+            height: 19.5625rem;
+            width: 15.9375rem;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .tp-dynamic-card-background-modal {
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        .tp-dynamic-card-container {
+            width: inherit;
+            height: inherit;
+            padding: 1.5rem;
+        }
+
+        .tp-dynamic-card-container-modal {
+            position: relative;
+            margin: 0;
+            padding: 2rem 1rem;
+        }
+
+        .card-text-container-modal {
+            max-width: 21rem;
+        }
+
+        .tp-dynamic-modal-exit-button-wrapper {
+            position: absolute;
+            top: 1.1875rem;
+            right: 1.1875rem;
+            z-index: 9;
+        }
+
+        .tp-dynamic-modal-exit-button {
+            height: 1rem;
+            width: 1rem;
+        }
+
+        .tp-dynamic-card-header-text {
+            font-family: "Basel Grotesk";
+            font-weight: 400;
+            line-height: 1.4625rem;
+            font-size: 1.125rem;
+            text-align: left;
+            margin-top: 1.5rem;
+            height: 2.875rem;
+            max-height: 3.875rem;
+            display: flex;
+        }
+
+        .tp-dynamic-card-header-text-modal {
+            height: 100% !important;
+        }
+
+        .tp-dynamic-card-text {
+            height: 7.75rem;
+            font-family: "Basel Grotesk";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.3rem;
+            letter-spacing: 0px;
+            text-align: left;
+            justify-self: flex-end;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tp-dynamic-date-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .tp-dynamic-card-text-modal {
+            height: 100% !important;
+            max-width: 80vw;
+        }
+
+        .tp-dynamic-author-text {
+            margin-bottom: 0.5rem;
+        }
+
+        .tp-dynamic-created-at-text {
+            display: block;
+        }
+
+        .copyright-r {
+            font-family: "basel-for-copy";
+            font-size: 1.125rem;
+            position: relative;
+            top: -0.5rem;
+        }
+
+        #protecting-customers-slider .splide__arrows {
+            display: none;
+        }
+
+        /*MOBILE SPLIDE PAGINATION*/
+
+        #protecting-customers-slider .splide__pagination {
+            display: flex;
+            bottom: -3rem !important;
+            gap: 0.35rem;
+            margin-top: 2rem;
+        }
+
+        #protecting-customers-slider .splide__pagination__page {
+            background: rgba(110, 110, 110, 0.5) !important;
+            border: none !important;
+            height: 8px !important;
+            width: 8px !important;
+            transition: background 0.2s linear !important;
+        }
+
+        #protecting-customers-slider .splide__pagination__page.is-active {
+            background: rgba(22, 22, 22, 1) !important;
+            transform: scale(1) !important;
+            opacity: 1 !important;
+        }
+
+        .splide-gradient {
+            display: none;
+            /* background-image: linear-gradient(270deg, rgba(236, 244, 255, 1) 36.84%, rgba(236, 244, 255, 0) 100%);
+          position: absolute;
+          content: "";
+          bottom: 0;
+          height: 100%;
+          width: 3rem;
+          right: -3px;
+          pointer-events: none; */
+        }
+    }
+
+    @media (max-width: 320px) {
+        #protecting-customers-slider .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #protecting-customers-slider .splide__slide {
+            align-items: center;
+        }
+
+        /* Change Height of Splide IP Section Parents*/
+        section:has(#protecting-customers-slider),
+        .section-block:has(#protecting-customers-slider) {
+            height: 134.1rem !important;
+        }
+
+        #protecting-customers-slider>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        #protecting-customers-slider .splide__list {
+            align-items: center;
+        }
+
+        /* Hide Splide Slides after 4 */
+        #protecting-customers-slider .splide__list li:nth-child(n + 4) {
+            display: none;
+        }
+
+        .tp-dynamic.reviews-button-wrapper {
+            margin-top: 12.4375rem;
+        }
+
+        /* Target Native IP Elements to move at 320px Width */
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(11),
+        /*Trustpilot*/
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(8),
+        /*Vertical Line 1*/
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(9),
+        /*Vertical Line 2*/
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(17),
+        /*Apple Store*/
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(16)
+
+        /*Google Play*/
+            {
+            top: 117.8125rem !important;
+        }
+
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(15),
+        /*Apple Store Text*/
+        section:has(#protecting-customers-slider) .section-inner div:nth-child(14)
+
+        /*Google Play Text*/
+            {
+            top: 121.1rem !important;
+        }
+    }
+
+    /*MODAL STYLES*/
+
+    .review-modal-background {
+        position: fixed;
+        top: 0;
+        z-index: 9999999;
+        background-color: rgba(236, 244, 255, 0.2);
+        height: 100vh;
+        width: 100vw;
+        align-content: center;
+        max-width: unset;
+        /*Override Dialog API Styles*/
+        max-height: unset;
+        /*Override Dialog API Styles*/
+        border: unset;
+        /*Override Dialog API Styles*/
+    }
+
+    .review-modal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .modal-guts {
+        background-color: rgb(236, 244, 255);
+        border-radius: 1.5rem;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .tp-dynamic-read-more {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    .tp-dynamic-read-more:hover {
+        cursor: pointer;
+    }
+</style>
+
+<!-- TrustPilot Dynamic Review Script -->
+<script>
+    let currentScriptTpDynamic = document.currentScript;
+    ("use strict");
+    //This variable is the Splide container where the carousel will go
+    //Carousel is generated as HTML later in this script
+    const splideContainer = document.querySelector(
+        ".trustpilot-dynamic-splide-list"
+    );
+
+    document.addEventListener("DOMContentLoaded", function () {
+        // getTrustPilotTaggedReviews();
+
+        //Main HTML is used to add modals
+        const main = document.querySelector("main");
+        //Make our stars based on their color! Thanks, Josh.
+        function starSvgFactory(starColor) {
+            return ` <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M11.5277 1.35869C11.6834 0.910915 12.3166 0.910913 12.4723 1.35869L14.7071 7.78807C14.7758 7.98561 14.9601 8.11955 15.1692 8.12381L21.9745 8.26249C22.4485 8.27215 22.6442 8.87442 22.2664 9.16082L16.8423 13.2731C16.6757 13.3994 16.6053 13.6161 16.6658 13.8163L18.6369 20.3314C18.7742 20.7851 18.2618 21.1574 17.8727 20.8866L12.2856 16.9987C12.1139 16.8793 11.8861 16.8793 11.7144 16.9987L6.12728 20.8866C5.73816 21.1574 5.22584 20.7851 5.36311 20.3314L7.33418 13.8163C7.39473 13.6161 7.32432 13.3994 7.15767 13.2731L1.73357 9.16082C1.35581 8.87442 1.5515 8.27215 2.02546 8.26249L8.83077 8.12381C9.03986 8.11955 9.2242 7.98561 9.29287 7.78808L11.5277 1.35869Z"
+        fill="#161616" />
+    </svg>`;
+        }
+
+        function modalFactory(starColor, reviewObject, modalDiv) {
+            //Modal HTML
+            let modalHtml = `
+  <div class="review-modal">
+    <div class="tp-dynamic-card-background tp-dynamic-card-background-modal">
+      <div class="tp-dynamic-card-container tp-dynamic-card-container-modal">
+        <div class="tp-dynamic-modal-exit-button-wrapper" id=${reviewObject.reviewId
+                }-exit tabindex="0" role="button">
+          <img class="tp-dynamic-modal-exit-button" src="https://v.fastcdn.co/u/bff2cbd9/64736864-0-X-shape.svg"/>
+        </div>
+        <div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
+        <div class="aura-trustpilot-rating-stars-wrapper aura-trustpilot-rating-stars-wrapper-modal" role="img" aria-label="5 star rating">
+
+          <div class="aura-trustpilot-rating-star">
+      <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+    </div>
+  <div class="aura-trustpilot-rating-star">
+      <div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+    </div>
+  <div class="aura-trustpilot-rating-star">
+      <div class="aura-trustpilot-rating-star-wrapper-icon"  style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+    </div>
+  <div class="aura-trustpilot-rating-star">
+      <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+    </div>
+  <div class="aura-trustpilot-rating-star">
+      <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                    starColor
+                )}</div>
+    </div>
+    </div>
+          </div>
+        <div class="tp-dynamic-card-text-container card-text-container-modal">
+          <p class="tp-dynamic-card-text tp-dynamic-card-text-modal">${reviewObject.reviewParagraph
+                }</p>
+          <div class="tp-dynamic-date-wrapper">
+            <p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor}</p>
+            <p class="tp-dynamic-created-at-text">Trustpilot, ${reviewObject.reviewDate
+                }</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  `;
+
+            //Create modal HTML object and add it to top of the Main HTML element
+            modalDiv.id = reviewObject.reviewId + "-modal";
+            modalDiv.classList.add("review-modal-background");
+            let modalGuts = document.createElement("div");
+            modalGuts.classList.add("modal-guts");
+            modalGuts.innerHTML = modalHtml;
+            modalDiv.appendChild(modalGuts);
+            // modalDiv.style.display = "none";
+
+            const handleModalInsertion = (divToInsert) => {
+                let isSectionBlock = false;
+
+                let currentElementToCheck = currentScriptTpDynamic.parentElement;
+
+                while (!isSectionBlock) {
+                    if (currentElementToCheck.nodeName === "SECTION") {
+                        isSectionBlock = true;
+                    } else {
+                        currentElementToCheck = currentElementToCheck.parentElement;
+                    }
+                }
+
+                currentElementToCheck.after(divToInsert);
+            };
+
+            handleModalInsertion(modalDiv);
+
+            let closeButton = document.getElementById(
+                `${reviewObject.reviewId}-exit`
+            );
+            closeButton.setAttribute(
+                "aria-label",
+                `Close ${reviewObject.reviewAuthor}'s review of Aura`
+            );
+            closeButton.addEventListener("click", () => {
+                modalDiv.close();
+            });
+
+            closeButton.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    modalDiv.close();
+                }
+            });
+        }
+
+        function slideFactory(starColor, reviewObject, modalDiv) {
+            //Generate Splide card/slide HTML
+            let slideHtml = `
+  <div class="tp-dynamic-card-background">
+    <div class="tp-dynamic-card-container">
+      <div class="aura-trustpilot-rating layout-desktop-inline star-size-desktop-24 star-size-mobile-24 undefined star-position-mobile-top">
+      <div class="aura-trustpilot-rating-stars-wrapper rating-stars-review-wrapper" role="img" aria-label="5 Stars">
+        <div class="aura-trustpilot-rating-star">
+          <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+  </div>
+          <div class="aura-trustpilot-rating-star">
+            <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+          </div>
+        <div class="aura-trustpilot-rating-star">
+            <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+          </div>
+        <div class="aura-trustpilot-rating-star">
+            <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+          </div>
+        <div class="aura-trustpilot-rating-star">
+            <div class="aura-trustpilot-rating-star-wrapper-icon" style="color: ${starColor}">${starSvgFactory(
+                starColor
+            )}</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="tp-dynamic-card-text-container">
+        <p class="tp-dynamic-card-text">${cleanUpText(
+                reviewObject.reviewParagraph,
+                130
+            )} <span id="${reviewObject.reviewId
+                }-link" class="tp-dynamic-read-more" role="button">Read More</span></p>
+        <div class="tp-dynamic-date-wrapper">
+          <p class="tp-dynamic-author-text">— ${reviewObject.reviewAuthor}</p>
+          <p class="tp-dynamic-created-at-text"><span>Trustpilot,</span> <span>${reviewObject.reviewDate
+                }</span></p>
+        </div>
+        </div>
+
+    </div>
+
+  </div>
+  `;
+
+            //Insert Splide card/slide HTML
+            let splideSlide = document.createElement("li");
+            splideSlide.classList.add("splide__slide");
+            splideSlide.innerHTML = slideHtml;
+            splideContainer.appendChild(splideSlide);
+
+            //Add Modal display functionality on 'read more' click
+            let readMoreLink = document.getElementById(
+                `${reviewObject.reviewId}-link`
+            );
+            readMoreLink.setAttribute(
+                "aria-label",
+                `Open ${reviewObject.reviewAuthor}'s review of Aura`
+            );
+            readMoreLink.addEventListener("click", () => {
+                // modalDiv.style.display = "flex";
+                modalDiv.showModal();
+            });
+
+            readMoreLink.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    // modalDiv.style.display = "flex";
+                    modalDiv.showModal();
+                }
+            });
+        }
+
+        function cleanUpText(string, maxLength) {
+            let uglyShortText =
+                string.length > maxLength ? string.slice(0, maxLength) : string;
+            let lastSpace = uglyShortText.lastIndexOf(" ", 500);
+            let cleanShortText = uglyShortText.substring(0, lastSpace);
+            let textWithDots =
+                uglyShortText === string
+                    ? uglyShortText
+                    : cleanShortText.concat("", "... ");
+            return textWithDots;
+        }
+
+        // function handleTrustPilotAPIResponseError() {
+        const createStaticReviews = async () => {
+            const staticReviews = [
+                {
+                    id: "r1dianeaura1",
+                    stars: 5,
+                    text: "My ID was stolen a few years ago. I found Aura and they are able to keep track of any malicious activity with all my personal information. I like that I get a notification immediately if there is something that needs attention right away.",
+                    consumer: {
+                        displayName: "Diane A.",
+                    },
+                    createdAt: "09.11.25",
+                },
+                {
+                    id: "r2maxbrokers",
+                    stars: 5,
+                    text: "Great and affordable plan for identity protection and removing data from data brokers.",
+                    consumer: {
+                        displayName: "Max.",
+                    },
+                    createdAt: "09.04.25",
+                },
+                {
+                    id: "r3stephenmon",
+                    stars: 5,
+                    text: "I have nothing, but positive things to say about Aura. The alerts I get when I open a new account let me know that they are monitoring 24/7.",
+                    consumer: {
+                        displayName: "Stephen B.",
+                    },
+                    createdAt: "10.26.23",
+                },
+                {
+                    id: "r4ericbroker",
+                    stars: 5,
+                    text: "Hands down the best internet protection I have ever had. They go to bat for you right away by removing your personal data from brokers who sell your personal information which exposes you to scammers.",
+                    consumer: {
+                        displayName: "Eric S.",
+                    },
+                    createdAt: "08.25.25",
+                },
+                {
+                    id: "r5lindassnbr",
+                    stars: 5,
+                    text: "I'm extremely relieved that I chose to sign up with Aura earlier this year, having been a part of the August SSN breach. Aura was proactive and incredibly supportive, guiding me step-by-step to secure and freeze my accounts.",
+                    consumer: {
+                        displayName: "Linda.",
+                    },
+                    createdAt: "09.05.24",
+                },
+                {
+                    id: "r6lindaalert",
+                    stars: 5,
+                    text: "I've had several credit monitoring services, Aura is the only one that gives me frequent alerts. I have never received any alerts from other services I've tried.",
+                    consumer: {
+                        displayName: "Linda",
+                    },
+                    createdAt: "09.05.24",
+                },
+                {
+                    id: "r7samanthaid",
+                    stars: 5,
+                    text: "All other identity services pale in comparison to what Aura can do. I highly recommend using their services because of how truly valuable they are and what they can really do for you.",
+                    consumer: {
+                        displayName: "Samantha",
+                    },
+                    createdAt: "10.31.23",
+                },
+                {
+                    id: "r8kellybease",
+                    stars: 4,
+                    text: "For all the protection and piece of mind Aura provides it is still a product that is easy to use.",
+                    consumer: {
+                        displayName: "Kelly B.",
+                    },
+                    createdAt: "09.09.25",
+                },
+                {
+                    id: "r9lisabestcs",
+                    stars: 5,
+                    text: "First, Aura is an excellent product. I tried several of the top security apps, but none were as comprehensive. I've talked to several tech specialists at Aura and I receive the best customer service.",
+                    consumer: {
+                        displayName: "Lisa",
+                    },
+                    createdAt: "09.30.24",
+                },
+            ];
+
+            await staticReviews.forEach((staticReview) => {
+                let modalDiv = document.createElement("dialog");
+                let reviewObject = {
+                    reviewId: staticReview.id,
+                    reviewRating: staticReview.stars,
+                    reviewParagraph: staticReview.text,
+                    reviewAuthor: staticReview.consumer.displayName,
+                    reviewDate: staticReview.createdAt,
+                };
+
+                //Create and insert our HTML
+                modalFactory("black", reviewObject, modalDiv);
+                slideFactory("black", reviewObject, modalDiv);
+
+                //Add Modal hide functionality on background click
+                modalDiv.addEventListener("click", (event) => {
+                    if (event.target === modalDiv) {
+                        // modalDiv.style.display = "none";
+                        modalDiv.close();
+                    }
+                });
+            });
+
+            splideFactory();
+        };
+        createStaticReviews();
+
+
+        const splide = new Splide("#protecting-customers-slider", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 1,
+            perMove: 1,
+            arrows: true,
+            pagination: true,
+            flickPower: 100,
+            flickMaxPages: 1,
+            gap: "1.875rem",
+            snap: false,
+            drag: true,
+            arrowPath:
+                "M22.8449 6.17835C22.194 5.52747 21.1387 5.52747 20.4879 6.17835C19.837 6.82922 19.837 7.8845 20.4879 8.53537L29.4287 17.4762L6.66643 17.4762C5.74595 17.4762 4.99976 18.2224 4.99976 19.1429C4.99976 20.0634 5.74595 20.8096 6.66643 20.8096L29.4269 20.8096L20.4879 29.7486C19.837 30.3994 19.837 31.4547 20.4879 32.1056C21.1387 32.7565 22.194 32.7565 22.8449 32.1056L34.63 20.3205C35.2809 19.6696 35.2809 18.6143 34.63 17.9635L22.8449 6.17835Z",
+            classes: {
+                arrows: "splide__arrows tp-arrows_wrapper",
+                arrow: "splide__arrow tp-arrow",
+                prev: "splide__arrow--prev tp-prev",
+                next: "splide__arrow--next tp-next",
+                pagination: "splide__pagination tp-pagination-mobile",
+                page: "splide__pagination__page tp-page-dot",
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    arrows: false,
+                    pagination: true,
+                    drag: "free",
+                    padding: { left: "1.5rem", right: "1.5rem" },
+                },
+            },
+        });
+
+        //Add tabindex only to the VISIBLE read more links
+        //Must be run before splide.mount();
+        splide.on("ready", () => {
+            const visibleReadMores = document.querySelectorAll(
+                "#protecting-customers-slider .splide__slide.is-visible .tp-dynamic-read-more"
+            );
+            visibleReadMores.forEach((link) => {
+                link.setAttribute("tabindex", "0");
+            });
+        });
+
+        splide.mount();
+
+        //Slide that leaves view becomes untabbable
+        splide.on("hidden", (slide) => {
+            const currentReadMoreLink = slide.slide.querySelector(
+                ".tp-dynamic-read-more"
+            );
+            currentReadMoreLink.setAttribute("tabindex", "-1");
+        });
+
+        //Slide that becomes visible becomes tabbable
+        splide.on("visible", (slide) => {
+            const currentReadMoreLink = slide.slide.querySelector(
+                ".tp-dynamic-read-more"
+            );
+            currentReadMoreLink.setAttribute("tabindex", "0");
+        });
+    });
+</script>
