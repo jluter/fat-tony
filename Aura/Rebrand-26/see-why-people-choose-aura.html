@@ -1,0 +1,1298 @@
+<!-- GB Name: See Why People Choose Aura - Aura Safety -->
+<style>
+    .is-mobile {
+        display: none;
+    }
+
+    .comparison-table-data {
+        border-top: 1px solid #4d4d4d;
+        font-size: 1.125rem;
+        line-height: 140%;
+        vertical-align: top;
+    }
+
+    .comparison-table-data.vertical-alignment-middle {
+        vertical-align: middle;
+    }
+
+
+    .vertical-align-middle {
+        vertical-align: middle;
+    }
+
+    .comparison-table {
+        border-spacing: 0px;
+        width: 100%;
+    }
+
+    .comparison-chart-icon {
+        /* margin-bottom: 0.25rem; */
+        margin-left: auto;
+        margin-right: auto;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .comparison-table-data,
+    .comparison-table-header {
+        padding: 1.5rem;
+        max-width: 9rem;
+        color: #fff;
+    }
+
+    .comparison-table-header {
+        font-size: 1.375rem;
+        line-height: 140%;
+        font-weight: 485;
+    }
+
+    /*Chart Gradient*/
+    .comparison-table tbody::before {
+        width: 23%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 32%;
+        height: 100%;
+        max-height: 76rem;
+        background: linear-gradient(180deg, #CDDEFF 0%, #FFD4B6 100%);
+        z-index: -1;
+        border-radius: 1rem 1rem 1rem 1rem;
+    }
+
+    .comparison-chart-aura-logo.aura {
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width: 6.438rem;
+    }
+
+    .comparison-chart-paragraph {
+        max-width: 26ch;
+        font-size: 1rem;
+        line-height: 140%;
+        margin-left: auto;
+        margin-right: auto;
+        color: #161616;
+    }
+
+    .comparison-chart-paragraph.not_Aura {
+        color: #BABABA;
+    }
+
+    .comparison-chart-paragraph.desktop {
+        display: block;
+    }
+
+    .comparison-chart-paragraph.mobile {
+        display: none;
+    }
+
+    .comparison-chart-paragraph.smaller-width {
+        max-width: 17ch;
+    }
+
+    .left-align {
+        padding-left: 0rem;
+        text-align: left;
+        font-size: 1.375rem;
+        font-weight: 485;
+        max-width: 13.75ch;
+        padding-right: 6rem;
+    }
+
+    .left-align.vertical-center {
+        vertical-align: middle;
+    }
+
+
+    .add-border-radius-top {
+        border-radius: 1rem 1rem 0rem 0rem;
+    }
+
+    .add-border-radius-bottom {
+        border-radius: 0rem 0rem 1rem 1rem;
+    }
+
+    .starting-price {
+        padding-left: 0rem;
+        text-align: left;
+        font-size: 1.375rem;
+        font-weight: 485;
+        max-width: 13ch;
+        padding-right: 7rem;
+        margin-top: auto;
+        vertical-align: bottom;
+    }
+
+    .add-medium-weight {
+        font-weight: 485;
+    }
+
+    .comparison-chart-btn-desktop {
+        width: 11.875rem;
+        height: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.8rem;
+    }
+
+    .comparison-chart-btn-mobile {
+        display: none;
+        width: 16.813rem;
+        height: 3.938rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-tp-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .comparison-chart-footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .comparison-tp-wrapper.mobile {
+        display: none;
+    }
+
+    .comparison-chart-disclaimer {
+        max-width: 100%;
+        font-size: 0.875rem;
+        color: #4c5770;
+        line-height: 140%;
+        text-align: left;
+        margin-top: 5rem;
+    }
+
+    .comparison-chart-paragraph.add-margin-bottom {
+        margin-bottom: 3.5rem;
+    }
+
+    .comparison-table-header.mobile {
+        display: none;
+    }
+
+    .comparison-pc-wrapper {
+        font-size: 1.125rem;
+        line-height: 140%;
+        font-weight: 500;
+        /* margin-top: 3rem; */
+    }
+
+    .comparison-pc-wrapper.others {
+        font-weight: 400;
+    }
+
+    .pc-span {
+        font-size: 0.75rem;
+        font-weight: 400;
+    }
+
+    /* MODAL STYLES */
+    .comparison-modal_link_wrapper {
+        margin-top: 0.8rem;
+        text-align: center;
+    }
+
+    .comparison-modal_link {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: #161616;
+        cursor: pointer;
+    }
+
+    .underline-link {
+        text-decoration: underline;
+    }
+
+    .comparison-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: fade-in 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000030;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+
+    .comparison-modal_close-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #6e6e6e;
+        opacity: 70%;
+        z-index: 1;
+    }
+
+    .comparison-modal_content-wrapper {
+        position: relative;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 2;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: left;
+    }
+
+    .comparison-modal_exit-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .comparison-modal_header {
+        font-size: 1.375rem;
+        font-weight: 485;
+    }
+
+    .comparison-modal_p {
+        font-size: 1.125rem;
+        line-height: 150%;
+        max-width: 40ch;
+    }
+
+    .comparison-tp-wrapper {
+        margin-bottom: 1rem;
+    }
+
+    .comparison-tp-wrapper.mobile {
+        display: none;
+    }
+
+    .comparison-table-mobile-header {
+        display: none;
+    }
+
+    .is-mobile {
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+
+        .comparison-table tbody::before {
+            width: 41%;
+            content: "";
+            left: 59%;
+            height: 100%;
+            max-height: 76rem;
+            background: linear-gradient(180deg,
+                    #CDDEFF 0%,
+                    /* solid blue at top */
+                    #CDDEFF 45%,
+                    /* blue stays until 45% */
+                    #FFD4B6 85%,
+                    /* gradual blend to orange ends at 85% */
+                    #FFD4B6 100%
+                    /* full orange at bottom */
+                ) !important;
+        }
+
+
+
+        .comparison-table-mobile-header {
+            display: block;
+            font-size: 0.625rem;
+        }
+
+        .is-mobile {
+            display: inherit;
+        }
+
+        .is-mobile {
+            display: inline;
+        }
+
+        .is-desktop {
+            display: none;
+        }
+
+        .comparison-table-header {
+            line-height: 100%;
+        }
+
+        .comparison-pc-wrapper {
+            font-size: 0.75rem;
+        }
+
+        .comparison-chart-paragraph.desktop {
+            display: none;
+        }
+
+        .comparison-chart-paragraph.mobile {
+            display: block;
+        }
+
+        .comparison-table-header.desktop {
+            display: none;
+        }
+
+        .comparison-table-header.mobile {
+            display: block;
+        }
+
+        .comparison-table-header {
+            font-size: 0.875rem;
+        }
+
+        .comparison-chart-paragraph {
+            max-width: 15ch;
+            font-size: 0.75rem;
+            line-height: 140%;
+        }
+
+        .comparison-table-data {
+            font-size: 0.875rem;
+        }
+
+        .comparison-chart-icon {
+            margin-bottom: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            overflow: visible;
+        }
+
+        .comparison-tp-wrapper.desktop {
+            display: none;
+        }
+
+        .comparison-chart-aura-logo.aura {
+            margin-bottom: 0.25rem;
+            margin-top: 0.25rem;
+            width: 3.438rem;
+            max-height: 1.1rem;
+        }
+
+        .comparison-table-data,
+        .comparison-table-header {
+            padding: 1rem 0.5rem;
+            max-width: 5rem;
+        }
+
+        .comparison-chart-btn-desktop {
+            display: none;
+        }
+
+        .comparison-chart-btn-mobile {
+            display: flex;
+            width: 22.1875rem;
+        }
+
+        .comparison-tp-wrapper.mobile {
+            display: block;
+        }
+
+        .comparison-chart-paragraph.smaller-width {
+            max-width: 9ch;
+        }
+
+        .comparison-table-data.smaller-mobile {
+            font-size: 0.75rem;
+        }
+
+        .add-medium-weight {
+            max-width: 10ch;
+        }
+
+        .comparison-chart-paragraph.add-margin-bottom {
+            margin-bottom: 0.5rem;
+        }
+
+        .comparison-chart-disclaimer {
+            font-size: 0.75rem;
+            max-width: 92%;
+            margin-top: 0rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-tp-wrapper {
+            margin-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .left-align {
+            font-size: 0.875rem;
+            max-width: 9ch;
+            padding-right: 0.5rem;
+        }
+
+        .with-icon.vertical-middle {
+            vertical-align: middle;
+        }
+
+        /* MODAL STYLES */
+        .comparison-modal_content-wrapper {
+            padding: 2.25rem 1.5rem;
+        }
+
+        .comparison-modal_p {
+            font-size: 1rem;
+            max-width: 26ch;
+        }
+
+        .comparison-modal_header {
+            font-size: 1.125rem;
+            max-width: 18ch;
+        }
+
+        .comparison-modal_link_wrapper.add-margin-bottom {
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-tp-wrapper.desktop {
+            display: none;
+        }
+
+        .comparison-tp-wrapper.mobile {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-tp-wrapper {
+            margin-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .comparison-pc-wrapper {
+            margin-top: 0rem;
+        }
+
+        /*Title Border Radius*/
+        section.section-relative:has(.border-radius-target) {
+            border-radius: 2rem 2rem 0 0;
+            margin-top: -2rem;
+        }
+
+        a.comparison-chart-btn-desktop.aura-cta-no-arrow.aura-cta {
+            width: 7.438rem;
+            font-size: 0.85rem !important;
+            height: 2rem;
+        }
+
+        /* Scroll container */
+        .comparison-table-scroll-wrapper {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            max-width: 100%;
+
+            /* Hide native scrollbar */
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE/Edge */
+        }
+
+        .comparison-table-scroll-wrapper::-webkit-scrollbar {
+            display: none;
+            /* Chrome/Safari */
+        }
+
+        /* Make table wider so scroll reveals last columns */
+        .comparison-table {
+            min-width: 200%;
+        }
+
+
+        /* Custom scrollbar inside the container */
+        .comparison-scrollbar {
+            position: absolute;
+            /* changed from fixed */
+            bottom: 4rem;
+            /* 8px from the bottom of the container */
+            left: 0;
+            right: 0;
+            height: 4px;
+            margin: 0 auto;
+            max-width: 315px;
+            /* optional max width */
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            pointer-events: none;
+            /* allows scrolling through the container */
+            z-index: 5;
+        }
+
+        /* White moving thumb */
+        .comparison-scrollbar-thumb {
+            width: 50%;
+            /* adjust width dynamically via JS if needed */
+            height: 100%;
+            background: #ffffff;
+            border-radius: 2px;
+            transform: translateX(0);
+            transition: transform 0.2s ease;
+        }
+    }
+</style>
+<!--Us vs Them Comparison table HTML-->
+<div class="comparison-table-scroll-wrapper">
+    <table class="comparison-table">
+        <tr class="comparison-table-row header-row">
+            <th scope="col" class="comparison-table-header"></th>
+            <th scope="col" class="comparison-table-header add-white-background add-border-radius-top">
+                <svg class="comparison-chart-aura-logo aura" aria-label="Aura" alt="Aura" width="100%" height="100%"
+                    viewBox="0 0 53 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M2.93041 0.831055H9.8898V2.42602H2.93041V0.831055ZM23.1037 13.4012C23.2897 12.9936 23.384 12.5525 23.384 12.0902V5.60988H25.0542V12.0902C25.0542 13.4366 24.4989 14.6812 23.4905 15.5949C23.0061 16.0339 22.4397 16.3771 21.8073 16.615C21.1637 16.8571 20.4779 16.9798 19.7689 16.9798C19.0599 16.9798 18.3742 16.8571 17.7306 16.615C17.0982 16.3771 16.5318 16.0339 16.0474 15.5949C15.039 14.6812 14.4837 13.4366 14.4837 12.0902V5.61586H16.1539V12.0902C16.1539 12.5525 16.2482 12.9936 16.4342 13.4012C16.6124 13.7919 16.869 14.1407 17.1971 14.4379C17.871 15.0485 18.7844 15.3849 19.7689 15.3849C20.7535 15.3849 21.6669 15.0485 22.3408 14.4379C22.6688 14.1407 22.9255 13.7919 23.1037 13.4012ZM30.9076 16.7807V12.9358H35.2081L37.2553 16.7807H39.129L36.7 12.2186C36.8506 12.1125 36.9935 11.9957 37.1281 11.8684C37.4825 11.5332 37.761 11.1428 37.956 10.708C38.1588 10.2558 38.2617 9.77611 38.2617 9.28226C38.2617 8.78871 38.159 8.30867 37.9564 7.8555C37.7617 7.41977 37.4836 7.02819 37.1299 6.69155C36.7766 6.35521 36.3657 6.09085 35.9088 5.90574C35.4342 5.71345 34.9316 5.61598 34.4153 5.61598H29.2373V16.7807H30.9076ZM30.9076 7.21102H34.4153C34.9921 7.21102 35.5374 7.42774 35.9508 7.82124C36.3639 8.21452 36.5914 8.7334 36.5914 9.28233C36.5914 9.82957 36.3646 10.3456 35.9526 10.7353C35.5399 11.1258 34.9939 11.3409 34.4153 11.3409H30.9076V7.21102ZM43.2663 16.7807L46.7715 8.0198L50.2767 16.7807H52.0647L47.5977 5.61598H45.9453L41.4783 16.7807H43.2663ZM5.58045 5.61598L1.11353 16.7807H2.90155L6.40668 8.0198L9.9119 16.7807H11.6999L7.23292 5.61598H5.58045Z"
+                        fill="#161616" />
+                </svg>
+            </th>
+            <th scope="col" class="comparison-table-header">Incogni</th>
+            <th scope="col" class="comparison-table-header">DeleteMe</th>
+        </tr>
+        <tr class="comparison-table-row">
+            <th id="contentFilteringHeader" scope="row" class="comparison-table-data left-align"
+                style="vertical-align:middle;">
+                Online Info & Data Broker <br class="is-mobile">Removals
+            </th>
+            <td class="comparison-table-data with-icon add-white-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <p id="contentFilteringDetails" class="comparison-chart-paragraph">
+                    Remove from Google search results, people search sites, junk mailers,
+                    real estate data brokers, and more.
+                </p>
+                <!-- <div class="comparison-chart-paragraph mobile">
+        <p>Set a filter level for each family member</p>
+        <div class="comparison-modal_link_wrapper">
+          <div
+            id="contentFilteringModalLink"
+            aria-label="Open Content Filtering Feature Pop-up with full details"
+            tabindex="0"
+            role="link"
+            class="comparison-modal_link underline-link">
+            Learn More
+          </div>
+        </div>
+      </div> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-alignment-middle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-alignment-middle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th id="bedtimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+                Digital Account Cleanup
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <div class="comparison-chart-paragraph mobile">
+        <p>
+          Set Bedtimes when devices automatically disconnect from the Internet.
+        </p>
+        <div class="comparison-modal_link_wrapper">
+          <div
+            id="bedtimeModalLink"
+            aria-label="Open Bedtime Feature Pop-up with full details"
+            tabindex="0"
+            role="link"
+            class="comparison-modal_link underline-link">
+            Learn More
+          </div>
+        </div>
+      </div> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th id="screenTimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+                Monthly Data <br class="is-mobile">Removal Reports
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background vertical-align-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <p id="screenTimeDetails" class="comparison-chart-paragraph desktop">
+        Customize Screen Time Limits for each kid's profile and set different
+        limits for apps, categories of sites, and a Daily Time Limit.
+      </p> -->
+                <!-- <div class="comparison-chart-paragraph mobile">
+        <p>Customize Screen Time for each kid's profile</p>
+        <div class="comparison-modal_link_wrapper">
+            <div
+              id="screenTimeModalLink"
+              aria-label="Open Screen Time Limits Feature Pop-up with full details"
+              tabindex="0"
+              role="link"
+              class="comparison-modal_link underline-link">
+              Learn More
+            </div>
+          </div>
+      </div> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th id="bedtimeHeader" scope="row" class="comparison-table-data left-align vertical-center">
+                Identity Protection
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <div class="comparison-chart-paragraph mobile">
+        <p>
+          Set Bedtimes when devices automatically disconnect from the Internet.
+        </p>
+        <div class="comparison-modal_link_wrapper">
+          <div
+            id="bedtimeModalLink"
+            aria-label="Open Bedtime Feature Pop-up with full details"
+            tabindex="0"
+            role="link"
+            class="comparison-modal_link underline-link">
+            Learn More
+          </div>
+        </div>
+      </div> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle ">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th id="pauseInternetHeader" scope="row" class="comparison-table-data left-align vertical-center">
+                VPN
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background vertical-align-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <p id="pauseInternetDetails" class="comparison-chart-paragraph desktop">
+        Pause the Internet at the press of a button. Hit unpause when you're
+        ready to give back their internet access.
+      </p> -->
+                <!-- <div class="comparison-chart-paragraph mobile">
+        <p>Pause the Internet at the press of a button.</p>
+        <div class="comparison-modal_link_wrapper">
+          <div
+            id="pauseInternetModalLink"
+            aria-label="Open Pause the Internet Feature Pop-up with full details"
+            tabindex="0"
+            role="link"
+            class="comparison-modal_link underline-link">
+            Learn More
+          </div>
+        </div>
+      </div> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align vertical-center">Antivirus</th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background vertical-align-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <p class="comparison-chart-paragraph">
+        Track your kids' online habits to spot overuse on apps and websites and
+        see which sites were blocked.
+      </p> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align vertical-center">
+                Password Manager
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background vertical-align-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <!-- <p class="comparison-chart-paragraph">
+        Extend your kid's daily time online with Bonus Time to reward good
+        behavior or celebrate successes.
+      </p> -->
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon vertical-middle vertical-align-middle">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align">
+                Credit Monitoring
+            </th>
+            <td class="comparison-table-data with-icon vertical-middle add-white-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <p class="comparison-chart-paragraph">Instant Credit Lock</p>
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="22" height="22" rx="11" fill="white" />
+                    <path
+                        d="M14.5774 6.24408C14.9028 5.91864 15.4305 5.91864 15.7559 6.24408C16.0814 6.56951 16.0814 7.09715 15.7559 7.42259L12.1785 11L15.7559 14.5774C16.0814 14.9028 16.0814 15.4305 15.7559 15.7559C15.4305 16.0814 14.9029 16.0814 14.5774 15.7559L11 12.1785L7.42259 15.7559C7.09715 16.0814 6.56951 16.0814 6.24408 15.7559C5.91864 15.4305 5.91864 14.9028 6.24408 14.5774L9.82149 11L6.24408 7.42259C5.91865 7.09715 5.91865 6.56951 6.24408 6.24408C6.56952 5.91864 7.09716 5.91864 7.42259 6.24408L11 9.82149L14.5774 6.24408Z"
+                        fill="#161616" />
+                </svg>
+
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align">
+                <span>24/7 Customer <br class="is-mobile">Support</span>
+                <!-- <span class="is-mobile">Parent Recomme-<br />ndations</span> -->
+            </th>
+            <td class="comparison-table-data with-icon add-white-background">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <p class="comparison-chart-paragraph">100% U.S. Based</p>
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+                <p class="comparison-chart-paragraph not_Aura">Not 24/7</p>
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align">
+                <span>Money-Back <br class="is-mobile">Guarantee</span>
+                <!-- <span class="is-mobile">Parent Recomme-<br />ndations</span> -->
+            </th>
+            <td class="comparison-table-data with-icon add-white-background add-border-radius-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1ZM17.4053 8.69141C17.0139 8.30195 16.3808 8.30312 15.9912 8.69434L10.7217 13.9902L8.41016 11.6562C8.02155 11.2639 7.38849 11.2609 6.99609 11.6494C6.60366 12.038 6.60067 12.671 6.98926 13.0635L10.0088 16.1133C10.1963 16.3027 10.4522 16.4098 10.7188 16.4102C10.9852 16.4104 11.2408 16.3041 11.4287 16.1152L17.4082 10.1055C17.7977 9.71406 17.7965 9.08097 17.4053 8.69141Z"
+                        fill="#161616" />
+                </svg>
+                <p class="comparison-chart-paragraph">60 days on annual plans</p>
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+                <p class="comparison-chart-paragraph not_Aura">30 days</p>
+            </td>
+            <td class="comparison-table-data with-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 1C18.0751 1 23 5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1Z"
+                        fill="#4D4D4D" />
+                    <path
+                        d="M16.7089 10.7053C17.0985 10.3138 17.0969 9.68067 16.7054 9.29113C16.3139 8.90158 15.6807 8.90316 15.2912 9.29466L10.0218 14.5905L7.71058 12.2565C7.32198 11.864 6.68882 11.8609 6.29638 12.2495C5.90394 12.6381 5.90083 13.2713 6.28942 13.6637L9.30947 16.7136C9.49699 16.903 9.75234 17.0097 10.0188 17.01C10.2853 17.0103 10.5409 16.9043 10.7289 16.7153L16.7089 10.7053Z"
+                        fill="white" />
+                </svg>
+
+                <p class="comparison-chart-paragraph not_Aura">30 days</p>
+            </td>
+        </tr>
+        <tr class="comparison-table-row">
+            <th scope="row" class="comparison-table-data left-align">
+
+            </th>
+            <td class="comparison-table-data with-icon add-white-background add-border-radius-bottom">
+                <a class="comparison-chart-btn-desktop btn"></a>
+            </td>
+            <td class="comparison-table-data with-icon">
+            </td>
+            <td class="comparison-table-data with-icon">
+
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="spacer is-mobile">
+    <div class="comparison-scrollbar">
+        <div class="comparison-scrollbar-thumb"></div>
+    </div>
+</div>
+
+<!-- <div class="comparison-chart-footer-wrapper">
+  <div id="comparisonTrustPilot2" class="comparison-tp-wrapper mobile"></div>
+  <a class="comparison-chart-btn-mobile btn"></a>
+  <p class="comparison-chart-disclaimer">
+    ** Based on August 2022 pricing on Lifelock.com
+  </p> 
+</div>-->
+
+<!-- Comparison Chart Modal Script  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", () => {
+        const ipBody = document.querySelector("#landing-page");
+
+        const comparisonModalParent = document.createElement("div");
+        comparisonModalParent.classList.add("comparison-modal");
+        ipBody.appendChild(comparisonModalParent);
+
+        const modalHTML = `<div
+  id="comparisonModal"
+  role="dialog"
+  aria-label="Feature Extended Details"
+  class="comparison-modal_content-wrapper">
+  <div id="comparisonModalHeader" class="comparison-modal_header">
+    Bedtimes
+  </div>
+  <p id="comparisonModalParagraph" class="comparison-modal_p">
+    Set Bedtimes for weeknights and weekends. When bedtime rolls around, all
+    devices associated with your child's profile will automatically disconnect
+    from the Internet.
+  </p>
+  <svg
+    aria-label="Exit Modal"
+    class="comparison-modal_exit-icon"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L13.4142 12L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L12 13.4142L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L10.5858 12L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L12 10.5858L18.2929 4.29289Z"
+      fill="#55595E" />
+  </svg>
+</div>
+<div class="comparison-modal_close-area"></div>
+  `;
+
+        comparisonModalParent.innerHTML = modalHTML;
+
+        // All Links & Modal Elements
+        const comparisonModal = document.querySelector("#comparisonModal");
+        const comparisonModalLinks = document.querySelectorAll(
+            ".comparison-modal_link"
+        );
+
+        // Exit elements
+        const comparisonModalExitIcon = document.querySelector(
+            ".comparison-modal_exit-icon"
+        );
+        const comparisonModalExitArea = document.querySelector(
+            ".comparison-modal_close-area"
+        );
+
+        // Make Exit elements tabbable
+        comparisonModalExitIcon.setAttribute("tabindex", "0");
+        comparisonModalExitArea.setAttribute("tabindex", "0");
+
+        const comparisonModalParagraph = document.querySelector(
+            "#comparisonModalParagraph"
+        );
+        const comparisonModalHeader = document.querySelector(
+            "#comparisonModalHeader"
+        );
+
+        // Feature Links | This is used to dynamically change the modal text by targeting each feature paragraph ID & Link ID
+
+        // Content Filtering Elements
+        const contentFilteringHeader = document.querySelector(
+            "#contentFilteringHeader"
+        );
+        const contentFilteringDetails = document.querySelector(
+            "#contentFilteringDetails"
+        );
+        const contentFilteringModalLink = document.querySelector(
+            "#contentFilteringModalLink"
+        );
+
+        // Screen Time Elements
+        const screenTimeHeader = document.querySelector("#screenTimeHeader");
+        const screenTimeDetails = document.querySelector("#screenTimeDetails");
+        const screenTimeModalLink = document.querySelector("#screenTimeModalLink");
+
+        // Bedtime Elements
+        const bedtimeHeader = document.querySelector("#bedtimeHeader");
+        const bedtimeDetails = document.querySelector("#bedtimeDetails");
+        const bedtimeModalLink = document.querySelector("#bedtimeModalLink");
+
+        // Pause the Internet Elements
+        const pauseInternetHeader = document.querySelector("#pauseInternetHeader");
+        const pauseInternetDetails = document.querySelector(
+            "#pauseInternetDetails"
+        );
+        const pauseInternetModalLink = document.querySelector(
+            "#pauseInternetModalLink"
+        );
+
+        // // Internet Usage Elements
+        // const internetUsageHeader = document.querySelector("#internetUsageHeader");
+        // const internetUsageDetails = document.querySelector(
+        //     "#internetUsageDetails"
+        // );
+        // const internetUsageModalLink = document.querySelector(
+        //     "#internetUsageModalLink"
+        // );
+
+        // Safe Browsing Elements
+        const safeBrowsingHeader = document.querySelector("#safeBrowsingHeader");
+        const safeBrowsingDetails = document.querySelector("#safeBrowsingDetails");
+        const safeBrowsingModalLink = document.querySelector(
+            "#safeBrowsingModalLink"
+        );
+
+        // Antivirus Elements
+        const antivirusHeader = document.querySelector("#antivirusHeader");
+        const antivirusDetails = document.querySelector("#antivirusDetails");
+        const antivirusModalLink = document.querySelector("#antivirusModalLink");
+
+        // Dark Web Elements
+        const darkWebHeader = document.querySelector("#darkWebHeader");
+        const darkWebDetails = document.querySelector("#darkWebDetails");
+        const darkWebModalLink = document.querySelector("#darkWebModalLink");
+
+        // Modal Functions
+        function openModal(event) {
+            comparisonModalParent.classList.add("visible");
+            document.body.classList.add("modal-on");
+        }
+
+        function closeModal(event) {
+            comparisonModalParent.classList.remove("visible");
+            document.body.classList.remove("modal-on");
+        }
+
+        // For all links, make tabbable, open modal, & change modal elements based on link clicked ID
+        comparisonModalLinks.forEach((element) => {
+            element.setAttribute("tabindex", "0");
+            element.addEventListener("click", function (id) {
+                id = element.getAttribute("id");
+
+                if (id === contentFilteringModalLink.id) {
+                    let ariaLabelHeader = contentFilteringHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = contentFilteringHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML =
+                        contentFilteringDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                }
+                // else if (id === screenTimeModalLink.id) {
+                // let ariaLabelHeader = screenTimeHeader.innerText;
+
+                //   comparisonModalHeader.innerHTML = screenTimeHeader.innerHTML;
+                //   comparisonModalParagraph.innerHTML = screenTimeDetails.innerHTML;
+                //   comparisonModal.setAttribute(
+                //     "aria-label",
+                //     `${ariaLabelHeader} Extended Details`
+                //   );
+                // }
+                else if (id === bedtimeModalLink.id) {
+                    let ariaLabelHeader = bedtimeHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = bedtimeHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = bedtimeDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                } else if (id === pauseInternetModalLink.id) {
+                    let ariaLabelHeader = pauseInternetHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = pauseInternetHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = pauseInternetDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                }
+                // else if (id === internetUsageModalLink.id) {
+                // let ariaLabelHeader = internetUsageHeader.innerText;
+
+                //   comparisonModalHeader.innerHTML = internetUsageHeader.innerHTML;
+                //   comparisonModalParagraph.innerHTML = internetUsageDetails.innerHTML;
+                //   comparisonModal.setAttribute(
+                //     "aria-label",
+                //     `${ariaLabelHeader} Extended Details`
+                //   );
+                // }
+                else if (id === safeBrowsingModalLink.id) {
+                    let ariaLabelHeader = safeBrowsingHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = safeBrowsingHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = safeBrowsingDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                } else if (id === antivirusModalLink.id) {
+                    let ariaLabelHeader = antivirusHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = antivirusHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = antivirusDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                } else if (id === darkWebModalLink.id) {
+                    let ariaLabelHeader = darkWebHeader.innerText;
+
+                    comparisonModalHeader.innerHTML = darkWebHeader.innerHTML;
+                    comparisonModalParagraph.innerHTML = darkWebDetails.innerHTML;
+                    comparisonModal.setAttribute(
+                        "aria-label",
+                        `${ariaLabelHeader} Extended Details`
+                    );
+                }
+                openModal();
+            });
+            element.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    element.click();
+                    comparisonModalExitIcon.focus();
+                }
+            });
+        });
+
+        // Exit Elements, close Modal
+        comparisonModalExitIcon.addEventListener("click", function () {
+            closeModal();
+        });
+        comparisonModalExitIcon.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                comparisonModalExitArea.click();
+            }
+        });
+
+        comparisonModalExitArea.addEventListener("click", function () {
+            closeModal();
+        });
+        comparisonModalExitArea.addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                comparisonModalExitArea.click();
+            }
+        });
+
+        // Exit Elements, close Modal on Escape
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const wrapper = document.querySelector(".comparison-table-scroll-wrapper");
+        const scrollbar = document.querySelector(".comparison-scrollbar");
+        const thumb = document.querySelector(".comparison-scrollbar-thumb");
+
+        if (!wrapper || !scrollbar || !thumb) return;
+
+        function updateThumbPosition() {
+            const scrollLeft = wrapper.scrollLeft;
+            const maxScroll = wrapper.scrollWidth - wrapper.clientWidth;
+
+            // Get dynamic widths
+            const trackWidth = scrollbar.clientWidth;
+            const thumbWidth = thumb.clientWidth;
+
+            // Avoid division by zero
+            const move = maxScroll > 0 ? (scrollLeft / maxScroll) * (trackWidth - thumbWidth) : 0;
+
+            thumb.style.transform = `translateX(${move}px)`;
+        }
+
+        // Update on scroll
+        wrapper.addEventListener("scroll", updateThumbPosition);
+
+        // Update on resize (responsive)
+        window.addEventListener("resize", updateThumbPosition);
+
+        // Initialize position
+        updateThumbPosition();
+    });
+</script>

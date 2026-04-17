@@ -50,7 +50,7 @@
 
     .comparison-table-header {
         font-size: 1rem;
-        line-height: 140%;
+        line-height: 120%;
         font-weight: 485;
     }
 
@@ -60,7 +60,7 @@
         content: "";
         position: absolute;
         top: 0;
-        left: 52%;
+        left: 51.5%;
         height: 100%;
         background: linear-gradient(180deg, #CDDEFF 0%, #FFD4B6 100%);
         z-index: -1;
@@ -153,6 +153,10 @@
 
     .comparison-tp-wrapper {
         margin-bottom: 1rem;
+    }
+    
+    .comparison-table-header {
+        padding-top: 0;
     }
 
     .comparison-table-footer-wrapper {
@@ -305,11 +309,15 @@
 
     .comparison-table__badge {
         position: absolute;
-        bottom: 10%;
-        right: 24%;
+        bottom: 12%;
+        right: 22%;
         width: 4.5rem;
         height: 4.5rem;
         z-index: 3;
+    }
+
+    .comparison-table__sup {
+        font-size: 0.85rem;
     }
 
     @media (max-width: 767px) {
@@ -321,7 +329,8 @@
         .comparison-table__badge {
             width: 3.5rem;
             height: 3.5rem;
-            right: 22%;
+            right: 21%;
+            bottom: 9%;
         }
 
         .comparison-table {
@@ -344,7 +353,7 @@
         }
 
         .comparison-table-header {
-            line-height: 100%;
+            line-height: 120%;
         }
 
         .comparison-pc-wrapper {
@@ -446,7 +455,7 @@
         }
 
         .comparison-table-header.left-align {
-            font-size: 0.875rem;
+            font-size: 1rem;
         }
 
         .left-align {
@@ -482,11 +491,11 @@
                     fill="#161616" />
             </svg>
         </th>
-        <th scope="col" class="comparison-table-header">Average cost <br />per month<sup>‡</sup></th>
+        <th scope="col" class="comparison-table-header">Average cost <br />per month<sup class="comparison-table__sup">‡</sup></th>
     </tr>
     <tr class="comparison-table-row">
         <th id="contentFilteringHeader" scope="row" class="comparison-table-data left-align">
-            Identity Theft Protection
+            Identity Theft <br class="is-mobile"/>Protection
         </th>
         <td class="comparison-table-data with-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none">
@@ -559,7 +568,7 @@
         </td>
     </tr>
     <tr class="comparison-table-row">
-        <th scope="row" class="comparison-table-data left-align vertical-center">Total Per Month</th>
+        <th scope="row" class="comparison-table-data left-align vertical-center">Total per month</th>
         <td class="comparison-table-data vertical-middle vertical-align-middle middle-price">
             $9.99
         </td>
@@ -569,4 +578,4 @@
     </tr>
     <img class="comparison-table__badge" alt="Average 78% Savings" src="https://v.fastcdn.co/u/bff2cbd9/65906463-0-78-Percent-Badge.png"/>
 </table>
-<p class="comparison-table__disclaimer">Savings calculation is based on paid plans of popular service providers. Prices subject to change</p>
+<p class="comparison-table__disclaimer"><sup class="comparison-table__sup">‡</sup>Savings calculation is based on paid plans of popular service providers. Prices subject to change.</p>
