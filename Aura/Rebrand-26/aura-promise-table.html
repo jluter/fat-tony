@@ -1,0 +1,209 @@
+<!-- The Aura Promise Table Styles  -->
+<style>
+    .aura-promise__heading {
+        font-size: 2.75rem;
+        font-weight: 600;
+        line-height: 115%;
+        color:#fff;
+    }
+
+    .aura-promise__subheading {
+        font-size: 1rem;
+        color:#fff;
+       font-weight: 535;
+       line-height: 130%;
+    }
+  
+   .aura-promise__subheading::before {
+     content: "";
+     background-color: #fff;
+     width: 6px;
+     height: 6px;
+     display: inline-block;
+     margin: 0px 8px 3px 0px;
+    } 
+
+    .aura-promise__heading-wrapper {
+        display: flex;
+       flex-direction: column;
+       align-items: start;
+       gap: 1.5rem;
+       padding-left: 2rem;
+
+    }
+
+  
+  /* Media Queries */
+  .aura-promise_table-wrapper {
+    text-align: left;
+    padding: 2rem 2rem;
+
+  }
+  .aura-promise_table-row {
+    margin-bottom: 0.5rem;
+  }
+  .aura-promise_btn {
+    height: 3.6875rem;
+    width: 19.0625rem;
+    margin: 0 auto;
+  }
+  .aura-promise_data-text {
+    font-size: 1.125rem;
+    line-height: 140%;
+    color:#fff;
+    margin-bottom: 0.5rem;
+  }
+  .aura-promise_data-text.last {
+    margin-bottom: 1.5rem;
+  }
+  .aura-promise_cta-text {
+    font-size: 1.375rem;
+    text-align: center;
+    line-height: 140%;
+    margin-bottom: 1.5rem;
+  }
+  .aura-promise_table-data {
+    display: flex;
+    margin-bottom: 0.5rem;
+    padding-top: 1.5rem;
+    gap: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .aura-promise_table-data.last  {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+  .aura-promise_icon {
+    flex: 0 0 auto;
+    margin-top: 0.5rem;
+  }
+  .aura-promise_line {
+    width: 1px;
+    flex-grow: 1;
+    background-color: #cfd5e3;
+  }
+  .aura-promise_header {
+    font-size: 1.5rem;
+    font-weight: 485;
+    line-height: 130%;
+    margin-bottom: 0.5rem;
+    color:#fff;
+  }
+  .superscript-star {
+    font-size: 1.6rem;
+  }
+  @media (max-width: 768px) {
+
+    .aura-promise__heading {
+       font-size: 1.75rem;
+       text-align: left;
+    }    
+
+    .aura-promise_table-row {
+      margin-bottom: 0rem;
+    }
+    .aura-promise_header {
+      font-size: 1.25rem;
+      margin-bottom: 0.8rem;
+      display: inline-block;
+
+    }
+    .aura-promise_icon {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 0.35rem;
+    }
+    .aura-promise_data-text {
+      font-size: 1rem;
+    }
+    .aura-promise_data-text.last {
+        margin-bottom: 0;
+    }
+    .superscript-star {
+      font-size: 1.2rem;
+    }
+    .aura-promise_table-data {
+      margin-bottom: 0rem;
+    }
+    .aura-promise_text-wrapper {
+      padding-bottom: 1rem;
+    }
+
+    .aura-promise__heading-wrapper {
+        display: flex;
+       flex-direction: column;
+       align-items: start;
+       gap: 1.5rem;
+       padding-left: 1rem;
+
+    }
+    .aura-promise_table-wrapper {
+      padding: 2rem 1rem 1rem 1rem;
+    }
+    .ultimate-plan-text {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<div class="aura-promise__heading-wrapper">
+<p class="aura-promise__subheading">Our guarantees</p>
+  <h2 class="aura-promise__heading">The Aura promise</h2>
+ </div>
+
+<!-- The Aura Promise Table HTML  -->
+<div class="aura-promise_table-wrapper">
+  <table class="aura-promise_table">
+    <caption style="display: none">
+      The Aura Promise Table
+    </caption>
+    <tr class="aura-promise_table-row">
+      <td class="aura-promise_table-data">
+        
+        <div class="aura-promise_text-wrapper">
+          <h3 class="aura-promise_header">$1 million identity theft coverage</h3>
+          <p class="aura-promise_data-text">
+            Every adult member gets $1 million to cover eligible losses and fees due to identity theft.*
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr class="aura-promise_table-row">
+      <td class="aura-promise_table-data">
+        
+        <div class="aura-promise_text-wrapper">
+          <h3 class="aura-promise_header">Certified data security and privacy</h3>
+          <p class="aura-promise_data-text">
+            Safeguard your data using the same security standards as banks and military. Plus, we never sell your data to third parties.
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr class="aura-promise_table-row">
+      <td class="aura-promise_table-data">
+        
+        <div class="aura-promise_text-wrapper">
+          <h3 class="aura-promise_header mobile-margin-bottom">
+            60-day money back guarantee
+          </h3>
+          <p class="aura-promise_data-text">
+            Try Aura risk-free. Love us, or your money back.²
+          </p>
+        </div>
+      </td>
+    </tr>
+    <tr class="aura-promise_table-row">
+      <td class="aura-promise_table-data last">
+        
+        <div class="aura-promise_text-wrapper">
+          <h3 class="aura-promise_header insurance-coverage">
+            24/7 U.S.-based support
+          </h3>
+          <p class="aura-promise_data-text last">
+            Around-the-clock U.S. fraud specialists are available to help.
+          </p>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>

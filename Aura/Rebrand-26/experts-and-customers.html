@@ -1,18 +1,26 @@
-<!--GB NAME: Protecting happy customers - Aura Safety -->
+<!--GB NAME: Experts and Customers - Aura Safety -->
 <div id="protecting-customers-slider" class="splide protecting-customers-slider" aria-label="Aura Customers Reviews">
     <div class="arrow-header-container">
-        <h2 class="protecting-customers__title">Protecting over 1,000,000 happy customers</h2>
-        <div class="splide__arrows splide__arrows--ltr">
+
+
+    </div>
+    <div class="tp-dynamic__arrow-slide-wrapper">
+        <div class="splide__arrows splide__arrows--ltr left-arrow-container">
             <button class="splide__arrow splide__arrow--prev" type="button" aria-label="Previous slide"
                 aria-controls="slider-track">
-                <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg class="left-arrow-svg" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                         d="M10.2927 3.70715C10.6832 3.31663 11.3164 3.31663 11.7069 3.70715C12.0974 4.09768 12.0974 4.73084 11.7069 5.12137L6.34236 10.4859L19.9998 
-            10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
-            19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z" />
+                    10.4859C20.552 10.4859 20.9998 10.9336 20.9998 11.4859C20.9998 12.0382 20.552 12.4859 19.9998 12.4859L6.34348 12.4859L11.7069 17.8493C12.0974 18.2398 12.0974 18.873 11.7069 
+                    19.2635C11.3164 19.654 10.6832 19.654 10.2927 19.2635L3.2216 12.1924C2.83108 11.8019 2.83108 11.1687 3.2216 10.7782L10.2927 3.70715Z" />
                 </svg>
             </button>
+        </div>
+        <div class="splide__track">
+            <ul class="splide__list trustpilot-dynamic-splide-list"></ul>
+            <div class="splide-gradient"></div>
+        </div>
+        <div class="splide__arrows splide__arrows--ltr right-arrow-container">
             <button class="splide__arrow splide__arrow--next" type="button" aria-label="Next slide"
                 aria-controls="slider-track">
                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -20,12 +28,6 @@
                         d="M13.7073 3.70715C13.3168 3.31663 12.6836 3.31663 12.2931 3.70715C11.9026 4.09768 11.9026 4.73084 12.2931 5.12137L17.6576 10.4859L4.00024 10.4859C3.44796 10.4859 3.00024 10.9336 3.00024 11.4859C3.00024 12.0382 3.44796 12.4859 4.00024 12.4859L17.6565 12.4859L12.2931 17.8493C11.9026 18.2398 11.9026 18.873 12.2931 19.2635C12.6836 19.654 13.3168 19.654 13.7073 19.2635L20.7784 12.1924C21.1689 11.8019 21.1689 11.1687 20.7784 10.7782L13.7073 3.70715Z" />
                 </svg>
             </button>
-        </div>
-    </div>
-    <div class="tp-dynamic__arrow-slide-wrapper">
-        <div class="splide__track">
-            <ul class="splide__list trustpilot-dynamic-splide-list"></ul>
-            <div class="splide-gradient"></div>
         </div>
     </div>
 </div>
@@ -115,9 +117,6 @@
 
     /*Desktop Styles */
     @media (min-width: 769px) {
-        #protecting-customers-slider-track {
-            overflow: visible !important;
-        }
 
         .tp-dynamic__arrow-slide-wrapper {
             position: relative;
@@ -132,22 +131,22 @@
         /*Slider gradient */
 
         #protecting-customers-slider .splide__arrows {
-            width: auto;
+            position: absolute;
+            padding: 0 1rem;
+            top: 50%;
             display: flex;
-            gap: 0.75rem;
+            gap: 1.5rem;
             align-items: center;
             justify-content: space-between;
-            bottom: 0%;
-            right: 0%;
-            position: absolute;
+            width: auto;
         }
 
         #protecting-customers-slider .splide__arrows .splide__arrow svg {
-            fill: #161616;
+            fill: #ffffff;
         }
 
         #protecting-customers-slider .splide__arrows .splide__arrow svg:hover {
-            fill: #ffffff;
+            fill: #161616;
         }
 
         #protecting-customers-slider .left-arrow-svg {
@@ -155,7 +154,7 @@
         }
 
         #protecting-customers-slider .splide__arrow {
-            background: rgba(22, 22, 22, 0.15) !important;
+            background: rgba(42, 42, 42, 1) !important;
             position: static !important;
             border: none !important;
             height: 2.5rem !important;
@@ -165,7 +164,7 @@
         }
 
         #protecting-customers-slider .splide__arrow:hover {
-            background: #161616 !important;
+            background: #ffffff !important;
         }
 
         #protecting-customers-slider .splide__arrow:disabled {
@@ -174,13 +173,16 @@
 
         #protecting-customers-slider .splide__arrow--prev:hover svg,
         #protecting-customers-slider .splide__arrow--next:hover svg {
-            fill: #ffffff !important;
+            fill: #161616 !important;
         }
 
         .tp-dynamic-card-background {
             height: 22.875rem;
             width: 21.875rem;
-            background-color: #ffffff;
+            background: url(//storage.googleapis.com/instapage-user-media/bff2cbd9/65886078-0--Clouds--Gradient-BG.png);
+            background-size: var(--total-width, 100%) 100%;
+            background-position: calc(-1 * var(--card-offset, 0px)) center;
+            background-repeat: no-repeat;
             border-radius: 16px;
             display: flex;
             flex-direction: row;
@@ -221,7 +223,7 @@
             font-weight: 400;
             height: 3.875rem;
             line-height: 1.925rem;
-            font-size: 1.375rem;
+            font-size: 1.125rem;
             text-align: left;
             margin-top: 1.5rem;
             display: flex;
@@ -229,7 +231,7 @@
 
         .tp-dynamic-card-text {
             font-family: "Basel Grotesk";
-            font-size: 1.375rem;
+            font-size: 1.125rem;
             font-weight: 400;
             line-height: 140%;
             letter-spacing: 0px;
@@ -358,7 +360,10 @@
         .tp-dynamic-card-background {
             height: 19.5625rem;
             width: 15.9375rem;
-            background-color: #ffffff;
+            background: url(//storage.googleapis.com/instapage-user-media/bff2cbd9/65886078-0--Clouds--Gradient-BG.png);
+            background-size: var(--total-width, 100%) 100%;
+            background-position: calc(-1 * var(--card-offset, 0px)) center;
+            background-repeat: no-repeat;
             border-radius: 24px;
             display: flex;
             flex-direction: row;
@@ -424,7 +429,7 @@
             text-align: left;
             justify-self: flex-end;
             margin-bottom: 2rem;
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
 
         .tp-dynamic-date-wrapper {
@@ -473,7 +478,7 @@
         }
 
         #protecting-customers-slider .splide__pagination__page.is-active {
-            background: rgba(22, 22, 22, 1) !important;
+            background: rgba(255, 255, 255, 1) !important;
             transform: scale(1) !important;
             opacity: 1 !important;
         }
@@ -756,7 +761,7 @@
       <div class="tp-dynamic-card-text-container">
         <p class="tp-dynamic-card-text">${cleanUpText(
                 reviewObject.reviewParagraph,
-                130
+                187
             )} <span id="${reviewObject.reviewId
                 }-link" class="tp-dynamic-read-more" role="button">Read More</span></p>
         <div class="tp-dynamic-date-wrapper">
@@ -817,6 +822,34 @@
         // function handleTrustPilotAPIResponseError() {
         const createStaticReviews = async () => {
             const staticReviews = [
+                
+                {
+                    id: "r1kristinav",
+                    stars: 5,
+                    text: "I'm extremely relieved that I chose to sign up with Aura earlier this year, having been a part of the August SSN breach. Aura was proactive and incredibly supportive, guiding me step-by-step to secure and freeze my accounts.",
+                    consumer: {
+                        displayName: "Kristina V.",
+                    },
+                    createdAt: "09.05.24",
+                }, 
+                {
+                    id: "r2johnm",
+                    stars: 5,
+                    text: "Fantastic computer protection. Online security, antivirus, as well as stolen identity protection. Great price too!",
+                    consumer: {
+                        displayName: "John M.",
+                    },
+                    createdAt: "03.11.25",
+                }, 
+                {
+                    id: "r4ericbroker",
+                    stars: 5,
+                    text: "Hands down the best internet protection I have ever had. They go to bat for you right away by removing your personal data from brokers who sell your personal information which exposes you to scammers.",
+                    consumer: {
+                        displayName: "Eric S.",
+                    },
+                    createdAt: "08.25.25",
+                }, 
                 {
                     id: "r1dianeaura1",
                     stars: 5,
@@ -843,15 +876,6 @@
                         displayName: "Stephen B.",
                     },
                     createdAt: "10.26.23",
-                },
-                {
-                    id: "r4ericbroker",
-                    stars: 5,
-                    text: "Hands down the best internet protection I have ever had. They go to bat for you right away by removing your personal data from brokers who sell your personal information which exposes you to scammers.",
-                    consumer: {
-                        displayName: "Eric S.",
-                    },
-                    createdAt: "08.25.25",
                 },
                 {
                     id: "r5lindassnbr",
@@ -937,7 +961,7 @@
             pagination: true,
             flickPower: 100,
             flickMaxPages: 1,
-            gap: "1.25rem",
+            gap: "1.7rem",
             snap: false,
             drag: true,
             arrowPath:
@@ -956,7 +980,7 @@
                     arrows: false,
                     pagination: true,
                     drag: "free",
-                    padding: { left: "1.5rem", right: "1.5rem" },
+                    padding: { left: "0", right: "0" },
                 },
             },
         });
@@ -973,6 +997,22 @@
         });
 
         splide.mount();
+
+        // Set background offset for each card so the gradient flows across the carousel
+        function setCardGradientOffsets() {
+            const list = document.querySelector('#protecting-customers-slider .splide__list');
+            if (!list) return;
+            const totalWidth = list.scrollWidth;
+            const cards = list.querySelectorAll('.tp-dynamic-card-background');
+            cards.forEach((card) => {
+                const slide = card.closest('.splide__slide');
+                if (!slide) return;
+                card.style.setProperty('--total-width', totalWidth + 'px');
+                card.style.setProperty('--card-offset', slide.offsetLeft + 'px');
+            });
+        }
+        setCardGradientOffsets();
+        window.addEventListener('resize', setCardGradientOffsets);
 
         //Slide that leaves view becomes untabbable
         splide.on("hidden", (slide) => {
