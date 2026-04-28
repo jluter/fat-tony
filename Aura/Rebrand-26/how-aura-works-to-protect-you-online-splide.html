@@ -1,27 +1,25 @@
 <!-- GB Name: How Aura Works Cards Slides - Safety  -->
 <style>
-    section:has(#howAuraWorks) {
-        display: none;
-    }
+  section:has(#howAuraWorks) {
+    display: none;
+  }
 
 
   .how-aura-works {
-    padding: 1rem;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     gap: 1.5rem;
-    background-color: white;
   }
 
   /* Splide Track Overflow visibile for full width look */
-  #howAuraWorks > .splide__track {
+  #howAuraWorks>.splide__track {
     overflow: visible !important;
   }
 
   /* Splide Track Overflow visibile for full width look */
-  #howAuraWorks > .splide__track > .splide__list {
+  #howAuraWorks>.splide__track>.splide__list {
     align-items: stretch;
   }
 
@@ -29,8 +27,9 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 16.6rem;
-    width: 100%;
+    height: 13.375rem;
+    width: 18rem;
+    border-radius: 1rem;
   }
 
   .how-aura-works_image.first {
@@ -46,7 +45,7 @@
   }
 
   .how-aura-works_text-wrapper {
-    max-width: 20ch;
+    max-width: 18rem;
     text-align: left;
     font-size: 1.375rem;
     line-height: 1.875rem;
@@ -54,15 +53,17 @@
   }
 
   .how-aura-works_header {
-    font-family: "Clarendon Graphic";
-    font-size: 1.75rem;
-    line-height: 2.45rem;
+    font-size: 1.375rem;
+    line-height: 130%;
     margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 485;
   }
 
   .how-aura-works_paragraph {
     font-size: 1rem;
-    line-height: 1.4rem;
+    line-height: 130%;
+    color: #BABABA;
   }
 
   .how-aura-works-arrows {
@@ -71,8 +72,18 @@
     right: 0%;
   }
 
+  #howAuraWorks .splide__pagination__page {
+    background: rgba(110, 110, 110, 0.5) !important;
+    width: 0.75rem !important;
+    height: 0.75rem !important;
+  }
+
+  #howAuraWorks .splide__pagination__page.is-active {
+    background: #ffffff !important;
+  }
+
   .how-aura-works-pagination-mobile {
-    bottom: -2rem;
+    bottom: -1.8rem;
   }
 
   .how-aura-works-page-dot {
@@ -87,28 +98,8 @@
   }
 
   @media screen and (max-width: 768px) {
-    .how-aura-works {
-      padding: 0.75rem;
-      gap: 1rem;
-    }
-
-    .how-aura-works_image {
-      height: 12rem;
-    }
-
-    .how-aura-works_text-wrapper {
-      max-width: 100%;
-    }
-
-    .how-aura-works_header {
-      font-size: 1.375rem;
-      line-height: 1.925rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .how-aura-works_paragraph {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
+    section:has(#howAuraWorks) {
+      display: inherit;
     }
   }
 </style>
@@ -123,6 +114,8 @@
       autoWidth: true,
       perPage: 1,
       perMove: 1,
+      flickPower: 100,
+      flickMaxPages: 1,
       arrows: false,
       pagination: true,
       gap: "1rem",
@@ -154,31 +147,29 @@
       <div class="splide__slide how-aura-works">
         <div class="how-aura-works_image first"></div>
         <div class="how-aura-works_text-wrapper">
-          <h3 class="how-aura-works_header">Proactively Protects Your Data</h3>
+          <h3 class="how-aura-works_header">Proactively protects your data</h3>
           <p class="how-aura-works_paragraph">
-            Aura sends requests to over 30 people search sites & data brokers to
-            remove your personal information to reduce exposure to spam and
-            scams.
+            Aura sends requests to over 200 people search sites & data brokers to remove your personal information to
+            reduce
+            exposure to spam and scams.
           </p>
         </div>
       </div>
       <div class="splide__slide how-aura-works">
         <div class="how-aura-works_image second"></div>
         <div class="how-aura-works_text-wrapper">
-          <h3 class="how-aura-works_header">24/7 Breach & Fraud Monitoring</h3>
+          <h3 class="how-aura-works_header">24/7 breach & fraud monitoring</h3>
           <p class="how-aura-works_paragraph">
-            Aura continually monitors the Dark Web and public records to alert
-            you if your data has been compromised.
+            Aura continually monitors the Dark Web and public records to alert you if your data has been compromised.
           </p>
         </div>
       </div>
       <div class="splide__slide how-aura-works">
         <div class="how-aura-works_image third"></div>
         <div class="how-aura-works_text-wrapper">
-          <h3 class="how-aura-works_header">Security For Data & Devices</h3>
+          <h3 class="how-aura-works_header">Security for data & devices</h3>
           <p class="how-aura-works_paragraph">
-            Aura protects your online activities with VPN encryption, Antivirus,
-            and Password Manager.
+            Aura protects your online activities with VPN encryption, Antivirus, and Password Manager.
           </p>
         </div>
       </div>

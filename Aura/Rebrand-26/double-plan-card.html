@@ -1,0 +1,982 @@
+<!-- Global Block Name: Double Plan Cards - Aura Parents -->
+<!-- Splide Slider Mount  -->
+<script id="auraPlanCards">
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#sliderPlanCards", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: true,
+            drag: false,
+            gap: "0rem",
+            i18n: {
+                prev: "Previous Feature, Aura Plan Cards",
+                next: "Next Feature, Aura Plan Cards",
+                slideX: "Go to Slide %s, Aura Plan Cards",
+            },
+            breakpoints: {
+                768: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+                320: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+<div class="plan-card__heading-wrapper">
+    <h2 class="plan-card__heading">Choose your plan</h2>
+    <p class="plan-card__subheading">
+        Try risk-free with our 60-day money-back guarantee.² 24/7 customer support
+        included with all plans.
+    </p>
+</div>
+
+<div id="sliderPlanCards" class="splide" aria-label="Aura Plan Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list plan-card_list">
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card first-plan">
+                    <img class="plan-card__abs-img1"
+                        src="https://v.fastcdn.co/u/bff2cbd9/65934340-0-Orange-plan-card-cor.png"
+                        alt="Now with spam call & message protection" />
+                    <div class="plan-card_topper-wrapper">
+                        <h3 class="plan-card_plan-name">Family</h3>
+                        <div class="plan-card_coverage-text">5 adults, unlimited kids &
+                        unlimited devices</div>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceFamily" class="plan-card_price-text">$--</span>
+                            <div class="plan-card__badge">
+                                Save<span id="planDiscountFamily" class="plan-card__badge--discount family-badge">XX%</span>
+                            </div>
+                        </div>
+                        <div class="plan-card_billed-wrapper">
+                            <span id="planAnnuallyFamily" class="plan-card_billed-text">billed annually, or $--/mo
+                                billed monthly</span>
+                        </div>
+                        <!-- <div class="plan-card_special-intro-text">
+              Special intro offer<sup>‡</sup>
+            </div> -->
+                    </div>
+                    <a id="planButtonFamily" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card__feature-alignment">
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Parental Controls (all Kids plan benefits)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Safe Gaming (all Kids plan benefits)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Online Wellbeing Tools (all Kids plan benefits)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Family & Child Identity Protection</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">$5M Identity Theft Insurance*</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">3-Bureau Credit Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Instant Credit Lock</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Home & Auto Title Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Financial Transaction Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Antivirus, VPN, Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">People Search Sites & Spam Lists Removal</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">AI Spam Call & Message Protection</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">24/7 Customer Support</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#876C13" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">U.S. Based Expert Fraud Remediation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card second-plan">
+                    <div class="plan-card_topper-wrapper">
+                        <h3 class="plan-card_plan-name">Kids</h3>
+                        <div class="plan-card_coverage-text">Unlimited kids & unlimited devices</div>
+                    </div>
+                    <div class="plan-card_plan-data-wrapper">
+                        <div class="plan-card_price-wrapper">
+                            <span id="planPriceIndividual" class="plan-card_price-text">$--</span>
+                        <div class="plan-card__badge">
+                            Save up to<span id="planDiscountIndividual" class="plan-card__badge--discount individual-badge">XX%</span>
+                        </div>
+                        </div>
+                        <div class="plan-card_billed-wrapper">
+                            <span id="planAnnuallyIndividual" class="plan-card_billed-text">billed annually, or $--/mo billed
+                                monthly</span>
+                        </div>
+                        <!-- <div class="plan-card_special-intro-text">
+              Special intro offer<sup>‡</sup>
+            </div> -->
+                    </div>
+                    <a id="planButtonIndividual" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card_feature-header">
+                                Parental Controls
+                            </h4>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Content Filtering & Site Blocking</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Screen Time Limits & Scheduling</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Pause the Internet</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Online History & Usage Reports</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card_feature-header">
+                                Safe Gaming with Cyberbullying & Predator Alerts
+                            </h4>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">In-game Voice & Text Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Predator, Scam & Cyberbullying Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Weekly Gaming Activity Report</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">24/7 Customer Support
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card__feature-alignment">
+                            <h4 class="plan-card_feature-header">
+                                Online Wellbeing
+                            </h4>
+                            <ul class="plan-card_feature-content-wrapper">
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Day & Night Online Activity Overview</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Social Interactions</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                        fill="none">
+                                        <path d="M2 7.97756L6.01493 12L14 4" stroke="#888888" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="plan-card_feature-text">Personalized Recommendations</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .plan-card__abs-img1 {
+        position: absolute;
+        width: 25.75rem;
+        top: -2rem;
+        right: -3.5rem;
+    }
+
+    .plan-card__heading {
+        font-size: 2.75rem;
+        font-weight: 600;
+        line-height: 115%;
+    }
+
+    .plan-card__subheading {
+        font-size: 1.125rem;
+        max-width: 34rem;
+    }
+
+    .plan-card__heading-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 3.5rem;
+        margin-top: 3rem;
+    }
+
+    #sliderPlanCards .splide__track {
+        overflow: visible;
+    }
+
+    /* SPLIDE STYLES */
+    .plan-card_list {
+        justify-content: center;
+        align-items: start;
+        gap: 1.5rem;
+    }
+
+    .plan-card_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        transition: all 200ms ease;
+        border-radius: 1.5rem 1.5rem 1rem 1rem;
+        background-color: rgba(29, 47, 80, 0);
+        width: 24rem;
+    }
+
+
+    .no-gap {
+        margin-right: 0 !important;
+    }
+
+    /* PLAN CARD STYLES */
+
+    /* Native Plan Cards Style Overrides  */
+    #page-block-mjqoqa1yiw .section-block {
+        background-color: #ffffff !important;
+    }
+
+    .per {
+        margin-left: 0rem !important;
+    }
+
+    .price-div:not(.ft-price-div) {
+        font-size: 2.25rem !important;
+    }
+
+    .discount-div {
+        font-size: 0.813rem !important;
+        font-weight: 485 !important;
+    }
+
+    .per {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 1.375rem !important;
+        font-weight: 300 !important;
+        line-height: 1.375rem !important;
+        margin-left: -1rem !important;
+    }
+
+    .price-div:not(.ft-price-div) {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 2.75rem !important;
+        font-weight: 400 !important;
+        line-height: 3rem !important;
+    }
+
+    .price-div.ft-price-div {
+        color: #161616 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 2.25rem !important;
+        font-weight: 300 !important;
+        line-height: 2.25rem !important;
+    }
+
+    .discount-div {
+        color: #1d2f50 !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 0.9rem !important;
+        font-weight: 485 !important;
+        line-height: 1.3rem !important;
+    }
+
+    .annual-monthly-div {
+        color: #4d4d4d !important;
+        font-family: "Basel Grotesk", sans-serif !important;
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+        line-height: 1.3rem !important;
+    }
+
+    .price-div {
+        display: flex;
+    }
+
+    /*.mo-cent-wrapper {
+    display: flex;
+    flex-direction: column;
+  }*/
+
+    .cent-text {
+        font-weight: 400;
+        line-height: 1.125rem;
+        font-size: 1.35rem;
+        margin-top: 0.7rem;
+    }
+
+    .mo-text {
+        color: #161616 !important;
+        font-size: 1.5rem !important;
+        font-style: normal !important;
+        font-weight: 400 !important;
+        line-height: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* Plan Card Parent Wrapper */
+    .plan-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+        padding: 2rem 1.2rem 0rem;
+            background-position: left 22px bottom -1px;
+        overflow: hidden;
+        background-size: 24px 24px;
+        border-radius: 1.5rem;
+        border: 1px solid #0E463B;
+    }
+
+    .plan-card.first-plan {
+        background-color: #FFDA63;
+        background-image: linear-gradient(rgba(255, 246, 216, 0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 246, 216, 0.75) 1px, transparent 1px);
+        flex-grow: 1;
+    }
+
+    .plan-card.second-plan {
+        background-color: #ffffff;
+        background-image: linear-gradient(rgba(235, 235, 235, 0.75) 1px, transparent 1px), linear-gradient(90deg, rgba(235, 235, 235, 0.75) 1px, transparent 1px);
+    }
+
+    #sliderPlanCards .plan-card {
+        padding-bottom: 2rem;
+    }
+
+    /* Family Plan Card Parent Wrapper */
+    .splide-card_family-wrapper {
+        overflow: visible;
+        background-color: white;
+        border-bottom: 0.5px solid #d9d9d9;
+    }
+
+    .first-plan .plan-card__feature-content-wrapper {
+        margin-top:  0;
+    }
+
+    /* Plan Card | Topper holding Plan Name & Discount Bubble */
+    .plan-card_topper-wrapper,
+    .plan-card_plan-data-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card_plan-name {
+        font-size: 1.5rem;
+        font-style: normal;
+        line-height: 130%;
+        font-weight: 535;
+        padding-bottom: 5px;
+    }
+
+    .plan-card_feature-header {
+        color: #161616;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 485;
+        line-height: 130%;
+    }
+
+    .plan-card_child-feature-header {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+
+    .plan-card_child-feature-header-wrapper.add-margin-top {
+        margin-top: 0.3rem;
+    }
+
+    /* Plan Card | Devices */
+    .plan-card_coverage-text {
+        font-size: 0.875rem;
+        color: #4d4d4d;
+        text-align: left;
+        max-width: 10rem;
+    }
+
+    .plan-card__feature-alignment {
+        text-align: left;
+        margin-top: 0.5rem;
+    }
+
+    .plan-card_feature-header {
+        max-width: 25ch;
+    }
+
+    .plan-card_special-intro-text {
+        font-size: 0.875rem;
+        color: #888888;
+        text-align: left;
+        margin-top: 0.2rem;
+    }
+
+    .plan-card__badge {
+        display: flex;
+        font-family: 'Bricolage Grotesque';
+        color: #0E463B;
+        background-color: #B5E346;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.9rem 1.5rem 1.25rem 1.5rem;
+        border-radius: 50%;
+        outline: 2px solid black;
+        outline-offset: -6px;
+        line-height: 130%;
+        margin-top: -1.25rem;
+        font-size: 0.625rem;
+    }
+
+    .plan-card__badge--discount {
+        font-size: 1.75rem;
+    }
+
+    .plan-card_discount-wrapper {
+        background-color: #ffd89e;
+        margin-bottom: 0.3rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card_discount-text,
+    .plan-card_protection-badge-text,
+    .discount-div {
+        font-size: 0.92rem !important;
+        color: #161616 !important;
+    }
+
+    .plan-card_protection-badge-text {
+        font-weight: 485 !important;
+    }
+
+    .plan-card_protection-badge-text.is-family {
+        color: #161616 !important;
+    }
+
+    /* Plan Card | Button */
+    .plan-card_button {
+        width: 100%;
+        height: 3rem;
+        margin: 1rem 0rem 0 0;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card_price-wrapper,
+    .plan-card_billed-wrapper,
+    .plan-card_feature-content-wrapper {
+        width: 100%;
+        text-align: left;
+    }
+
+    .plan-card_billed-wrapper {
+        margin-top: 0.8rem;
+    }
+
+    .plan-card_price-wrapper {
+        display: flex;
+        align-items: end;
+        gap: 1rem;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card_price-text {
+        font-size: 2.75rem !important;
+        font-weight: 430;
+    }
+
+    /* Plan Card | Monthly Span */
+    .plan-card_mo-span {
+        font-size: 1.5rem;
+        font-weight: 430;
+    }
+
+    /* Plan Card | Billed Monthly Text */
+    .plan-card_billed-text {
+        font-size: 0.875rem !important;
+        color: #4D4D4D;
+    }
+
+    .plan-card_feature-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card_feature-wrapper,
+    .plan-card_feature-header-wrapper,
+    .plan-card_child-feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card_feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card_feature-wrapper {
+        align-items: start;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card_checkmark {
+        /* background-image: url("//v.fastcdn.co/u/eccab5bb/60974726-0-card-check.svg"); */
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 1rem;
+        height: 1rem;
+        margin-top: 0.1rem;
+    }
+
+    .plan-card_feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 0.6rem;
+        padding: 0;
+    }
+
+    .plan-card_feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 1rem;
+    }
+
+    .plan-card_feature-text {
+        max-width: 29ch;
+        font-weight: 430;
+    }
+
+    /* Media Queries */
+
+    @media (min-width: 768px) {
+        .show-desktop {
+            display: block;
+        }
+
+        .show-mobile {
+            display: none;
+        }
+
+        .plan-card_list {
+            align-items: stretch;
+        }
+
+        .plan-card_slide {
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+
+        .plan-card {
+            justify-content: start;
+            border-right: 0px;
+            padding-bottom: 1rem;
+        }
+
+        .plan-card_list>#sliderPlanCards-slide01,
+        .plan-card_list>#sliderPlanCards-slide01>.plan-card {
+            border-radius: 1.5rem;
+        }
+
+        .plan-card_list>#sliderPlanCards-slide02,
+        .plan-card_list>#sliderPlanCards-slide02>.plan-card {
+            border-radius: 1.5rem;
+        }
+
+        .plan-card_list>#sliderPlanCards-slide02>.plan-card {
+            border: 0.5px solid #d9d9d9;
+            border-right: 0px;
+        }
+
+        .plan-card_list>#sliderPlanCards-slide03,
+        .plan-card_list>#sliderPlanCards-slide03>.plan-card {
+            border-radius: 1.5rem;
+        }
+
+        .plan-card__badge {
+            display: flex;
+            width: 5.875rem;
+            height: 4rem;
+            font-size: 0.625rem;
+            padding: 0;
+            margin-top: 0;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+        }
+
+        .plan-card__badge--discount {
+            font-size: 1.4rem;
+        }
+    }
+
+    /*DESKTOP SPLIDE PAGINATION*/
+    #sliderPlanCards .splide__pagination {
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        #sliderPlanCards {
+            display: flex;
+        }
+
+        .plan-card__heading-wrapper {
+            padding-bottom: 2.25rem;
+        }
+
+        .plan-card__heading-wrapper {
+            gap: 0.75rem;
+        }
+
+        .plan-card__subheading {
+            font-size: 1rem;
+        }
+
+        .plan-card_topper-wrapper {
+            margin-bottom: 1.5rem;
+        }
+
+        .plan-card__heading {
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 115%;
+        }
+
+        .plan-card__subheading {
+            font-size: 1rem;
+            max-width: 85%;
+        }
+
+        .plan-card_billed-wrapper {
+            margin-top: 0.3rem;
+        }
+
+        .plan-card_discount-wrapper {
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-card {
+            padding: 2rem 1rem 2rem;
+            max-width: 20rem;
+        }
+
+        .show-desktop {
+            display: none;
+        }
+
+        .show-mobile {
+            display: block;
+        }
+
+        .price-div:not(.ft-price-div) {
+            font-size: 2rem !important;
+        }
+
+        .plan-card {
+            gap: 0.8rem;
+            border: 1px solid #d9d9d9;
+        }
+
+        .plan-card_slide {
+            align-items: center;
+        }
+
+        .plan-card_list {
+            justify-content: start;
+            gap: 16px;
+        }
+
+        .plan-card_billed-text {
+            font-size: 0.85rem !important;
+        }
+
+        .splide-card_family-wrapper {
+            background-color: transparent;
+            border-bottom: 0px;
+            border-radius: 1.5rem 1.5rem 1rem 0rem;
+        }
+
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card_coverage-text {
+            font-size: 0.875rem;
+            text-align: left;
+        }
+
+        .plan-card_plan-name,
+        .plan-card_feature-header {
+            font-size: 1.125rem;
+        }
+
+        .plan-card_child-feature-header {
+            max-width: 22ch;
+            font-size: 1rem;
+        }
+
+        #sliderPlanCards .plan-card_button {
+            font-size: 1.125rem !important;
+            width: 100%;
+            height: 3rem;
+        }
+
+        .plan-card_discount-text {
+            font-size: 0.8rem !important;
+        }
+
+        .plan-card_feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card_feature-text {
+            max-width: 27ch;
+            font-weight: 400;
+        }
+
+        .plan-card_feature-header {
+            max-width: 23ch;
+        }
+
+        #element-__gpage-block-mjqoqa1yiw-2214 {
+            width: 23rem;
+        }
+
+        .plan-card_billed-wrapper,
+        .plan-card_special-intro-text {
+            display: inline;
+        }
+
+        .plan-card_plan-name {
+            font-size: 1.5rem;
+        }
+
+        .plan-card__badge {
+            gap: 0.5rem;
+            padding-bottom: 1.125rem;
+        }
+
+        #sliderPlanCards-list {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    /* Change Height of Plan Cards Parents*/
+    @media (max-width: 320px) {
+        #sliderPlanCards .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #sliderPlanCards .splide__slide {
+            align-items: center;
+        }
+
+        section:has(.plan-card_list),
+        .section-block:has(.plan-card_list) {
+            height: 251.5625rem !important;
+        }
+
+        .splide-card_family-wrapper {
+            margin-top: 1.75rem;
+        }
+
+        .plan-card_list>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        .plan-card_list {
+            align-items: center;
+        }
+    }
+</style>
