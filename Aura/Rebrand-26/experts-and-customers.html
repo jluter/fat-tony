@@ -288,7 +288,7 @@
             width: auto;
         }
 
-        .aura-trustpilot-rating-star-wrapper-icon svg {
+        #protecting-customers-slider .aura-trustpilot-rating-star-wrapper-icon svg {
             height: 100% !important;
             width: 100% !important;
             z-index: 2;
@@ -316,8 +316,17 @@
             width: 13.29px !important;
         }
 
-        #protecting-customers-slider .aura-trustpilot-rating-text {
-            color: #4c4c4c;
+        
+        .aura-trustpilot-rating-text p {
+            color: #BABABA;
+        }
+
+        section:has(#protecting-customers-slider) .aura-trustpilot-rating-star-wrapper-green {
+            background-color: #FFFFFF;
+        }
+
+        section:has(#protecting-customers-slider) .aura-trustpilot-rating-star-wrapper-grey {
+            background-color: #BABABA;
         }
 
         #protecting-customers-slider .aura-trustpilot-rating-stars-wrapper.rating-stars-review-wrapper,
@@ -514,6 +523,7 @@
         #protecting-customers-slider .splide__slide {
             align-items: center;
         }
+
 
         /* Change Height of Splide IP Section Parents*/
         section:has(#protecting-customers-slider),
@@ -893,7 +903,7 @@
                     consumer: {
                         displayName: "Linda",
                     },
-                    createdAt: "09.05.24",
+                    createdAt: "01.10.25",
                 },
                 {
                     id: "r7samanthaid",
@@ -1029,5 +1039,30 @@
             );
             currentReadMoreLink.setAttribute("tabindex", "0");
         });
+    });
+</script>
+
+<!--TrustPilot Logo update on mobile-->
+<script>
+    window.addEventListener("load", () => {
+        setTimeout(() => {
+            let tpLogo = document.querySelector("section:has(#protecting-customers-slider) .aura-trustpilot-rating-icon svg");
+            
+            console.log("TP LOGO: ", tpLogo);
+            
+            if (window.innerWidth < 768) {
+                tpLogo.innerHTML = '<image xlink:href="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/64ac4127550428270d3a7dfb_trustpilot-white-logo.svg" height="100%" width="100%"></image>'
+            } else {
+                tpLogo.innerHTML = '<image xlink:href="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/61b902912f9af56e4fd71b99_tp-logo-white-text.svg" height="100%" width="100%"></image>'
+            }
+            
+            window.addEventListener("resize", () => {
+                if (window.innerWidth < 768) {
+                    tpLogo.innerHTML = '<image xlink:href="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/64ac4127550428270d3a7dfb_trustpilot-white-logo.svg" height="100%" width="100%"></image>'
+                } else {
+                    tpLogo.innerHTML = '<image xlink:href="https://uploads-ssl.webflow.com/607724b2ae76e535db9552ff/61b902912f9af56e4fd71b99_tp-logo-white-text.svg" height="100%" width="100%"></image>'
+                }
+            });
+        }, 500)
     });
 </script>
