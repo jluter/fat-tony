@@ -1,0 +1,556 @@
+<style>
+
+    @font-face {
+        font-family: "Basel Grotesk";
+        src: url(https://assets.website-files.com/607724b…/61f3052…_Basel-Grotesk-Regular.woff), local("Open Sans"), url(https://storage.googleapis.com/instapage-fonts/OpenSans.ttf);
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    body {
+        font-family: "Basel Grotesk";
+        -webkit-font-smoothing: antialiased;
+    }
+
+  /* ── Wrapper ── */
+  .plan-cards {
+    max-width: 560px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan-card__heading {
+    font-size: 2rem;
+    font-weight: 535;
+    color: #191C1F;
+    margin: 0 0 0.75rem 0;
+    line-height: 125%;
+  }
+
+  .plan-card__subheading {
+    font-size: 1.125rem;
+    font-weight: 430;
+    color: #191C1F;
+    margin: 0;
+    line-height: 130%;
+  }
+
+  /* ── Toggle ── */
+  .plan-cards__toggle {
+    display: inline-flex;
+    background: #ECF4FF;
+    border-radius: 100px;
+    padding: 4px;
+    margin: 2rem 0;
+  }
+
+  .plan-cards__toggle-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #4C5570;
+    cursor: pointer;
+  }
+
+  .plan-cards__toggle-btn--selected {
+    background: #fff;
+    color: #111;
+    font-weight: 700;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ── Cards container ── */
+  .plan-cards__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ── Plan card ── */
+  .plan-cards__card {
+    text-align: left;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #EDF1F7;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  /* ── Card body ── */
+  .plan-cards__card-body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ── Plan name heading ── */
+  .plan-cards__card-title {
+    font-size: 1.125rem ;
+    font-weight: 535;
+    color: #191C1F;
+    margin: 0;
+  }
+
+  /* ── Description paragraph ── */
+  .plan-cards__card-description {
+    font-size: 0.875rem;;
+    color: #4C5570;
+    line-height: 130%;
+    padding: 0.25rem 0 0.75rem 0;
+  }
+
+  /* ── "See all features" modal trigger ── */
+  .plan-cards__features-link {
+    display: inline;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* ── Price row ── */
+  .plan-cards__card-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .plan-cards__card-price-text {
+    font-size: 0.875rem;
+    color: #191C1F;
+    line-height: 1;
+    font-weight: 430;
+    margin: 0;
+  }
+
+  .plan-cards__card-price {
+    font-size: 1.125rem;
+    line-height: 130%;
+    font-weight: 535;
+    color: #191C1F;
+  }
+
+  /* ── Discount badge ── */
+  .plan-cards__card-discount {
+    background: #E9FFD7;
+    color: #008542;
+    font-size: 0.75rem;
+    font-weight: 535;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+
+    /* ── CTA button ── */
+    .plan-cards__button {
+        display: inline-block;
+        background: #36f;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 485;
+        padding: 10px 20px;
+        border-radius: 8px;
+        text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+        .plan-cards {
+            max-width: 315px;
+        }
+
+        .plan-cards__card {
+            flex-direction: column;
+        }
+
+        .plan-cards__button {
+            width: 100%;
+            text-align: center;
+            margin-top: 0.75rem
+        }
+
+        .plan-cards__card-description {
+            padding: 0.75rem 0 1rem 0;
+        }
+
+        .plan-card__subheading {
+            font-weight: 400;
+        }
+
+        .plan-card__heading,
+        .plan-card__subheading {
+            max-width: 20rem;
+        }
+    }
+</style>
+
+<div class="plan-cards">
+    <h1 class="plan-card__heading">Get protected again in just a few taps</h1>
+    <p class="plan-card__subheading">Choose plan below and sign in to reactivate your coverage.</p>
+    <div class="plan-cards__toggle">
+        <button class="plan-cards__toggle-btn plan-cards__toggle-btn--selected" data-test="TOGGLE" type="button">Annual</button>
+        <button class="plan-cards__toggle-btn" data-test="TOGGLE" type="button">Monthly</button>
+    </div>
+    <div class="plan-cards__list">
+        <div class="plan-cards__card">
+            <div class="plan-cards__card-body">
+                <h5 class="plan-cards__card-title">Individual</h5>
+                <p class="plan-cards__card-description">
+                    Protect yourself, 10 devices, and up to $1 Million Identity Theft Insurance.
+                    <span class="plan-cards__features-link" type="button" aria-haspopup="dialog" aria-controls="compare-plans-modal">See all features</span>
+                </p>
+                <div class="plan-cards__card-price-row">
+                    <p class="plan-cards__card-price-text" id="planPriceIndividual"><span class="plan-cards__card-price">$120</span></p>
+                    <div class="plan-cards__card-discount" id="planDiscountIndividual">Save 58%</div>
+                </div>
+            </div>
+            <a class="plan-cards__button aura-cta btn" id="planButtonIndividual">Choose Plan</a>
+        </div>
+        <div class="plan-cards__card">
+            <div class="plan-cards__card-body">
+                <h5 class="plan-cards__card-title">Couple</h5>
+                <p class="plan-cards__card-description">
+                    Protect up to 2 people, 20 devices, and up to $2 Million Identity Theft Insurance.
+                    <span class="plan-cards__features-link" type="button" aria-haspopup="dialog" aria-controls="compare-plans-modal">See all features</span>
+                </p>
+                <div class="plan-cards__card-price-row">
+                    <p class="plan-cards__card-price-text" id="planPriceCouple"><span class="plan-cards__card-price">$216</span></p>
+                    <div class="plan-cards__card-discount" id="planDiscountCouple">Save 62%</div>
+                </div>
+            </div>
+            <a class="plan-cards__button aura-cta btn" id="planButtonCouple">Choose Plan</a>
+        </div>
+        <div class="plan-cards__card">
+            <div class="plan-cards__card-body">
+                <h5 class="plan-cards__card-title">Family</h5>
+                <p class="plan-cards__card-description">
+                    Protect up to 5 people, 50 devices, and up to $5 Million Identity Theft Insurance.
+                    <span class="plan-cards__features-link" type="button" aria-haspopup="dialog" aria-controls="compare-plans-modal">See all features</span>
+                </p>
+                <div class="plan-cards__card-price-row">
+                    <p class="plan-cards__card-price-text" id="planPriceFamily"><span class="plan-cards__card-price">$348</span></p>
+                    <div class="plan-cards__card-discount" id="planDiscountFamily">Save 63%</div>
+                </div>
+            </div>
+            <a class="plan-cards__button aura-cta btn" id="planButtonFamily">Choose Plan</a>
+        </div>
+    </div>
+</div>
+
+<!-- ── Compare Plans Modal ── -->
+<style>
+  .cpm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(30, 34, 48, 0.55);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .cpm-overlay--open {
+    display: flex;
+  }
+
+  .cpm-dialog {
+    background: #fff;
+    border-radius: 1.25rem;
+    padding: 2.5rem 2rem 2rem;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .cpm-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    color: #191C1F;
+    padding: 0.25rem;
+  }
+
+  .cpm-heading {
+    font-size: 1.75rem;
+    font-weight: 535;
+    color: #191C1F;
+    text-align: center;
+    margin: 0 0 1.75rem;
+  }
+
+  /* ── Card list: horizontal in modal ── */
+  .plan-cards__list.cpm-cards {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  /* ── Card: column layout in modal ── */
+  .plan-cards__card.cpm-card {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1.25rem;
+    box-shadow: 0 4px 24px 0 rgba(24, 71, 212, 0.08);
+  }
+
+  /* ── Header row: title + badge ── */
+  .plan-cards__card-price-row.cpm-card__header {
+    justify-content: space-between;
+    gap: 0;
+    margin-bottom: 0.25rem;
+  }
+
+  /* ── Discount badge: tighter padding in modal ── */
+  .plan-cards__card-discount.cpm-card {
+    padding: 0.2rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  /* ── Price: larger in modal ── */
+  .plan-cards__card-price.cpm-card {
+    font-size: 0.875rem;
+    color: #4C5570;
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    font-weight: 430;
+    gap: 0.25rem;
+  }
+
+  .plan-cards__card-price.cpm-card .plan-cards__card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.1rem;
+    display: block;
+  }
+
+  /* ── Price sub-text: different color + bottom margin in modal ── */
+  .plan-cards__card-price-text.cpm-card {
+    font-size: 0.875rem;
+    color: #4C5570;
+    margin: 0 0 1rem;
+  }
+
+  /* ── "Includes" label (no plan-cards equivalent) ── */
+  .cpm-card__includes-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #191C1F;
+    margin: 1rem 0 0.5rem;
+  }
+
+  /* ── Feature list (no plan-cards equivalent) ── */
+  .cpm-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+    max-width: 14rem;
+  }
+
+  .cpm-card__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: #191C1F;
+    line-height: 1.35;
+  }
+
+  .cpm-card__features li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 0.05em;
+    background-color: #161616;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 12'%3E%3Cpath d='m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z' clip-rule='evenodd' fill='%23161616' fill-rule='evenodd'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 12'%3E%3Cpath d='m10.854 3.8532c0.1951-0.19544 0.1948-0.51202-7e-4 -0.7071-0.1954-0.19508-0.512-0.19479-0.7071 6.6e-4l-5.6349 5.6454-2.6573-2.6623c-0.19508-0.19544-0.51166-0.19574-0.7071-6.6e-4 -0.19545 0.19508-0.19574 0.51166-6.6e-4 0.70711l3.0112 3.0168c0.0938 0.09398 0.22112 0.14678 0.35389 0.14678s0.26009-0.0528 0.35388-0.14678l5.9888-6z' clip-rule='evenodd' fill='%23161616' fill-rule='evenodd'/%3E%3C/svg%3E");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  /* ── CTA button: full-width pill in modal ── */
+  .plan-cards__button.cpm-card {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 535;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .plan-cards__price-alignment.cpm-card {
+    display: flex;
+  }
+
+  /* ── Footnote (no plan-cards equivalent) ── */
+  .cpm-footnote {
+    font-size: 0.75rem;
+    text-align: left;
+    color: #191c1f;
+    margin: 2rem 0 0;
+    line-height: 1.5;
+  }
+
+  .cpm-footnote a {
+    color: inherit;
+  }
+
+  @media (max-width: 600px) {
+    .cpm-overlay {
+        padding: 0;
+    }
+
+    .cpm-dialog {
+        max-width: unset;
+        max-height: unset;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .plan-cards__list.cpm-cards {
+      flex-direction: column;
+    }
+
+    .plan-cards__list.cpm-cards {
+      align-items: center;
+    }
+
+    section:has(.plan-cards__list.cpm-cards) .plan-cards__card.cpm-card {
+      z-index: 999;
+    }
+  }
+</style>
+
+<div class="cpm-overlay" id="compare-plans-modal" role="dialog" aria-modal="true" aria-labelledby="cpm-title">
+  <div class="cpm-dialog">
+    <button class="cpm-close" aria-label="Close modal" id="cpm-close-btn">&#x2715;</button>
+    <h2 class="cpm-heading" id="cpm-title">Compare plans</h2>
+    <div class="plan-cards__list cpm-cards">
+
+      <div class="plan-cards__card cpm-card">
+        <div class="plan-cards__card-price-row cpm-card__header">
+          <h3 class="plan-cards__card-title cpm-card">Individual</h3>
+          <span class="plan-cards__card-discount cpm-card" id="planDiscountIndividualModal">Save 58%</span>
+        </div>
+        <div class="plan-cards__price-alignment cpm-card">
+            <p class="plan-cards__card-price cpm-card" id="planPriceIndividualModal">$120</p>
+        </div>
+        <p class="cpm-card__includes-label">Includes</p>
+        <ul class="cpm-card__features">
+          <li>1 Adult, 10 Devices</li>
+          <li>$1M Identity Theft Insurance*</li>
+          <li>Identity Theft Protection</li>
+          <li>Financial Fraud Protection</li>
+          <li>Antivirus, VPN, Password Manager</li>
+        </ul>
+        <a class="plan-cards__button cpm-card aura-cta btn" id="planButtonIndividualModal">Choose Plan</a>
+      </div>
+
+      <div class="plan-cards__card cpm-card">
+        <div class="plan-cards__card-price-row cpm-card__header">
+          <h3 class="plan-cards__card-title cpm-card">Couple</h3>
+          <span class="plan-cards__card-discount cpm-card" id="planDiscountCoupleModal">Save 62%</span>
+        </div>
+        <div class="plan-cards__price-alignment cpm-card">
+            <p class="plan-cards__card-price cpm-card" id="planPriceCoupleModal">$216</p>
+        </div>
+        <p class="cpm-card__includes-label">Includes</p>
+        <ul class="cpm-card__features">
+          <li>2 Adults, 20 Devices</li>
+          <li>$2M Identity Theft Insurance*</li>
+          <li>Identity Theft Protection</li>
+          <li>Financial Fraud Protection</li>
+          <li>Antivirus, VPN, Password Manager</li>
+        </ul>
+        <a class="plan-cards__button cpm-card aura-cta btn" id="planButtonCoupleModal">Choose Plan</a>
+      </div>
+
+      <div class="plan-cards__card cpm-card">
+        <div class="plan-cards__card-price-row cpm-card__header">
+          <h3 class="plan-cards__card-title cpm-card">Family</h3>
+          <span class="plan-cards__card-discount cpm-card" id="planDiscountFamilyModal">Save 63%</span>
+        </div>
+        <div class="plan-cards__price-alignment cpm-card">
+            <p class="plan-cards__card-price cpm-card" id="planPriceFamilyModal">$348</p>
+        </div>
+        <p class="cpm-card__includes-label">Includes</p>
+        <ul class="cpm-card__features">
+          <li>5 Adults, Unlimited Kids &amp; Unlimited Devices</li>
+          <li>$5M Identity Theft Insurance*</li>
+          <li>Family &amp; Child Identity Protection</li>
+          <li>Financial Fraud Protection</li>
+          <li>Antivirus, VPN, Password Manager</li>
+          <li>Parental Controls</li>
+        </ul>
+        <a class="plan-cards__button cpm-card aura-cta btn" id="planButtonFamilyModal">Choose Plan</a>
+      </div>
+
+    </div>
+    <p class="cpm-footnote">* Every adult member on your plan is backed by a $1,000,000 insurance policy to cover eligible losses and fees due to identity theft. Identity Theft Insurance is underwritten and administered by American Bankers Insurance Company of Florida, an Assurant company. Please refer to the actual policies for terms, conditions, and exclusions of coverage. Coverage may not be available in all jurisdictions. Review the <a>Summary of Benefits.</a></p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const overlay = document.getElementById('compare-plans-modal');
+    const closeBtn = document.getElementById('cpm-close-btn');
+    const triggers = document.querySelectorAll('.plan-cards__features-link');
+
+    function openModal() {
+      overlay.classList.add('cpm-overlay--open');
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      overlay.classList.remove('cpm-overlay--open');
+    }
+
+    triggers.forEach(function (btn) {
+      btn.addEventListener('click', openModal);
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // Close on overlay click (outside dialog)
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('cpm-overlay--open')) {
+        closeModal();
+      }
+    });
+  })();
+</script>

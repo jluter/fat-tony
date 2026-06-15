@@ -1,0 +1,1180 @@
+<!-- GB Name: Privacy D2P Plan Cards - Aura Safety -->
+
+<style>
+    .is-mobile {
+        display: none;
+    }
+
+    .plan-card__heading {
+        font-size: 2.75rem;
+        font-weight: 600;
+        line-height: 115%;
+    }
+
+    .plan-card__subheading {
+        font-size: 1.125rem;
+    }
+
+    .plan-card__heading-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding-bottom: 3.5rem;
+        margin-top: 3rem;
+    }
+
+    /* SPLIDE STYLES */
+    #sliderPlanCards .splide__track {
+        overflow: visible;
+    }
+
+    .plan-card_list {
+        /* justify-content: center; */
+        align-items: start;
+    }
+
+    .plan-card_slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        transition: all 200ms ease;
+        border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+        overflow: visible;
+        /* Set to transparent for no ribbion */
+        max-width: 346px;
+    }
+
+    #sliderPlanCards .plan-card_slide.with-ribbon {
+        background: linear-gradient(0deg, #5d93ff 96%, #2c408a 99%, #0d1840 100%);
+        backdrop-filter: blur(24px);
+    }
+
+    #sliderPlanCards .plan-card_slide.with-ribbon,
+    .plan-card_ribbon.ribbon-is-active {
+        background-color: transparent;
+        /* Sets to full color when active */
+    }
+
+    .no-gap {
+        margin-right: 0 !important;
+    }
+
+    /* PLAN CARD STYLES */
+
+    /* Plan Card Parent Wrapper */
+    .plan-card {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1rem;
+        padding: 2rem 1.2rem;
+        background: #f7f6f7 url(https://storage.googleapis.com/instapage-user-media/bff2cbd9/65901397-0-Rectangle-41933-2.png) center / cover no-repeat;
+        border: 1px solid rgba(29, 47, 80, 0);
+        border-radius: 1.5rem;
+    }
+
+    .plan-card.has-ribbon {
+        border: 0px !important;
+        box-shadow: 0 0 24px rgba(51, 102, 255, 0.6);
+    }
+
+    /* Plan Card | Ribbon holding Ribbon Text */
+    .plan-card_ribbon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0.5rem 0;
+        background-color: rgba(29, 47, 80, 0);
+        color: rgba(255, 255, 255, 0);
+        font-size: 0.813rem;
+        padding: 0.75rem;
+        font-weight: 485;
+        border-radius: 24px;
+    }
+
+    .plan-card_ribbon-text.no-text {
+        height: 1.3rem;
+    }
+
+    /* Plan Card | Ribbon Active */
+    .ribbon-is-active {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    /* Plan Card | Topper holding Plan Name & Discount Bubble */
+    .plan-card_topper-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    /* Plan Card | Plan Name */
+    .plan-card_plan-name {
+        font-size: 1.5rem;
+        font-weight: 535;
+        line-height: 130%;
+        display: flex;
+    }
+
+    .plan-card_plan-name span {
+        font-size: 0.875rem;
+        line-height: 130%;
+        margin-top: 0.25rem;
+        color: #2551B8;
+    }
+
+    .plan-card_feature-header {
+        font-size: 1.125rem;
+        font-weight: 535;
+        line-height: 140%;
+    }
+
+    .plan-card_feature-header {
+        max-width: 26ch;
+    }
+
+    /* Plan Card | List */
+    .plan-card_ul {
+        padding-left: 0rem;
+        margin: 0rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Plan Card | Discount Bubble */
+    .plan-card_discount-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0.3rem 0.5rem;
+        background-color: #ffd89e;
+        border-radius: 9999rem;
+    }
+
+    /* Plan Card | Discount Text */
+    .plan-card_discount-text {
+        font-size: 1rem;
+        font-weight: 485;
+    }
+
+    .plan-card_intro-price-wrapper {
+        font-size: 0.875rem;
+        color: #6e6e6e;
+        text-align: left;
+        margin-top: -0.75rem;
+    }
+
+    /* Plan Card | Button */
+    #sliderPlanCards .plan-card_button {
+        width: 19.0625rem;
+        max-width: 100%;
+        height: 3rem;
+        margin: 1rem 0rem;
+    }
+
+    /* Plan Card | Price Wrapper */
+    .plan-card_price-wrapper,
+    .plan-card_billed-wrapper,
+    .plan-card_feature-content-wrapper {
+        width: 100%;
+        text-align: left;
+    }
+
+    .plan-card_price-wrapper {
+        margin: 2rem 0 0;
+    }
+
+    .plan-card_billed-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 0.2rem;
+    }
+
+    /* Plan Card | Price Text */
+    .plan-card_price-text {
+        font-size: 2.75rem;
+        display: flex;
+    }
+
+    /* Plan Card | Monthly Span */
+    .per.mo-text {
+        font-size: 1.125rem;
+    }
+
+    /* !!! 
+  THIS IS A ONE OFF CHANGE TO .plan-card_billed-text FOR HAVING MONTHLY AND ANNUAL IN THE SAME SENTENCE 
+  REMOVE LINE HEIGHT AND MAX-WIDTH WHEN NEEDING TO REVERT
+  !!! */
+
+    /* Plan Card | Billed Monthly Text */
+    .plan-card_billed-text {
+        font-size: 1rem !important;
+        color: #4d4d4d;
+        font-weight: 400;
+        line-height: 100%;
+        /* max-width: 36ch !important;
+    line-height: 1.125rem !important; */
+    }
+
+    .plan-card_feature-text {
+        font-size: 1rem;
+    }
+
+    /* Plan Card | Feature Wrapper */
+    .plan-card_feature-wrapper,
+    .plan-card_feature-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        gap: 0.5rem;
+    }
+
+    .plan-card_feature-header-wrapper {
+        align-items: center;
+    }
+
+    .plan-card_feature-wrapper {
+        align-items: start;
+    }
+
+    /* Plan Card | Checkmark */
+    .plan-card_checkmark {
+        background-image: url("https://storage.googleapis.com/instapage-user-media/bff2cbd9/65895605-0-checkmark-2.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 0.9rem;
+        height: 0.9rem;
+        margin-top: 0.2rem;
+    }
+
+    .plan-card_feature-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        gap: 1rem;
+    }
+
+    .plan-card_feature-block {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
+
+    .plan-card_feature-text {
+        max-width: 29ch;
+    }
+
+    /* INTRO MODAL STYLES */
+    .plan-card-intro-price-modal_link_wrapper {
+        margin-top: 1rem;
+        text-align: left;
+    }
+
+    .plan-card-intro-price-modal_link {
+        font-size: 0.875rem;
+        color: #6e6e6e;
+        cursor: pointer;
+    }
+
+    .underline-link {
+        text-decoration: underline;
+    }
+
+    .plan-card-intro-price-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        animation: fade-in 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000030;
+    }
+
+    .visible {
+        display: flex !important;
+    }
+
+    .plan-card-intro-price-modal_close-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #6e6e6e;
+        opacity: 70%;
+        z-index: 1;
+    }
+
+    .plan-card-intro-price-modal_content-wrapper {
+        position: relative;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        z-index: 2;
+        background-color: white;
+        border-radius: 0.5rem;
+        text-align: left;
+    }
+
+    .plan-card-intro-price-modal_exit-icon {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .plan-card-intro-price-modal_header {
+        font-size: 1.375rem;
+        font-weight: 485;
+    }
+
+    .plan-card-intro-price-modal_p {
+        font-size: 1rem;
+        line-height: 150%;
+        max-width: 50ch;
+    }
+
+    .plan-card-inro-price-modal_list {
+        padding-left: 1.5rem;
+        margin: 0rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .plan-card-inro-price-modal_plan-header {
+        font-weight: 535;
+    }
+
+    .plan-card-inro-price-modal_list-item {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        line-height: 150%;
+    }
+
+    .plan-card-inro-price-modal_list-item:before {
+        content: "•";
+        margin-right: 0.5rem;
+    }
+
+    .plan-card_feature-text--bubble {
+        color: #2551b8;
+        font-family: "Basel Grotesk";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 635;
+        line-height: 130%;
+        /* 20.8px */
+        text-transform: uppercase;
+    }
+
+    /*DESKTOP SPLIDE PAGINATION*/
+    #sliderPlanCards .splide__pagination {
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        .is-desktop {
+            display: none;
+        }
+
+        .is-mobile {
+            display: inherit;
+        }
+
+        .plan-card.has-ribbon {
+            border: 0px !important;
+            filter: drop-shadow(0 0 14px rgba(51, 102, 255, 0.5));
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: filter;
+        }
+
+        .plan-card__heading {
+            font-size: 1.75rem;
+        }
+
+        .plan-card__heading-wrapper {
+            gap: 0.5rem;
+            padding-bottom: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .plan-card_billed-text {
+            max-width: 36ch !important;
+        }
+
+        /* INTRO MODAL STYLES */
+        .plan-card-intro-price-modal_content-wrapper {
+            padding: 2.25rem 1.5rem;
+        }
+
+        .plan-card-intro-price-modal_p {
+            font-size: 1rem;
+            max-width: 26ch;
+        }
+
+        .plan-card-intro-price-modal_header {
+            font-size: 1.125rem;
+        }
+
+        /* #sliderPlanCards .splide__list {
+      align-items: center;
+      flex-direction: column;
+    } */
+        /* .plan-card_billed-wrapper {
+      flex-direction: column;
+    } */
+        .slide-header {
+            font-size: 6rem !important;
+        }
+
+        .plan-card__subheading {
+            width: 80%;
+        }
+
+        #sliderPlanCards .plan-card_button {
+            width: 16.25rem;
+            max-width: 100%;
+            height: 3rem;
+            font-size: 1.125rem !important;
+            align-self: center;
+        }
+
+        .plan-card_ribbon,
+        .plan-card_discount-text {
+            font-size: 0.875rem !important;
+        }
+
+        .plan-card_feature-header-wrapper {
+            flex-direction: column;
+            align-items: start;
+            justify-content: left;
+            gap: 0.5rem;
+        }
+
+        .plan-card_feature-text,
+        .plan-card_billed-wrapper {
+            max-width: 25ch;
+        }
+
+        .plan-card_feature-header {
+            max-width: 20ch;
+        }
+
+        /* #sliderPlanCards-slide03 {
+      margin-top: 2rem;
+    } */
+        .plan-card-inro-price-modal_plans-wrapper {
+            max-width: 29ch;
+        }
+
+        /*Hero Fix*/
+        section.section-relative:has(.gsap-header) {
+            margin-top: -1px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        #sliderPlanCards .splide__list {
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #sliderPlanCards .splide__slide {
+            align-items: center;
+        }
+
+        section:has(#sliderPlanCards),
+        .section-block:has(#sliderPlanCards) {
+            height: 276.5rem !important;
+        }
+
+        .splide-card_family-wrapper {
+            margin-top: 1.75rem;
+        }
+
+        #sliderPlanCards .splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        .plan-cards_list {
+            align-items: center;
+        }
+
+        .plan-card_ribbon-text.no-text {
+            height: 1.3rem;
+        }
+    }
+</style>
+
+<!-- Splide Slider Mount  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#sliderPlanCards", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 3,
+            perMove: 1,
+            arrows: false,
+            pagination: true,
+            drag: false,
+            gap: "1.5rem",
+            i18n: {
+                prev: "Previous Feature, Aura Plan Cards",
+                next: "Next Feature, Aura Plan Cards",
+                slideX: "Go to Slide %s, Aura Plan Cards",
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    gap: "1rem",
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "1.5rem" },
+                },
+                320: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: false,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<div class="plan-card__heading-wrapper">
+    <h2 class="plan-card__heading">Choose your plan</h2>
+    <p class="plan-card__subheading">
+        Try Aura risk-free with your 14-day free trial. Cancel your free trial
+        anytime.
+    </p>
+</div>
+
+<div id="sliderPlanCards" class="splide" role="group" aria-label="Aura Plan Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list plan-card_list">
+            <div class="splide__slide plan-card_slide">
+                <div class="plan-card_ribbon">
+                    <span aria-hidden="true" class="plan-card_ribbon-text no-text"></span>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <h3 class="plan-card_plan-name">Premium</h3>
+                        <div class="plan-card_discount-wrapper">
+                            <span id="planDiscountIndividual" class="plan-card_discount-text">Save up to XX%</span>
+                        </div>
+                    </div>
+                    <div class="plan-card_price-wrapper">
+                        <span id="planPriceIndividual" class="plan-card_price-text">Free for 14 days</span>
+                    </div>
+                    <div class="plan-card_billed-wrapper">
+                        <span id="planMonthlyIndividual" class="plan-card_billed-text">or $XX/mo billed monthly</span>
+                    </div>
+                    <!-- <div class="plan-card_intro-price-wrapper">
+            Special intro offer<sup>‡</sup>
+          </div> -->
+                    <a id="planButtonIndividual" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">What's Included</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">1 Adult</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">24/7 U.S. Based Customer Support</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Privacy Protection</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">Enhanced
+                                        </span>
+                                        Data Removal from 200+ Data Broker Sites to Reduce
+                                        <br class="is-mobile" />Scams
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Data Removal from People Search Sites, Credit
+                                        Solicitors,
+                                        Junk-mailers</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Google Search Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Digital Account Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Registry with National Do-Not-Call List</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">
+                                Identity Theft Protection
+                            </h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">SSN Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Personal Info Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Account Breach Alerts</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Online & Device Security</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Antivirus - 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">VPN & Virtual Locations (10 Devices)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Safe Browsing - 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Sensitive Files Vault (1GB)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="plan-card-intro-price-modal_link_wrapper">
+            <div class="plan-card-intro-price-modal_link">
+              <sup>‡</sup>Introductory offer
+              <span class="underline-link">details.</span>
+            </div>
+          </div> -->
+                </div>
+            </div>
+            <div class="splide__slide plan-card_slide with-ribbon">
+                <div class="plan-card_ribbon ribbon-is-active">
+                    <span aria-hidden="true" class="plan-card_ribbon-text">Best Protection for One</span>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-card_topper-wrapper">
+                        <h3 class="plan-card_plan-name">Ultimate</h3>
+                        <div class="plan-card_discount-wrapper">
+                            <span id="planDiscountCouple" class="plan-card_discount-text">Save up to XX%</span>
+                        </div>
+                    </div>
+                    <div class="plan-card_price-wrapper">
+                        <span id="planPriceCouple" class="plan-card_price-text">Free for 14 days</span>
+                    </div>
+                    <div class="plan-card_billed-wrapper">
+                        <span id="planMonthlyCouple" class="plan-card_billed-text">or $XX/mo billed monthly</span>
+                    </div>
+                    <!-- <div class="plan-card_intro-price-wrapper">
+            Special intro offer<sup>‡</sup>
+          </div> -->
+                    <a id="planButtonCouple" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">What's Included</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">1 Adult</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">24/7 U.S. Based Customer Support</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>$1 Million Identity Theft Insurance*</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Privacy Protection</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">Enhanced
+                                        </span>
+                                        Data Removal from 200+ Data Broker Sites to Reduce
+                                        <br class="is-mobile" />Scams
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Data Removal from People Search Sites, Credit
+                                        Solicitors,
+                                        Junk-mailers</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Google Search Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Digital Account Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Registry with National Do-Not-Call List</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">
+                                Identity Theft Protection
+                            </h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">SSN Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Personal Info Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Account Breach Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Home Title & Address Fraud Alerts</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Stolen Identity Alerts</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Identity Verification Monitoring</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Online & Device Security</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Antivirus - Up to 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">VPN & Virtual Locations (10 Devices)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Safe Browsing - 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Sensitive Files Vault (1GB)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">
+                                Financial Fraud Protection
+                            </h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>3-Bureau Credit Monitoring</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Credit Lock</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Bank Fraud Monitoring</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Financial Transaction Monitoring</strong>
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Monthly Credit Score¹</strong></span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Annual Credit Reports</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="plan-card-intro-price-modal_link_wrapper">
+            <div class="plan-card-intro-price-modal_link">
+              <sup>‡</sup>Introductory offer
+              <span class="underline-link">details.</span>
+            </div>
+          </div> -->
+                </div>
+            </div>
+            <div class="splide__slide plan-card_slide with-ribbon no-gap">
+                <div class="plan-card_ribbon ribbon-is-active">
+                    <span class="plan-card_ribbon-text">Best Protection for Two</span>
+                </div>
+                <div class="plan-card has-ribbon">
+                    <div class="plan-card_topper-wrapper">
+                        <h3 class="plan-card_plan-name">Ultimate<span>Plus</span></h3>
+                        <div class="plan-card_discount-wrapper">
+                            <span id="planDiscountFamily" class="plan-card_discount-text">Save up to XX%</span>
+                        </div>
+                    </div>
+                    <div class="plan-card_price-wrapper">
+                        <span id="planPriceFamily" class="plan-card_price-text">Free for 14 days</span>
+                    </div>
+                    <div class="plan-card_billed-wrapper">
+                        <span id="planMonthlyFamily" class="plan-card_billed-text">or $XX/mo billed monthly</span>
+                    </div>
+                    <!-- <div class="plan-card_intro-price-wrapper">
+            Special intro offer<sup>‡</sup>
+          </div> -->
+                    <a id="planButtonFamily" class="plan-card_button btn url-link">Get Protection Now</a>
+                    <div class="plan-card_feature-block">
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">What's Included</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">2 Adults</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">24/7 U.S. Based Customer Support</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><strong>Up to $2 Million Identity Theft Insurance* ($1M
+                                        insurance
+                                        per adult)</strong></span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Privacy Protection</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">Enhanced
+                                        </span>
+                                        Data Removal from 200+ Data Broker Sites to Reduce
+                                        <br class="is-mobile" />Scams
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Data Removal from People Search Sites, Credit
+                                        Solicitors,
+                                        Junk-mailers</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Google Search Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text"><span
+                                            class="plan-card_feature-text--bubble">New </span>
+                                        Digital Account Cleanup
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Registry with National Do-Not-Call List</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">
+                                Identity Theft Protection
+                            </h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">SSN Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Personal Info Dark Web Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Account Breach Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Home Title & Address Fraud Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Stolen Identity Alerts</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Identity Verification Monitoring</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">Online & Device Security</h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Antivirus - Up to 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">VPN & Virtual Locations (10 Devices)</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Safe Browsing - 10 Devices</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Password Manager</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Sensitive Files Vault (1GB)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="plan-card_feature-content-wrapper">
+                            <h4 class="plan-card_feature-header">
+                                Financial Fraud Protection
+                            </h4>
+                            <ul class="plan-card_ul">
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">3-Bureau Credit Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Credit Lock</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Bank Fraud Monitoring</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Financial Transaction Monitoring
+                                    </span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Monthly Credit Score¹</span>
+                                </li>
+                                <li class="plan-card_feature-wrapper">
+                                    <div class="plan-card_checkmark" aria-label="Included"></div>
+                                    <span class="plan-card_feature-text">Annual Credit Reports</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="plan-card-intro-price-modal_link_wrapper">
+            <div class="plan-card-intro-price-modal_link">
+              <sup>‡</sup>Introductory offer
+              <span class="underline-link">details.</span>
+            </div>
+          </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Splide planCards Intro Modal Script  -->
+<!-- <script>
+  "use strict";
+  document.addEventListener("DOMContentLoaded", () => {
+    const ipBody = document.querySelector("#landing-page");
+
+    const modalParent = document.createElement("div");
+    modalParent.classList.add("plan-card-intro-price-modal");
+    ipBody.appendChild(modalParent);
+
+    const modalHTML = `<div class="plan-card-intro-price-modal_content-wrapper">
+  <div class="plan-card-intro-price-modal_header">Introductory Offer</div>
+  <p class="plan-card-intro-price-modal_p">
+    The introductory offer is valid for the first term of your subscription. At
+    the end of the expiration of the initial term, you will be automatically
+    renewed at the renewal price. This price is subject to change. We will
+    always email you in advance prior to annual renewal.
+  </p>
+  <div class="plan-card-inro-price-modal_plans-wrapper">
+    <h6 class="plan-card-inro-price-modal_plan-header">Individual:</h6>
+    <ul class="plan-card-inro-price-modal_list">
+      <li class="plan-card-inro-price-modal_list-item">
+        Annual - pay $144.00 after free trial, renews at $215.78/year
+      </li>
+      <li class="plan-card-inro-price-modal_list-item">
+        Monthly - pay $15.00 after free trial, renews at $24.00/month
+      </li>
+    </ul>
+  </div>
+  <div class="plan-card-inro-price-modal_plans-wrapper">
+    <h6 class="plan-card-inro-price-modal_plan-header">Couple:</h6>
+    <ul class="plan-card-inro-price-modal_list">
+      <li class="plan-card-inro-price-modal_list-item">
+        Annual - pay $264.00 after free trial, renews at $345.41/year
+      </li>
+      <li class="plan-card-inro-price-modal_list-item">
+        Monthly - pay $29.00 after free trial, renews at $48.00/month
+      </li>
+    </ul>
+  </div>
+  <div class="plan-card-inro-price-modal_plans-wrapper">
+    <h6 class="plan-card-inro-price-modal_plan-header">Family:</h6>
+    <ul class="plan-card-inro-price-modal_list">
+      <li class="plan-card-inro-price-modal_list-item">
+        Annual - pay $348.00 after free trial, renews at $419.83/year
+      </li>
+      <li class="plan-card-inro-price-modal_list-item">
+        Monthly - pay $39.00 after free trial, renews at $80.00/month
+      </li>
+    </ul>
+  </div>
+  <svg
+    class="plan-card-intro-price-modal_exit-icon"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M18.2929 4.29289C18.6834 3.90237 19.3166 3.90237 19.7071 4.29289C20.0976 4.68342 20.0976 5.31658 19.7071 5.70711L13.4142 12L19.7071 18.2929C20.0976 18.6834 20.0976 19.3166 19.7071 19.7071C19.3166 20.0976 18.6834 20.0976 18.2929 19.7071L12 13.4142L5.70711 19.7071C5.31658 20.0976 4.68342 20.0976 4.29289 19.7071C3.90237 19.3166 3.90237 18.6834 4.29289 18.2929L10.5858 12L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L12 10.5858L18.2929 4.29289Z"
+      fill="#55595E" />
+  </svg>
+</div>
+<div class="plan-card-intro-price-modal_close-area"></div>
+      `;
+    modalParent.innerHTML = modalHTML;
+
+    const introModalLinks = document.querySelectorAll(
+      ".plan-card-intro-price-modal_link"
+    );
+    const introModalExitIcon = document.querySelector(
+      ".plan-card-intro-price-modal_exit-icon"
+    );
+    const introModalExitArea = document.querySelector(
+      ".plan-card-intro-price-modal_close-area"
+    );
+    introModalExitIcon.setAttribute("tabindex", "0");
+    introModalExitArea.setAttribute("tabindex", "0");
+
+    function openModal(event) {
+      modalParent.classList.add("visible");
+      document.body.classList.add("modal-on");
+    }
+
+    function closeModal(event) {
+      modalParent.classList.remove("visible");
+      document.body.classList.remove("modal-on");
+    }
+
+    introModalLinks.forEach((element) => {
+      element.setAttribute("tabindex", "0");
+      element.addEventListener("click", function () {
+        openModal();
+      });
+      introModalExitIcon.addEventListener("click", function () {
+        closeModal();
+      });
+      introModalExitArea.addEventListener("click", function () {
+        closeModal();
+      });
+    });
+  });
+</script> -->

@@ -1,0 +1,577 @@
+<!--GB Name: FAQ Privacy - Aura Safety-->
+<!--Frequently Asked Questions Accordion = FAQ-->
+
+<style id="faqAccordionStyles">
+    .accordion-block {
+        background-color: #161616;
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        color: #ffffff;
+    }
+
+    .faq-accordion__alignment {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        gap: 2rem;
+    }
+
+    .faq-accordion-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 4rem;
+        padding-top: 3rem;
+    }
+
+    .faq-accordion__systems-wrapper.first {
+        padding-top: 0.5rem;
+    }
+
+    .faq-accordion__system-header {
+        font-size: 1.125rem;
+        text-decoration: underline;
+    }
+
+    .faq-headline {
+        font-family: "Basel Grotesk";
+        font-size: 2.5rem;
+        padding-bottom: 2rem;
+        font-weight: 550;
+        max-width: 18ch;
+    }
+
+    .faq-accordion {
+        max-width: 39.25rem;
+    }
+
+    .faq-accordion__list-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 2rem;
+    }
+
+    .faq-accordion__list-item.is-first {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .faq-accordion__list-item:hover {
+        cursor: pointer;
+    }
+
+    .faq-accordion__list-item:hover>.faq-accordion__permanent-block {
+        padding-left: 1rem;
+    }
+
+    .faq-accordion__permanent-block {
+        padding-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: padding-left 0.2s linear;
+    }
+
+    .faq-accordion__expand-block {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        /* height: 100%; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: left;
+        gap: 2rem;
+    }
+
+    .faq-accordion__question {
+        font-family: "Basel Grotesk";
+        font-size: 1.5rem;
+        max-width: 45ch;
+        font-weight: 535;
+    }
+
+    .faq-accordion__answer {
+        padding-top: 2.5rem;
+        font-size: 1.125rem;
+    }
+
+    .faq-accordion__plus-minus {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .faq-accordion__svg-vertical-line {
+        transition: opacity 200ms ease-out;
+    }
+
+    .faq-accordion__plus-minus.is-open .faq-accordion__svg-vertical-line {
+        opacity: 0%;
+    }
+
+    .faq-accordion__ul {
+        padding-left: 1.2rem;
+        max-width: 50rem;
+    }
+
+    .faq-accordion__ul.decimal {
+        padding-left: 1rem;
+        list-style-type: decimal;
+    }
+
+    .faq-accordion__ul li {
+        padding-bottom: 0.25rem;
+    }
+
+    .faq-accordion__question-svg {
+        position: absolute;
+        top: 2rem;
+        right: 3rem;
+        bottom: auto;
+        left: auto;
+        width: 7rem;
+        height: auto;
+    }
+
+    /*Mobile Styles*/
+    @media (max-width: 767px) {
+        .faq-accordion-container {
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+
+        .faq-accordion__alignment {
+            padding: 0 2.5rem;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .faq-headline {
+            font-size: 1.875rem;
+        }
+
+        .faq-accordion__list-item {
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-accordion__question {
+            font-family: "Basel Grotesk";
+            font-size: 1.25rem;
+            padding-top: 0;
+            max-width: 85%;
+        }
+
+        .faq-accordion__answer {
+            padding-top: 1.5rem;
+        }
+
+        .faq-accordion__permanent-block {
+            padding-top: 1.5rem;
+            align-items: center;
+        }
+
+        .faq-accordion__plus-minus {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .faq-accordion__svg-icon {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+
+        .faq-accordion__question-svg {
+            top: 2rem;
+            width: 4rem;
+        }
+    }
+
+    .faq-link {
+        text-decoration: underline;
+    }
+</style>
+
+<!--HTML that will be inserted into the InstaPage <section> element-->
+<div id="faqAccordionHtml" class="faq-accordion-container">
+    <div class="faq-accordion-container">
+        <!-- <img
+      class="faq-accordion__question-svg"
+      src="//v.fastcdn.co/u/bff2cbd9/65612217-0-question-mark-illust.svg"
+      alt="Question Mark Decoration"
+    /> -->
+        <div class="faq-accordion__alignment">
+            <h2 class="faq-headline">Frequently asked questions</h2>
+            <div class="faq-accordion">
+                <div role="list" class="faq-accordion__list">
+                    <div role="listitem" class="faq-accordion__list-item is-first" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                What is a data broker?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                A data broker is a company or individual that gathers personal information about people
+                                from various sources, like
+                                online activities, public records, and purchases. They then compile this data and sell
+                                it to businesses for marketing,
+                                research, and other uses. This information can include your contact information such as
+                                name, address, phone number, and
+                                email address. It could also include your location data, online browsing history, social
+                                media activity, demographic
+                                details, education and professional information, and financial information.
+                            </div>
+                        </div>
+                    </div>
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                Why should I opt out of data brokers?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">Opting out of data brokers is important for several reasons:
+                                <ul class="faq-accordion__ul">
+                                    <li><strong>Protect Your Privacy</strong>: Data brokers collect and sell detailed
+                                        personal information, including
+                                        your habits, preferences, and location. Opting out limits how much of your
+                                        private life is accessible to
+                                        companies.</li>
+                                    <li><strong>Reduce Spam and Unwanted Ads</strong>: By limiting the amount of
+                                        information available about you, opting
+                                        out can decrease the number of unsolicited marketing emails, phone calls, and
+                                        ads you receive.</li>
+                                    <li><strong>Lower Risk of Identity Theft</strong>: Less available personal
+                                        information means a lower chance of it
+                                        falling into the wrong hands, helping to protect you from identity theft and
+                                        fraud.</li>
+                                    <li><strong>Increase Control Over Your Data</strong>: Opting out gives you more say
+                                        in who can access and use your
+                                        personal information, ensuring it's only shared with your consent.</li>
+                                    <li><strong>Prevent Misuse of Information</strong>: Data brokers may not always
+                                        handle your information responsibly.
+                                        By opting out, you reduce the risk of your data being used in ways you don’t
+                                        approve of or that could harm you.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                How does Aura help remove my personal information online?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                <ul class="faq-accordion__ul decimal">
+                                    <li>Aura scans data broker websites to find profiles that contain your information
+                                        that was collected and created
+                                        without your permission.</li>
+                                    <li>Aura then sends requests to the data brokers to remove your information. This is
+                                        done automatically and we
+                                        update you on the progress along the way.</li>
+                                    <li>Aura ensures ongoing protection by continuously monitoring the data broker
+                                        websites and sending removal requests
+                                        to help prevent brokers from recollecting your data in the future.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                What is the dark web?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                <p>The Dark Web is a collection of websites, forums, and marketplaces that are only
+                                    accessible by using the Tor browser.
+                                    This specialized browser grants users a level of anonymity that is especially
+                                    appealing to cybercriminals and
+                                    hackers.</p>
+                                <br>
+                                <p>If your information is on the dark web (i.e., through a data broker data breach),
+                                    criminals could commit identity
+                                    theft, open credit accounts, take out loans, or make purchases in your name, leading
+                                    to financial loss and credit
+                                    damage.</p>
+                                <br>
+                                <p>Aura scans and monitors the Dark Web and alerts you if your SSN or personal info is
+                                    found on the Dark Web, and offers
+                                    recommendations for protection.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List Item 5 -->
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                    Who owns Aura?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                <p>Aura, headquartered in Boston, Massachusetts, was established in 2014 by Hari
+                                    Ravichandran following his experience
+                                    with identity theft. In July 2019, Intersections Inc. and iSubscribed combined its
+                                    services and renamed itself to
+                                    Aura. As a result, their respective brands Intrusta and Identity Guard were also
+                                    brought together.</p>
+                                <br>
+                                <p>Aura (and Aura.com) should not be confused with Aura International, a training and
+                                    management consulting firm based
+                                    in Beijing, China.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List Item 6 -->
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                    Is my data safe with Aura?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                Aura does not sell customer data as described in our privacy policy (<u><a
+                                        href="https://www.aura.com/legal/privacy-policy" rel="noreferrer noopener">link</a></u>). Aura does not
+                                operate
+                                any data broker or people data mining websites.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List Item 7 -->
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                    How do I contact customer support?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                To contact customer support, please visit <u><a href="https://help.aura.com/s/"
+                                        rel="noreferrer noopener">https://help.aura.com/s/</a></u>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List Item 8 -->
+                    <div role="listitem" class="faq-accordion__list-item" aria-expanded="false">
+                        <div role="button" class="faq-accordion__permanent-block">
+                            <div class="faq-accordion__question">
+                                    Where is your customer support based?
+                            </div>
+                            <div class="faq-accordion__plus-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="faq-accordion__svg-icon" width="24"
+                                    height="24" viewBox="0 0 24 24" fill="none">
+                                    <path class="faq-accordion__svg-vertical-line" d="M12 4V20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path class="faq-accordion__svg-horizontal-line" d="M4 12H20" stroke="#FFFFFF"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="faq-accordion__expand-block" aria-hidden="true">
+                            <div class="faq-accordion__answer">
+                                To contact customer support, please visit <u><a href="https://help.aura.com/s/"
+                                        rel="noreferrer noopener">https://help.aura.com/s/</a></u>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Lists -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--faq Accordion Script -->
+<script data-cfasync="false">
+    //Grab the HTML Element/Object that this script is currently running in
+    const currentScriptfaq = document.currentScript; //EDIT: Update variable name in all locations for each new accordion.
+
+    const createFaqAccordion = () => {
+        //EDIT: Update function name in all locations for each new accordion.
+
+        //Loop through parent elements in ascending order until IP's section element is found
+        let isSectionBlock = false;
+        let currentElementToCheck = currentScriptfaq.parentElement; //This starting element should be the IP HTML Widget. Console log to confirm.
+
+        while (!isSectionBlock) {
+            if (currentElementToCheck.nodeName === "SECTION") {
+                isSectionBlock = true;
+            } else {
+                currentElementToCheck = currentElementToCheck.parentElement;
+            }
+        }
+
+        //Apply stylings via CSS
+        currentElementToCheck.classList.add("accordion-block");
+        currentElementToCheck.classList.add("faq-accordion-block"); //EDIT: Update classlist name for each new accordion.
+
+        //Grab HTML & Style elements
+        const accordionHTML = document.querySelector("#faqAccordionHtml");
+        const accordionStyles = document.querySelector("#faqAccordionStyles");
+
+        //Overwrite current HTML
+        currentElementToCheck.innerHTML = "";
+
+        //Insert HTML & Styles into block
+        currentElementToCheck.appendChild(accordionHTML);
+        currentElementToCheck.appendChild(accordionStyles);
+
+        //Add accordion functionality. Must be after HTML is inserted.
+        const faqListItemArray = document.querySelectorAll(
+            ".faq-accordion__list-item",
+        );
+        const faqBlocksToExpandArray = document.querySelectorAll(
+            ".faq-accordion__expand-block",
+        );
+
+        faqListItemArray.forEach((toggle, index) => {
+            toggle.setAttribute("tabindex", "0");
+            // toggle.addEventListener('keydown', setFocusToIndividualCta);
+            let accordionContent = faqBlocksToExpandArray[index];
+            let buttonArrow = toggle.querySelector(".faq-accordion__plus-minus");
+
+            let handleToggle = () => {
+                // CLOSE ALL OTHER ACCORDIONS
+                faqListItemArray.forEach((item, i) => {
+                    if (item !== toggle) {
+                        item.classList.remove("is-open");
+
+                        const content = faqBlocksToExpandArray[i];
+                        const arrow = item.querySelector(".faq-accordion__plus-minus");
+
+                        content.classList.remove("is-open");
+                        arrow.classList.remove("is-open");
+
+                        content.style.maxHeight = null;
+                        content.style.display = "none";
+
+                        item.setAttribute("aria-expanded", "false");
+                        content.setAttribute("aria-hidden", "true");
+                    }
+                });
+
+                // TOGGLE CURRENT ACCORDION
+                toggle.classList.toggle("is-open");
+                accordionContent.classList.toggle("is-open");
+                buttonArrow.classList.toggle("is-open");
+
+                if (accordionContent.style.maxHeight) {
+                    accordionContent.style.display = "none";
+                    accordionContent.style.maxHeight = null;
+                } else {
+                    accordionContent.style.display = "flex";
+                    accordionContent.style.maxHeight =
+                        accordionContent.scrollHeight + "px";
+                }
+            };
+
+            //Function to dynamically change aria attributes
+            let handleAriaOnClick = (element, ariaType) => {
+                if (element.getAttribute(`aria-${ariaType}`) !== null) {
+                    element.setAttribute(
+                        `aria-${ariaType}`,
+                        element.getAttribute(`aria-${ariaType}`) === "true"
+                            ? "false"
+                            : "true",
+                    );
+                } else {
+                    console.error(
+                        `Element does not have aria-${ariaType} attribute. View element:`,
+                        element,
+                    );
+                }
+            };
+
+            toggle.addEventListener("click", (event) => {
+                handleToggle();
+                handleAriaOnClick(toggle, "expanded");
+                handleAriaOnClick(accordionContent, "hidden");
+            });
+
+            toggle.addEventListener("keydown", (event) => {
+                const { key, which } = event;
+                const keysToMatch = ["Enter", " "];
+                const whichCodesToMatch = [32, 13];
+
+                if (keysToMatch.includes(key) || whichCodesToMatch.includes(which)) {
+                    handleToggle();
+                    handleAriaOnClick(toggle, "expanded");
+                    handleAriaOnClick(accordionContent, "hidden");
+                }
+            });
+        });
+    };
+
+    document.addEventListener("DOMContentLoaded", createFaqAccordion);
+</script>
