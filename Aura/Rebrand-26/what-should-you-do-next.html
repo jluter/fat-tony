@@ -1,0 +1,748 @@
+<!-- Splide protectData Mount  -->
+<!-- GB Name: What you should do next splide - Aura Safety  -->
+<script>
+    "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const splide = new Splide("#protectData", {
+            type: "slide",
+            autoWidth: true,
+            perPage: 1,
+            perMove: 1,
+            arrows: true,
+            pagination: true,
+            drag: true,
+            gap: "1rem",
+            arrowPath:
+                "M22.8449 6.17835C22.194 5.52747 21.1387 5.52747 20.4879 6.17835C19.837 6.82922 19.837 7.8845 20.4879 8.53537L29.4287 17.4762L6.66643 17.4762C5.74595 17.4762 4.99976 18.2224 4.99976 19.1429C4.99976 20.0634 5.74595 20.8096 6.66643 20.8096L29.4269 20.8096L20.4879 29.7486C19.837 30.3994 19.837 31.4547 20.4879 32.1056C21.1387 32.7565 22.194 32.7565 22.8449 32.1056L34.63 20.3205C35.2809 19.6696 35.2809 18.6143 34.63 17.9635L22.8449 6.17835Z",
+            i18n: {
+                prev: "Previous Feature, How Aura Protects",
+                next: "Next Feature, How Aura Protects",
+                slideX: "Go to Slide %s, How Aura Protects Feature",
+            },
+            classes: {
+                arrows: "splide__arrows protect-data_arrows_wrapper",
+                arrow: "splide__arrow protect-data_arrow",
+                prev: "splide__arrow--prev protect-data_prev",
+                next: "splide__arrow--next protect-data_next",
+            },
+            breakpoints: {
+                768: {
+                    perPage: 1,
+                    perMove: 1,
+                    drag: true,
+                    arrows: true,
+                    pagination: true,
+                    dragMinThreshold: 5,
+                    flickPower: 200,
+                    flickMaxPages: 1,
+                    padding: { left: "1.5rem", right: "1.5rem" },
+                },
+                320: {
+                    destroy: false,
+                    type: "slide",
+                    autoWidth: true,
+                    arrows: false,
+                    pagination: true,
+                    gap: "0rem",
+                    perPage: 1,
+                    perMove: 1,
+                    drag: false,
+                    flickPower: 100,
+                    flickMaxPages: 1,
+                    padding: { left: "0rem", right: "0rem" },
+                },
+            },
+        });
+
+        splide.mount();
+    });
+</script>
+
+<!-- Splide protectData Library  -->
+<style>
+    #protectData .splide__track {
+        overflow: visible !important;
+    }
+
+    #protectData .splide__pagination {
+        bottom: -10.5% !important;
+    }
+
+    #protectData .splide__pagination__page {
+        border: none !important;
+        background: rgba(110, 110, 110, 0.5) !important;
+        opacity: 1 !important;
+        height: 0.625rem !important;
+        width: 0.625rem !important;
+    }
+
+    #protectData .splide__pagination__page.is-active {
+        border: 1px solid #fff !important;
+        background: #fff !important;
+        transform: scale(1) !important;
+    }
+
+    #protectData .splide__arrows .splide__arrow svg {
+        fill: #fff;
+    }
+
+    #protectData .splide__arrow:hover {
+        background: rgba(255, 255, 255, 1) !important;
+    }
+
+    #protectData .splide__arrow:hover svg {
+        fill: rgba(22, 22, 22, 1) !important;
+    }
+
+    .protect-data_list {
+        align-items: stretch;
+    }
+
+    .protect-data_slide {
+        display: flex;
+        flex-direction: column;
+        max-width: 21.625rem;
+        align-items: stretch;
+        justify-content: stretch;
+        border-radius: 1rem;
+        height: stretch;
+    }
+
+    .protect-data_image {
+        width: 100%;
+        height: 12.715rem;
+    }
+
+    #protectData .splide__list {
+        gap: 1rem;
+    }
+
+    /*
+  .protect-data_image.one {
+    background: url(https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/6841bdf4380eae1a3d623454_Group%206960693.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .protect-data_image.two {
+    background: url(https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/6841bdf127fd9e4de389051b_Group%206960694.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .protect-data_image.three {
+    background: url(https://cdn.prod.website-files.com/607724b2ae76e535db9552ff/6841bdf4b0d26715d28a2788_Group%206960695.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  */
+    .protect-data_content-wrapper {
+        background-color: #2a2a2a;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: start;
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    .protect-data_header {
+        color: #fff;
+        font-size: 1.375rem;
+        font-weight: 485;
+        line-height: 130%;
+        font-family: "Basel Grotesk";
+        margin-bottom: 0.5rem;
+    }
+
+    .protect-data_paragraph {
+        color: #fff;
+        font-family: "Basel Grotesk";
+        font-size: 1rem;
+        line-height: 140%;
+        margin-bottom: 1rem;
+        max-width: 98%;
+    }
+
+    .protect-data_how-wrapper {
+        padding-top: 1rem;
+        border-top: 1px solid #4d4d4d;
+    }
+
+    .protect-data_how-header {
+        color: #fff;
+        font-size: 1.125rem;
+        font-weight: 535;
+        line-height: 130%;
+        font-family: "Basel Grotesk";
+        margin-bottom: 0.5rem;
+        margin-top: 0.25rem;
+    }
+
+    /* Arrow Styles */
+
+    /*Desktop Only*/
+    @media (min-width: 769px) {
+        #protectData .splide__arrows {
+            top: -5.75rem;
+            right: 2.5rem;
+            gap: 1rem !important;
+        }
+
+        #protectData .protect-data_arrow {
+            width: 3rem !important;
+            height: 3rem !important;
+        }
+    }
+
+    .protect-data_arrow {
+        background: rgba(42, 42, 42, 1) !important;
+        opacity: 1 !important;
+        border: 1px solid #161616;
+        bottom: -3.5%;
+        top: auto;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .protect-data_prev {
+        left: 1.75rem;
+    }
+
+    .protect-data_next {
+        right: 1.75rem;
+    }
+
+    .protect-data_page-dot {
+        background: transparent;
+        border: #161616 solid 1px;
+        opacity: 1;
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .protect-data_page-dot.is-active {
+        transform: scale(1);
+        background: #161616;
+    }
+
+    /*DESKTOP SPLIDE PAGINATION*/
+    /*.protect-data_pagination-mobile {
+    display: none;
+  }*/
+
+    @media (max-width: 768px) {
+        .protect-data_slide {
+            max-width: 20rem;
+        }
+
+        #protectData .splide__list {
+            gap: 0.5rem;
+        }
+
+        .splide__arrows.splide__arrows--ltr {
+            display: none;
+        }
+
+        .protect-data_pagination-mobile {
+            display: flex;
+            margin-top: 2.5rem !important;
+        }
+
+        #protectData .splide__track {
+            padding-bottom: 2.5rem;
+        }
+
+        .protect-data_image {
+            height: 12.5rem;
+            object-fit: cover;
+        }
+
+        .protect-data_header {
+            font-size: 1.125rem;
+        }
+
+        .protect-data_how-header {
+            font-size: 1rem;
+        }
+
+        .protect-data_content-wrapper {
+            padding: 1rem;
+        }
+    }
+
+    /* Change Height of Splide Section Parents*/
+    @media (max-width: 320px) {
+        #protectData .splide__list {
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        #protectData .splide__slide {
+            align-items: center;
+        }
+
+        section:has(.protect-data_list),
+        .section-block:has(.protect-data_list) {
+            height: 200.5625rem !important;
+        }
+
+        .protect-data_list>.splide__slide {
+            margin-right: 0rem !important;
+        }
+
+        .protect-data_list {
+            align-items: center;
+        }
+    }
+
+    /* SPLIDE STYLES */
+    .splide__list {
+        justify-content: start;
+        align-items: start;
+    }
+
+    .splide__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: space-between;
+        transition: all 200ms ease;
+        border-radius: 1.5rem 1.5rem 1rem 1rem;
+        overflow: hidden;
+        background-color: rgba(29,
+                47,
+                80,
+                0);
+        /* Set to transparent for no ribbion */
+    }
+
+
+
+
+    .no-gap {
+        margin-right: 0 !important;
+    }
+
+    @media screen and (min-width: 200px) and (max-width: 767px) {
+        .slide-header {
+            font-size: 6rem !important;
+        }
+    }
+
+    /* SPLIDE DESKTOP/MOBILE STYLES */
+    #slider {
+        margin: 3.063rem auto;
+        /*width: 1300px;*/
+    }
+
+    .splide__slide.is-active {
+        opacity: 1;
+    }
+
+    /* SPLIDE CARD STYLES - PAGE SPECIFIC*/
+
+    /*Desktop Styles */
+    @media (min-width: 769px) {
+        /*Slider gradient */
+        /*
+		  div#slider-track:after {
+			content: "";
+			position: absolute;
+			z-index: 1;
+			bottom: 0;
+			pointer-events: none;
+			background-image: linear-gradient(
+			  270deg,
+			  #f6f6f6 36.84%,
+			  rgba(255, 255, 255, 0) 100%
+			);
+			width: 3rem;
+			height: 100%;
+			right: 0;
+		  }
+		  */
+
+        .splide__arrows {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            /*width: 104%;*/
+            top: 50%;
+        }
+
+        .splide__arrows .splide__arrow svg {
+            fill: #161616;
+        }
+
+        .splide__arrows .splide__arrow svg:hover {
+            fill: #ffffff;
+        }
+
+        .left-arrow-svg {
+            transform: scaleX(1) !important;
+        }
+
+        .splide__arrow {
+            position: static !important;
+            border: 1px solid #161616 !important;
+            height: 2.5rem !important;
+            width: 2.5rem !important;
+        }
+
+        .splide__arrow svg {
+            width: 1.2rem !important;
+            height: 1.2rem !important;
+        }
+
+        .splide__arrow:hover {
+            background: #161616 !important;
+        }
+
+        .splide__arrow--prev:hover svg,
+        .splide__arrow--next:hover svg {
+            fill: #ffffff !important;
+        }
+
+        .arrow-header-container {
+            display: flex;
+            position: static;
+            align-items: center;
+            justify-content: center;
+            gap: 5rem;
+            margin-bottom: 4.5rem;
+        }
+
+        /*  #element-6988, #page-block-314crfzx4un {
+		min-height: 1240px !important;
+		}*/
+
+        .desktop-slider-headline {
+            max-width: 54.9375rem;
+            min-width: 54.9375rem;
+            font-size: 3.625rem;
+            font-weight: 400;
+            color: #161616;
+            text-align: center;
+        }
+
+        .desktop-slider-subheader {
+            font-size: 1.375rem;
+            line-height: 140%;
+            text-align: center;
+            color: #161616;
+            max-width: 53rem;
+            min-width: 53rem;
+            margin-top: 0.6rem;
+        }
+
+        .card-background-wrapper {
+            height: 33.9375rem;
+            width: 21.6875rem;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .card-container {
+            width: inherit;
+            height: inherit;
+            margin: 1.5rem;
+        }
+
+        .card-image {
+            height: 11.875rem;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.9rem;
+        }
+
+        .card-header-text {
+            font-family: "Clarendon Graphic";
+            font-weight: 400;
+            line-height: 2.4375rem;
+            font-size: 1.875rem;
+            text-align: left;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            height: 4.875rem;
+            display: flex;
+        }
+
+        .card-paragraph-text {
+            font-family: "Basel Grotesk";
+            font-size: 1.125rem;
+            font-weight: 400;
+            line-height: 1.5625rem;
+            letter-spacing: 0px;
+            text-align: left;
+            width: 18.6875rem;
+            height: 6.25rem;
+            justify-self: flex-end;
+            align-self: flex-end;
+        }
+
+        .copyright-r {
+            font-family: "basel-for-copy";
+            font-size: 1.125rem;
+            position: relative;
+            top: -0.5rem;
+        }
+
+        .reviews-button-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 4rem 0rem;
+        }
+
+        .review-button {
+            width: 18.75rem;
+            height: 3.875rem;
+        }
+
+        .review-card {
+            height: 30rem;
+        }
+
+        /*47% (Data Module) Stylings*/
+
+        .data-module__slide-list {
+            display: flex !important;
+            justify-content: center;
+        }
+
+        .data-module__slide:nth-child(2) {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        .data-module__slide {
+            display: block;
+            max-width: 20.75rem;
+            padding: 0 2rem;
+        }
+
+        .data-module__slide-title {
+            font-size: 36px;
+            font-weight: 300;
+            padding-bottom: 12px;
+        }
+    }
+
+    /* Mobile Styles*/
+    @media (max-width: 768px) {
+        .splide__track--overflow-visible {
+            overflow: visible !important;
+        }
+
+        .card-background-wrapper {
+            height: 26.5625rem;
+            width: 16.425rem;
+            background-color: #ffffff;
+            border-radius: 24px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .card-container {
+            width: inherit;
+            height: inherit;
+            margin: 1rem;
+        }
+
+        .card-image {
+            height: 8.9375rem;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 0.9rem;
+        }
+
+        .card-header-text {
+            font-family: "Clarendon Graphic";
+            font-weight: 400;
+            line-height: 1.9375rem;
+            font-size: 1.5rem;
+            text-align: left;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            height: 3.875rem;
+            display: flex;
+        }
+
+        .card-header-text.extra-margin {
+            margin-bottom: 2.5rem;
+        }
+
+        .card-paragraph-text {
+            font-family: "Basel Grotesk";
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5625rem;
+            letter-spacing: 0px;
+            text-align: left;
+            width: 100%;
+            /* height: 6.25rem; */
+            justify-self: flex-end;
+            align-self: flex-end;
+        }
+
+        .copyright-r {
+            font-family: "basel-for-copy";
+            font-size: 1.125rem;
+            position: relative;
+            top: -0.5rem;
+        }
+
+        /*47% (Data Module) Stylings -- Mobile*/
+
+        .data-module__slide {
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+        }
+
+        .data-module__slide-title {
+            font-size: 36px;
+            font-weight: 300;
+            padding-bottom: 8px;
+        }
+
+        .data-module__slide-body {
+            max-width: 15.9375rem;
+        }
+
+        .splide__pagination {
+            position: static !important;
+            margin-top: 1.5rem;
+        }
+
+        .splide__pagination__page {
+            background: rgba(0, 0, 0, 0) !important;
+            border: 1px solid #161616 !important;
+            height: 6px !important;
+            width: 6px !important;
+            transition: background 0.2s linear !important;
+            opacity: 1 !important;
+        }
+
+        .splide__pagination__page.is-active {
+            background: #161616 !important;
+            transform: scale(1) !important;
+        }
+    }
+</style>
+
+<div id="protectData" class="splide" aria-label="How Does Aura Help Protect My Data Cards">
+    <div class="splide__arrows"></div>
+    <div class="splide__track">
+        <div class="splide__list protect-data_list">
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image one"
+                    src="https://v.fastcdn.co/u/bff2cbd9/66001151-0-Update-Passwords.png"
+                    alt="Aura app screenshot. Critical alert: your password was detected in a recent data breach. Compromised password detected." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_header">
+                        Update passwords
+                    </h3>
+                    <p class="protect-data_paragraph">
+                        If a password is exposed, attackers may try using it across other accounts. Change passwords starting with your most
+                        sensitive financial accounts.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura helps</h5>
+                        <p class="protect-data_paragraph">
+                            Aura’s Password Manager stores strong passwords, while Account Breach Alerts instantly notify you if your credentials
+                            end up on the dark web.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image two"
+                    src="https://v.fastcdn.co/u/bff2cbd9/66001154-0-Check-financial-Acco.png"
+                    alt="Aura app screenshot. New credit account detected. An attempt to access your credit file was blocked." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_header">Check financial accounts</h3>
+                    <p class="protect-data_paragraph">
+                        Review your bank accounts, credit cards, payment apps, and recent transactions for unauthorized activity. Early fraud
+                        detection limits the damage.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura helps</h5>
+                        <p class="protect-data_paragraph">
+                            Aura helps keep watch over your linked financial accounts to alert you to suspicious spending, new account holders, or
+                            unauthorized changes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image three"
+                    src="https://v.fastcdn.co/u/bff2cbd9/66001155-0-Monitor-Identity.png"
+                    alt="Aura app screenshot. Personal data is monitoring your driver's license, email address, and passport." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_header">
+                        Monitor identity and credit activity
+                    </h3>
+                    <p class="protect-data_paragraph">
+                        Hacks can lead to identity theft months later. Continuously monitoring your identity and credit files helps you catch
+                        and stop personal info misuse.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura helps</h5>
+                        <p class="protect-data_paragraph">
+                            Aura’s 3-Bureau Credit Monitoring delivers alerts up to 650x faster than the competition. Plus, you’re backed by $1M in
+                            Identity Theft Insurance and 24/7 expert support.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image four"
+                    src="https://v.fastcdn.co/u/bff2cbd9/66001158-0-Scan-Devices.png"
+                    alt="Aura app screenshot. Auto-scan is on and antivirus is checking downloads for viruses. Aura has resolved 3 threats in the last 30 days." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_header">
+                        Scan devices for malware
+                    </h3>
+                    <p class="protect-data_paragraph">
+                        Hackers may leave behind spyware to maintain access and steal new passwords. Running a comprehensive device scan ensures
+                        hidden malware is removed.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura helps</h5>
+                        <p class="protect-data_paragraph">
+                            Aura’s Antivirus detects, isolates, and removes malware, viruses, and ransomware across your devices—no tech expertise
+                            required.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="splide__slide protect-data_slide">
+                <img class="protect-data_image five"
+                    src="https://v.fastcdn.co/u/bff2cbd9/66001168-0-Remove-personal-info.png"
+                    alt="Aura app screenshot for data broker opt-out. 188 successful removals from data brokers." />
+                <div class="protect-data_content-wrapper">
+                    <h3 class="protect-data_header">
+                        Remove your personal info from data brokers
+                    </h3>
+                    <p class="protect-data_paragraph">
+                        Compromised data is often sold by brokers, leading to relentless spam and phishing. Removing your public info stops
+                        scammers from targeting you.
+                    </p>
+                    <div class="protect-data_how-wrapper">
+                        <h5 class="protect-data_how-header">How Aura helps</h5>
+                        <p class="protect-data_paragraph">
+                            Aura actively requests your removal from 200+ data brokers and sites to reduce your exposure to scams, spam, and ID
+                            theft.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
